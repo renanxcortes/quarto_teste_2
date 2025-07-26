@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Apresentação",
     "section": "",
-    "text": "Este é um webstie baseado no Quarto do Posit.\nTemplates úteis: https://drganghe.github.io/quarto-academic-site-examples.html\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\n[1] 2\n\n\nTo add a plotly graph:"
+    "text": "Este é um website baseado no Quarto do Posit.\nTemplates úteis: https://drganghe.github.io/quarto-academic-site-examples.html\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\n[1] 2\n\n\nTo add a plotly graph:"
   },
   {
     "objectID": "about.html",

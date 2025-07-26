@@ -7,7 +7,7 @@ execute:
   echo: false
 ---
 
-Este é um webstie baseado no Quarto do Posit.
+Este é um website baseado no Quarto do Posit.
 
 Templates úteis: <https://drganghe.github.io/quarto-academic-site-examples.html>
 
