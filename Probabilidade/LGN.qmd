@@ -1,10 +1,40 @@
 ---
 title: "Lei dos Grandes Números"
 
-execute: 
-  warning: false
-  message: false
-  echo: false
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
 ---
 
-Este é uma página da LGN.
+Este é uma página da LGN citando [@barryjames2023].
+
+Colocando uma equação:
+
+$E = mc^2$
+
+E colocando um ggplot2:
+
+```{r}
+# Definindo parâmetros
+set.seed(123)           # Para reprodutibilidade
+n_lancamentos <- 1000  # Número total de lançamentos
+
+# Simulando lançamentos: 1 representa "cara", 0 representa "coroa"
+resultados <- sample(c(0, 1), size = n_lancamentos, replace = TRUE)
+
+# Calculando a média acumulada (frequência relativa de "cara")
+media_acumulada <- cumsum(resultados) / (1:n_lancamentos)
+
+# Valor esperado teórico
+valor_esperado <- 0.5
+
+# Plotando o gráfico
+plot(media_acumulada, type = "l", col = "blue", lwd = 2,
+     xlab = "Número de lançamentos", ylab = "Frequência relativa de 'cara'",
+     main = "Lei dos Grandes Números - Moeda Honesta")
+abline(h = valor_esperado, col = "red", lty = 2, lwd = 2)
+legend("bottomright", legend = c("Frequência relativa", "Valor esperado (0.5)"),
+       col = c("blue", "red"), lty = c(1, 2), lwd = 2)
+
+```

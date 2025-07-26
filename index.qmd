@@ -7,21 +7,8 @@ execute:
   echo: false
 ---
 
-Este é um website baseado no Quarto do Posit.
+Este é um website baseado no Quarto da empresa Posit.
 
 Templates úteis: <https://drganghe.github.io/quarto-academic-site-examples.html>
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
-
-To add a plotly graph:
-
-```{r}
-library(plotly)
-fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length)
-fig
-
-```
+Site oficial do Quarto: <https://quarto.org/docs/websites>.
