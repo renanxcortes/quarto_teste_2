@@ -2,15 +2,43 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "quarto_teste_2",
+    "title": "Apresentação",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\n[1] 2\n\n\nTo add a plotly graph:"
+    "text": "Este é um webstie baseado no Quarto do Posit.\nTemplates úteis: https://drganghe.github.io/quarto-academic-site-examples.html\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\n[1] 2\n\n\nTo add a plotly graph:"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Sobre",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "This is a Quarto website.\nTemplates úteis: https://drganghe.github.io/quarto-academic-site-examples.html\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nTo add a plotly graph:\nytd library(plotly) fig &lt;- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length) fig}"
+  },
+  {
+    "objectID": "LGN.html",
+    "href": "LGN.html",
+    "title": "Lei dos Grandes Números",
+    "section": "",
+    "text": "Este é uma página da LGN."
+  },
+  {
+    "objectID": "TCL.html",
+    "href": "TCL.html",
+    "title": "Teorema Central do Limite",
+    "section": "",
+    "text": "Este é uma página do TCL."
+  },
+  {
+    "objectID": "Probabilidade/TCL.html",
+    "href": "Probabilidade/TCL.html",
+    "title": "Teorema Central do Limite",
+    "section": "",
+    "text": "Este é uma página do TCL."
+  },
+  {
+    "objectID": "Probabilidade/LGN.html",
+    "href": "Probabilidade/LGN.html",
+    "title": "Lei dos Grandes Números",
+    "section": "",
+    "text": "Este é uma página da LGN."
   }
 ]

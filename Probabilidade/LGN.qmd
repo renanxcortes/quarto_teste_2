@@ -1,0 +1,10 @@
+---
+title: "Lei dos Grandes Números"
+
+execute: 
+  warning: false
+  message: false
+  echo: false
+---
+
+Este é uma página da LGN.

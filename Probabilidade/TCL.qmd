@@ -1,0 +1,10 @@
+---
+title: "Teorema Central do Limite"
+
+execute: 
+  warning: false
+  message: false
+  echo: false
+---
+
+Este é uma página do TCL.

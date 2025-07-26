@@ -1,5 +1,5 @@
 ---
-title: "quarto_teste_2"
+title: "Apresentação"
 
 execute: 
   warning: false
@@ -7,7 +7,7 @@ execute:
   echo: false
 ---
 
-This is a Quarto website.
+Este é um webstie baseado no Quarto do Posit.
 
 Templates úteis: <https://drganghe.github.io/quarto-academic-site-examples.html>
 
