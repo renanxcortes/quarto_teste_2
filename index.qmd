@@ -9,6 +9,8 @@ execute:
 
 This is a Quarto website.
 
+Templates úteis: <https://drganghe.github.io/quarto-academic-site-examples.html>
+
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
 ```{r}
