@@ -26,4 +26,4 @@ Além disso, cuidado ao setar engine jupyter que daí os códigos R não serão 
 
 **Engine Conflicts:**
 
--   **Knitr vs. Jupyter:** If you explicitly set the `engine` to `jupyter` in your YAML, R code chunks will not be executed, and only Python (or the kernel's language) will run. For mixed R and Python, `engine: knitr` is typically used, relying on `reticulate` for Python execution.
+- **Knitr vs. Jupyter:** If you explicitly set the `engine` to `jupyter` in your YAML, R code chunks will not be executed, and only Python (or the kernel's language) will run. For mixed R and Python, `engine: knitr` is typically used, relying on `reticulate` for Python execution.

@@ -11,10 +11,36 @@ format:
     code-summary: "Mostrar Código"
 ---
 
-Este é uma página do TCL.
+# Introdução e Condições Iniciais
 
-Um código em Python.
+O Teorema Central do Limite (TCL) é um dos resultados mais famosos da Teoria da Probabilidade.
 
-```{python}
-2+2
-```
+Sejam $X_1, X_2, ...$ variáveis aleatórias independentes e identicamente distribuídas ($iid$) com média e variância existentes e finitas. Isto é:
+
+$-\infty < \mu < +\infty$
+
+$0 < \sigma^2 < +\infty$
+
+Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$.
+
+## Teorema Central do Limite
+
+Pela Lei dos Grandes Números, sabemos que $\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$, mas a qual taxa? Como que é a distribuição dessa quantidade?
+
+Podemos reescrever a quantidade acima como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$
+
+
+## Diferentes versões do TCL
+
+
+## Exemplo Computacional
+
+
+## Usando o TCL pra aproximar a Binomial pela Normal
+
+
+# Links Úteis:
+
+[Aula de Harvard de Lei dos Grandes Números e Teorema Central do Limite](https://www.youtube.com/watch?v=OprNqnHsVIA&t=1910s)
+
+[Página da Wikipedia do Teorema Central do Limite](https://pt.wikipedia.org/wiki/Teorema_central_do_limite)
