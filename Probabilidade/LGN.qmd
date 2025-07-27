@@ -16,7 +16,7 @@ format:
 
 # Introdução e Condições Iniciais
 
-A Lei dos Grandes Números é um dos resultados mais famosos da Teoria da Probabilidade.
+A Lei dos Grandes Números (LGN) é um dos resultados mais famosos da Teoria da Probabilidade.
 
 Sejam $X_1, X_2, ...$ variáveis aleatórias independentes e identicamente distribuídas ($iid$) com média e variância existentes e finitas. Isto é:
 
@@ -49,35 +49,54 @@ A Lei Fraca estabelece que $\forall \varepsilon > 0$, então:
 
 $P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \xrightarrow{n \rightarrow + \infty} 0$
 
-**Prova.** A prova faz uso da Desigualdade de Chebyshev:
+**Prova.** A prova faz uso da [Desigualdade de Chebyshev](https://pt.wikipedia.org/wiki/Desigualdade_de_Chebyshev):
 
-$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. Esper.}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0$
+$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0$
+
+## Exemplo: O caso Bernoulli
+
+Suponha uma sequência independente de lançamentos de uma moeda honesta e a variável aleatória $X_i = 1$ se cara e $X_i = 0$ se coroa. Ou seja,
+
+$X_i \overset{iid}{\sim}Bernoulli(p)$
+
+onde $p = 0,5$. Então, pela Lei Forte dos Grandes Números:
+
+$\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n} \xrightarrow{n \rightarrow + \infty} p$
+
+Este resultado mostra que a medida que o jogarmos a moeda infinitas vezes, iremos convergir para um cenário em que metade dos lançamentos serão caras e metade serão coroas. Note que o resultado vale quando $n \rightarrow + \infty$, ou seja, ele não estabelece nada em uma quantidade finita de lançamentos onde pode existir variabilidade. Por exemplo, mesmo que seja altamente improvável que nos primeiros 100 lançamentos todos os resultados sejam a face "Cara", não existe nada matematicamente que estabeleça que isso seja impossível. No entanto, no limite do infinito as quantidades iniciais serão "engolidas" pela LGN. Para uma discussão mais aprofundada sobre esse tema recomenda-se uma leitura sobre o [Gambler's Fallacy](https://en.wikipedia.org/wiki/Gambler%27s_fallacy). 
+
 
 ## Exemplo Computacional
 
 No R:
 
 ```{r}
-# Definindo parâmetros
-set.seed(123)           # Para reprodutibilidade
-n_lancamentos <- 1000  # Número total de lançamentos
+# Carregar as bibliotecas necessárias
+library(ggplot2)
+library(dplyr)
 
-# Simulando lançamentos: 1 representa "cara", 0 representa "coroa"
-resultados <- sample(c(0, 1), size = n_lancamentos, replace = TRUE)
+# Definir o número de lançamentos
+n <- 500
 
-# Calculando a média acumulada (frequência relativa de "cara")
-media_acumulada <- cumsum(resultados) / (1:n_lancamentos)
+# Simular lançamentos de uma moeda honesta
+set.seed(123) # Para reprodutibilidade
+lancamentos <- sample(c("Cara", "Coroa"), n, replace = TRUE)
 
-# Valor esperado teórico
-valor_esperado <- 0.5
+# Calcular a proporção acumulada de caras
+dados <- data.frame(lancamentos) %>%
+  mutate(
+    n = row_number(),
+    proporcao_cara = cumsum(lancamentos == "Cara") / n
+  )
 
-# Plotando o gráfico
-plot(media_acumulada, type = "l", col = "blue", lwd = 2,
-     xlab = "Número de lançamentos", ylab = "Frequência relativa de 'cara'",
-     main = "Lei dos Grandes Números - Moeda Honesta")
-abline(h = valor_esperado, col = "red", lty = 2, lwd = 2)
-legend("bottomright", legend = c("Frequência relativa", "Valor esperado (0.5)"),
-       col = c("blue", "red"), lty = c(1, 2), lwd = 2)
+# Criar o gráfico
+ggplot(dados, aes(x = n, y = proporcao_cara)) +
+  geom_line(color = "blue") +
+  labs(title = "Lei dos Grandes Números: Lançamento de uma Moeda Honesta",
+       x = "Número de Lançamentos",
+       y = "Proporção de Caras") +
+  geom_hline(yintercept = 0.5, linetype = "dashed", color = "red") +
+  theme_minimal()
 
 ```
 
