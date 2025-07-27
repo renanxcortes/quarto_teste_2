@@ -4,7 +4,11 @@ title: "Teorema Central do Limite"
 execute: 
   warning: false
   message: false
-  echo: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
 ---
 
 Este é uma página do TCL.
