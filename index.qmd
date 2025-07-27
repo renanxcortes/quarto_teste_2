@@ -12,3 +12,11 @@ Este é um website baseado no Quarto da empresa Posit.
 Templates úteis: <https://drganghe.github.io/quarto-academic-site-examples.html>
 
 Site oficial do Quarto: <https://quarto.org/docs/websites>.
+
+Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate e ter o jupyter instalado.
+
+Exemplo:
+
+```         
+reticulate::py_require("matplotlib")
+```

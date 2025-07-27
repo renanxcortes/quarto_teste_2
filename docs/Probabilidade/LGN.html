@@ -226,6 +226,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#lei-forte-dos-grande-números" id="toc-lei-forte-dos-grande-números" class="nav-link" data-scroll-target="#lei-forte-dos-grande-números">Lei Forte dos Grande Números</a></li>
   <li><a href="#lei-fraca-dos-grande-números" id="toc-lei-fraca-dos-grande-números" class="nav-link" data-scroll-target="#lei-fraca-dos-grande-números">Lei Fraca dos Grande Números</a></li>
+  <li><a href="#relação-entre-leis-e-convergências" id="toc-relação-entre-leis-e-convergências" class="nav-link" data-scroll-target="#relação-entre-leis-e-convergências">Relação entre Leis e Convergências</a></li>
+  <li><a href="#exemplo-o-caso-bernoulli" id="toc-exemplo-o-caso-bernoulli" class="nav-link" data-scroll-target="#exemplo-o-caso-bernoulli">Exemplo: O caso Bernoulli</a></li>
   <li><a href="#exemplo-computacional" id="toc-exemplo-computacional" class="nav-link" data-scroll-target="#exemplo-computacional">Exemplo Computacional</a>
   <ul class="collapse">
   <li><a href="#links-úteis" id="toc-links-úteis" class="nav-link" data-scroll-target="#links-úteis">Links Úteis:</a></li>
@@ -258,7 +260,7 @@ window.Quarto = {
 
 <section id="introdução-e-condições-iniciais" class="level1">
 <h1>Introdução e Condições Iniciais</h1>
-<p>A Lei dos Grandes Números é um dos resultados mais famosos da Teoria da Probabilidade.</p>
+<p>A Lei dos Grandes Números (LGN) é um dos resultados mais famosos da Teoria da Probabilidade.</p>
 <p>Sejam <span class="math inline">\(X_1, X_2, ...\)</span> variáveis aleatórias independentes e identicamente distribuídas (<span class="math inline">\(iid\)</span>) com média e variância existentes e finitas. Isto é:</p>
 <p><span class="math inline">\(-\infty &lt; \mu &lt; +\infty\)</span></p>
 <p><span class="math inline">\(0 &lt; \sigma^2 &lt; +\infty\)</span></p>
@@ -270,6 +272,7 @@ window.Quarto = {
 <p><span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span> com probabilidade 1.</p>
 <p>Observe que <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span> é um <strong>evento</strong>. Logo, a Lei Forte poderia ser reescrita com uma notação probabilística alternativa:</p>
 <p><span class="math inline">\(P\left(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu \right) = 1\)</span></p>
+<p>Este resultado estabelece que <span class="math inline">\(\bar{X}\)</span> converge <em>quase certamente</em> para <span class="math inline">\(\mu\)</span>. Podemos interpretar esse resultado como sendo <em>à medida que n cresce, no infinito, <span class="math inline">\(\bar{X}\)</span> e <span class="math inline">\(\mu\)</span> serão iguais</em>. Ou seja, é uma convergência pontual do valor de uma variável aleatória para uma constante (a média populacional).</p>
 <p>A prova deste teorema implica em provar que o evento acima é um evento de probabilidade 1, o que exige maior formalidade matemática fazendo uso do <a href="https://pt.wikipedia.org/wiki/Lema_de_Borel-Cantelli">Lema de Borel-Cantelli</a>.</p>
 <p><strong>Prova.</strong> Ver Cáp. 5 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
 </section>
@@ -277,8 +280,26 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="lei-fraca-dos-grande-números">Lei Fraca dos Grande Números</h2>
 <p>A Lei Fraca estabelece que <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>, então:</p>
 <p><span class="math inline">\(P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \xrightarrow{n \rightarrow + \infty} 0\)</span></p>
-<p><strong>Prova.</strong> A prova faz uso da Desigualdade de Chebyshev:</p>
-<p><span class="math inline">\(P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. Esper.}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0\)</span></p>
+<p>Este resultado estabelece que <span class="math inline">\(\bar{X}\)</span> converge <em>em probabilidade</em> para <span class="math inline">\(\mu\)</span>.</p>
+<p><strong>Prova.</strong> A prova faz uso da <a href="https://pt.wikipedia.org/wiki/Desigualdade_de_Chebyshev">Desigualdade de Chebyshev</a>:</p>
+<p><span class="math inline">\(P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0\)</span></p>
+<p>Este resultado ilustra que <span class="math inline">\(\bar{X}\)</span> converge <em>em probabilidade</em> para <span class="math inline">\(\mu\)</span>. Podemos interpretar esse resultado como sendo <em>à medida que n cresce, é extremamente improvável que a diferença entre</em> <span class="math inline">\(\bar{X}\)</span> e <span class="math inline">\(\mu\)</span> seja maior que <span class="math inline">\(\varepsilon\)</span>.</p>
+</section>
+<section id="relação-entre-leis-e-convergências" class="level2">
+<h2 class="anchored" data-anchor-id="relação-entre-leis-e-convergências">Relação entre Leis e Convergências</h2>
+<p>É intuitivo pensar afirmarmos que duas quantidades são <strong>iguais</strong> é mais “forte” do que dizer que essas duas quantidades são “altamente prováveis de <strong>estarem próximas</strong>”. Ora, se uma coisa é igual à outra, isso implica de que elas também são próximas. Tendo em vista que a Lei Forte dos Grandes Números representa a convergência <em>quase certa</em> e a Lei Fraca representa a convergência <em>em probabilidade</em>, temos que se</p>
+<p><span class="math inline">\(Convergência\ Quase\ Certa \implies Convergência\ em\ Probabilidade\)</span></p>
+<p>então,</p>
+<p><span class="math inline">\(Lei\ Forte \implies Lei\ Fraca\)</span></p>
+<p>O contrário não vale para nenhuma das duas afirmativas acima.</p>
+</section>
+<section id="exemplo-o-caso-bernoulli" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-o-caso-bernoulli">Exemplo: O caso Bernoulli</h2>
+<p>Suponha uma sequência independente de lançamentos de uma moeda honesta e a variável aleatória <span class="math inline">\(X_i = 1\)</span> se cara e <span class="math inline">\(X_i = 0\)</span> se coroa. Ou seja,</p>
+<p><span class="math inline">\(X_i \overset{iid}{\sim}Bernoulli(p)\)</span></p>
+<p>onde <span class="math inline">\(p = 0,5\)</span>. Então, pela Lei Forte dos Grandes Números:</p>
+<p><span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n} \xrightarrow{n \rightarrow + \infty} p\)</span></p>
+<p>Este resultado mostra que a medida que o jogarmos a moeda infinitas vezes, iremos convergir para um cenário em que metade dos lançamentos serão caras e metade serão coroas. Note que o resultado vale quando <span class="math inline">\(n \rightarrow + \infty\)</span>, ou seja, ele não estabelece nada em uma quantidade finita de lançamentos onde pode existir variabilidade. Por exemplo, mesmo que seja altamente improvável que nos primeiros 100 lançamentos todos os resultados sejam a face “Cara”, não existe nada matematicamente que estabeleça que isso seja impossível. No entanto, no limite do infinito as quantidades iniciais serão “engolidas” pela LGN. Para uma discussão mais aprofundada sobre esse tema recomenda-se uma leitura sobre o <a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy">Gambler’s Fallacy</a>.</p>
 </section>
 <section id="exemplo-computacional" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-computacional">Exemplo Computacional</h2>
@@ -286,31 +307,73 @@ window.Quarto = {
 <div class="cell">
 <details class="code-fold">
 <summary>Mostrar Código</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definindo parâmetros</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)           <span class="co"># Para reprodutibilidade</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>n_lancamentos <span class="ot">&lt;-</span> <span class="dv">1000</span>  <span class="co"># Número total de lançamentos</span></span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar as bibliotecas necessárias</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando lançamentos: 1 representa "cara", 0 representa "coroa"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">size =</span> n_lancamentos, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir o número de lançamentos</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">500</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando a média acumulada (frequência relativa de "cara")</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>media_acumulada <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(resultados) <span class="sc">/</span> (<span class="dv">1</span><span class="sc">:</span>n_lancamentos)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor esperado teórico</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>valor_esperado <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotando o gráfico</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(media_acumulada, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="st">"blue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Número de lançamentos"</span>, <span class="at">ylab =</span> <span class="st">"Frequência relativa de 'cara'"</span>,</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Lei dos Grandes Números - Moeda Honesta"</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> valor_esperado, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"bottomright"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">"Frequência relativa"</span>, <span class="st">"Valor esperado (0.5)"</span>),</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"red"</span>), <span class="at">lty =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Simular lançamentos de uma moeda honesta</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Para reprodutibilidade</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>lancamentos <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Cara"</span>, <span class="st">"Coroa"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular a proporção acumulada de caras</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(lancamentos) <span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">row_number</span>(),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">proporcao_cara =</span> <span class="fu">cumsum</span>(lancamentos <span class="sc">==</span> <span class="st">"Cara"</span>) <span class="sc">/</span> n</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar o gráfico</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> proporcao_cara)) <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Lei dos Grandes Números: Lançamento de uma Moeda Honesta"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Número de Lançamentos"</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Proporção de Caras"</span>) <span class="sc">+</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="LGN_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>No Python:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar Código</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Definindo o número de lançamentos</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">500</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando lançamentos de uma moeda honesta</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)  <span class="co"># Para reprodutibilidade</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>lancamentos <span class="op">=</span> np.random.choice([<span class="st">'Cara'</span>, <span class="st">'Coroa'</span>], size<span class="op">=</span>n)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando a proporção acumulada de caras</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>proporcao_cara <span class="op">=</span> np.cumsum(lancamentos <span class="op">==</span> <span class="st">'Cara'</span>) <span class="op">/</span> np.arange(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando o gráfico</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.plot(proporcao_cara, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Proporção de Caras'</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Proporção Esperada (0.5)'</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Lei dos Grandes Números: Lançamento de uma Moeda Honesta'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Número de Lançamentos'</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Proporção de Caras'</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="LGN_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
