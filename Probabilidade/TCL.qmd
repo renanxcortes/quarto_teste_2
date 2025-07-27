@@ -60,7 +60,9 @@ $$
 $$
 Podemos assumir, sem perda de generalidade que $\mu = 0$ e $\sigma = 1$, pois poderíamos fazer a prova definindo uma variável aleatória sendo $Z_i = \frac{X_i- \mu}{\sigma}$, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta fazer a prova para a quantidade:
 
-$\frac{1}{\sqrt{n}}\sum_{i=1}^n X_i \xrightarrow{D} N(0, 1)$
+$\frac{\sum_{i=1}^n X_i}{\sqrt{n}} \xrightarrow{D} N(0, 1)$
+
+Fazendo através da Função Geradora de Momentos...
 
 
 $\square$
