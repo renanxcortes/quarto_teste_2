@@ -28,7 +28,7 @@ A primeira condição de finitude das médias é necessária para a Lei Forte do
 
 Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$.
 
-## Lei Forte dos Grande Números
+## Lei Forte dos Grandes Números
 
 A Lei Forte estabelece que:
 
@@ -44,7 +44,7 @@ A prova deste teorema implica em provar que o evento acima é um evento de proba
 
 **Prova.** Ver Cáp. 5 de @barryjames2023.
 
-## Lei Fraca dos Grande Números
+## Lei Fraca dos Grandes Números
 
 A Lei Fraca estabelece que $\forall \varepsilon > 0$, então:
 
