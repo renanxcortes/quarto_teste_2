@@ -14,17 +14,48 @@ format:
     code-summary: "Mostrar Código"
 ---
 
-# Seção 1
+# Introdução e Condições Iniciais
 
-Este é uma página da LGN citando [@barryjames2023].
+A Lei dos Grandes Números é um dos resultados mais famosos da Teoria da Probabilidade.
 
-## Seção 2
+Sejam $X_1, X_2, ...$ variáveis aleatórias independentes e identicamente distribuídas ($iid$) com média e variância existentes e finitas. Isto é:
 
-Colocando uma equação:
+$-\infty < \mu < +\infty$
 
-$E = mc^2$
+$0 < \sigma^2 < +\infty$
 
-E colocando um ggplot2:
+A primeira condição de finitude das médias é necessária para a Lei Forte dos Grandes Números.
+
+Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$.
+
+## Lei Forte dos Grande Números
+
+A Lei Forte estabelece que:
+
+$\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$ com probabilidade 1.
+
+Observe que $\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$ é um **evento**. Logo, a Lei Forte poderia ser reescrita com uma notação probabilística alternativa:
+
+$P\left(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu \right) = 1$
+
+A prova deste teorema implica em provar que o evento acima é um evento de probabilidade 1, o que exige maior formalidade matemática fazendo uso do [Lema de Borel-Cantelli](https://pt.wikipedia.org/wiki/Lema_de_Borel-Cantelli).
+
+**Prova.** Ver Cáp. 5 de @barryjames2023.
+
+
+## Lei Fraca dos Grande Números
+
+A Lei Fraca estabelece que $\forall \varepsilon > 0$, então:
+
+$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \xrightarrow{n \rightarrow + \infty} 0$
+
+**Prova.** A prova faz uso da Desigualdade de Chebyshev:
+
+$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. Esper.}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0$
+
+## Exemplo Computacional
+
+No R:
 
 ```{r}
 # Definindo parâmetros
@@ -50,6 +81,9 @@ legend("bottomright", legend = c("Frequência relativa", "Valor esperado (0.5)")
 
 ```
 
-### Seção 3
 
-Ela tem também um table of contents.
+### Links Úteis:
+
+[Aula de Harvard de Lei dos Grandes Números e Teorema Central do Limite](https://www.youtube.com/watch?v=OprNqnHsVIA&t=1910s)
+
+[Página da Wikipedia da Lei dos Grandes Números](https://en.wikipedia.org/wiki/Law_of_large_numbers)

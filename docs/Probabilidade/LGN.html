@@ -222,11 +222,13 @@ window.Quarto = {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#seção-1" id="toc-seção-1" class="nav-link active" data-scroll-target="#seção-1">Seção 1</a>
+  <li><a href="#introdução-e-condições-iniciais" id="toc-introdução-e-condições-iniciais" class="nav-link active" data-scroll-target="#introdução-e-condições-iniciais">Introdução e Condições Iniciais</a>
   <ul class="collapse">
-  <li><a href="#seção-2" id="toc-seção-2" class="nav-link" data-scroll-target="#seção-2">Seção 2</a>
+  <li><a href="#lei-forte-dos-grande-números" id="toc-lei-forte-dos-grande-números" class="nav-link" data-scroll-target="#lei-forte-dos-grande-números">Lei Forte dos Grande Números</a></li>
+  <li><a href="#lei-fraca-dos-grande-números" id="toc-lei-fraca-dos-grande-números" class="nav-link" data-scroll-target="#lei-fraca-dos-grande-números">Lei Fraca dos Grande Números</a></li>
+  <li><a href="#exemplo-computacional" id="toc-exemplo-computacional" class="nav-link" data-scroll-target="#exemplo-computacional">Exemplo Computacional</a>
   <ul class="collapse">
-  <li><a href="#seção-3" id="toc-seção-3" class="nav-link" data-scroll-target="#seção-3">Seção 3</a></li>
+  <li><a href="#links-úteis" id="toc-links-úteis" class="nav-link" data-scroll-target="#links-úteis">Links Úteis:</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -254,14 +256,33 @@ window.Quarto = {
 </header>
 
 
-<section id="seção-1" class="level1">
-<h1>Seção 1</h1>
-<p>Este é uma página da LGN citando <span class="citation" data-cites="barryjames2023">(<a href="#ref-barryjames2023" role="doc-biblioref">James 2023</a>)</span>.</p>
-<section id="seção-2" class="level2">
-<h2 class="anchored" data-anchor-id="seção-2">Seção 2</h2>
-<p>Colocando uma equação:</p>
-<p><span class="math inline">\(E = mc^2\)</span></p>
-<p>E colocando um ggplot2:</p>
+<section id="introdução-e-condições-iniciais" class="level1">
+<h1>Introdução e Condições Iniciais</h1>
+<p>A Lei dos Grandes Números é um dos resultados mais famosos da Teoria da Probabilidade.</p>
+<p>Sejam <span class="math inline">\(X_1, X_2, ...\)</span> variáveis aleatórias independentes e identicamente distribuídas (<span class="math inline">\(iid\)</span>) com média e variância existentes e finitas. Isto é:</p>
+<p><span class="math inline">\(-\infty &lt; \mu &lt; +\infty\)</span></p>
+<p><span class="math inline">\(0 &lt; \sigma^2 &lt; +\infty\)</span></p>
+<p>A primeira condição de finitude das médias é necessária para a Lei Forte dos Grandes Números.</p>
+<p>Além disso, defina <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}\)</span>.</p>
+<section id="lei-forte-dos-grande-números" class="level2">
+<h2 class="anchored" data-anchor-id="lei-forte-dos-grande-números">Lei Forte dos Grande Números</h2>
+<p>A Lei Forte estabelece que:</p>
+<p><span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span> com probabilidade 1.</p>
+<p>Observe que <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span> é um <strong>evento</strong>. Logo, a Lei Forte poderia ser reescrita com uma notação probabilística alternativa:</p>
+<p><span class="math inline">\(P\left(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu \right) = 1\)</span></p>
+<p>A prova deste teorema implica em provar que o evento acima é um evento de probabilidade 1, o que exige maior formalidade matemática fazendo uso do <a href="https://pt.wikipedia.org/wiki/Lema_de_Borel-Cantelli">Lema de Borel-Cantelli</a>.</p>
+<p><strong>Prova.</strong> Ver Cáp. 5 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
+</section>
+<section id="lei-fraca-dos-grande-números" class="level2">
+<h2 class="anchored" data-anchor-id="lei-fraca-dos-grande-números">Lei Fraca dos Grande Números</h2>
+<p>A Lei Fraca estabelece que <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>, então:</p>
+<p><span class="math inline">\(P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \xrightarrow{n \rightarrow + \infty} 0\)</span></p>
+<p><strong>Prova.</strong> A prova faz uso da Desigualdade de Chebyshev:</p>
+<p><span class="math inline">\(P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. Esper.}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0\)</span></p>
+</section>
+<section id="exemplo-computacional" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-computacional">Exemplo Computacional</h2>
+<p>No R:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Mostrar Código</summary>
@@ -294,9 +315,10 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="seção-3" class="level3">
-<h3 class="anchored" data-anchor-id="seção-3">Seção 3</h3>
-<p>Ela tem também um table of contents.</p>
+<section id="links-úteis" class="level3">
+<h3 class="anchored" data-anchor-id="links-úteis">Links Úteis:</h3>
+<p><a href="https://www.youtube.com/watch?v=OprNqnHsVIA&amp;t=1910s">Aula de Harvard de Lei dos Grandes Números e Teorema Central do Limite</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">Página da Wikipedia da Lei dos Grandes Números</a></p>
 
 
 

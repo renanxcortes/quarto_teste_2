@@ -46,7 +46,7 @@
     "href": "Probabilidade/LGN.html",
     "title": "Lei dos Grandes Números",
     "section": "",
-    "text": "Este é uma página da LGN citando (James 2023).\n\n\nColocando uma equação:\n\\(E = mc^2\\)\nE colocando um ggplot2:\n\n\nMostrar Código\n# Definindo parâmetros\nset.seed(123)           # Para reprodutibilidade\nn_lancamentos &lt;- 1000  # Número total de lançamentos\n\n# Simulando lançamentos: 1 representa \"cara\", 0 representa \"coroa\"\nresultados &lt;- sample(c(0, 1), size = n_lancamentos, replace = TRUE)\n\n# Calculando a média acumulada (frequência relativa de \"cara\")\nmedia_acumulada &lt;- cumsum(resultados) / (1:n_lancamentos)\n\n# Valor esperado teórico\nvalor_esperado &lt;- 0.5\n\n# Plotando o gráfico\nplot(media_acumulada, type = \"l\", col = \"blue\", lwd = 2,\n     xlab = \"Número de lançamentos\", ylab = \"Frequência relativa de 'cara'\",\n     main = \"Lei dos Grandes Números - Moeda Honesta\")\nabline(h = valor_esperado, col = \"red\", lty = 2, lwd = 2)\nlegend(\"bottomright\", legend = c(\"Frequência relativa\", \"Valor esperado (0.5)\"),\n       col = c(\"blue\", \"red\"), lty = c(1, 2), lwd = 2)\n\n\n\n\n\n\n\n\n\n\n\nEla tem também um table of contents.",
+    "text": "A Lei dos Grandes Números é um dos resultados mais famosos da Teoria da Probabilidade.\nSejam \\(X_1, X_2, ...\\) variáveis aleatórias independentes e identicamente distribuídas (\\(iid\\)) com média e variância existentes e finitas. Isto é:\n\\(-\\infty &lt; \\mu &lt; +\\infty\\)\n\\(0 &lt; \\sigma^2 &lt; +\\infty\\)\nA primeira condição de finitude das médias é necessária para a Lei Forte dos Grandes Números.\nAlém disso, defina \\(\\bar{X} = \\frac{\\sum_{i=1}^{n}{X_i}}{n}\\).\n\n\nA Lei Forte estabelece que:\n\\(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu\\) com probabilidade 1.\nObserve que \\(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu\\) é um evento. Logo, a Lei Forte poderia ser reescrita com uma notação probabilística alternativa:\n\\(P\\left(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu \\right) = 1\\)\nA prova deste teorema implica em provar que o evento acima é um evento de probabilidade 1, o que exige maior formalidade matemática fazendo uso do Lema de Borel-Cantelli.\nProva. Ver Cáp. 5 de James (2023).\n\n\n\nA Lei Fraca estabelece que \\(\\forall \\varepsilon &gt; 0\\), então:\n\\(P\\left(\\left| \\bar{X} - \\mu \\right| \\ge \\varepsilon \\right) \\xrightarrow{n \\rightarrow + \\infty} 0\\)\nProva. A prova faz uso da Desigualdade de Chebyshev:\n\\(P\\left(\\left| \\bar{X} - \\mu \\right| \\ge \\varepsilon \\right) \\overset{\\text{Des. Cheb.}}{\\le} \\frac{Var(\\bar{X})}{\\varepsilon^2} = \\frac{Var\\left(\\frac{\\sum_{i=1}^{n}{X_i}}{n}\\right)}{\\varepsilon^2} \\overset{\\text{Prop. Esper.}}{=} \\frac{Var(\\sum_{i=1}^{n}{X_i})}{n^2\\varepsilon^2} \\overset{\\text{Indep.}}{=} \\frac{\\sum_{i=1}^{n}{Var(X_i)}}{n^2\\varepsilon^2} \\overset{\\text{Ident. Dist.}}{=} \\frac{n\\sigma^2}{n^2\\varepsilon^2} = \\frac{\\sigma^2}{n\\varepsilon^2} \\xrightarrow{n \\rightarrow + \\infty} 0\\)\n\n\n\nNo R:\n\n\nMostrar Código\n# Definindo parâmetros\nset.seed(123)           # Para reprodutibilidade\nn_lancamentos &lt;- 1000  # Número total de lançamentos\n\n# Simulando lançamentos: 1 representa \"cara\", 0 representa \"coroa\"\nresultados &lt;- sample(c(0, 1), size = n_lancamentos, replace = TRUE)\n\n# Calculando a média acumulada (frequência relativa de \"cara\")\nmedia_acumulada &lt;- cumsum(resultados) / (1:n_lancamentos)\n\n# Valor esperado teórico\nvalor_esperado &lt;- 0.5\n\n# Plotando o gráfico\nplot(media_acumulada, type = \"l\", col = \"blue\", lwd = 2,\n     xlab = \"Número de lançamentos\", ylab = \"Frequência relativa de 'cara'\",\n     main = \"Lei dos Grandes Números - Moeda Honesta\")\nabline(h = valor_esperado, col = \"red\", lty = 2, lwd = 2)\nlegend(\"bottomright\", legend = c(\"Frequência relativa\", \"Valor esperado (0.5)\"),\n       col = c(\"blue\", \"red\"), lty = c(1, 2), lwd = 2)\n\n\n\n\n\n\n\n\n\n\n\nAula de Harvard de Lei dos Grandes Números e Teorema Central do Limite\nPágina da Wikipedia da Lei dos Grandes Números",
     "crumbs": [
       "Probabilidade",
       "Lei dos Grandes Números"
@@ -56,8 +56,41 @@
     "objectID": "Probabilidade/LGN.html#seção-2",
     "href": "Probabilidade/LGN.html#seção-2",
     "title": "Lei dos Grandes Números",
+    "section": "Seção 2",
+    "text": "Seção 2\nColocando uma equação:\n\\(E = mc^2\\)\nE colocando um ggplot2:\n\n\nMostrar Código\n# Definindo parâmetros\nset.seed(123)           # Para reprodutibilidade\nn_lancamentos &lt;- 1000  # Número total de lançamentos\n\n# Simulando lançamentos: 1 representa \"cara\", 0 representa \"coroa\"\nresultados &lt;- sample(c(0, 1), size = n_lancamentos, replace = TRUE)\n\n# Calculando a média acumulada (frequência relativa de \"cara\")\nmedia_acumulada &lt;- cumsum(resultados) / (1:n_lancamentos)\n\n# Valor esperado teórico\nvalor_esperado &lt;- 0.5\n\n# Plotando o gráfico\nplot(media_acumulada, type = \"l\", col = \"blue\", lwd = 2,\n     xlab = \"Número de lançamentos\", ylab = \"Frequência relativa de 'cara'\",\n     main = \"Lei dos Grandes Números - Moeda Honesta\")\nabline(h = valor_esperado, col = \"red\", lty = 2, lwd = 2)\nlegend(\"bottomright\", legend = c(\"Frequência relativa\", \"Valor esperado (0.5)\"),\n       col = c(\"blue\", \"red\"), lty = c(1, 2), lwd = 2)\n\n\n\n\n\n\n\n\n\n\nSeção 3\nEla tem também um table of contents.\nEste é uma página da LGN citando .\n\n\nLinks Úteis:\nAula de Harvard de Lei dos Grandes Números e Teorema Central do Limite\nPágina da Wikipedia da Lei dos Grandes Números",
+    "crumbs": [
+      "Probabilidade",
+      "Lei dos Grandes Números"
+    ]
+  },
+  {
+    "objectID": "Probabilidade/LGN.html#lei-forte-dos-grande-números",
+    "href": "Probabilidade/LGN.html#lei-forte-dos-grande-números",
+    "title": "Lei dos Grandes Números",
     "section": "",
-    "text": "Colocando uma equação:\n\\(E = mc^2\\)\nE colocando um ggplot2:\n\n\nMostrar Código\n# Definindo parâmetros\nset.seed(123)           # Para reprodutibilidade\nn_lancamentos &lt;- 1000  # Número total de lançamentos\n\n# Simulando lançamentos: 1 representa \"cara\", 0 representa \"coroa\"\nresultados &lt;- sample(c(0, 1), size = n_lancamentos, replace = TRUE)\n\n# Calculando a média acumulada (frequência relativa de \"cara\")\nmedia_acumulada &lt;- cumsum(resultados) / (1:n_lancamentos)\n\n# Valor esperado teórico\nvalor_esperado &lt;- 0.5\n\n# Plotando o gráfico\nplot(media_acumulada, type = \"l\", col = \"blue\", lwd = 2,\n     xlab = \"Número de lançamentos\", ylab = \"Frequência relativa de 'cara'\",\n     main = \"Lei dos Grandes Números - Moeda Honesta\")\nabline(h = valor_esperado, col = \"red\", lty = 2, lwd = 2)\nlegend(\"bottomright\", legend = c(\"Frequência relativa\", \"Valor esperado (0.5)\"),\n       col = c(\"blue\", \"red\"), lty = c(1, 2), lwd = 2)\n\n\n\n\n\n\n\n\n\n\n\nEla tem também um table of contents.",
+    "text": "A Lei Forte estabelece que:\n\\(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu\\) com probabilidade 1.\nObserve que \\(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu\\) é um evento. Logo, a Lei Forte poderia ser reescrita com uma notação probabilística alternativa:\n\\(P\\left(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu \\right) = 1\\)\nA prova deste teorema implica em provar que o evento acima é um evento de probabilidade 1, o que exige maior formalidade matemática fazendo uso do Lema de Borel-Cantelli.\nProva. Ver Cáp. 5 de James (2023).",
+    "crumbs": [
+      "Probabilidade",
+      "Lei dos Grandes Números"
+    ]
+  },
+  {
+    "objectID": "Probabilidade/LGN.html#lei-fraca-dos-grande-números",
+    "href": "Probabilidade/LGN.html#lei-fraca-dos-grande-números",
+    "title": "Lei dos Grandes Números",
+    "section": "",
+    "text": "A Lei Fraca estabelece que \\(\\forall \\varepsilon &gt; 0\\), então:\n\\(P\\left(\\left| \\bar{X} - \\mu \\right| \\ge \\varepsilon \\right) \\xrightarrow{n \\rightarrow + \\infty} 0\\)\nProva. A prova faz uso da Desigualdade de Chebyshev:\n\\(P\\left(\\left| \\bar{X} - \\mu \\right| \\ge \\varepsilon \\right) \\overset{\\text{Des. Cheb.}}{\\le} \\frac{Var(\\bar{X})}{\\varepsilon^2} = \\frac{Var\\left(\\frac{\\sum_{i=1}^{n}{X_i}}{n}\\right)}{\\varepsilon^2} \\overset{\\text{Prop. Esper.}}{=} \\frac{Var(\\sum_{i=1}^{n}{X_i})}{n^2\\varepsilon^2} \\overset{\\text{Indep.}}{=} \\frac{\\sum_{i=1}^{n}{Var(X_i)}}{n^2\\varepsilon^2} \\overset{\\text{Ident. Dist.}}{=} \\frac{n\\sigma^2}{n^2\\varepsilon^2} = \\frac{\\sigma^2}{n\\varepsilon^2} \\xrightarrow{n \\rightarrow + \\infty} 0\\)",
+    "crumbs": [
+      "Probabilidade",
+      "Lei dos Grandes Números"
+    ]
+  },
+  {
+    "objectID": "Probabilidade/LGN.html#exemplo-computacional",
+    "href": "Probabilidade/LGN.html#exemplo-computacional",
+    "title": "Lei dos Grandes Números",
+    "section": "",
+    "text": "No R:\n\n\nMostrar Código\n# Definindo parâmetros\nset.seed(123)           # Para reprodutibilidade\nn_lancamentos &lt;- 1000  # Número total de lançamentos\n\n# Simulando lançamentos: 1 representa \"cara\", 0 representa \"coroa\"\nresultados &lt;- sample(c(0, 1), size = n_lancamentos, replace = TRUE)\n\n# Calculando a média acumulada (frequência relativa de \"cara\")\nmedia_acumulada &lt;- cumsum(resultados) / (1:n_lancamentos)\n\n# Valor esperado teórico\nvalor_esperado &lt;- 0.5\n\n# Plotando o gráfico\nplot(media_acumulada, type = \"l\", col = \"blue\", lwd = 2,\n     xlab = \"Número de lançamentos\", ylab = \"Frequência relativa de 'cara'\",\n     main = \"Lei dos Grandes Números - Moeda Honesta\")\nabline(h = valor_esperado, col = \"red\", lty = 2, lwd = 2)\nlegend(\"bottomright\", legend = c(\"Frequência relativa\", \"Valor esperado (0.5)\"),\n       col = c(\"blue\", \"red\"), lty = c(1, 2), lwd = 2)\n\n\n\n\n\n\n\n\n\n\n\nAula de Harvard de Lei dos Grandes Números e Teorema Central do Limite\nPágina da Wikipedia da Lei dos Grandes Números",
     "crumbs": [
       "Probabilidade",
       "Lei dos Grandes Números"
