@@ -44,6 +44,8 @@ A prova deste teorema implica em provar que o evento acima é um evento de proba
 
 **Prova.** Ver Cáp. 5 de @barryjames2023.
 
+$\square$
+
 ## Lei Fraca dos Grandes Números
 
 A Lei Fraca estabelece que $\forall \varepsilon > 0$, então:
@@ -55,6 +57,8 @@ Este resultado estabelece que $\bar{X}$ converge *em probabilidade* para $\mu$.
 **Prova.** A prova faz uso da [Desigualdade de Chebyshev](https://pt.wikipedia.org/wiki/Desigualdade_de_Chebyshev):
 
 $P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0$
+
+$\square$
 
 Este resultado ilustra que $\bar{X}$ converge *em probabilidade* para $\mu$. Podemos interpretar esse resultado como sendo *à medida que n cresce, é extremamente improvável que a diferença entre* $\bar{X}$ e $\mu$ seja maior que $\varepsilon$.
 

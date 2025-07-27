@@ -273,6 +273,7 @@ window.Quarto = {
 <p>Este resultado estabelece que <span class="math inline">\(\bar{X}\)</span> converge <em>quase certamente</em> para <span class="math inline">\(\mu\)</span>. Podemos interpretar esse resultado como sendo <em>à medida que n cresce, no infinito, <span class="math inline">\(\bar{X}\)</span> e <span class="math inline">\(\mu\)</span> serão iguais</em>. Ou seja, é uma convergência pontual do valor de uma variável aleatória para uma constante (a média populacional).</p>
 <p>A prova deste teorema implica em provar que o evento acima é um evento de probabilidade 1, o que exige maior formalidade matemática fazendo uso do <a href="https://pt.wikipedia.org/wiki/Lema_de_Borel-Cantelli">Lema de Borel-Cantelli</a>.</p>
 <p><strong>Prova.</strong> Ver Cáp. 5 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
+<p><span class="math inline">\(\square\)</span></p>
 </section>
 <section id="lei-fraca-dos-grandes-números" class="level2">
 <h2 class="anchored" data-anchor-id="lei-fraca-dos-grandes-números">Lei Fraca dos Grandes Números</h2>
@@ -281,6 +282,7 @@ window.Quarto = {
 <p>Este resultado estabelece que <span class="math inline">\(\bar{X}\)</span> converge <em>em probabilidade</em> para <span class="math inline">\(\mu\)</span>.</p>
 <p><strong>Prova.</strong> A prova faz uso da <a href="https://pt.wikipedia.org/wiki/Desigualdade_de_Chebyshev">Desigualdade de Chebyshev</a>:</p>
 <p><span class="math inline">\(P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0\)</span></p>
+<p><span class="math inline">\(\square\)</span></p>
 <p>Este resultado ilustra que <span class="math inline">\(\bar{X}\)</span> converge <em>em probabilidade</em> para <span class="math inline">\(\mu\)</span>. Podemos interpretar esse resultado como sendo <em>à medida que n cresce, é extremamente improvável que a diferença entre</em> <span class="math inline">\(\bar{X}\)</span> e <span class="math inline">\(\mu\)</span> seja maior que <span class="math inline">\(\varepsilon\)</span>.</p>
 </section>
 <section id="relação-entre-leis-e-convergências" class="level2">

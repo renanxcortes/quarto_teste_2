@@ -29,6 +29,12 @@ Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$.
 
 Pela Lei dos Grandes Números, sabemos que $\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$, mas a qual taxa? Como que é a distribuição dessa quantidade?
 
+## Convergência em Distribuição
+
+**Definição. ** Sejam $X, X_1, X_2, ...$ variáveis aleatórias com, respectivamente, funções de distribuições $F, F_1, F_2, ...$. Dizemos que $X_n$ *converge em distribuição* para $X$, quando $n \rightarrow +\infty$, se $F_n(x) \rightarrow F(x)$ para todo $x$ ponto de continuidade de $F$.
+
+*Notação: * $X_n \xrightarrow{D} X$ ou $X_n \xrightarrow{D} F$.
+
 ## Teorema Central do Limite
 
 Podemos reescrever a quantidade da introdução como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não "exploda" para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por $n$ elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de $\frac{1}{2}$, ou seja, $\sqrt{n}$.^[Uma discussão sobre este fator de convergência é discutido [aqui](https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt)]. 
@@ -40,14 +46,24 @@ $\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, 
 Ou, alternativamente, na sua forma mais popular:
 
 $$
-\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\ em\ distribuição
+\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{D} N(0, 1)
 $$ {#eq-tcl}
 
 O TCL retrata um dos teoremas mais lindos de toda a probabilidade tendo em vista que com poucas condições iniciais (neste caso, média e variância finitas) conseguimos provar que a média amostral $\bar{X}$ padronizada converge em distribuição para a distribuição normal padrão. Observe que o teorema não faz nenhuma alusão ao tipo de variável aleatória, podendo ser discreto ou contínuo, e nem sobre o suporte da distribuição, podendo ser positivo, negativo ou ambos.
 
 Este teorema é um dos principais motivos pela ampla difusão da distribuição Normal em diversas áreas do conhecimento científico. Tendo em vista que, dadas às devidas condições, a média amostral pode ser aproximada pela distribuição normal padrão, as aplicações desses resultados são diversos.
 
-**Prova.** Faça $S_n = X_1 + X_2 + ... +X_n$ e multiplicando e dividindo por $n$ o termo do @eq-tcl
+**Prova.** Faça $S_n = X_1 + X_2 + ... +X_n$ e multiplicando e dividindo por $n$ o termo do @eq-tcl chegamos em
+
+$$
+\frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\ \text{em distribuição}
+$$
+Podemos assumir, sem perda de generalidade que $\mu = 0$ e $\sigma = 1$, pois poderíamos fazer a prova definindo uma variável aleatória sendo $Z_i = \frac{X_i- \mu}{\sigma}$, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta fazer a prova para a quantidade:
+
+$\frac{1}{\sqrt{n}}\sum_{i=1}^n X_i \xrightarrow{D} N(0, 1)$
+
+
+$\square$
 
 Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de @barryjames2023.
 
@@ -55,13 +71,13 @@ Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada
 
 @barryjames2023 trata o *problema central do limite* atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:
 
-$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{n \rightarrow + \infty} N(0, 1)$ em distribuição
+$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)$
 
 Outras maneiras de representar o TCL são:
 
-$\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{n \rightarrow + \infty} N(0, 1)$ em distribuição
+$\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)$
 
-$\sqrt{n} \bar{X} \xrightarrow{n \rightarrow + \infty} N(\mu, \sigma^2)$ em distribuição
+$\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)$
 
 ## Exemplo Computacional
 

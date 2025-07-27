@@ -190,6 +190,7 @@ window.Quarto = {
   <ul>
   <li><a href="#introdução-e-condições-iniciais" id="toc-introdução-e-condições-iniciais" class="nav-link active" data-scroll-target="#introdução-e-condições-iniciais">Introdução e Condições Iniciais</a>
   <ul class="collapse">
+  <li><a href="#convergência-em-distribuição" id="toc-convergência-em-distribuição" class="nav-link" data-scroll-target="#convergência-em-distribuição">Convergência em Distribuição</a></li>
   <li><a href="#teorema-central-do-limite" id="toc-teorema-central-do-limite" class="nav-link" data-scroll-target="#teorema-central-do-limite">Teorema Central do Limite</a>
   <ul class="collapse">
   <li><a href="#diferentes-formulações-e-versões-do-tcl" id="toc-diferentes-formulações-e-versões-do-tcl" class="nav-link" data-scroll-target="#diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</a></li>
@@ -231,6 +232,11 @@ window.Quarto = {
 <p><span class="math inline">\(0 &lt; \sigma^2 &lt; +\infty\)</span></p>
 <p>Além disso, defina <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}\)</span>.</p>
 <p>Pela Lei dos Grandes Números, sabemos que <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span>, mas a qual taxa? Como que é a distribuição dessa quantidade?</p>
+<section id="convergência-em-distribuição" class="level2">
+<h2 class="anchored" data-anchor-id="convergência-em-distribuição">Convergência em Distribuição</h2>
+<p><strong>Definição. </strong> Sejam <span class="math inline">\(X, X_1, X_2, ...\)</span> variáveis aleatórias com, respectivamente, funções de distribuições <span class="math inline">\(F, F_1, F_2, ...\)</span>. Dizemos que <span class="math inline">\(X_n\)</span> <em>converge em distribuição</em> para <span class="math inline">\(X\)</span>, quando <span class="math inline">\(n \rightarrow +\infty\)</span>, se <span class="math inline">\(F_n(x) \rightarrow F(x)\)</span> para todo <span class="math inline">\(x\)</span> ponto de continuidade de <span class="math inline">\(F\)</span>.</p>
+<p><em>Notação: </em> <span class="math inline">\(X_n \xrightarrow{D} X\)</span> ou <span class="math inline">\(X_n \xrightarrow{D} F\)</span>.</p>
+</section>
 <section id="teorema-central-do-limite" class="level2">
 <h2 class="anchored" data-anchor-id="teorema-central-do-limite">Teorema Central do Limite</h2>
 <p>Podemos reescrever a quantidade da introdução como sendo <span class="math inline">\(\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0\)</span>. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não “exploda” para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por <span class="math inline">\(n\)</span> elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de <span class="math inline">\(\frac{1}{2}\)</span>, ou seja, <span class="math inline">\(\sqrt{n}\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
@@ -238,19 +244,24 @@ window.Quarto = {
 <p><span class="math inline">\(\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, \sigma^{2})\)</span> em distribuição</p>
 <p>Ou, alternativamente, na sua forma mais popular:</p>
 <p><span id="eq-tcl"><span class="math display">\[
-\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\ em\ distribuição
+\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{D} N(0, 1)
 \tag{1}\]</span></span></p>
 <p>O TCL retrata um dos teoremas mais lindos de toda a probabilidade tendo em vista que com poucas condições iniciais (neste caso, média e variância finitas) conseguimos provar que a média amostral <span class="math inline">\(\bar{X}\)</span> padronizada converge em distribuição para a distribuição normal padrão. Observe que o teorema não faz nenhuma alusão ao tipo de variável aleatória, podendo ser discreto ou contínuo, e nem sobre o suporte da distribuição, podendo ser positivo, negativo ou ambos.</p>
 <p>Este teorema é um dos principais motivos pela ampla difusão da distribuição Normal em diversas áreas do conhecimento científico. Tendo em vista que, dadas às devidas condições, a média amostral pode ser aproximada pela distribuição normal padrão, as aplicações desses resultados são diversos.</p>
-<p><strong>Prova.</strong> Faça <span class="math inline">\(S_n = X_1 + X_2 + ... +X_n\)</span> e multiplicando e dividindo por <span class="math inline">\(n\)</span> o termo do <a href="#eq-tcl" class="quarto-xref">Equação&nbsp;1</a></p>
+<p><strong>Prova.</strong> Faça <span class="math inline">\(S_n = X_1 + X_2 + ... +X_n\)</span> e multiplicando e dividindo por <span class="math inline">\(n\)</span> o termo do <a href="#eq-tcl" class="quarto-xref">Equação&nbsp;1</a> chegamos em</p>
+<p><span class="math display">\[
+\frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\ \text{em distribuição}
+\]</span> Podemos assumir, sem perda de generalidade que <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = 1\)</span>, pois poderíamos fazer a prova definindo uma variável aleatória sendo <span class="math inline">\(Z_i = \frac{X_i- \mu}{\sigma}\)</span>, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta fazer a prova para a quantidade:</p>
+<p><span class="math inline">\(\frac{1}{\sqrt{n}}\sum_{i=1}^n X_i \xrightarrow{D} N(0, 1)\)</span></p>
+<p><span class="math inline">\(\square\)</span></p>
 <p>Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
 <section id="diferentes-formulações-e-versões-do-tcl" class="level3">
 <h3 class="anchored" data-anchor-id="diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</h3>
 <p><span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span> trata o <em>problema central do limite</em> atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:</p>
-<p><span class="math inline">\(\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{n \rightarrow + \infty} N(0, 1)\)</span> em distribuição</p>
+<p><span class="math inline">\(\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)\)</span></p>
 <p>Outras maneiras de representar o TCL são:</p>
-<p><span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{n \rightarrow + \infty} N(0, 1)\)</span> em distribuição</p>
-<p><span class="math inline">\(\sqrt{n} \bar{X} \xrightarrow{n \rightarrow + \infty} N(\mu, \sigma^2)\)</span> em distribuição</p>
+<p><span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)\)</span></p>
+<p><span class="math inline">\(\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)\)</span></p>
 </section>
 </section>
 <section id="exemplo-computacional" class="level2">
