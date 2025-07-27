@@ -35,7 +35,7 @@
     "href": "Probabilidade/TCL.html",
     "title": "Teorema Central do Limite",
     "section": "",
-    "text": "O Teorema Central do Limite (TCL) é um dos resultados mais famosos da Teoria da Probabilidade.\nSejam \\(X_1, X_2, ...\\) variáveis aleatórias independentes e identicamente distribuídas (\\(iid\\)) com média e variância existentes e finitas. Isto é:\n\\(-\\infty &lt; \\mu &lt; +\\infty\\)\n\\(0 &lt; \\sigma^2 &lt; +\\infty\\)\nAlém disso, defina \\(\\bar{X} = \\frac{\\sum_{i=1}^{n}{X_i}}{n}\\).\n\n\nPela Lei dos Grandes Números, sabemos que \\(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu\\), mas a qual taxa? Como que é a distribuição dessa quantidade?\nPodemos reescrever a quantidade acima como sendo \\(\\bar{X} - \\mu \\xrightarrow{n \\rightarrow + \\infty} 0\\)",
+    "text": "O Teorema Central do Limite (TCL) é um dos resultados mais famosos da Teoria da Probabilidade.\nSejam \\(X_1, X_2, ...\\) variáveis aleatórias independentes e identicamente distribuídas (\\(iid\\)) com média e variância existentes e finitas. Isto é:\n\\(-\\infty &lt; \\mu &lt; +\\infty\\)\n\\(0 &lt; \\sigma^2 &lt; +\\infty\\)\nAlém disso, defina \\(\\bar{X} = \\frac{\\sum_{i=1}^{n}{X_i}}{n}\\).\n\n\nPela Lei dos Grandes Números, sabemos que \\(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu\\), mas a qual taxa? Como que é a distribuição dessa quantidade?\nPodemos reescrever a quantidade acima como sendo \\(\\bar{X} - \\mu \\xrightarrow{n \\rightarrow + \\infty} 0\\).\nUma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não “exploda” para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por \\(n\\) elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de \\(\\frac{1}{2}\\), ou seja, \\(\\sqrt{n}\\).1. Logo, o TCL pode ser descrito por:\n\\(\\sqrt{n} \\left(\\bar{X} - \\mu \\right) \\xrightarrow{n \\rightarrow + \\infty} N(0, \\sigma^{2})\\) em distribuição\nOu alternativamente na sua forma mais popular:\n\\(\\sqrt{n} \\left(\\frac{\\bar{X} - \\mu}{\\sigma} \\right) \\xrightarrow{n \\rightarrow + \\infty} N(0, 1)\\) em distribuição\nUma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de James (2023).",
     "crumbs": [
       "Probabilidade",
       "Teorema Central do Limite"
@@ -145,7 +145,18 @@
     "href": "Probabilidade/TCL.html#teorema-central-do-limite",
     "title": "Teorema Central do Limite",
     "section": "",
-    "text": "Pela Lei dos Grandes Números, sabemos que \\(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu\\), mas a qual taxa? Como que é a distribuição dessa quantidade?\nPodemos reescrever a quantidade acima como sendo \\(\\bar{X} - \\mu \\xrightarrow{n \\rightarrow + \\infty} 0\\)",
+    "text": "Pela Lei dos Grandes Números, sabemos que \\(\\bar{X} \\xrightarrow{n \\rightarrow + \\infty} \\mu\\), mas a qual taxa? Como que é a distribuição dessa quantidade?\nPodemos reescrever a quantidade acima como sendo \\(\\bar{X} - \\mu \\xrightarrow{n \\rightarrow + \\infty} 0\\).\nUma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não “exploda” para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por \\(n\\) elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de \\(\\frac{1}{2}\\), ou seja, \\(\\sqrt{n}\\).1. Logo, o TCL pode ser descrito por:\n\\(\\sqrt{n} \\left(\\bar{X} - \\mu \\right) \\xrightarrow{n \\rightarrow + \\infty} N(0, \\sigma^{2})\\) em distribuição\nOu alternativamente na sua forma mais popular:\n\\(\\sqrt{n} \\left(\\frac{\\bar{X} - \\mu}{\\sigma} \\right) \\xrightarrow{n \\rightarrow + \\infty} N(0, 1)\\) em distribuição\nUma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de James (2023).",
+    "crumbs": [
+      "Probabilidade",
+      "Teorema Central do Limite"
+    ]
+  },
+  {
+    "objectID": "Probabilidade/TCL.html#footnotes",
+    "href": "Probabilidade/TCL.html#footnotes",
+    "title": "Teorema Central do Limite",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nUma discussão sobre este fator de convergência é discutido aqui↩︎",
     "crumbs": [
       "Probabilidade",
       "Teorema Central do Limite"

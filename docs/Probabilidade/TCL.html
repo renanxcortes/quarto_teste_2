@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -196,7 +216,12 @@ window.Quarto = {
 <section id="teorema-central-do-limite" class="level2">
 <h2 class="anchored" data-anchor-id="teorema-central-do-limite">Teorema Central do Limite</h2>
 <p>Pela Lei dos Grandes Números, sabemos que <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span>, mas a qual taxa? Como que é a distribuição dessa quantidade?</p>
-<p>Podemos reescrever a quantidade acima como sendo <span class="math inline">\(\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0\)</span></p>
+<p>Podemos reescrever a quantidade acima como sendo <span class="math inline">\(\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0\)</span>.</p>
+<p>Uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não “exploda” para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por <span class="math inline">\(n\)</span> elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de <span class="math inline">\(\frac{1}{2}\)</span>, ou seja, <span class="math inline">\(\sqrt{n}\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Logo, o TCL pode ser descrito por:</p>
+<p><span class="math inline">\(\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, \sigma^{2})\)</span> em distribuição</p>
+<p>Ou alternativamente na sua forma mais popular:</p>
+<p><span class="math inline">\(\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\)</span> em distribuição</p>
+<p>Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
 </section>
 <section id="diferentes-versões-do-tcl" class="level2">
 <h2 class="anchored" data-anchor-id="diferentes-versões-do-tcl">Diferentes versões do TCL</h2>
@@ -214,9 +239,20 @@ window.Quarto = {
 <p><a href="https://pt.wikipedia.org/wiki/Teorema_central_do_limite">Página da Wikipedia do Teorema Central do Limite</a></p>
 
 
+
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-barryjames2023" class="csl-entry" role="listitem">
+James, Barry R. 2023. <em>Probabilidade: Um Curso Em Nível Intermediário</em>. 5th ed. IMPA.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Uma discussão sobre este fator de convergência é discutido <a href="https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt">aqui</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

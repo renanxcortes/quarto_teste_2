@@ -27,17 +27,24 @@ Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$.
 
 Pela Lei dos Grandes Números, sabemos que $\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$, mas a qual taxa? Como que é a distribuição dessa quantidade?
 
-Podemos reescrever a quantidade acima como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$
+Podemos reescrever a quantidade acima como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$.
 
+Uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não "exploda" para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por $n$ elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de $\frac{1}{2}$, ou seja, $\sqrt{n}$.^[Uma discussão sobre este fator de convergência é discutido [aqui](https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt)]. Logo, o TCL pode ser descrito por:
+
+$\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, \sigma^{2})$ em distribuição
+
+Ou alternativamente na sua forma mais popular:
+
+
+$\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)$ em distribuição
+
+Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de @barryjames2023.
 
 ## Diferentes versões do TCL
 
-
 ## Exemplo Computacional
 
-
 ## Usando o TCL pra aproximar a Binomial pela Normal
-
 
 # Links Úteis:
 
