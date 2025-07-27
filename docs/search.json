@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Apresentação",
     "section": "",
-    "text": "Este é um website baseado no Quarto da empresa Posit.\nTemplates úteis: https://drganghe.github.io/quarto-academic-site-examples.html\nSite oficial do Quarto: https://quarto.org/docs/websites.\nPara rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate e ter o jupyter instalado.\nExemplo:\nreticulate::py_require(\"matplotlib\")",
+    "text": "Este é um website baseado no Quarto da empresa Posit.\nTemplates úteis: https://drganghe.github.io/quarto-academic-site-examples.html\nSite oficial do Quarto: https://quarto.org/docs/websites.\nPara rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate e ter o jupyter instalado.\nExemplo:\nreticulate::py_require(\"matplotlib\")\n\nAlém disso, cuidado ao setar engine jupyter que daí os códigos R não serão rodados.\nEngine Conflicts:\n\nKnitr vs. Jupyter: If you explicitly set the engine to jupyter in your YAML, R code chunks will not be executed, and only Python (or the kernel’s language) will run. For mixed R and Python, engine: knitr is typically used, relying on reticulate for Python execution.",
     "crumbs": [
       "Sobre"
     ]
