@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.42">
@@ -73,17 +73,17 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
   }
 }</script>
 
@@ -126,13 +126,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Probabilidade/LGN.html">Probabilidade</a></li><li class="breadcrumb-item"><a href="../Probabilidade/TCL.html">Teorema Central do Limite</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -144,7 +144,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Procurar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -159,7 +159,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Probabilidade</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -237,10 +237,12 @@ window.Quarto = {
 <p>Logo, o TCL pode ser descrito por:</p>
 <p><span class="math inline">\(\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, \sigma^{2})\)</span> em distribuição</p>
 <p>Ou, alternativamente, na sua forma mais popular:</p>
-<p><span class="math inline">\(\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\)</span> em distribuição</p>
+<p><span id="eq-tcl"><span class="math display">\[
+\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\ em\ distribuição
+\tag{1}\]</span></span></p>
 <p>O TCL retrata um dos teoremas mais lindos de toda a probabilidade tendo em vista que com poucas condições iniciais (neste caso, média e variância finitas) conseguimos provar que a média amostral <span class="math inline">\(\bar{X}\)</span> padronizada converge em distribuição para a distribuição normal padrão. Observe que o teorema não faz nenhuma alusão ao tipo de variável aleatória, podendo ser discreto ou contínuo, e nem sobre o suporte da distribuição, podendo ser positivo, negativo ou ambos.</p>
 <p>Este teorema é um dos principais motivos pela ampla difusão da distribuição Normal em diversas áreas do conhecimento científico. Tendo em vista que, dadas às devidas condições, a média amostral pode ser aproximada pela distribuição normal padrão, as aplicações desses resultados são diversos.</p>
-<p><strong>Prova.</strong> Prova aqui.</p>
+<p><strong>Prova.</strong> Faça <span class="math inline">\(S_n = X_1 + X_2 + ... +X_n\)</span> e multiplicando e dividindo por <span class="math inline">\(n\)</span> o termo do <a href="#eq-tcl" class="quarto-xref">Equação&nbsp;1</a></p>
 <p>Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
 <section id="diferentes-formulações-e-versões-do-tcl" class="level3">
 <h3 class="anchored" data-anchor-id="diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</h3>
@@ -268,11 +270,11 @@ window.Quarto = {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-barryjames2023" class="csl-entry" role="listitem">
-James, Barry R. 2023. <em>Probabilidade: Um Curso Em Nível Intermediário</em>. 5th ed. IMPA.
+James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>. 5.ª ed. IMPA.
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas de rodapé</h2>
 
 <ol>
 <li id="fn1"><p>Uma discussão sobre este fator de convergência é discutido <a href="https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt">aqui</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
@@ -321,12 +323,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiada");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiada");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",

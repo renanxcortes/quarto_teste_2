@@ -1,10 +1,11 @@
 ---
 title: "Teorema Central do Limite"
+lang: pt # Equações ficarem referenciadas em Português
 
 toc: true
 toc-title: "Nesta página"
 
-execute: 
+execute: # Evitar colocar echo: false, caso contário os códigos não aparecerão
   warning: false
   message: false
 
@@ -38,13 +39,15 @@ $\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, 
 
 Ou, alternativamente, na sua forma mais popular:
 
-$\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)$ em distribuição
+$$
+\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\ em\ distribuição
+$$ {#eq-tcl}
 
 O TCL retrata um dos teoremas mais lindos de toda a probabilidade tendo em vista que com poucas condições iniciais (neste caso, média e variância finitas) conseguimos provar que a média amostral $\bar{X}$ padronizada converge em distribuição para a distribuição normal padrão. Observe que o teorema não faz nenhuma alusão ao tipo de variável aleatória, podendo ser discreto ou contínuo, e nem sobre o suporte da distribuição, podendo ser positivo, negativo ou ambos.
 
 Este teorema é um dos principais motivos pela ampla difusão da distribuição Normal em diversas áreas do conhecimento científico. Tendo em vista que, dadas às devidas condições, a média amostral pode ser aproximada pela distribuição normal padrão, as aplicações desses resultados são diversos.
 
-**Prova.** Prova aqui.
+**Prova.** Faça $S_n = X_1 + X_2 + ... +X_n$ e multiplicando e dividindo por $n$ o termo do @eq-tcl
 
 Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de @barryjames2023.
 
