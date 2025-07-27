@@ -120,7 +120,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked fullcontent">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -183,7 +183,24 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#introdução-e-condições-iniciais" id="toc-introdução-e-condições-iniciais" class="nav-link active" data-scroll-target="#introdução-e-condições-iniciais">Introdução e Condições Iniciais</a>
+  <ul class="collapse">
+  <li><a href="#teorema-central-do-limite" id="toc-teorema-central-do-limite" class="nav-link" data-scroll-target="#teorema-central-do-limite">Teorema Central do Limite</a>
+  <ul class="collapse">
+  <li><a href="#diferentes-formulações-e-versões-do-tcl" id="toc-diferentes-formulações-e-versões-do-tcl" class="nav-link" data-scroll-target="#diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</a></li>
+  </ul></li>
+  <li><a href="#exemplo-computacional" id="toc-exemplo-computacional" class="nav-link" data-scroll-target="#exemplo-computacional">Exemplo Computacional</a></li>
+  <li><a href="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal" id="toc-usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="nav-link" data-scroll-target="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</a></li>
+  </ul></li>
+  <li><a href="#links-úteis" id="toc-links-úteis" class="nav-link" data-scroll-target="#links-úteis">Links Úteis:</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -208,23 +225,31 @@ window.Quarto = {
 
 <section id="introdução-e-condições-iniciais" class="level1">
 <h1>Introdução e Condições Iniciais</h1>
-<p>O Teorema Central do Limite (TCL) é um dos resultados mais famosos da Teoria da Probabilidade.</p>
+<p>O Teorema Central do Limite (TCL) é um dos resultados mais famosos e mais bonitos da Teoria da Probabilidade.</p>
 <p>Sejam <span class="math inline">\(X_1, X_2, ...\)</span> variáveis aleatórias independentes e identicamente distribuídas (<span class="math inline">\(iid\)</span>) com média e variância existentes e finitas. Isto é:</p>
 <p><span class="math inline">\(-\infty &lt; \mu &lt; +\infty\)</span></p>
 <p><span class="math inline">\(0 &lt; \sigma^2 &lt; +\infty\)</span></p>
 <p>Além disso, defina <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}\)</span>.</p>
+<p>Pela Lei dos Grandes Números, sabemos que <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span>, mas a qual taxa? Como que é a distribuição dessa quantidade?</p>
 <section id="teorema-central-do-limite" class="level2">
 <h2 class="anchored" data-anchor-id="teorema-central-do-limite">Teorema Central do Limite</h2>
-<p>Pela Lei dos Grandes Números, sabemos que <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span>, mas a qual taxa? Como que é a distribuição dessa quantidade?</p>
-<p>Podemos reescrever a quantidade acima como sendo <span class="math inline">\(\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0\)</span>.</p>
-<p>Uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não “exploda” para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por <span class="math inline">\(n\)</span> elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de <span class="math inline">\(\frac{1}{2}\)</span>, ou seja, <span class="math inline">\(\sqrt{n}\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Logo, o TCL pode ser descrito por:</p>
+<p>Podemos reescrever a quantidade da introdução como sendo <span class="math inline">\(\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0\)</span>. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não “exploda” para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por <span class="math inline">\(n\)</span> elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de <span class="math inline">\(\frac{1}{2}\)</span>, ou seja, <span class="math inline">\(\sqrt{n}\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Logo, o TCL pode ser descrito por:</p>
 <p><span class="math inline">\(\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, \sigma^{2})\)</span> em distribuição</p>
-<p>Ou alternativamente na sua forma mais popular:</p>
+<p>Ou, alternativamente, na sua forma mais popular:</p>
 <p><span class="math inline">\(\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\)</span> em distribuição</p>
+<p>O TCL retrata um dos teoremas mais lindos de toda a probabilidade tendo em vista que com poucas condições iniciais (neste caso, média e variância finitas) conseguimos provar que a média amostral <span class="math inline">\(\bar{X}\)</span> padronizada converge em distribuição para a distribuição normal padrão. Observe que o teorema não faz nenhuma alusão ao tipo de variável aleatória, podendo ser discreto ou contínuo, e nem sobre o suporte da distribuição, podendo ser positivo, negativo ou ambos.</p>
+<p>Este teorema é um dos principais motivos pela ampla difusão da distribuição Normal em diversas áreas do conhecimento científico. Tendo em vista que, dadas às devidas condições, a média amostral pode ser aproximada pela distribuição normal padrão, as aplicações desses resultados são diversos.</p>
+<p><strong>Prova.</strong> Prova aqui.</p>
 <p>Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
+<section id="diferentes-formulações-e-versões-do-tcl" class="level3">
+<h3 class="anchored" data-anchor-id="diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</h3>
+<p><span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span> trata o <em>problema central do limite</em> atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:</p>
+<p><span class="math inline">\(\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{n \rightarrow + \infty} N(0, 1)\)</span> em distribuição</p>
+<p>Outras maneiras de representar o TCL são:</p>
+<p><span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{n \rightarrow + \infty} N(0, 1)\)</span> em distribuição</p>
+<p><span class="math inline">\(\sqrt{n} \bar{X} \xrightarrow{n \rightarrow + \infty} N(\mu, \sigma^2)\)</span> em distribuição</p>
 </section>
-<section id="diferentes-versões-do-tcl" class="level2">
-<h2 class="anchored" data-anchor-id="diferentes-versões-do-tcl">Diferentes versões do TCL</h2>
 </section>
 <section id="exemplo-computacional" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-computacional">Exemplo Computacional</h2>

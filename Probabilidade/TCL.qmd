@@ -1,6 +1,9 @@
 ---
 title: "Teorema Central do Limite"
 
+toc: true
+toc-title: "Nesta página"
+
 execute: 
   warning: false
   message: false
@@ -13,7 +16,7 @@ format:
 
 # Introdução e Condições Iniciais
 
-O Teorema Central do Limite (TCL) é um dos resultados mais famosos da Teoria da Probabilidade.
+O Teorema Central do Limite (TCL) é um dos resultados mais famosos e mais bonitos da Teoria da Probabilidade.
 
 Sejam $X_1, X_2, ...$ variáveis aleatórias independentes e identicamente distribuídas ($iid$) com média e variância existentes e finitas. Isto é:
 
@@ -23,24 +26,39 @@ $0 < \sigma^2 < +\infty$
 
 Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$.
 
-## Teorema Central do Limite
-
 Pela Lei dos Grandes Números, sabemos que $\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$, mas a qual taxa? Como que é a distribuição dessa quantidade?
 
-Podemos reescrever a quantidade acima como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$.
+## Teorema Central do Limite
 
-Uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não "exploda" para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por $n$ elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de $\frac{1}{2}$, ou seja, $\sqrt{n}$.^[Uma discussão sobre este fator de convergência é discutido [aqui](https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt)]. Logo, o TCL pode ser descrito por:
+Podemos reescrever a quantidade da introdução como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não "exploda" para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por $n$ elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de $\frac{1}{2}$, ou seja, $\sqrt{n}$.^[Uma discussão sobre este fator de convergência é discutido [aqui](https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt)]. 
+
+Logo, o TCL pode ser descrito por:
 
 $\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, \sigma^{2})$ em distribuição
 
-Ou alternativamente na sua forma mais popular:
-
+Ou, alternativamente, na sua forma mais popular:
 
 $\sqrt{n} \left(\frac{\bar{X} - \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)$ em distribuição
 
+O TCL retrata um dos teoremas mais lindos de toda a probabilidade tendo em vista que com poucas condições iniciais (neste caso, média e variância finitas) conseguimos provar que a média amostral $\bar{X}$ padronizada converge em distribuição para a distribuição normal padrão. Observe que o teorema não faz nenhuma alusão ao tipo de variável aleatória, podendo ser discreto ou contínuo, e nem sobre o suporte da distribuição, podendo ser positivo, negativo ou ambos.
+
+Este teorema é um dos principais motivos pela ampla difusão da distribuição Normal em diversas áreas do conhecimento científico. Tendo em vista que, dadas às devidas condições, a média amostral pode ser aproximada pela distribuição normal padrão, as aplicações desses resultados são diversos.
+
+**Prova.** Prova aqui.
+
 Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de @barryjames2023.
 
-## Diferentes versões do TCL
+### Diferentes formulações e versões do TCL
+
+@barryjames2023 trata o *problema central do limite* atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:
+
+$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{n \rightarrow + \infty} N(0, 1)$ em distribuição
+
+Outras maneiras de representar o TCL são:
+
+$\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{n \rightarrow + \infty} N(0, 1)$ em distribuição
+
+$\sqrt{n} \bar{X} \xrightarrow{n \rightarrow + \infty} N(\mu, \sigma^2)$ em distribuição
 
 ## Exemplo Computacional
 
