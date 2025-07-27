@@ -1,13 +1,20 @@
 ---
 title: "Lei dos Grandes Números"
 
+toc: true
+toc-title: "Nesta página"
+
 format:
   html:
     code-fold: true
     code-summary: "Mostrar Código"
 ---
 
+# Seção 1
+
 Este é uma página da LGN citando [@barryjames2023].
+
+## Seção 2
 
 Colocando uma equação:
 
@@ -38,3 +45,7 @@ legend("bottomright", legend = c("Frequência relativa", "Valor esperado (0.5)")
        col = c("blue", "red"), lty = c(1, 2), lwd = 2)
 
 ```
+
+### Seção 3
+
+Ela tem também um table of contents.

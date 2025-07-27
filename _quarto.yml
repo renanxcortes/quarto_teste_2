@@ -2,24 +2,37 @@ project:
   type: website
   output-dir: docs
 
+# # Layout horizontal (menus)
+# website:
+#   title: "Teaching"
+#   navbar:
+#     left:
+#       - text: "Sobre"
+#         href: index.qmd
+#       - text: "Probabilidade"
+#         menu:
+#           - Probabilidade/LGN.qmd
+#           - Probabilidade/TCL.qmd 
+
+# Layout vertical (contents e sections)
 website:
-  title: "Teaching"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Sobre
-      - text: "Probabilidade"
-        menu:
+  sidebar:
+    collapse-level: 1
+    style: "docked"
+    search: true
+    contents:
+      - text: "Sobre"
+        href: index.qmd
+      - section: "Probabilidade"
+        contents:
           - Probabilidade/LGN.qmd
-          - Probabilidade/TCL.qmd 
+          - Probabilidade/TCL.qmd
 
 format:
   html:
     theme:
       - cosmo
-      - brand
     css: styles.css
-    toc: true
 
 editor: visual
 
