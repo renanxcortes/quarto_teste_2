@@ -8,3 +8,9 @@ execute:
 ---
 
 Este é uma página do TCL.
+
+Um código em Python.
+
+```{python}
+2+2
+```
