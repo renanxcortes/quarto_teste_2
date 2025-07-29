@@ -79,11 +79,50 @@ No entanto, note acima que $E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)$ é exatam
 
 $M_{Q_n}(t) = \left( M_{X_i}\left( \frac{t}{\sqrt{n}} \right) \right)^n, \ \forall i$
 
-Assim, por simplificação de notação vamos suprimir o $X_i$ nos passos seguintes e vamos avaliar esta expressão o que acontece quando $n \rightarrow +\infty$ 
+Assim, por simplificação de notação vamos suprimir o $X_i$ nos passos seguintes e vamos avaliar esta expressão o que acontece quando $n \rightarrow +\infty$.
 
+Observe que da maneira como está estruturado $\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n$ converge para uma indefinição do tipo $1^\infty$, pois $\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n = \left( E\left( e^{\frac{tX}{\sqrt{n}}} \right) \right)^n \rightarrow \left( E\left( e^0 \right) \right)^\infty$.
 
+Para tratar essa indefinição, aplicaremos o logaritmo natural ($log$) na expressão e, depois de avaliado o limite, podemos reverter o valor aplicando o exponencial. Logo,
 
+$log\left(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n \right) = n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)$
 
+Quando aplicamos $n \rightarrow +\infty$ caímos numa indefinição do tipo $+\infty \times 0$, logo vamos reescrever a equação para caírmos numa indefinição do tipo $\frac{0}{0}$ para aplicarmos [l'Hôpital](https://pt.wikipedia.org/wiki/Regra_de_l%27H%C3%B4pital):
+
+$\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}$
+
+Como o $n$ é um número inteiro natural e para melhor tratativa algébrica, vamos fazer uma transforção de variável para facilitar o desenvolvimento e poder aplicar a derivada em um número real. Assim,
+
+$$
+\lim_{n\to\infty}\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}} \overset{y=\frac{1}{\sqrt(n)}, \ y \in \mathbb{R} }{=} \lim_{y\to 0}\frac{log\left( M\left( yt \right) \right)}{y^2}
+$$
+
+Que é uma indefinição do tipo $\frac{0}{0}$. Logo, aplicando l'Hôpital:^[Lembrando que $\frac{d\log(f(x))}{dx} = \frac{1}{f(x)} \cdot \frac{df(x)}{dx} = \frac{f'(x)}{f(x)}$]
+
+$$
+\lim_{y\to 0}\frac{tM'(yt)}{M(yt)}\frac{1}{2y}
+$$
+
+Este limite continua sendo uma indefinição do tipo $\frac{0}{0}$, porque pela definição da função geradora do momento, quando aplicamos as suposições no ponto $t=0$ temos:
+
+$$
+\begin{aligned}
+M(t) = E\left(e^{tX}\right) \implies M(0) = 1 \\
+\mu = 0 \implies M'(0) = 0 \\
+\sigma^2 = 1 \implies M''(0) = 1
+\end{aligned}
+$$
+Logo, simplificando os limites e aplicando l'Hôpital novamente temos:
+
+$$
+\lim_{y\to 0}\frac{tM'(yt)}{M(yt)}\frac{1}{2y} \overset{\lim_{y\to 0}{M(yt)}=1}{=} \lim_{y\to 0}\frac{tM'(yt)}{2y} = \lim_{y\to 0}\frac{t^2M''(yt)}{2} = \frac{t^2}{2} \lim_{y\to 0}M''(yt) = \frac{t^2}{2}
+$$
+
+Aplicando o exponencial para reverter o logaritmo aplicado originalmente temos:
+
+$M_{Q_n}(t) \xrightarrow{n \rightarrow +\infty} e^{\frac{t^2}{2}}$
+
+Que coindide com a função geradora de momentos da Normal Padrão.
 
 $\square$
 
