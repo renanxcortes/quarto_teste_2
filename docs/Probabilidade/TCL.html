@@ -239,7 +239,7 @@ window.Quarto = {
 </section>
 <section id="teorema-central-do-limite" class="level2">
 <h2 class="anchored" data-anchor-id="teorema-central-do-limite">Teorema Central do Limite</h2>
-<p>Podemos reescrever a quantidade da introdução como sendo <span class="math inline">\(\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0\)</span>. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não “exploda” para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por <span class="math inline">\(n\)</span> elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de <span class="math inline">\(\frac{1}{2}\)</span>, ou seja, <span class="math inline">\(\sqrt{n}\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Podemos reescrever a quantidade da introdução como sendo <span class="math inline">\(\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0\)</span>. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não “exploda” para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por <span class="math inline">\(n\)</span> elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de <span class="math inline">\(\frac{1}{2}\)</span>, ou seja, <span class="math inline">\(\sqrt{n}\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>Logo, o TCL pode ser descrito por:</p>
 <p><span class="math inline">\(\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, \sigma^{2})\)</span> em distribuição</p>
 <p>Ou, alternativamente, na sua forma mais popular:</p>
@@ -253,7 +253,15 @@ window.Quarto = {
 \frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\ \text{em distribuição}
 \]</span> Podemos assumir, sem perda de generalidade que <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = 1\)</span>, pois poderíamos fazer a prova definindo uma variável aleatória sendo <span class="math inline">\(Z_i = \frac{X_i- \mu}{\sigma}\)</span>, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta fazer a prova para a quantidade:</p>
 <p><span class="math inline">\(\frac{\sum_{i=1}^n X_i}{\sqrt{n}} \xrightarrow{D} N(0, 1)\)</span></p>
-<p>Fazendo através da Função Geradora de Momentos…</p>
+<p>Para continuar a prova, faremos o uso da função geradora de momentos (M) da quantidade acima e avaliando o seu valor quanto <span class="math inline">\(n \rightarrow +\infty\)</span> a fim de identificar qual a distribuição limite obtida.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Ou seja:</p>
+<p><span class="math inline">\(M_{X_n}(x) \xrightarrow{n \rightarrow + \infty} M_{X}(x) \implies X_n \xrightarrow{D} X\)</span></p>
+<p>Por notação, vamos estabelecer <span class="math inline">\(Q_n = \frac{\sum_{i=1}^n X_i}{\sqrt{n}}\)</span> e aplicar o teorema acima:</p>
+<p><span class="math inline">\(M_{Q_n}(t) = E\left( e^{t\left(\frac{\sum_{i=1}^n X_i}{\sqrt{n}}\right)} \right) \overset{\text{Prop. de Exponencial}}{=} E\left( e^{\frac{tX_1}{\sqrt{n}}} \times e^{\frac{tX_2}{\sqrt{n}}} \times \dots \times e^{\frac{tX_n}{\sqrt{n}}} \right) \overset{\text{Independência}}{=} \prod_{i=1}^{n}E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)\)</span></p>
+<p>Como todos os <span class="math inline">\(X_i\)</span> são identicamente distribuídos, podemos simplificar a expressão para:</p>
+<p><span class="math inline">\(M_{Q_n}(t) = \prod_{i=1}^{n}E\left( e^{\frac{tX_i}{\sqrt{n}}} \right) = E\left( e^{\frac{tX_1}{\sqrt{n}}} \right) \times E\left( e^{\frac{tX_2}{\sqrt{n}}} \right) \times \dots \times E\left( e^{\frac{tX_n}{\sqrt{n}}} \right) = \left( E\left( e^{\frac{tX_i}{\sqrt{n}}} \right) \right)^n, \ \forall i\)</span></p>
+<p>No entanto, note acima que <span class="math inline">\(E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)\)</span> é exatamente a função geradora de momentos aplicada no ponto <span class="math inline">\(\frac{t}{\sqrt(n)}\)</span>. Logo:</p>
+<p><span class="math inline">\(M_{Q_n}(t) = \left( M_{X_i}\left( \frac{t}{\sqrt{n}} \right) \right)^n, \ \forall i\)</span></p>
+<p>Assim, por simplificação de notação, vamos avaliar a</p>
 <p><span class="math inline">\(\square\)</span></p>
 <p>Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
 <section id="diferentes-formulações-e-versões-do-tcl" class="level3">
@@ -270,6 +278,7 @@ window.Quarto = {
 </section>
 <section id="usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="level2">
 <h2 class="anchored" data-anchor-id="usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</h2>
+<p>Esta aproximação, também conhecida como <a href="https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem">Teorema de De Moivre–Laplace</a>, …</p>
 </section>
 </section>
 <section id="links-úteis" class="level1">
@@ -283,6 +292,9 @@ window.Quarto = {
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-curtiss1942note" class="csl-entry" role="listitem">
+Curtiss, J. H. 1942. <span>«A note on the theory of moment generating functions»</span>. <em>Ann. Math. Stat.</em> 13 (4): 430–33.
+</div>
 <div id="ref-barryjames2023" class="csl-entry" role="listitem">
 James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>. 5.ª ed. IMPA.
 </div>
@@ -290,6 +302,7 @@ James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>.
 
 <ol>
 <li id="fn1"><p>Uma discussão sobre este fator de convergência é discutido <a href="https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt">aqui</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Este teorema é um caso particular do <a href="https://en.wikipedia.org/wiki/L%C3%A9vy%27s_continuity_theorem">Teorema de Continuidade de Levy</a> para funções características. E pode ser melhor detalhado em <span class="citation" data-cites="curtiss1942note">Curtiss (<a href="#ref-curtiss1942note" role="doc-biblioref">1942</a>)</span> ou <a href="https://researchers.ms.unimelb.edu.au/~xgge@unimelb/Files/Teaching/Advanced%20Probability%20(Semester%201%202020)/The%20Theory%20of%20Moment%20Generating%20Functions.pdf">aqui</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
