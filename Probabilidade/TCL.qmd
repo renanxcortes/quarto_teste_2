@@ -128,11 +128,11 @@ $\square$
 
 Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de @barryjames2023.
 
-### Diferentes formulações e versões do TCL
+## Diferentes formulações e versões do TCL
 
-@barryjames2023 trata o *problema central do limite* atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:
+Fazendo $S_n = X_1 + X_2 + ... +X_n$, @barryjames2023 trata o *problema central do limite* atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:
 
-$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)$
+$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)$.
 
 Outras maneiras de representar o TCL são:
 

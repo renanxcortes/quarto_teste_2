@@ -191,10 +191,8 @@ window.Quarto = {
   <li><a href="#introdução-e-condições-iniciais" id="toc-introdução-e-condições-iniciais" class="nav-link active" data-scroll-target="#introdução-e-condições-iniciais">Introdução e Condições Iniciais</a>
   <ul class="collapse">
   <li><a href="#convergência-em-distribuição" id="toc-convergência-em-distribuição" class="nav-link" data-scroll-target="#convergência-em-distribuição">Convergência em Distribuição</a></li>
-  <li><a href="#teorema-central-do-limite" id="toc-teorema-central-do-limite" class="nav-link" data-scroll-target="#teorema-central-do-limite">Teorema Central do Limite</a>
-  <ul class="collapse">
+  <li><a href="#teorema-central-do-limite" id="toc-teorema-central-do-limite" class="nav-link" data-scroll-target="#teorema-central-do-limite">Teorema Central do Limite</a></li>
   <li><a href="#diferentes-formulações-e-versões-do-tcl" id="toc-diferentes-formulações-e-versões-do-tcl" class="nav-link" data-scroll-target="#diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</a></li>
-  </ul></li>
   <li><a href="#exemplo-computacional" id="toc-exemplo-computacional" class="nav-link" data-scroll-target="#exemplo-computacional">Exemplo Computacional</a></li>
   <li><a href="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal" id="toc-usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="nav-link" data-scroll-target="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</a></li>
   </ul></li>
@@ -291,14 +289,14 @@ M(t) = E\left(e^{tX}\right) \implies M(0) = 1 \\
 <p>Que coindide com a função geradora de momentos da Normal Padrão.</p>
 <p><span class="math inline">\(\square\)</span></p>
 <p>Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
-<section id="diferentes-formulações-e-versões-do-tcl" class="level3">
-<h3 class="anchored" data-anchor-id="diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</h3>
-<p><span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span> trata o <em>problema central do limite</em> atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:</p>
-<p><span class="math inline">\(\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)\)</span></p>
+</section>
+<section id="diferentes-formulações-e-versões-do-tcl" class="level2">
+<h2 class="anchored" data-anchor-id="diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</h2>
+<p>Fazendo <span class="math inline">\(S_n = X_1 + X_2 + ... +X_n\)</span>, <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span> trata o <em>problema central do limite</em> atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:</p>
+<p><span class="math inline">\(\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)\)</span>.</p>
 <p>Outras maneiras de representar o TCL são:</p>
 <p><span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)\)</span></p>
 <p><span class="math inline">\(\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)\)</span></p>
-</section>
 </section>
 <section id="exemplo-computacional" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-computacional">Exemplo Computacional</h2>
