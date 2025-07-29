@@ -62,7 +62,7 @@ Podemos assumir, sem perda de generalidade que $\mu = 0$ e $\sigma = 1$, pois po
 
 $\frac{\sum_{i=1}^n X_i}{\sqrt{n}} \xrightarrow{D} N(0, 1)$
 
-Para continuar a prova, faremos o uso da função geradora de momentos (M) da quantidade acima e avaliando o seu valor quanto $n \rightarrow +\infty$ a fim de identificar qual a distribuição limite obtida.^[Este teorema é um caso particular do [Teorema de Continuidade de Levy](https://en.wikipedia.org/wiki/L%C3%A9vy%27s_continuity_theorem) para funções características. E pode ser melhor detalhado em @curtiss1942note ou [aqui](https://researchers.ms.unimelb.edu.au/~xgge@unimelb/Files/Teaching/Advanced%20Probability%20(Semester%201%202020)/The%20Theory%20of%20Moment%20Generating%20Functions.pdf).] Ou seja:
+Para continuar a prova, faremos o uso da função geradora de momentos ($M$) da quantidade acima e avaliando o seu valor quanto $n \rightarrow +\infty$ a fim de identificar qual a distribuição limite obtida.^[Este teorema é um caso particular do [Teorema de Continuidade de Levy](https://en.wikipedia.org/wiki/L%C3%A9vy%27s_continuity_theorem) para funções características. E pode ser melhor detalhado em @curtiss1942note ou [aqui](https://researchers.ms.unimelb.edu.au/~xgge@unimelb/Files/Teaching/Advanced%20Probability%20(Semester%201%202020)/The%20Theory%20of%20Moment%20Generating%20Functions.pdf).] Ou seja:
 
 $M_{X_n}(x) \xrightarrow{n \rightarrow + \infty} M_{X}(x) \implies X_n \xrightarrow{D} X$
 
