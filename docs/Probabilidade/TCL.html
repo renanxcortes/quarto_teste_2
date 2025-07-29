@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -193,8 +227,8 @@ window.Quarto = {
   <li><a href="#convergência-em-distribuição" id="toc-convergência-em-distribuição" class="nav-link" data-scroll-target="#convergência-em-distribuição">Convergência em Distribuição</a></li>
   <li><a href="#teorema-central-do-limite" id="toc-teorema-central-do-limite" class="nav-link" data-scroll-target="#teorema-central-do-limite">Teorema Central do Limite</a></li>
   <li><a href="#diferentes-formulações-e-versões-do-tcl" id="toc-diferentes-formulações-e-versões-do-tcl" class="nav-link" data-scroll-target="#diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</a></li>
-  <li><a href="#exemplo-computacional" id="toc-exemplo-computacional" class="nav-link" data-scroll-target="#exemplo-computacional">Exemplo Computacional</a></li>
   <li><a href="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal" id="toc-usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="nav-link" data-scroll-target="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</a></li>
+  <li><a href="#exemplo-computacional" id="toc-exemplo-computacional" class="nav-link" data-scroll-target="#exemplo-computacional">Exemplo Computacional</a></li>
   </ul></li>
   <li><a href="#links-úteis" id="toc-links-úteis" class="nav-link" data-scroll-target="#links-úteis">Links Úteis:</a></li>
   </ul>
@@ -298,12 +332,59 @@ M(t) = E\left(e^{tX}\right) \implies M(0) = 1 \\
 <p><span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)\)</span></p>
 <p><span class="math inline">\(\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)\)</span></p>
 </section>
-<section id="exemplo-computacional" class="level2">
-<h2 class="anchored" data-anchor-id="exemplo-computacional">Exemplo Computacional</h2>
-</section>
 <section id="usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="level2">
 <h2 class="anchored" data-anchor-id="usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</h2>
 <p>Esta aproximação, também conhecida como <a href="https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem">Teorema de De Moivre–Laplace</a>, …</p>
+</section>
+<section id="exemplo-computacional" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-computacional">Exemplo Computacional</h2>
+<p>Segue abaixo:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar Código</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parâmetros</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>n_simulacoes <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># Número de Simulações</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>n_lancamentos <span class="ot">&lt;-</span> <span class="dv">300</span> <span class="co"># Número de lançamentos por simulação</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>prob_cara <span class="ot">&lt;-</span> <span class="fl">0.5</span>     <span class="co"># Probabilidade de sair cara</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulação</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Sn <span class="ot">&lt;-</span> <span class="fu">replicate</span>(n_simulacoes, {</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  lancamentos <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), n_lancamentos, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="dv">1</span> <span class="sc">-</span> prob_cara, prob_cara))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(lancamentos)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores Normal Padrão</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>valores_pad <span class="ot">&lt;-</span> (Sn <span class="sc">-</span> n_lancamentos <span class="sc">*</span> prob_cara) <span class="sc">/</span> <span class="fu">sqrt</span>(n_lancamentos <span class="sc">*</span> prob_cara <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> prob_cara))</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados para o gráfico</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">valores =</span> valores_pad)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores Teóricos</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>media_pop <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>desvio_padrao_pop <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> valores)) <span class="sc">+</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> media_pop, <span class="at">sd =</span> desvio_padrao_pop), <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Teorema Central do Limite - Moeda Honesta"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Média Padronizada dos Lançamentos"</span>,</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Densidade"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TCL_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="links-úteis" class="level1">

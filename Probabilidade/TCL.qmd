@@ -140,11 +140,51 @@ $\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)$
 
 $\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)$
 
-## Exemplo Computacional
-
 ## Usando o TCL pra aproximar a Binomial pela Normal
 
 Esta aproximação, também conhecida como [Teorema de De Moivre–Laplace](https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem), ...
+
+## Exemplo Computacional
+
+Segue abaixo:
+
+```{r}
+library(ggplot2)
+
+set.seed(123)
+
+# Parâmetros
+n_simulacoes <- 1000 # Número de Simulações
+n_lancamentos <- 300 # Número de lançamentos por simulação
+prob_cara <- 0.5     # Probabilidade de sair cara
+
+# Simulação
+Sn <- replicate(n_simulacoes, {
+  
+  lancamentos <- sample(c(0,1), n_lancamentos, replace = TRUE, prob = c(1 - prob_cara, prob_cara))
+  sum(lancamentos)
+  
+})
+
+# Valores Normal Padrão
+valores_pad <- (Sn - n_lancamentos * prob_cara) / sqrt(n_lancamentos * prob_cara * (1 - prob_cara))
+
+# Dados para o gráfico
+dados <- data.frame(valores = valores_pad)
+
+# Valores Teóricos
+media_pop <- 0
+desvio_padrao_pop <- 1
+
+# Gráfico
+ggplot(dados, aes(x = valores)) +
+  geom_histogram(aes(y = ..density..), fill = "skyblue", color = "black", alpha = 0.7) +
+  stat_function(fun = dnorm, args = list(mean = media_pop, sd = desvio_padrao_pop), col = "red", size = 1) +
+  labs(title = "Teorema Central do Limite - Moeda Honesta",
+       x = "Média Padronizada dos Lançamentos",
+       y = "Densidade")
+```
+
 
 # Links Úteis:
 
