@@ -227,11 +227,11 @@ window.Quarto = {
   <li><a href="#convergência-em-distribuição" id="toc-convergência-em-distribuição" class="nav-link" data-scroll-target="#convergência-em-distribuição">Convergência em Distribuição</a></li>
   <li><a href="#teorema-central-do-limite" id="toc-teorema-central-do-limite" class="nav-link" data-scroll-target="#teorema-central-do-limite">Teorema Central do Limite</a></li>
   <li><a href="#diferentes-formulações-e-versões-do-tcl" id="toc-diferentes-formulações-e-versões-do-tcl" class="nav-link" data-scroll-target="#diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</a></li>
-  <li><a href="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal" id="toc-usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="nav-link" data-scroll-target="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</a>
+  <li><a href="#exemplo-computacional-o-caso-binomial" id="toc-exemplo-computacional-o-caso-binomial" class="nav-link" data-scroll-target="#exemplo-computacional-o-caso-binomial">Exemplo Computacional: O caso Binomial</a></li>
+  <li><a href="#usando-o-tcl-pra-aproximar-probabilidades-da-binomial-pela-normal" id="toc-usando-o-tcl-pra-aproximar-probabilidades-da-binomial-pela-normal" class="nav-link" data-scroll-target="#usando-o-tcl-pra-aproximar-probabilidades-da-binomial-pela-normal">Usando o TCL pra aproximar probabilidades da Binomial pela Normal</a>
   <ul class="collapse">
   <li><a href="#correção-de-continuidade" id="toc-correção-de-continuidade" class="nav-link" data-scroll-target="#correção-de-continuidade">Correção de Continuidade</a></li>
   </ul></li>
-  <li><a href="#exemplo-computacional" id="toc-exemplo-computacional" class="nav-link" data-scroll-target="#exemplo-computacional">Exemplo Computacional</a></li>
   </ul></li>
   <li><a href="#links-úteis" id="toc-links-úteis" class="nav-link" data-scroll-target="#links-úteis">Links Úteis</a></li>
   </ul>
@@ -335,25 +335,9 @@ M(t) = E\left(e^{tX}\right) \implies M(0) = 1 \\
 <p><span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)\)</span></p>
 <p><span class="math inline">\(\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)\)</span></p>
 </section>
-<section id="usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="level2">
-<h2 class="anchored" data-anchor-id="usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</h2>
-<p>Esta aproximação, também conhecida como <a href="https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem">Teorema de De Moivre–Laplace</a>, ilustra como o TCL pode ser usado para aproximar a distribuição discreta Binomial pela distribuição contínua Normal.</p>
-<p>Seja <span class="math inline">\(X_i \overset{iid}{\sim} Bernoulli(p)\)</span>, então <span class="math inline">\(X = \sum_{i=1}^{n}X_i \sim Binomial(n, p)\)</span> e queremos calcular a probabilidade da variável aleatória <span class="math inline">\(X\)</span> estar entre dois valores inteiros <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> o que pode ser computacionalmente intenso. Nesse sentido, vamos aproximar essa probabilidade através do TCL usando o fato de que <span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)\)</span>:</p>
-<p><span class="math display">\[
-P(a \le X \le b) = P\left( \frac{a-np}{\sqrt{np(1-p)}} \le \frac{X-np}{\sqrt{np(1-p)}} \le \frac{b-np}{\sqrt{np(1-p)}} \right) \approx \Phi\left( \frac{b-np}{\sqrt{np(1-p)}} \right) - \Phi\left( \frac{a-np}{\sqrt{np(1-p)}} \right)
-\]</span></p>
-<p>Esta expressão representa a diferença das distribuição acumuladas da Normal Padrão entre os pontos <span class="math inline">\(\frac{b-np}{\sqrt{np(1-p)}}\)</span> e <span class="math inline">\(\frac{a-np}{\sqrt{np(1-p)}}\)</span>.</p>
-<section id="correção-de-continuidade" class="level3">
-<h3 class="anchored" data-anchor-id="correção-de-continuidade">Correção de Continuidade</h3>
-<p>Observe que esta aproximação se mostra útil, no entanto temos que ter um cuidado adicional ao aproximarmos distribuições contínuas de discretas para evitarmos conclusões equivocadas. Por exemplo, suponha que gostaríamos de usar esta aproximação para calcular a probabilidade de a variável assumir um ponto específico <span class="math inline">\(a\)</span>, então podemos concluir, <strong>erroneamente</strong>, que:</p>
-<p><span class="math inline">\(P(X = a) = P(a \le X \le a) \neq \Phi(a) - \Phi(a) = 0, \ \forall a\)</span></p>
-<p>Logo, podemos melhorar essa aproximação de probabilidade através de uma especificação de um intervalo contínuo no entorno do valor <span class="math inline">\(a\)</span>:</p>
-<p><span class="math inline">\(P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)\)</span></p>
-</section>
-</section>
-<section id="exemplo-computacional" class="level2">
-<h2 class="anchored" data-anchor-id="exemplo-computacional">Exemplo Computacional</h2>
-<p>Lembrando que se <span class="math inline">\(X_i \overset{iid}{\sim} Bernoulli(p)\)</span>, então <span class="math inline">\(S_n = \sum_{i=1}^{n}X_i \sim Binomial(n, p)\)</span></p>
+<section id="exemplo-computacional-o-caso-binomial" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-computacional-o-caso-binomial">Exemplo Computacional: O caso Binomial</h2>
+<p>Se <span class="math inline">\(X_i \overset{iid}{\sim} Bernoulli(p)\)</span>, então <span class="math inline">\(S_n = \sum_{i=1}^{n}X_i \sim Binomial(n, p)\)</span>.</p>
 <p>A seguir, apresentamos a distribuição da quantidade:</p>
 <p><span class="math inline">\(\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} = \frac{{S}_n - np}{\sqrt{np(1-p)}} \xrightarrow{D} N(0, 1)\)</span>.</p>
 <p>No R:</p>
@@ -430,7 +414,7 @@ P(a \le X \le b) = P\left( \frac{a-np}{\sqrt{np(1-p)}} \le \frac{X-np}{\sqrt{np(
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>desvio_padrao_pop <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>count, bins, ignored <span class="op">=</span> plt.hist(valores_pad, bins<span class="op">=</span><span class="dv">30</span>, density<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Curva Teórica Normal Padrão</span></span>
@@ -451,11 +435,27 @@ P(a \le X \le b) = P\left( \frac{a-np}{\sqrt{np(1-p)}} \le \frac{X-np}{\sqrt{np(
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="TCL_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="TCL_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="576"></p>
 </figure>
 </div>
 </div>
 </div>
+</section>
+<section id="usando-o-tcl-pra-aproximar-probabilidades-da-binomial-pela-normal" class="level2">
+<h2 class="anchored" data-anchor-id="usando-o-tcl-pra-aproximar-probabilidades-da-binomial-pela-normal">Usando o TCL pra aproximar probabilidades da Binomial pela Normal</h2>
+<p>Esta aproximação, também conhecida como <a href="https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem">Teorema de De Moivre–Laplace</a>, ilustra como o TCL pode ser usado para aproximar a distribuição discreta Binomial pela distribuição contínua Normal.</p>
+<p>Lembrando que se <span class="math inline">\(X_i \overset{iid}{\sim} Bernoulli(p)\)</span>, então <span class="math inline">\(X = \sum_{i=1}^{n}X_i \sim Binomial(n, p)\)</span> (pela notação, <span class="math inline">\(X = S_n\)</span> do exemplo computacional anterior) e queremos calcular a probabilidade da variável aleatória <span class="math inline">\(X\)</span> estar entre dois valores inteiros <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> o que pode ser computacionalmente intenso. Nesse sentido, vamos aproximar essa probabilidade através do TCL usando o fato de que <span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)\)</span>:</p>
+<p><span class="math display">\[
+P(a \le X \le b) = P\left( \frac{a-np}{\sqrt{np(1-p)}} \le \frac{X-np}{\sqrt{np(1-p)}} \le \frac{b-np}{\sqrt{np(1-p)}} \right) \approx \Phi\left( \frac{b-np}{\sqrt{np(1-p)}} \right) - \Phi\left( \frac{a-np}{\sqrt{np(1-p)}} \right)
+\]</span></p>
+<p>Esta expressão representa a diferença das distribuição acumuladas da Normal Padrão entre os pontos <span class="math inline">\(\frac{b-np}{\sqrt{np(1-p)}}\)</span> e <span class="math inline">\(\frac{a-np}{\sqrt{np(1-p)}}\)</span>.</p>
+<section id="correção-de-continuidade" class="level3">
+<h3 class="anchored" data-anchor-id="correção-de-continuidade">Correção de Continuidade</h3>
+<p>Observe que esta aproximação se mostra útil, no entanto temos que ter um cuidado adicional ao aproximarmos distribuições contínuas de discretas para evitarmos conclusões equivocadas. Por exemplo, suponha que gostaríamos de usar esta aproximação para calcular a probabilidade de a variável assumir um ponto específico <span class="math inline">\(a\)</span>, então podemos concluir, <strong>erroneamente</strong>, que:</p>
+<p><span class="math inline">\(P(X = a) = P(a \le X \le a) \neq \Phi(a) - \Phi(a) = 0, \ \forall a\)</span></p>
+<p>Logo, podemos melhorar essa aproximação de probabilidade através de uma especificação de um intervalo contínuo no entorno do valor <span class="math inline">\(a\)</span>:</p>
+<p><span class="math inline">\(P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)\)</span></p>
+</section>
 </section>
 </section>
 <section id="links-úteis" class="level1">

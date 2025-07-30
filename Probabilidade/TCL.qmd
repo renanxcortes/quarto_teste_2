@@ -140,31 +140,10 @@ $\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)$
 
 $\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)$
 
-## Usando o TCL pra aproximar a Binomial pela Normal
 
-Esta aproximação, também conhecida como [Teorema de De Moivre–Laplace](https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem), ilustra como o TCL pode ser usado para aproximar a distribuição discreta Binomial pela distribuição contínua Normal.
+## Exemplo Computacional: O caso Binomial
 
-Seja $X_i \overset{iid}{\sim} Bernoulli(p)$, então $X = \sum_{i=1}^{n}X_i \sim Binomial(n, p)$ e queremos calcular a probabilidade da variável aleatória $X$ estar entre dois valores inteiros $a$ e $b$ o que pode ser computacionalmente intenso. Nesse sentido, vamos aproximar essa probabilidade através do TCL usando o fato de que $\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)$:
-
-$$
-P(a \le X \le b) = P\left( \frac{a-np}{\sqrt{np(1-p)}} \le \frac{X-np}{\sqrt{np(1-p)}} \le \frac{b-np}{\sqrt{np(1-p)}} \right) \approx \Phi\left( \frac{b-np}{\sqrt{np(1-p)}} \right) - \Phi\left( \frac{a-np}{\sqrt{np(1-p)}} \right)
-$$
-
-Esta expressão representa a diferença das distribuição acumuladas da Normal Padrão entre os pontos $\frac{b-np}{\sqrt{np(1-p)}}$ e $\frac{a-np}{\sqrt{np(1-p)}}$.
-
-### Correção de Continuidade
-
-Observe que esta aproximação se mostra útil, no entanto temos que ter um cuidado adicional ao aproximarmos distribuições contínuas de discretas para evitarmos conclusões equivocadas. Por exemplo, suponha que gostaríamos de usar esta aproximação para calcular a probabilidade de a variável assumir um ponto específico $a$, então podemos concluir, **erroneamente**, que:
-
-$P(X = a) = P(a \le X \le a) \neq \Phi(a) - \Phi(a) = 0, \ \forall a$
-
-Logo, podemos melhorar essa aproximação de probabilidade através de uma especificação de um intervalo contínuo no entorno do valor $a$:
-
-$P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)$ 
-
-## Exemplo Computacional
-
-Lembrando que se $X_i \overset{iid}{\sim} Bernoulli(p)$, então $S_n = \sum_{i=1}^{n}X_i \sim Binomial(n, p)$
+Se $X_i \overset{iid}{\sim} Bernoulli(p)$, então $S_n = \sum_{i=1}^{n}X_i \sim Binomial(n, p)$.
 
 A seguir, apresentamos a distribuição da quantidade:
 
@@ -235,7 +214,7 @@ media_pop = 0
 desvio_padrao_pop = 1
 
 # Gráfico
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(6, 4))
 count, bins, ignored = plt.hist(valores_pad, bins=30, density=True, color='skyblue', edgecolor='black', alpha=0.7)
 
 # Curva Teórica Normal Padrão
@@ -254,6 +233,29 @@ plt.tight_layout()
 plt.show()
 ```
 
+
+
+## Usando o TCL pra aproximar probabilidades da Binomial pela Normal
+
+Esta aproximação, também conhecida como [Teorema de De Moivre–Laplace](https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem), ilustra como o TCL pode ser usado para aproximar a distribuição discreta Binomial pela distribuição contínua Normal.
+
+Lembrando que se $X_i \overset{iid}{\sim} Bernoulli(p)$, então $X = \sum_{i=1}^{n}X_i \sim Binomial(n, p)$ (pela notação, $X = S_n$ do exemplo computacional anterior) e queremos calcular a probabilidade da variável aleatória $X$ estar entre dois valores inteiros $a$ e $b$ o que pode ser computacionalmente intenso. Nesse sentido, vamos aproximar essa probabilidade através do TCL usando o fato de que $\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)$:
+
+$$
+P(a \le X \le b) = P\left( \frac{a-np}{\sqrt{np(1-p)}} \le \frac{X-np}{\sqrt{np(1-p)}} \le \frac{b-np}{\sqrt{np(1-p)}} \right) \approx \Phi\left( \frac{b-np}{\sqrt{np(1-p)}} \right) - \Phi\left( \frac{a-np}{\sqrt{np(1-p)}} \right)
+$$
+
+Esta expressão representa a diferença das distribuição acumuladas da Normal Padrão entre os pontos $\frac{b-np}{\sqrt{np(1-p)}}$ e $\frac{a-np}{\sqrt{np(1-p)}}$.
+
+### Correção de Continuidade
+
+Observe que esta aproximação se mostra útil, no entanto temos que ter um cuidado adicional ao aproximarmos distribuições contínuas de discretas para evitarmos conclusões equivocadas. Por exemplo, suponha que gostaríamos de usar esta aproximação para calcular a probabilidade de a variável assumir um ponto específico $a$, então podemos concluir, **erroneamente**, que:
+
+$P(X = a) = P(a \le X \le a) \neq \Phi(a) - \Phi(a) = 0, \ \forall a$
+
+Logo, podemos melhorar essa aproximação de probabilidade através de uma especificação de um intervalo contínuo no entorno do valor $a$:
+
+$P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)$ 
 
 # Links Úteis
 

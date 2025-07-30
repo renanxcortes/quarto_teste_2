@@ -139,7 +139,7 @@ lancamentos = np.random.choice(['Cara', 'Coroa'], size=n)
 proporcao_cara = np.cumsum(lancamentos == 'Cara') / np.arange(1, n + 1)
 
 # Criando o gráfico
-plt.figure(figsize=(10, 5))
+plt.figure(figsize=(6, 4))
 plt.plot(proporcao_cara, color='blue', label='Proporção de Caras')
 plt.axhline(y=0.5, color='red', linestyle='--', label='Proporção Esperada (0.5)')
 plt.title('Lei dos Grandes Números: Lançamento de uma Moeda Honesta')
