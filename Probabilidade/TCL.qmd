@@ -37,7 +37,7 @@ Pela Lei dos Grandes Números, sabemos que $\bar{X} \xrightarrow{n \rightarrow +
 
 ## Teorema Central do Limite
 
-Podemos reescrever a quantidade da introdução como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não "exploda" para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por $n$ elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de $\frac{1}{2}$, ou seja, $\sqrt{n}$.^[Uma discussão sobre este fator de convergência é discutido [aqui](https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt)] 
+Podemos reescrever a quantidade da introdução como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não "exploda" (ou "degenere") para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por $n$ elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de $\frac{1}{2}$, ou seja, $\sqrt{n}$.^[Uma discussão sobre este fator de convergência é discutido [aqui](https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt)] 
 
 Logo, o TCL pode ser descrito por:
 
