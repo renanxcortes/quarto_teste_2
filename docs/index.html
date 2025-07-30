@@ -160,10 +160,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Este é um website baseado no Quarto da empresa Posit.</p>
 <p>Templates úteis: <a href="https://drganghe.github.io/quarto-academic-site-examples.html" class="uri">https://drganghe.github.io/quarto-academic-site-examples.html</a></p>
 <p>Site oficial do Quarto: <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<p>Site interessante: <a href="https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html" class="uri">https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html</a></p>
 <p>Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate e ter o jupyter instalado.</p>
 <p>Exemplo:</p>
-<pre><code>reticulate::py_require("matplotlib")
+<pre><code>reticulate::py_install("matplotlib")
+reticulate::py_install("scipy")
 </code></pre>
+<p>No entanto, o Quarto cria um ambiente virtual temporário chamado <code>r-reticulate</code>. Uma discussão por ser vista <a href="https://stackoverflow.com/questions/76745347/how-to-make-quarto-use-the-same-python-environment-that-was-specified-in-rstudio">aqui</a></p>
 <p>Além disso, cuidado ao setar engine jupyter que daí os códigos R não serão rodados.</p>
 <p><strong>Engine Conflicts:</strong></p>
 <ul>

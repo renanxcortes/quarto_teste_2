@@ -75,11 +75,11 @@ Como todos os $X_i$ são identicamente distribuídos, podemos simplificar a expr
 
 $M_{Q_n}(t) = \prod_{i=1}^{n}E\left( e^{\frac{tX_i}{\sqrt{n}}} \right) = E\left( e^{\frac{tX_1}{\sqrt{n}}} \right) \times E\left( e^{\frac{tX_2}{\sqrt{n}}} \right) \times \dots \times E\left( e^{\frac{tX_n}{\sqrt{n}}} \right) = \left( E\left( e^{\frac{tX_i}{\sqrt{n}}} \right) \right)^n, \ \forall i$
 
-No entanto, note acima que $E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)$ é exatamente a função geradora de momentos aplicada no ponto $\frac{t}{\sqrt(n)}$. Logo:
+No entanto, note acima que $E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)$ é exatamente a função geradora de momentos aplicada no ponto $\frac{t}{\sqrt{n}}$. Logo:
 
 $M_{Q_n}(t) = \left( M_{X_i}\left( \frac{t}{\sqrt{n}} \right) \right)^n, \ \forall i$
 
-Assim, por simplificação de notação vamos suprimir o $X_i$ nos passos seguintes e vamos avaliar esta expressão o que acontece quando $n \rightarrow +\infty$.
+Assim, por simplificação de notação, vamos suprimir o $X_i$^[@magalhaes2006probabilidade também realiza esta simplificação de notação em uma prova similar do TCL fazendo uso da [Função Característica](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_caracter%C3%ADstica_(probabilidade)).] nos passos seguintes e vamos avaliar esta expressão o que acontece quando $n \rightarrow +\infty$.
 
 Observe que da maneira como está estruturado $\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n$ converge para uma indefinição do tipo $1^\infty$, pois $\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n = \left( E\left( e^{\frac{tX}{\sqrt{n}}} \right) \right)^n \rightarrow \left( E\left( e^0 \right) \right)^\infty$.
 
@@ -94,7 +94,7 @@ $\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}$
 Como o $n$ é um número inteiro natural e para melhor tratativa algébrica, vamos fazer uma transforção de variável para facilitar o desenvolvimento e poder aplicar a derivada em um número real. Assim,
 
 $$
-\lim_{n\to\infty}\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}} \overset{y=\frac{1}{\sqrt(n)}, \ y \in \mathbb{R} }{=} \lim_{y\to 0}\frac{log\left( M\left( yt \right) \right)}{y^2}
+\lim_{n\to\infty}\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}} \overset{y=\frac{1}{\sqrt{n}}, \ y \in \mathbb{R} }{=} \lim_{y\to 0}\frac{log\left( M\left( yt \right) \right)}{y^2}
 $$
 
 Que é uma indefinição do tipo $\frac{0}{0}$. Logo, aplicando l'Hôpital:^[Lembrando que $\frac{d\log(f(x))}{dx} = \frac{1}{f(x)} \cdot \frac{df(x)}{dx} = \frac{f'(x)}{f(x)}$]
@@ -142,11 +142,35 @@ $\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)$
 
 ## Usando o TCL pra aproximar a Binomial pela Normal
 
-Esta aproximação, também conhecida como [Teorema de De Moivre–Laplace](https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem), ...
+Esta aproximação, também conhecida como [Teorema de De Moivre–Laplace](https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem), ilustra como o TCL pode ser usado para aproximar a distribuição discreta Binomial pela distribuição contínua Normal.
+
+Seja $X_i \overset{iid}{\sim} Bernoulli(p)$, então $X = \sum_{i=1}^{n}X_i \sim Binomial(n, p)$ e queremos calcular a probabilidade da variável aleatória $X$ estar entre dois valores inteiros $a$ e $b$ o que pode ser computacionalmente intenso. Nesse sentido, vamos aproximar essa probabilidade através do TCL usando o fato de que $\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)$:
+
+$$
+P(a \le X \le b) = P\left( \frac{a-np}{\sqrt{np(1-p)}} \le \frac{X-np}{\sqrt{np(1-p)}} \le \frac{b-np}{\sqrt{np(1-p)}} \right) \approx \Phi\left( \frac{b-np}{\sqrt{np(1-p)}} \right) - \Phi\left( \frac{a-np}{\sqrt{np(1-p)}} \right)
+$$
+
+Esta expressão representa a diferença das distribuição acumuladas da Normal Padrão entre os pontos $\frac{b-np}{\sqrt{np(1-p)}}$ e $\frac{a-np}{\sqrt{np(1-p)}}$.
+
+### Correção de Continuidade
+
+Observe que esta aproximação se mostra útil, no entanto temos que ter um cuidado adicional ao aproximarmos distribuições contínuas de discretas para evitarmos conclusões equivocadas. Por exemplo, suponha que gostaríamos de usar esta aproximação para calcular a probabilidade de a variável assumir um ponto específico $a$, então podemos concluir, **erroneamente**, que:
+
+$P(X = a) = P(a \le X \le a) \neq \Phi(a) - \Phi(a) = 0, \ \forall a$
+
+Logo, podemos melhorar essa aproximação de probabilidade através de uma especificação de um intervalo contínuo no entorno do valor $a$:
+
+$P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)$ 
 
 ## Exemplo Computacional
 
-Segue abaixo:
+Lembrando que se $X_i \overset{iid}{\sim} Bernoulli(p)$, então $S_n = \sum_{i=1}^{n}X_i \sim Binomial(n, p)$
+
+A seguir, apresentamos a distribuição da quantidade:
+
+$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} = \frac{{S}_n - np}{\sqrt{np(1-p)}} \xrightarrow{D} N(0, 1)$.
+
+No R:
 
 ```{r}
 library(ggplot2)
@@ -185,8 +209,53 @@ ggplot(dados, aes(x = valores)) +
        y = "Densidade")
 ```
 
+No Python:
 
-# Links Úteis:
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+# Parâmetros
+n_simulacoes = 1000  # Número de Simulações
+n_lancamentos = 300  # Número de lançamentos por simulação
+prob_cara = 0.5      # Probabilidade de sair cara
+
+# Simulação
+Sn = np.array([
+    np.sum(np.random.choice([0, 1], size=n_lancamentos, p=[1 - prob_cara, prob_cara]))
+    for _ in range(n_simulacoes)
+])
+
+# Valores Normal Padrão
+valores_pad = (Sn - n_lancamentos * prob_cara) / np.sqrt(n_lancamentos * prob_cara * (1 - prob_cara))
+
+# Valores Teóricos
+media_pop = 0
+desvio_padrao_pop = 1
+
+# Gráfico
+plt.figure(figsize=(10, 6))
+count, bins, ignored = plt.hist(valores_pad, bins=30, density=True, color='skyblue', edgecolor='black', alpha=0.7)
+
+# Curva Teórica Normal Padrão
+x = np.linspace(min(bins), max(bins), 1000)
+plt.plot(x, norm.pdf(x, media_pop, desvio_padrao_pop), color='red', lw=2, label='Normal(0,1)')
+
+# Labels e Título
+plt.title("Teorema Central do Limite - Moeda Honesta")
+plt.xlabel("Média Padronizada dos Lançamentos")
+plt.ylabel("Densidade")
+plt.legend()
+
+# Exibir
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+
+# Links Úteis
 
 [Aula de Harvard de Lei dos Grandes Números e Teorema Central do Limite](https://www.youtube.com/watch?v=OprNqnHsVIA&t=1910s)
 

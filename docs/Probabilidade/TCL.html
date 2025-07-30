@@ -227,10 +227,13 @@ window.Quarto = {
   <li><a href="#convergência-em-distribuição" id="toc-convergência-em-distribuição" class="nav-link" data-scroll-target="#convergência-em-distribuição">Convergência em Distribuição</a></li>
   <li><a href="#teorema-central-do-limite" id="toc-teorema-central-do-limite" class="nav-link" data-scroll-target="#teorema-central-do-limite">Teorema Central do Limite</a></li>
   <li><a href="#diferentes-formulações-e-versões-do-tcl" id="toc-diferentes-formulações-e-versões-do-tcl" class="nav-link" data-scroll-target="#diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</a></li>
-  <li><a href="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal" id="toc-usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="nav-link" data-scroll-target="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</a></li>
+  <li><a href="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal" id="toc-usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="nav-link" data-scroll-target="#usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</a>
+  <ul class="collapse">
+  <li><a href="#correção-de-continuidade" id="toc-correção-de-continuidade" class="nav-link" data-scroll-target="#correção-de-continuidade">Correção de Continuidade</a></li>
+  </ul></li>
   <li><a href="#exemplo-computacional" id="toc-exemplo-computacional" class="nav-link" data-scroll-target="#exemplo-computacional">Exemplo Computacional</a></li>
   </ul></li>
-  <li><a href="#links-úteis" id="toc-links-úteis" class="nav-link" data-scroll-target="#links-úteis">Links Úteis:</a></li>
+  <li><a href="#links-úteis" id="toc-links-úteis" class="nav-link" data-scroll-target="#links-úteis">Links Úteis</a></li>
   </ul>
 </nav>
     </div>
@@ -291,9 +294,9 @@ window.Quarto = {
 <p><span class="math inline">\(M_{Q_n}(t) = E\left( e^{t\left(\frac{\sum_{i=1}^n X_i}{\sqrt{n}}\right)} \right) \overset{\text{Prop. de Exponencial}}{=} E\left( e^{\frac{tX_1}{\sqrt{n}}} \times e^{\frac{tX_2}{\sqrt{n}}} \times \dots \times e^{\frac{tX_n}{\sqrt{n}}} \right) \overset{\text{Independência}}{=} \prod_{i=1}^{n}E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)\)</span></p>
 <p>Como todos os <span class="math inline">\(X_i\)</span> são identicamente distribuídos, podemos simplificar a expressão para:</p>
 <p><span class="math inline">\(M_{Q_n}(t) = \prod_{i=1}^{n}E\left( e^{\frac{tX_i}{\sqrt{n}}} \right) = E\left( e^{\frac{tX_1}{\sqrt{n}}} \right) \times E\left( e^{\frac{tX_2}{\sqrt{n}}} \right) \times \dots \times E\left( e^{\frac{tX_n}{\sqrt{n}}} \right) = \left( E\left( e^{\frac{tX_i}{\sqrt{n}}} \right) \right)^n, \ \forall i\)</span></p>
-<p>No entanto, note acima que <span class="math inline">\(E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)\)</span> é exatamente a função geradora de momentos aplicada no ponto <span class="math inline">\(\frac{t}{\sqrt(n)}\)</span>. Logo:</p>
+<p>No entanto, note acima que <span class="math inline">\(E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)\)</span> é exatamente a função geradora de momentos aplicada no ponto <span class="math inline">\(\frac{t}{\sqrt{n}}\)</span>. Logo:</p>
 <p><span class="math inline">\(M_{Q_n}(t) = \left( M_{X_i}\left( \frac{t}{\sqrt{n}} \right) \right)^n, \ \forall i\)</span></p>
-<p>Assim, por simplificação de notação vamos suprimir o <span class="math inline">\(X_i\)</span> nos passos seguintes e vamos avaliar esta expressão o que acontece quando <span class="math inline">\(n \rightarrow +\infty\)</span>.</p>
+<p>Assim, por simplificação de notação, vamos suprimir o <span class="math inline">\(X_i\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> nos passos seguintes e vamos avaliar esta expressão o que acontece quando <span class="math inline">\(n \rightarrow +\infty\)</span>.</p>
 <p>Observe que da maneira como está estruturado <span class="math inline">\(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n\)</span> converge para uma indefinição do tipo <span class="math inline">\(1^\infty\)</span>, pois <span class="math inline">\(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n = \left( E\left( e^{\frac{tX}{\sqrt{n}}} \right) \right)^n \rightarrow \left( E\left( e^0 \right) \right)^\infty\)</span>.</p>
 <p>Para tratar essa indefinição, aplicaremos o logaritmo natural (<span class="math inline">\(log\)</span>) na expressão e, depois de avaliado o limite, podemos reverter o valor aplicando o exponencial. Logo,</p>
 <p><span class="math inline">\(log\left(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n \right) = n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)\)</span></p>
@@ -301,9 +304,9 @@ window.Quarto = {
 <p><span class="math inline">\(\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}\)</span></p>
 <p>Como o <span class="math inline">\(n\)</span> é um número inteiro natural e para melhor tratativa algébrica, vamos fazer uma transforção de variável para facilitar o desenvolvimento e poder aplicar a derivada em um número real. Assim,</p>
 <p><span class="math display">\[
-\lim_{n\to\infty}\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}} \overset{y=\frac{1}{\sqrt(n)}, \ y \in \mathbb{R} }{=} \lim_{y\to 0}\frac{log\left( M\left( yt \right) \right)}{y^2}
+\lim_{n\to\infty}\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}} \overset{y=\frac{1}{\sqrt{n}}, \ y \in \mathbb{R} }{=} \lim_{y\to 0}\frac{log\left( M\left( yt \right) \right)}{y^2}
 \]</span></p>
-<p>Que é uma indefinição do tipo <span class="math inline">\(\frac{0}{0}\)</span>. Logo, aplicando l’Hôpital:<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Que é uma indefinição do tipo <span class="math inline">\(\frac{0}{0}\)</span>. Logo, aplicando l’Hôpital:<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <p><span class="math display">\[
 \lim_{y\to 0}\frac{tM'(yt)}{M(yt)}\frac{1}{2y}
 \]</span></p>
@@ -334,11 +337,26 @@ M(t) = E\left(e^{tX}\right) \implies M(0) = 1 \\
 </section>
 <section id="usando-o-tcl-pra-aproximar-a-binomial-pela-normal" class="level2">
 <h2 class="anchored" data-anchor-id="usando-o-tcl-pra-aproximar-a-binomial-pela-normal">Usando o TCL pra aproximar a Binomial pela Normal</h2>
-<p>Esta aproximação, também conhecida como <a href="https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem">Teorema de De Moivre–Laplace</a>, …</p>
+<p>Esta aproximação, também conhecida como <a href="https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem">Teorema de De Moivre–Laplace</a>, ilustra como o TCL pode ser usado para aproximar a distribuição discreta Binomial pela distribuição contínua Normal.</p>
+<p>Seja <span class="math inline">\(X_i \overset{iid}{\sim} Bernoulli(p)\)</span>, então <span class="math inline">\(X = \sum_{i=1}^{n}X_i \sim Binomial(n, p)\)</span> e queremos calcular a probabilidade da variável aleatória <span class="math inline">\(X\)</span> estar entre dois valores inteiros <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span> o que pode ser computacionalmente intenso. Nesse sentido, vamos aproximar essa probabilidade através do TCL usando o fato de que <span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)\)</span>:</p>
+<p><span class="math display">\[
+P(a \le X \le b) = P\left( \frac{a-np}{\sqrt{np(1-p)}} \le \frac{X-np}{\sqrt{np(1-p)}} \le \frac{b-np}{\sqrt{np(1-p)}} \right) \approx \Phi\left( \frac{b-np}{\sqrt{np(1-p)}} \right) - \Phi\left( \frac{a-np}{\sqrt{np(1-p)}} \right)
+\]</span></p>
+<p>Esta expressão representa a diferença das distribuição acumuladas da Normal Padrão entre os pontos <span class="math inline">\(\frac{b-np}{\sqrt{np(1-p)}}\)</span> e <span class="math inline">\(\frac{a-np}{\sqrt{np(1-p)}}\)</span>.</p>
+<section id="correção-de-continuidade" class="level3">
+<h3 class="anchored" data-anchor-id="correção-de-continuidade">Correção de Continuidade</h3>
+<p>Observe que esta aproximação se mostra útil, no entanto temos que ter um cuidado adicional ao aproximarmos distribuições contínuas de discretas para evitarmos conclusões equivocadas. Por exemplo, suponha que gostaríamos de usar esta aproximação para calcular a probabilidade de a variável assumir um ponto específico <span class="math inline">\(a\)</span>, então podemos concluir, <strong>erroneamente</strong>, que:</p>
+<p><span class="math inline">\(P(X = a) = P(a \le X \le a) \neq \Phi(a) - \Phi(a) = 0, \ \forall a\)</span></p>
+<p>Logo, podemos melhorar essa aproximação de probabilidade através de uma especificação de um intervalo contínuo no entorno do valor <span class="math inline">\(a\)</span>:</p>
+<p><span class="math inline">\(P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)\)</span></p>
+</section>
 </section>
 <section id="exemplo-computacional" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-computacional">Exemplo Computacional</h2>
-<p>Segue abaixo:</p>
+<p>Lembrando que se <span class="math inline">\(X_i \overset{iid}{\sim} Bernoulli(p)\)</span>, então <span class="math inline">\(S_n = \sum_{i=1}^{n}X_i \sim Binomial(n, p)\)</span></p>
+<p>A seguir, apresentamos a distribuição da quantidade:</p>
+<p><span class="math inline">\(\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} = \frac{{S}_n - np}{\sqrt{np(1-p)}} \xrightarrow{D} N(0, 1)\)</span>.</p>
+<p>No R:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Mostrar Código</summary>
@@ -385,10 +403,63 @@ M(t) = E\left(e^{tX}\right) \implies M(0) = 1 \\
 </div>
 </div>
 </div>
+<p>No Python:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar Código</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Parâmetros</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>n_simulacoes <span class="op">=</span> <span class="dv">1000</span>  <span class="co"># Número de Simulações</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>n_lancamentos <span class="op">=</span> <span class="dv">300</span>  <span class="co"># Número de lançamentos por simulação</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>prob_cara <span class="op">=</span> <span class="fl">0.5</span>      <span class="co"># Probabilidade de sair cara</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulação</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>Sn <span class="op">=</span> np.array([</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    np.<span class="bu">sum</span>(np.random.choice([<span class="dv">0</span>, <span class="dv">1</span>], size<span class="op">=</span>n_lancamentos, p<span class="op">=</span>[<span class="dv">1</span> <span class="op">-</span> prob_cara, prob_cara]))</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(n_simulacoes)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores Normal Padrão</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>valores_pad <span class="op">=</span> (Sn <span class="op">-</span> n_lancamentos <span class="op">*</span> prob_cara) <span class="op">/</span> np.sqrt(n_lancamentos <span class="op">*</span> prob_cara <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> prob_cara))</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores Teóricos</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>media_pop <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>desvio_padrao_pop <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>count, bins, ignored <span class="op">=</span> plt.hist(valores_pad, bins<span class="op">=</span><span class="dv">30</span>, density<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'skyblue'</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Curva Teórica Normal Padrão</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="bu">min</span>(bins), <span class="bu">max</span>(bins), <span class="dv">1000</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.plot(x, norm.pdf(x, media_pop, desvio_padrao_pop), color<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Normal(0,1)'</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Labels e Título</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Teorema Central do Limite - Moeda Honesta"</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Média Padronizada dos Lançamentos"</span>)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Densidade"</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="TCL_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="links-úteis" class="level1">
-<h1>Links Úteis:</h1>
+<h1>Links Úteis</h1>
 <p><a href="https://www.youtube.com/watch?v=OprNqnHsVIA&amp;t=1910s">Aula de Harvard de Lei dos Grandes Números e Teorema Central do Limite</a></p>
 <p><a href="https://pt.wikipedia.org/wiki/Teorema_central_do_limite">Página da Wikipedia do Teorema Central do Limite</a></p>
 
@@ -404,12 +475,16 @@ Curtiss, J. H. 1942. <span>«A note on the theory of moment generating functions
 <div id="ref-barryjames2023" class="csl-entry" role="listitem">
 James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>. 5.ª ed. IMPA.
 </div>
+<div id="ref-magalhaes2006probabilidade" class="csl-entry" role="listitem">
+Magalhães, M. N. 2006. <em>Probabilidade e Vari<span>á</span>veis Aleat<span>ó</span>rias</em>. 3.ª ed. Edusp.
+</div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas de rodapé</h2>
 
 <ol>
 <li id="fn1"><p>Uma discussão sobre este fator de convergência é discutido <a href="https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt">aqui</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Este teorema é um caso particular do <a href="https://en.wikipedia.org/wiki/L%C3%A9vy%27s_continuity_theorem">Teorema de Continuidade de Levy</a> para funções características. E pode ser melhor detalhado em <span class="citation" data-cites="curtiss1942note">Curtiss (<a href="#ref-curtiss1942note" role="doc-biblioref">1942</a>)</span> ou <a href="https://researchers.ms.unimelb.edu.au/~xgge@unimelb/Files/Teaching/Advanced%20Probability%20(Semester%201%202020)/The%20Theory%20of%20Moment%20Generating%20Functions.pdf">aqui</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Lembrando que <span class="math inline">\(\frac{d\log(f(x))}{dx} = \frac{1}{f(x)} \cdot \frac{df(x)}{dx} = \frac{f'(x)}{f(x)}\)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span> também realiza esta simplificação de notação em uma prova similar do TCL fazendo uso da <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_caracter%C3%ADstica_(probabilidade)">Função Característica</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Lembrando que <span class="math inline">\(\frac{d\log(f(x))}{dx} = \frac{1}{f(x)} \cdot \frac{df(x)}{dx} = \frac{f'(x)}{f(x)}\)</span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

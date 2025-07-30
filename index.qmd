@@ -13,14 +13,19 @@ Templates úteis: <https://drganghe.github.io/quarto-academic-site-examples.html
 
 Site oficial do Quarto: <https://quarto.org/docs/websites>.
 
+Site interessante: <https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html>
+
 Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate e ter o jupyter instalado.
 
 Exemplo:
 
-```         
-reticulate::py_require("matplotlib")
+```
+reticulate::py_install("matplotlib")
+reticulate::py_install("scipy")
 
 ```
+
+No entanto, o Quarto cria um ambiente virtual temporário chamado `r-reticulate`. Uma discussão por ser vista [aqui](https://stackoverflow.com/questions/76745347/how-to-make-quarto-use-the-same-python-environment-that-was-specified-in-rstudio)
 
 Além disso, cuidado ao setar engine jupyter que daí os códigos R não serão rodados.
 

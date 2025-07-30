@@ -151,7 +151,7 @@ plt.show()
 ```
 
 
-# Links Úteis:
+# Links Úteis
 
 [Aula de Harvard de Lei dos Grandes Números e Teorema Central do Limite](https://www.youtube.com/watch?v=OprNqnHsVIA&t=1910s)
 
