@@ -157,23 +157,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Este é um website baseado no Quarto da empresa Posit.</p>
-<p>Templates úteis: <a href="https://drganghe.github.io/quarto-academic-site-examples.html" class="uri">https://drganghe.github.io/quarto-academic-site-examples.html</a></p>
-<p>Site oficial do Quarto: <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<p>Site interessante: <a href="https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html" class="uri">https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html</a></p>
-<p>Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate e ter o jupyter instalado.</p>
-<p>Exemplo:</p>
+<p>Este é um Website do</p>
+<p>Constante Evolução</p>
+<p>Conceitos Gerais de Probabilidade, Estatística e afins</p>
+<p>Sinta-se livre para sugerir melhorias abrindo uma issue <a href="https://github.com/renanxcortes/teaching/issues">neste link</a></p>
+<p>Este é um website baseado no <a href="https://quarto.org/docs/websites">Quarto</a> da empresa <a href="https://posit.co/">Posit</a>.</p>
+<section id="links-úteis" class="level1">
+<h1>Links Úteis</h1>
+<p><a href="https://quarto.org/docs/websites">Site oficial do Quarto</a></p>
+<p><a href="https://drganghe.github.io/quarto-academic-site-examples.html">Templates úteis do prof. Gang He</a></p>
+<p><a href="https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html">Site do prof. André Zibetti</a></p>
+</section>
+<section id="considerações-de-desenvolvimento-do-site" class="level1">
+<h1>Considerações de Desenvolvimento do Site</h1>
+<p>O código para geração deste site por ser acessado <a href="https://github.com/renanxcortes/teaching">neste link</a>.</p>
+<p>Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate. Especificamente, o Quarto cria um ambiente virtual temporário chamado <code>r-reticulate</code>. Ou seja, as bibliotecas usadas durantes a geração do site serão as bibliotecas instaladas neste ambiante. e ma discussão por ser vista <a href="https://stackoverflow.com/questions/76745347/how-to-make-quarto-use-the-same-python-environment-that-was-specified-in-rstudio">aqui</a>.</p>
+<p>Exemplo de instalação de biblioteca do Python usando o <code>reticulate</code>:</p>
 <pre><code>reticulate::py_install("matplotlib")
-reticulate::py_install("scipy")
-</code></pre>
-<p>No entanto, o Quarto cria um ambiente virtual temporário chamado <code>r-reticulate</code>. Uma discussão por ser vista <a href="https://stackoverflow.com/questions/76745347/how-to-make-quarto-use-the-same-python-environment-that-was-specified-in-rstudio">aqui</a></p>
-<p>Além disso, cuidado ao setar engine jupyter que daí os códigos R não serão rodados.</p>
+reticulate::py_install("scipy")</code></pre>
+<p>Além disso, cuidado com o gerenciamento das engines no momento de compilar o website. Segundo a documentação do Quarto, é importante sabermos as diferentes distinções de engine e suas coexistências conforme a seguir:</p>
 <p><strong>Engine Conflicts:</strong></p>
 <ul>
-<li><strong>Knitr vs.&nbsp;Jupyter:</strong> If you explicitly set the <code>engine</code> to <code>jupyter</code> in your YAML, R code chunks will not be executed, and only Python (or the kernel’s language) will run. For mixed R and Python, <code>engine: knitr</code> is typically used, relying on <code>reticulate</code> for Python execution.</li>
+<li><strong>Knitr vs.&nbsp;Jupyter:</strong> <em>If you explicitly set the <code>engine</code> to <code>jupyter</code> in your YAML, R code chunks will not be executed, and only Python (or the kernel’s language) will run. For mixed R and Python, <code>engine: knitr</code> is typically used, relying on <code>reticulate</code> for Python execution.</em></li>
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

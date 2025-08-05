@@ -7,28 +7,39 @@ execute:
   echo: false
 ---
 
-Este é um website baseado no Quarto da empresa Posit.
+Este é um Website do
 
-Templates úteis: <https://drganghe.github.io/quarto-academic-site-examples.html>
+Constante Evolução
 
-Site oficial do Quarto: <https://quarto.org/docs/websites>.
+Conceitos Gerais de Probabilidade, Estatística e afins
 
-Site interessante: <https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html>
+Sinta-se livre para sugerir melhorias abrindo uma issue [neste link](https://github.com/renanxcortes/teaching/issues)
 
-Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate e ter o jupyter instalado.
+Este é um website baseado no [Quarto](https://quarto.org/docs/websites) da empresa [Posit](https://posit.co/).
 
-Exemplo:
+# Links Úteis
 
-```
+[Site oficial do Quarto](https://quarto.org/docs/websites)
+
+[Templates úteis do prof. Gang He](https://drganghe.github.io/quarto-academic-site-examples.html)
+
+[Site do prof. André Zibetti](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html)
+
+# Considerações de Desenvolvimento do Site
+
+O código para geração deste site por ser acessado [neste link](https://github.com/renanxcortes/teaching).
+
+Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate. Especificamente, o Quarto cria um ambiente virtual temporário chamado `r-reticulate`. Ou seja, as bibliotecas usadas durantes a geração do site serão as bibliotecas instaladas neste ambiante. e ma discussão por ser vista [aqui](https://stackoverflow.com/questions/76745347/how-to-make-quarto-use-the-same-python-environment-that-was-specified-in-rstudio).
+
+Exemplo de instalação de biblioteca do Python usando o `reticulate`:
+
+```         
 reticulate::py_install("matplotlib")
 reticulate::py_install("scipy")
-
 ```
 
-No entanto, o Quarto cria um ambiente virtual temporário chamado `r-reticulate`. Uma discussão por ser vista [aqui](https://stackoverflow.com/questions/76745347/how-to-make-quarto-use-the-same-python-environment-that-was-specified-in-rstudio)
-
-Além disso, cuidado ao setar engine jupyter que daí os códigos R não serão rodados.
+Além disso, cuidado com o gerenciamento das engines no momento de compilar o website. Segundo a documentação do Quarto, é importante sabermos as diferentes distinções de engine e suas coexistências conforme a seguir:
 
 **Engine Conflicts:**
 
-- **Knitr vs. Jupyter:** If you explicitly set the `engine` to `jupyter` in your YAML, R code chunks will not be executed, and only Python (or the kernel's language) will run. For mixed R and Python, `engine: knitr` is typically used, relying on `reticulate` for Python execution.
+-   **Knitr vs. Jupyter:** *If you explicitly set the `engine` to `jupyter` in your YAML, R code chunks will not be executed, and only Python (or the kernel's language) will run. For mixed R and Python, `engine: knitr` is typically used, relying on `reticulate` for Python execution.*

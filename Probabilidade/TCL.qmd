@@ -126,7 +126,7 @@ Que coindide com a função geradora de momentos da Normal Padrão.
 
 $\square$
 
-Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de @barryjames2023.
+Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de @barryjames2023 ou no Capítulo 6 de @degroot2012probability.
 
 ## Diferentes formulações e versões do TCL
 
