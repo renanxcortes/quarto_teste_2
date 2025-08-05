@@ -273,7 +273,7 @@ window.Quarto = {
 <section id="teorema-central-do-limite" class="level2">
 <h2 class="anchored" data-anchor-id="teorema-central-do-limite">Teorema Central do Limite</h2>
 <p>Podemos reescrever a quantidade da introdução como sendo <span class="math inline">\(\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0\)</span>. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não “exploda” (ou “degenere”) para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por <span class="math inline">\(n\)</span> elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de <span class="math inline">\(\frac{1}{2}\)</span>, ou seja, <span class="math inline">\(\sqrt{n}\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Logo, o TCL pode ser descrito por:</p>
+<p>Logo, o TCL pode ser definido por:</p>
 <p><span class="math inline">\(\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, \sigma^{2})\)</span> em distribuição</p>
 <p>Ou, alternativamente, na sua forma mais popular:</p>
 <p><span id="eq-tcl"><span class="math display">\[
@@ -285,9 +285,9 @@ window.Quarto = {
 <p><span class="math display">\[
 \frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{D} N(0, 1)
 \]</span></p>
-<p>Podemos assumir, sem perda de generalidade que <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = 1\)</span>, pois poderíamos fazer a prova definindo uma variável aleatória sendo <span class="math inline">\(Z_i = \frac{X_i- \mu}{\sigma}\)</span>, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta fazer a prova para a quantidade:</p>
-<p><span class="math inline">\(\frac{\sum_{i=1}^n X_i}{\sqrt{n}} \xrightarrow{D} N(0, 1)\)</span></p>
-<p>Para continuar a prova, faremos o uso da função geradora de momentos (<span class="math inline">\(M\)</span>) da quantidade acima e avaliando o seu valor quanto <span class="math inline">\(n \rightarrow +\infty\)</span> a fim de identificar qual a distribuição limite obtida.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Ou seja:</p>
+<p>Podemos assumir, sem perda de generalidade que <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = 1\)</span>, pois poderíamos fazer a prova definindo uma variável aleatória sendo <span class="math inline">\(Z_i = \frac{X_i- \mu}{\sigma}\)</span>, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta provar</p>
+<p><span class="math display">\[\frac{\sum_{i=1}^n X_i}{\sqrt{n}} \xrightarrow{D} N(0, 1)\]</span></p>
+<p>Para isso, faremos o uso da função geradora de momentos (<span class="math inline">\(M\)</span>) da quantidade acima e avaliando o seu valor quanto <span class="math inline">\(n \rightarrow +\infty\)</span> a fim de identificar qual a distribuição limite obtida.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Ou seja:</p>
 <p><span class="math inline">\(M_{X_n}(x) \xrightarrow{n \rightarrow + \infty} M_{X}(x) \implies X_n \xrightarrow{D} X\)</span></p>
 <p>Por notação, vamos estabelecer <span class="math inline">\(Q_n = \frac{\sum_{i=1}^n X_i}{\sqrt{n}}\)</span> e aplicar o teorema acima:</p>
 <p><span class="math inline">\(M_{Q_n}(t) = E\left( e^{t\left(\frac{\sum_{i=1}^n X_i}{\sqrt{n}}\right)} \right) \overset{\text{Prop. de Exponencial}}{=} E\left( e^{\frac{tX_1}{\sqrt{n}}} \times e^{\frac{tX_2}{\sqrt{n}}} \times \dots \times e^{\frac{tX_n}{\sqrt{n}}} \right) \overset{\text{Independência}}{=} \prod_{i=1}^{n}E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)\)</span></p>
@@ -298,10 +298,8 @@ window.Quarto = {
 <p>Assim, por simplificação de notação, vamos suprimir o <span class="math inline">\(X_i\)</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> nos passos seguintes e vamos avaliar esta expressão o que acontece quando <span class="math inline">\(n \rightarrow +\infty\)</span>.</p>
 <p>Observe que da maneira como está estruturado <span class="math inline">\(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n\)</span> converge para uma indefinição do tipo <span class="math inline">\(1^\infty\)</span>, pois <span class="math inline">\(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n = \left( E\left( e^{\frac{tX}{\sqrt{n}}} \right) \right)^n \rightarrow \left( E\left( e^0 \right) \right)^\infty\)</span>.</p>
 <p>Para tratar essa indefinição, aplicaremos o logaritmo natural (<span class="math inline">\(log\)</span>) na expressão e, depois de avaliado o limite, podemos reverter o valor aplicando o exponencial. Logo,</p>
-<p><span class="math inline">\(log\left(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n \right) = n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)\)</span></p>
-<p>Quando aplicamos <span class="math inline">\(n \rightarrow +\infty\)</span> caímos numa indefinição do tipo <span class="math inline">\(+\infty \times 0\)</span>, logo vamos reescrever a equação para caírmos numa indefinição do tipo <span class="math inline">\(\frac{0}{0}\)</span> para aplicarmos <a href="https://pt.wikipedia.org/wiki/Regra_de_l%27H%C3%B4pital">l’Hôpital</a>:</p>
-<p><span class="math display">\[n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right) = \frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}\]</span></p>
-<p>Como o <span class="math inline">\(n\)</span> é um número inteiro natural e para melhor tratativa algébrica, vamos fazer uma transforção de variável para facilitar o desenvolvimento e poder aplicar a derivada em um número real. Assim,</p>
+<p><span class="math display">\[log\left(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n \right) = n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)\]</span></p>
+<p>Quando aplicamos <span class="math inline">\(n \rightarrow +\infty\)</span> caímos numa indefinição do tipo <span class="math inline">\(+\infty \times 0\)</span>, logo vamos reescrever a equação para <span class="math inline">\(n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right) = \frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}\)</span> e, desta maneira, caírmos numa indefinição do tipo <span class="math inline">\(\frac{0}{0}\)</span> para aplicarmos <a href="https://pt.wikipedia.org/wiki/Regra_de_l%27H%C3%B4pital">l’Hôpital</a>. Como o <span class="math inline">\(n\)</span> é um número inteiro natural e para melhor tratativa algébrica, vamos fazer uma transforção de variável para facilitar o desenvolvimento e poder aplicar a derivada em um número real. Assim,</p>
 <p><span class="math display">\[
 \lim_{n\to\infty}\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}} \overset{y=\frac{1}{\sqrt{n}}, \ y \in \mathbb{R} }{=} \lim_{y\to 0}\frac{log\left( M\left( yt \right) \right)}{y^2}
 \]</span></p>
@@ -321,7 +319,7 @@ M(t) = E\left(e^{tX}\right) \implies M(0) = 1 \\
 \lim_{y\to 0}\frac{tM'(yt)}{M(yt)}\frac{1}{2y} \overset{\lim_{y\to 0}{M(yt)}=1}{=} \lim_{y\to 0}\frac{tM'(yt)}{2y} = \lim_{y\to 0}\frac{t^2M''(yt)}{2} = \frac{t^2}{2} \lim_{y\to 0}M''(yt) = \frac{t^2}{2}
 \]</span></p>
 <p>Aplicando o exponencial para reverter o logaritmo aplicado originalmente temos:</p>
-<p><span class="math inline">\(M_{Q_n}(t) \xrightarrow{n \rightarrow +\infty} e^{\frac{t^2}{2}}\)</span></p>
+<p><span class="math display">\[M_{Q_n}(t) \xrightarrow{n \rightarrow +\infty} e^{\frac{t^2}{2}}\]</span></p>
 <p>Que coindide com a função geradora de momentos da Normal Padrão.</p>
 <p><span class="math inline">\(\square\)</span></p>
 <p>Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada no Capítulo 7 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span> ou no Capítulo 6 de <span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>.</p>
@@ -329,16 +327,16 @@ M(t) = E\left(e^{tX}\right) \implies M(0) = 1 \\
 <section id="diferentes-formulações-e-versões-do-tcl" class="level2">
 <h2 class="anchored" data-anchor-id="diferentes-formulações-e-versões-do-tcl">Diferentes formulações e versões do TCL</h2>
 <p>Fazendo <span class="math inline">\(S_n = X_1 + X_2 + ... +X_n\)</span>, <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span> trata o <em>problema central do limite</em> atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:</p>
-<p><span class="math inline">\(\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)\)</span>.</p>
+<p><span class="math display">\[\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)\]</span></p>
 <p>Outras maneiras de representar o TCL são:</p>
-<p><span class="math inline">\(\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)\)</span></p>
-<p><span class="math inline">\(\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)\)</span></p>
+<p><span class="math display">\[\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)\]</span></p>
+<p><span class="math display">\[\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)\]</span></p>
 </section>
 <section id="exemplo-computacional-o-caso-binomial" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-computacional-o-caso-binomial">Exemplo Computacional: O caso Binomial</h2>
 <p>Se <span class="math inline">\(X_i \overset{iid}{\sim} Bernoulli(p)\)</span>, então <span class="math inline">\(S_n = \sum_{i=1}^{n}X_i \sim Binomial(n, p)\)</span>.</p>
 <p>A seguir, apresentamos a distribuição da quantidade:</p>
-<p><span class="math inline">\(\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} = \frac{{S}_n - np}{\sqrt{np(1-p)}} \xrightarrow{D} N(0, 1)\)</span>.</p>
+<p><span class="math display">\[\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} = \frac{{S}_n - np}{\sqrt{np(1-p)}} \xrightarrow{D} N(0, 1)\]</span></p>
 <p>No R:</p>
 <div class="cell">
 <details class="code-fold">

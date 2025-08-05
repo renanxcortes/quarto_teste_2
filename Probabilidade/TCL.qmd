@@ -37,7 +37,7 @@ Podemos reescrever a quantidade da introdução como sendo $\bar{X} - \mu \xrigh
 
 [^1]: Uma discussão sobre este fator de convergência é discutido [aqui](https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt)
 
-Logo, o TCL pode ser descrito por:
+Logo, o TCL pode ser definido por:
 
 $\sqrt{n} \left(\bar{X} - \mu \right) \xrightarrow{n \rightarrow + \infty} N(0, \sigma^{2})$ em distribuição
 
@@ -57,11 +57,11 @@ $$
 \frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{D} N(0, 1)
 $$
 
-Podemos assumir, sem perda de generalidade que $\mu = 0$ e $\sigma = 1$, pois poderíamos fazer a prova definindo uma variável aleatória sendo $Z_i = \frac{X_i- \mu}{\sigma}$, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta fazer a prova para a quantidade:
+Podemos assumir, sem perda de generalidade que $\mu = 0$ e $\sigma = 1$, pois poderíamos fazer a prova definindo uma variável aleatória sendo $Z_i = \frac{X_i- \mu}{\sigma}$, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta provar
 
-$\frac{\sum_{i=1}^n X_i}{\sqrt{n}} \xrightarrow{D} N(0, 1)$
+$$\frac{\sum_{i=1}^n X_i}{\sqrt{n}} \xrightarrow{D} N(0, 1)$$
 
-Para continuar a prova, faremos o uso da função geradora de momentos ($M$) da quantidade acima e avaliando o seu valor quanto $n \rightarrow +\infty$ a fim de identificar qual a distribuição limite obtida.[^2] Ou seja:
+Para isso, faremos o uso da função geradora de momentos ($M$) da quantidade acima e avaliando o seu valor quanto $n \rightarrow +\infty$ a fim de identificar qual a distribuição limite obtida.[^2] Ou seja:
 
 [^2]: Este teorema é um caso particular do [Teorema de Continuidade de Levy](https://en.wikipedia.org/wiki/L%C3%A9vy%27s_continuity_theorem) para funções características. E pode ser melhor detalhado em @curtiss1942note ou [aqui](https://researchers.ms.unimelb.edu.au/~xgge@unimelb/Files/Teaching/Advanced%20Probability%20(Semester%201%202020)/The%20Theory%20of%20Moment%20Generating%20Functions.pdf).
 
@@ -87,13 +87,9 @@ Observe que da maneira como está estruturado $\left( M\left( \frac{t}{\sqrt{n}}
 
 Para tratar essa indefinição, aplicaremos o logaritmo natural ($log$) na expressão e, depois de avaliado o limite, podemos reverter o valor aplicando o exponencial. Logo,
 
-$log\left(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n \right) = n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)$
+$$log\left(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n \right) = n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)$$
 
-Quando aplicamos $n \rightarrow +\infty$ caímos numa indefinição do tipo $+\infty \times 0$, logo vamos reescrever a equação para caírmos numa indefinição do tipo $\frac{0}{0}$ para aplicarmos [l'Hôpital](https://pt.wikipedia.org/wiki/Regra_de_l%27H%C3%B4pital):
-
-$$n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right) = \frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}$$
-
-Como o $n$ é um número inteiro natural e para melhor tratativa algébrica, vamos fazer uma transforção de variável para facilitar o desenvolvimento e poder aplicar a derivada em um número real. Assim,
+Quando aplicamos $n \rightarrow +\infty$ caímos numa indefinição do tipo $+\infty \times 0$, logo vamos reescrever a equação para $n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right) = \frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}$ e, desta maneira, caírmos numa indefinição do tipo $\frac{0}{0}$ para aplicarmos [l'Hôpital](https://pt.wikipedia.org/wiki/Regra_de_l%27H%C3%B4pital). Como o $n$ é um número inteiro natural e para melhor tratativa algébrica, vamos fazer uma transforção de variável para facilitar o desenvolvimento e poder aplicar a derivada em um número real. Assim,
 
 $$
 \lim_{n\to\infty}\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}} \overset{y=\frac{1}{\sqrt{n}}, \ y \in \mathbb{R} }{=} \lim_{y\to 0}\frac{log\left( M\left( yt \right) \right)}{y^2}
@@ -123,7 +119,7 @@ $$
 
 Aplicando o exponencial para reverter o logaritmo aplicado originalmente temos:
 
-$M_{Q_n}(t) \xrightarrow{n \rightarrow +\infty} e^{\frac{t^2}{2}}$
+$$M_{Q_n}(t) \xrightarrow{n \rightarrow +\infty} e^{\frac{t^2}{2}}$$
 
 Que coindide com a função geradora de momentos da Normal Padrão.
 
@@ -135,13 +131,13 @@ Uma discussão mais aprofundada do Teorema Central do Limite pode ser encontrada
 
 Fazendo $S_n = X_1 + X_2 + ... +X_n$, @barryjames2023 trata o *problema central do limite* atavés do estudo da convergência em distribuição das somas parciais normalizadas e formula o TCL como sendo:
 
-$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)$.
+$$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} \xrightarrow{D} N(0, 1)$$
 
 Outras maneiras de representar o TCL são:
 
-$\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)$
+$$\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)$$
 
-$\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)$
+$$\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)$$
 
 ## Exemplo Computacional: O caso Binomial
 
@@ -149,7 +145,7 @@ Se $X_i \overset{iid}{\sim} Bernoulli(p)$, então $S_n = \sum_{i=1}^{n}X_i \sim 
 
 A seguir, apresentamos a distribuição da quantidade:
 
-$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} = \frac{{S}_n - np}{\sqrt{np(1-p)}} \xrightarrow{D} N(0, 1)$.
+$$\frac{{S}_n - E({S}_n)}{\sqrt{Var(S_n)}} = \frac{{S}_n - np}{\sqrt{np(1-p)}} \xrightarrow{D} N(0, 1)$$
 
 No R:
 
