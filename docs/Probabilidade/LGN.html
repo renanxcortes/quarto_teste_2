@@ -259,18 +259,14 @@ window.Quarto = {
 <section id="introdução-e-condições-iniciais" class="level1">
 <h1>Introdução e Condições Iniciais</h1>
 <p>A Lei dos Grandes Números (LGN) é um dos resultados mais famosos da Teoria da Probabilidade.</p>
-<p>Sejam <span class="math inline">\(X_1, X_2, ...\)</span> variáveis aleatórias independentes e identicamente distribuídas (<span class="math inline">\(iid\)</span>) com média e variância existentes e finitas. Isto é:</p>
-<p><span class="math inline">\(-\infty &lt; \mu &lt; +\infty\)</span></p>
-<p><span class="math inline">\(0 &lt; \sigma^2 &lt; +\infty\)</span></p>
-<p>A primeira condição de finitude das médias é necessária para a Lei Forte dos Grandes Números.</p>
-<p>Além disso, defina <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}\)</span>.</p>
+<p>Sejam <span class="math inline">\(X_1, X_2, ...\)</span> variáveis aleatórias independentes e identicamente distribuídas (<span class="math inline">\(iid\)</span>) com média e variância existentes e finitas, isto é <span class="math inline">\(-\infty &lt; \mu &lt; +\infty\)</span> e <span class="math inline">\(0 &lt; \sigma^2 &lt; +\infty\)</span>.</p>
+<p>Além disso, defina <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}\)</span> como sendo a média amostral.</p>
 <section id="lei-forte-dos-grandes-números" class="level2">
 <h2 class="anchored" data-anchor-id="lei-forte-dos-grandes-números">Lei Forte dos Grandes Números</h2>
-<p>A Lei Forte estabelece que:</p>
-<p><span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span> com probabilidade 1.</p>
+<p>A Lei Forte estabelece que a média amostral converge para <span class="math inline">\(\mu\)</span> no infinito com probabilidade 1. Ou seja, <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span> com probabilidade 1.</p>
 <p>Observe que <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span> é um <strong>evento</strong>. Logo, a Lei Forte poderia ser reescrita com uma notação probabilística alternativa:</p>
-<p><span class="math inline">\(P\left(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu \right) = 1\)</span></p>
-<p>Este resultado estabelece que <span class="math inline">\(\bar{X}\)</span> converge <em>quase certamente</em> para <span class="math inline">\(\mu\)</span>. Podemos interpretar esse resultado como sendo <em>à medida que n cresce, no infinito, <span class="math inline">\(\bar{X}\)</span> e <span class="math inline">\(\mu\)</span> serão iguais</em>. Ou seja, é uma convergência pontual do valor de uma variável aleatória para uma constante (a média populacional).</p>
+<p><span class="math display">\[P\left(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu \right) = 1\]</span></p>
+<p>Este resultado estabelece que <span class="math inline">\(\bar{X}\)</span> converge <em>quase certamente</em> para <span class="math inline">\(\mu\)</span>. Podemos interpretar esse resultado como sendo <em>à medida que n cresce, no infinito,</em> <span class="math inline">\(\bar{X}\)</span> e <span class="math inline">\(\mu\)</span> serão iguais. Ou seja, é uma convergência pontual do valor de uma variável aleatória (a média amostral) para uma constante (a média populacional).</p>
 <p>A prova deste teorema implica em provar que o evento acima é um evento de probabilidade 1, o que exige maior formalidade matemática fazendo uso do <a href="https://pt.wikipedia.org/wiki/Lema_de_Borel-Cantelli">Lema de Borel-Cantelli</a>.</p>
 <p><strong>Prova.</strong> Ver Cáp. 5 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
 <p><span class="math inline">\(\square\)</span></p>
@@ -278,27 +274,27 @@ window.Quarto = {
 <section id="lei-fraca-dos-grandes-números" class="level2">
 <h2 class="anchored" data-anchor-id="lei-fraca-dos-grandes-números">Lei Fraca dos Grandes Números</h2>
 <p>A Lei Fraca estabelece que <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>, então:</p>
-<p><span class="math inline">\(P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \xrightarrow{n \rightarrow + \infty} 0\)</span></p>
+<p><span class="math display">\[P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \xrightarrow{n \rightarrow + \infty} 0\]</span></p>
 <p>Este resultado estabelece que <span class="math inline">\(\bar{X}\)</span> converge <em>em probabilidade</em> para <span class="math inline">\(\mu\)</span>.</p>
 <p><strong>Prova.</strong> A prova faz uso da <a href="https://pt.wikipedia.org/wiki/Desigualdade_de_Chebyshev">Desigualdade de Chebyshev</a>:</p>
-<p><span class="math inline">\(P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0\)</span></p>
+<p><span class="math display">\[P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0\]</span></p>
 <p><span class="math inline">\(\square\)</span></p>
 <p>Este resultado ilustra que <span class="math inline">\(\bar{X}\)</span> converge <em>em probabilidade</em> para <span class="math inline">\(\mu\)</span>. Podemos interpretar esse resultado como sendo <em>à medida que n cresce, é extremamente improvável que a diferença entre</em> <span class="math inline">\(\bar{X}\)</span> e <span class="math inline">\(\mu\)</span> seja maior que <span class="math inline">\(\varepsilon\)</span>.</p>
 </section>
 <section id="relação-entre-leis-e-convergências" class="level2">
 <h2 class="anchored" data-anchor-id="relação-entre-leis-e-convergências">Relação entre Leis e Convergências</h2>
 <p>É intuitivo pensar afirmarmos que duas quantidades são <strong>iguais</strong> é mais “forte” do que dizer que essas duas quantidades são “altamente prováveis de <strong>estarem próximas</strong>”. Ora, se uma coisa é igual à outra, isso implica de que elas também são próximas. Tendo em vista que a Lei Forte dos Grandes Números representa a convergência <em>quase certa</em> e a Lei Fraca representa a convergência <em>em probabilidade</em>, temos que se</p>
-<p><span class="math inline">\(Convergência\ Quase\ Certa \implies Convergência\ em\ Probabilidade\)</span></p>
+<p><span class="math display">\[Convergência\ Quase\ Certa \implies Convergência\ em\ Probabilidade\]</span></p>
 <p>então,</p>
-<p><span class="math inline">\(Lei\ Forte \implies Lei\ Fraca\)</span></p>
+<p><span class="math display">\[Lei\ Forte \implies Lei\ Fraca\]</span></p>
 <p>O contrário não vale para nenhuma das duas afirmativas acima.</p>
 </section>
 <section id="exemplo-o-caso-bernoulli" class="level2">
 <h2 class="anchored" data-anchor-id="exemplo-o-caso-bernoulli">Exemplo: O caso Bernoulli</h2>
 <p>Suponha uma sequência independente de lançamentos de uma moeda honesta e a variável aleatória <span class="math inline">\(X_i = 1\)</span> se cara e <span class="math inline">\(X_i = 0\)</span> se coroa. Ou seja,</p>
-<p><span class="math inline">\(X_i \overset{iid}{\sim}Bernoulli(p)\)</span></p>
+<p><span class="math display">\[X_i \overset{iid}{\sim}Bernoulli(p)\]</span></p>
 <p>onde <span class="math inline">\(p = 0,5\)</span>. Então, pela Lei Forte dos Grandes Números:</p>
-<p><span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n} \xrightarrow{n \rightarrow + \infty} p\)</span></p>
+<p><span class="math display">\[\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n} \xrightarrow{n \rightarrow + \infty} p\]</span></p>
 <p>Este resultado mostra que a medida que o jogarmos a moeda infinitas vezes, iremos convergir para um cenário em que metade dos lançamentos serão caras e metade serão coroas. Note que o resultado vale quando <span class="math inline">\(n \rightarrow + \infty\)</span>, ou seja, ele não estabelece nada em uma quantidade finita de lançamentos onde pode existir variabilidade. Por exemplo, mesmo que seja altamente improvável que nos primeiros 100 lançamentos todos os resultados sejam a face “Cara”, não existe nada matematicamente que estabeleça que isso seja impossível. No entanto, no limite do infinito as quantidades iniciais serão “engolidas” pela LGN. Para uma discussão mais aprofundada sobre esse tema recomenda-se uma leitura sobre o <a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy">Gambler’s Fallacy</a>.</p>
 </section>
 <section id="exemplo-computacional" class="level2">

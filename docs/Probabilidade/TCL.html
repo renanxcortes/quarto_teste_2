@@ -262,15 +262,13 @@ window.Quarto = {
 <section id="introdução-e-condições-iniciais" class="level1">
 <h1>Introdução e Condições Iniciais</h1>
 <p>O Teorema Central do Limite (TCL) é um dos resultados mais famosos e mais bonitos da Teoria da Probabilidade.</p>
-<p>Sejam <span class="math inline">\(X_1, X_2, ...\)</span> variáveis aleatórias independentes e identicamente distribuídas (<span class="math inline">\(iid\)</span>) com média e variância existentes e finitas. Isto é:</p>
-<p><span class="math inline">\(-\infty &lt; \mu &lt; +\infty\)</span></p>
-<p><span class="math inline">\(0 &lt; \sigma^2 &lt; +\infty\)</span></p>
-<p>Além disso, defina <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}\)</span>.</p>
+<p>Sejam <span class="math inline">\(X_1, X_2, ...\)</span> variáveis aleatórias independentes e identicamente distribuídas (<span class="math inline">\(iid\)</span>) com média e variância existentes e finitas, isto é <span class="math inline">\(-\infty &lt; \mu &lt; +\infty\)</span> e <span class="math inline">\(0 &lt; \sigma^2 &lt; +\infty\)</span>.</p>
+<p>Além disso, defina <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}\)</span> como sendo a média amostral.</p>
 <p>Pela Lei dos Grandes Números, sabemos que <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span>, mas a qual taxa? Como que é a distribuição dessa quantidade?</p>
 <section id="convergência-em-distribuição" class="level2">
 <h2 class="anchored" data-anchor-id="convergência-em-distribuição">Convergência em Distribuição</h2>
-<p><strong>Definição. </strong> Sejam <span class="math inline">\(X, X_1, X_2, ...\)</span> variáveis aleatórias com, respectivamente, funções de distribuições <span class="math inline">\(F, F_1, F_2, ...\)</span>. Dizemos que <span class="math inline">\(X_n\)</span> <em>converge em distribuição</em> para <span class="math inline">\(X\)</span>, quando <span class="math inline">\(n \rightarrow +\infty\)</span>, se <span class="math inline">\(F_n(x) \rightarrow F(x)\)</span> para todo <span class="math inline">\(x\)</span> ponto de continuidade de <span class="math inline">\(F\)</span>.</p>
-<p><em>Notação: </em> <span class="math inline">\(X_n \xrightarrow{D} X\)</span> ou <span class="math inline">\(X_n \xrightarrow{D} F\)</span>.</p>
+<p><strong>Definição.</strong> Sejam <span class="math inline">\(X, X_1, X_2, ...\)</span> variáveis aleatórias com, respectivamente, funções de distribuições <span class="math inline">\(F, F_1, F_2, ...\)</span>. Dizemos que <span class="math inline">\(X_n\)</span> <em>converge em distribuição</em> para <span class="math inline">\(X\)</span>, quando <span class="math inline">\(n \rightarrow +\infty\)</span>, se <span class="math inline">\(F_n(x) \rightarrow F(x)\)</span> para todo <span class="math inline">\(x\)</span> ponto de continuidade de <span class="math inline">\(F\)</span>.</p>
+<p><em>Notação:</em> <span class="math inline">\(X_n \xrightarrow{D} X\)</span> ou <span class="math inline">\(X_n \xrightarrow{D} F\)</span>.</p>
 </section>
 <section id="teorema-central-do-limite" class="level2">
 <h2 class="anchored" data-anchor-id="teorema-central-do-limite">Teorema Central do Limite</h2>
@@ -285,8 +283,9 @@ window.Quarto = {
 <p>Este teorema é um dos principais motivos pela ampla difusão da distribuição Normal em diversas áreas do conhecimento científico. Tendo em vista que, dadas às devidas condições, a média amostral pode ser aproximada pela distribuição normal padrão, as aplicações desses resultados são diversos.</p>
 <p><strong>Prova.</strong> Faça <span class="math inline">\(S_n = X_1 + X_2 + ... +X_n\)</span> e multiplicando e dividindo por <span class="math inline">\(n\)</span> o termo do <a href="#eq-tcl" class="quarto-xref">Equação&nbsp;1</a> chegamos em</p>
 <p><span class="math display">\[
-\frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\ \text{em distribuição}
-\]</span> Podemos assumir, sem perda de generalidade que <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = 1\)</span>, pois poderíamos fazer a prova definindo uma variável aleatória sendo <span class="math inline">\(Z_i = \frac{X_i- \mu}{\sigma}\)</span>, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta fazer a prova para a quantidade:</p>
+\frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{D} N(0, 1)
+\]</span></p>
+<p>Podemos assumir, sem perda de generalidade que <span class="math inline">\(\mu = 0\)</span> e <span class="math inline">\(\sigma = 1\)</span>, pois poderíamos fazer a prova definindo uma variável aleatória sendo <span class="math inline">\(Z_i = \frac{X_i- \mu}{\sigma}\)</span>, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta fazer a prova para a quantidade:</p>
 <p><span class="math inline">\(\frac{\sum_{i=1}^n X_i}{\sqrt{n}} \xrightarrow{D} N(0, 1)\)</span></p>
 <p>Para continuar a prova, faremos o uso da função geradora de momentos (<span class="math inline">\(M\)</span>) da quantidade acima e avaliando o seu valor quanto <span class="math inline">\(n \rightarrow +\infty\)</span> a fim de identificar qual a distribuição limite obtida.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Ou seja:</p>
 <p><span class="math inline">\(M_{X_n}(x) \xrightarrow{n \rightarrow + \infty} M_{X}(x) \implies X_n \xrightarrow{D} X\)</span></p>
@@ -301,7 +300,7 @@ window.Quarto = {
 <p>Para tratar essa indefinição, aplicaremos o logaritmo natural (<span class="math inline">\(log\)</span>) na expressão e, depois de avaliado o limite, podemos reverter o valor aplicando o exponencial. Logo,</p>
 <p><span class="math inline">\(log\left(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n \right) = n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)\)</span></p>
 <p>Quando aplicamos <span class="math inline">\(n \rightarrow +\infty\)</span> caímos numa indefinição do tipo <span class="math inline">\(+\infty \times 0\)</span>, logo vamos reescrever a equação para caírmos numa indefinição do tipo <span class="math inline">\(\frac{0}{0}\)</span> para aplicarmos <a href="https://pt.wikipedia.org/wiki/Regra_de_l%27H%C3%B4pital">l’Hôpital</a>:</p>
-<p><span class="math inline">\(\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}\)</span></p>
+<p><span class="math display">\[n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right) = \frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}\]</span></p>
 <p>Como o <span class="math inline">\(n\)</span> é um número inteiro natural e para melhor tratativa algébrica, vamos fazer uma transforção de variável para facilitar o desenvolvimento e poder aplicar a derivada em um número real. Assim,</p>
 <p><span class="math display">\[
 \lim_{n\to\infty}\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}} \overset{y=\frac{1}{\sqrt{n}}, \ y \in \mathbb{R} }{=} \lim_{y\to 0}\frac{log\left( M\left( yt \right) \right)}{y^2}

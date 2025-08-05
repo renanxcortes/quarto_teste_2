@@ -19,25 +19,23 @@ format:
 
 O Teorema Central do Limite (TCL) é um dos resultados mais famosos e mais bonitos da Teoria da Probabilidade.
 
-Sejam $X_1, X_2, ...$ variáveis aleatórias independentes e identicamente distribuídas ($iid$) com média e variância existentes e finitas. Isto é:
+Sejam $X_1, X_2, ...$ variáveis aleatórias independentes e identicamente distribuídas ($iid$) com média e variância existentes e finitas, isto é $-\infty < \mu < +\infty$ e $0 < \sigma^2 < +\infty$.
 
-$-\infty < \mu < +\infty$
-
-$0 < \sigma^2 < +\infty$
-
-Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$.
+Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$ como sendo a média amostral.
 
 Pela Lei dos Grandes Números, sabemos que $\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$, mas a qual taxa? Como que é a distribuição dessa quantidade?
 
 ## Convergência em Distribuição
 
-**Definição. ** Sejam $X, X_1, X_2, ...$ variáveis aleatórias com, respectivamente, funções de distribuições $F, F_1, F_2, ...$. Dizemos que $X_n$ *converge em distribuição* para $X$, quando $n \rightarrow +\infty$, se $F_n(x) \rightarrow F(x)$ para todo $x$ ponto de continuidade de $F$.
+**Definição.** Sejam $X, X_1, X_2, ...$ variáveis aleatórias com, respectivamente, funções de distribuições $F, F_1, F_2, ...$. Dizemos que $X_n$ *converge em distribuição* para $X$, quando $n \rightarrow +\infty$, se $F_n(x) \rightarrow F(x)$ para todo $x$ ponto de continuidade de $F$.
 
-*Notação: * $X_n \xrightarrow{D} X$ ou $X_n \xrightarrow{D} F$.
+*Notação:* $X_n \xrightarrow{D} X$ ou $X_n \xrightarrow{D} F$.
 
 ## Teorema Central do Limite
 
-Podemos reescrever a quantidade da introdução como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não "exploda" (ou "degenere") para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por $n$ elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de $\frac{1}{2}$, ou seja, $\sqrt{n}$.^[Uma discussão sobre este fator de convergência é discutido [aqui](https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt)] 
+Podemos reescrever a quantidade da introdução como sendo $\bar{X} - \mu \xrightarrow{n \rightarrow + \infty} 0$. Assim, uma das maneiras de buscar entender a distribuição de uma quantidade quando ela vai zero é multiplicá-la por uma quantidade que vai para infinito de uma maneira que seu valor de convergência não "exploda" (ou "degenere") para o infinito e nem para zero. De fato se multiplicarmos a quantidade acima por $n$ elevando-o à um exponencial buscando controlar as taxas de convergência. Neste caso, o exponencial é o valor de $\frac{1}{2}$, ou seja, $\sqrt{n}$.[^1]
+
+[^1]: Uma discussão sobre este fator de convergência é discutido [aqui](https://stats.stackexchange.com/questions/36113/where-does-sqrtn-come-from-in-central-limit-theorem-clt)
 
 Logo, o TCL pode ser descrito por:
 
@@ -56,13 +54,16 @@ Este teorema é um dos principais motivos pela ampla difusão da distribuição 
 **Prova.** Faça $S_n = X_1 + X_2 + ... +X_n$ e multiplicando e dividindo por $n$ o termo do @eq-tcl chegamos em
 
 $$
-\frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{n \rightarrow + \infty} N(0, 1)\ \text{em distribuição}
+\frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{D} N(0, 1)
 $$
+
 Podemos assumir, sem perda de generalidade que $\mu = 0$ e $\sigma = 1$, pois poderíamos fazer a prova definindo uma variável aleatória sendo $Z_i = \frac{X_i- \mu}{\sigma}$, onde esta variável teria média 0 e desvio padrão 1. Sendo assim, basta fazer a prova para a quantidade:
 
 $\frac{\sum_{i=1}^n X_i}{\sqrt{n}} \xrightarrow{D} N(0, 1)$
 
-Para continuar a prova, faremos o uso da função geradora de momentos ($M$) da quantidade acima e avaliando o seu valor quanto $n \rightarrow +\infty$ a fim de identificar qual a distribuição limite obtida.^[Este teorema é um caso particular do [Teorema de Continuidade de Levy](https://en.wikipedia.org/wiki/L%C3%A9vy%27s_continuity_theorem) para funções características. E pode ser melhor detalhado em @curtiss1942note ou [aqui](https://researchers.ms.unimelb.edu.au/~xgge@unimelb/Files/Teaching/Advanced%20Probability%20(Semester%201%202020)/The%20Theory%20of%20Moment%20Generating%20Functions.pdf).] Ou seja:
+Para continuar a prova, faremos o uso da função geradora de momentos ($M$) da quantidade acima e avaliando o seu valor quanto $n \rightarrow +\infty$ a fim de identificar qual a distribuição limite obtida.[^2] Ou seja:
+
+[^2]: Este teorema é um caso particular do [Teorema de Continuidade de Levy](https://en.wikipedia.org/wiki/L%C3%A9vy%27s_continuity_theorem) para funções características. E pode ser melhor detalhado em @curtiss1942note ou [aqui](https://researchers.ms.unimelb.edu.au/~xgge@unimelb/Files/Teaching/Advanced%20Probability%20(Semester%201%202020)/The%20Theory%20of%20Moment%20Generating%20Functions.pdf).
 
 $M_{X_n}(x) \xrightarrow{n \rightarrow + \infty} M_{X}(x) \implies X_n \xrightarrow{D} X$
 
@@ -72,14 +73,15 @@ $M_{Q_n}(t) = E\left( e^{t\left(\frac{\sum_{i=1}^n X_i}{\sqrt{n}}\right)} \right
 
 Como todos os $X_i$ são identicamente distribuídos, podemos simplificar a expressão para:
 
-
 $M_{Q_n}(t) = \prod_{i=1}^{n}E\left( e^{\frac{tX_i}{\sqrt{n}}} \right) = E\left( e^{\frac{tX_1}{\sqrt{n}}} \right) \times E\left( e^{\frac{tX_2}{\sqrt{n}}} \right) \times \dots \times E\left( e^{\frac{tX_n}{\sqrt{n}}} \right) = \left( E\left( e^{\frac{tX_i}{\sqrt{n}}} \right) \right)^n, \ \forall i$
 
 No entanto, note acima que $E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)$ é exatamente a função geradora de momentos aplicada no ponto $\frac{t}{\sqrt{n}}$. Logo:
 
 $M_{Q_n}(t) = \left( M_{X_i}\left( \frac{t}{\sqrt{n}} \right) \right)^n, \ \forall i$
 
-Assim, por simplificação de notação, vamos suprimir o $X_i$^[@magalhaes2006probabilidade também realiza esta simplificação de notação em uma prova similar do TCL fazendo uso da [Função Característica](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_caracter%C3%ADstica_(probabilidade)).] nos passos seguintes e vamos avaliar esta expressão o que acontece quando $n \rightarrow +\infty$.
+Assim, por simplificação de notação, vamos suprimir o $X_i$[^3] nos passos seguintes e vamos avaliar esta expressão o que acontece quando $n \rightarrow +\infty$.
+
+[^3]: @magalhaes2006probabilidade também realiza esta simplificação de notação em uma prova similar do TCL fazendo uso da [Função Característica](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_caracter%C3%ADstica_(probabilidade)).
 
 Observe que da maneira como está estruturado $\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n$ converge para uma indefinição do tipo $1^\infty$, pois $\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n = \left( E\left( e^{\frac{tX}{\sqrt{n}}} \right) \right)^n \rightarrow \left( E\left( e^0 \right) \right)^\infty$.
 
@@ -89,7 +91,7 @@ $log\left(\left( M\left( \frac{t}{\sqrt{n}} \right) \right)^n \right) = n\times 
 
 Quando aplicamos $n \rightarrow +\infty$ caímos numa indefinição do tipo $+\infty \times 0$, logo vamos reescrever a equação para caírmos numa indefinição do tipo $\frac{0}{0}$ para aplicarmos [l'Hôpital](https://pt.wikipedia.org/wiki/Regra_de_l%27H%C3%B4pital):
 
-$\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}$
+$$n\times log\left( M\left( \frac{t}{\sqrt{n}} \right) \right) = \frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}}$$
 
 Como o $n$ é um número inteiro natural e para melhor tratativa algébrica, vamos fazer uma transforção de variável para facilitar o desenvolvimento e poder aplicar a derivada em um número real. Assim,
 
@@ -97,7 +99,9 @@ $$
 \lim_{n\to\infty}\frac{log\left( M\left( \frac{t}{\sqrt{n}} \right) \right)}{\frac{1}{n}} \overset{y=\frac{1}{\sqrt{n}}, \ y \in \mathbb{R} }{=} \lim_{y\to 0}\frac{log\left( M\left( yt \right) \right)}{y^2}
 $$
 
-Que é uma indefinição do tipo $\frac{0}{0}$. Logo, aplicando l'Hôpital:^[Lembrando que $\frac{d\log(f(x))}{dx} = \frac{1}{f(x)} \cdot \frac{df(x)}{dx} = \frac{f'(x)}{f(x)}$]
+Que é uma indefinição do tipo $\frac{0}{0}$. Logo, aplicando l'Hôpital:[^4]
+
+[^4]: Lembrando que $\frac{d\log(f(x))}{dx} = \frac{1}{f(x)} \cdot \frac{df(x)}{dx} = \frac{f'(x)}{f(x)}$
 
 $$
 \lim_{y\to 0}\frac{tM'(yt)}{M(yt)}\frac{1}{2y}
@@ -111,8 +115,7 @@ M(t) = E\left(e^{tX}\right) \implies M(0) = 1 \\
 \mu = 0 \implies M'(0) = 0 \\
 \sigma^2 = 1 \implies M''(0) = 1
 \end{aligned}
-$$
-Logo, simplificando os limites e aplicando l'Hôpital novamente temos:
+$$ Logo, simplificando os limites e aplicando l'Hôpital novamente temos:
 
 $$
 \lim_{y\to 0}\frac{tM'(yt)}{M(yt)}\frac{1}{2y} \overset{\lim_{y\to 0}{M(yt)}=1}{=} \lim_{y\to 0}\frac{tM'(yt)}{2y} = \lim_{y\to 0}\frac{t^2M''(yt)}{2} = \frac{t^2}{2} \lim_{y\to 0}M''(yt) = \frac{t^2}{2}
@@ -139,7 +142,6 @@ Outras maneiras de representar o TCL são:
 $\frac{\bar{X} - E(\bar{X})}{\sqrt{Var(\bar{X})}} \xrightarrow{D} N(0, 1)$
 
 $\sqrt{n} \bar{X} \xrightarrow{D} N(\mu, \sigma^2)$
-
 
 ## Exemplo Computacional: O caso Binomial
 
@@ -233,8 +235,6 @@ plt.tight_layout()
 plt.show()
 ```
 
-
-
 ## Usando o TCL pra aproximar probabilidades da Binomial pela Normal
 
 Esta aproximação, também conhecida como [Teorema de De Moivre–Laplace](https://en.wikipedia.org/wiki/De_Moivre%E2%80%93Laplace_theorem), ilustra como o TCL pode ser usado para aproximar a distribuição discreta Binomial pela distribuição contínua Normal.
@@ -255,7 +255,7 @@ $P(X = a) = P(a \le X \le a) \neq \Phi(a) - \Phi(a) = 0, \ \forall a$
 
 Logo, podemos melhorar essa aproximação de probabilidade através de uma especificação de um intervalo contínuo no entorno do valor $a$:
 
-$P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)$ 
+$P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)$
 
 # Links Úteis
 

@@ -18,27 +18,19 @@ format:
 
 A Lei dos Grandes Números (LGN) é um dos resultados mais famosos da Teoria da Probabilidade.
 
-Sejam $X_1, X_2, ...$ variáveis aleatórias independentes e identicamente distribuídas ($iid$) com média e variância existentes e finitas. Isto é:
+Sejam $X_1, X_2, ...$ variáveis aleatórias independentes e identicamente distribuídas ($iid$) com média e variância existentes e finitas, isto é $-\infty < \mu < +\infty$ e $0 < \sigma^2 < +\infty$.
 
-$-\infty < \mu < +\infty$
-
-$0 < \sigma^2 < +\infty$
-
-A primeira condição de finitude das médias é necessária para a Lei Forte dos Grandes Números.
-
-Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$.
+Além disso, defina $\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}$ como sendo a média amostral.
 
 ## Lei Forte dos Grandes Números
 
-A Lei Forte estabelece que:
-
-$\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$ com probabilidade 1.
+A Lei Forte estabelece que a média amostral converge para $\mu$ no infinito com probabilidade 1. Ou seja, $\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$ com probabilidade 1.
 
 Observe que $\bar{X} \xrightarrow{n \rightarrow + \infty} \mu$ é um **evento**. Logo, a Lei Forte poderia ser reescrita com uma notação probabilística alternativa:
 
-$P\left(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu \right) = 1$
+$$P\left(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu \right) = 1$$
 
-Este resultado estabelece que $\bar{X}$ converge *quase certamente* para $\mu$. Podemos interpretar esse resultado como sendo *à medida que n cresce, no infinito, $\bar{X}$ e $\mu$ serão iguais*. Ou seja, é uma convergência pontual do valor de uma variável aleatória para uma constante (a média populacional).
+Este resultado estabelece que $\bar{X}$ converge *quase certamente* para $\mu$. Podemos interpretar esse resultado como sendo *à medida que n cresce, no infinito,* $\bar{X}$ e $\mu$ serão iguais. Ou seja, é uma convergência pontual do valor de uma variável aleatória (a média amostral) para uma constante (a média populacional).
 
 A prova deste teorema implica em provar que o evento acima é um evento de probabilidade 1, o que exige maior formalidade matemática fazendo uso do [Lema de Borel-Cantelli](https://pt.wikipedia.org/wiki/Lema_de_Borel-Cantelli).
 
@@ -50,13 +42,13 @@ $\square$
 
 A Lei Fraca estabelece que $\forall \varepsilon > 0$, então:
 
-$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \xrightarrow{n \rightarrow + \infty} 0$
+$$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \xrightarrow{n \rightarrow + \infty} 0$$
 
 Este resultado estabelece que $\bar{X}$ converge *em probabilidade* para $\mu$.
 
 **Prova.** A prova faz uso da [Desigualdade de Chebyshev](https://pt.wikipedia.org/wiki/Desigualdade_de_Chebyshev):
 
-$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0$
+$$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0$$
 
 $\square$
 
@@ -66,12 +58,11 @@ Este resultado ilustra que $\bar{X}$ converge *em probabilidade* para $\mu$. Pod
 
 É intuitivo pensar afirmarmos que duas quantidades são **iguais** é mais "forte" do que dizer que essas duas quantidades são "altamente prováveis de **estarem próximas**". Ora, se uma coisa é igual à outra, isso implica de que elas também são próximas. Tendo em vista que a Lei Forte dos Grandes Números representa a convergência *quase certa* e a Lei Fraca representa a convergência *em probabilidade*, temos que se
 
-
-$Convergência\ Quase\ Certa \implies Convergência\ em\ Probabilidade$
+$$Convergência\ Quase\ Certa \implies Convergência\ em\ Probabilidade$$
 
 então,
 
-$Lei\ Forte \implies Lei\ Fraca$
+$$Lei\ Forte \implies Lei\ Fraca$$
 
 O contrário não vale para nenhuma das duas afirmativas acima.
 
@@ -79,11 +70,11 @@ O contrário não vale para nenhuma das duas afirmativas acima.
 
 Suponha uma sequência independente de lançamentos de uma moeda honesta e a variável aleatória $X_i = 1$ se cara e $X_i = 0$ se coroa. Ou seja,
 
-$X_i \overset{iid}{\sim}Bernoulli(p)$
+$$X_i \overset{iid}{\sim}Bernoulli(p)$$
 
 onde $p = 0,5$. Então, pela Lei Forte dos Grandes Números:
 
-$\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n} \xrightarrow{n \rightarrow + \infty} p$
+$$\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n} \xrightarrow{n \rightarrow + \infty} p$$
 
 Este resultado mostra que a medida que o jogarmos a moeda infinitas vezes, iremos convergir para um cenário em que metade dos lançamentos serão caras e metade serão coroas. Note que o resultado vale quando $n \rightarrow + \infty$, ou seja, ele não estabelece nada em uma quantidade finita de lançamentos onde pode existir variabilidade. Por exemplo, mesmo que seja altamente improvável que nos primeiros 100 lançamentos todos os resultados sejam a face "Cara", não existe nada matematicamente que estabeleça que isso seja impossível. No entanto, no limite do infinito as quantidades iniciais serão "engolidas" pela LGN. Para uma discussão mais aprofundada sobre esse tema recomenda-se uma leitura sobre o [Gambler's Fallacy](https://en.wikipedia.org/wiki/Gambler%27s_fallacy).
 
@@ -121,7 +112,6 @@ ggplot(dados, aes(x = n, y = proporcao_cara)) +
 
 ```
 
-
 No Python:
 
 ```{python}
@@ -149,7 +139,6 @@ plt.legend()
 plt.grid()
 plt.show()
 ```
-
 
 # Links Úteis
 
