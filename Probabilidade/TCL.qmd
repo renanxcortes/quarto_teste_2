@@ -79,7 +79,7 @@ No entanto, note acima que $E\left( e^{\frac{tX_i}{\sqrt{n}}} \right)$ é exatam
 
 $M_{Q_n}(t) = \left( M_{X_i}\left( \frac{t}{\sqrt{n}} \right) \right)^n, \ \forall i$
 
-Assim, por simplificação de notação, vamos suprimir o $X_i$[^3] nos passos seguintes e vamos avaliar esta expressão o que acontece quando $n \rightarrow +\infty$.
+Por simplificação de notação, vamos suprimir o $X_i$[^3] nos passos seguintes e vamos avaliar esta expressão quando $n \rightarrow +\infty$.
 
 [^3]: @magalhaes2006probabilidade também realiza esta simplificação de notação em uma prova similar do TCL fazendo uso da [Função Característica](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_caracter%C3%ADstica_(probabilidade)).
 
@@ -247,11 +247,11 @@ Esta expressão representa a diferença das distribuição acumuladas da Normal 
 
 Observe que esta aproximação se mostra útil, no entanto temos que ter um cuidado adicional ao aproximarmos distribuições contínuas de discretas para evitarmos conclusões equivocadas. Por exemplo, suponha que gostaríamos de usar esta aproximação para calcular a probabilidade de a variável assumir um ponto específico $a$, então podemos concluir, **erroneamente**, que:
 
-$P(X = a) = P(a \le X \le a) \neq \Phi(a) - \Phi(a) = 0, \ \forall a$
+$$P(X = a) = P(a \le X \le a) \neq \Phi(a) - \Phi(a) = 0, \ \forall a$$
 
 Logo, podemos melhorar essa aproximação de probabilidade através de uma especificação de um intervalo contínuo no entorno do valor $a$:
 
-$P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)$
+$$P(X=a) \overset{a \ é \ inteiro!}{=} P\left( a - \frac{1}{2} \lt X \lt a + \frac{1}{2} \right) \approx \Phi\left( a - \frac{1}{2} \right) - \Phi\left( a + \frac{1}{2} \right)$$
 
 # Links Úteis
 

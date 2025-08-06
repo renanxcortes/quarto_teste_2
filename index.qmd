@@ -29,7 +29,7 @@ Este é um website baseado no [Quarto](https://quarto.org/docs/websites) da empr
 
 O código para geração deste site por ser acessado [neste link](https://github.com/renanxcortes/teaching).
 
-Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate. Especificamente, o Quarto cria um ambiente virtual temporário chamado `r-reticulate`. Ou seja, as bibliotecas usadas durantes a geração do site serão as bibliotecas instaladas neste ambiante. e ma discussão por ser vista [aqui](https://stackoverflow.com/questions/76745347/how-to-make-quarto-use-the-same-python-environment-that-was-specified-in-rstudio).
+Para rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate. Especificamente, o Quarto cria um ambiente virtual temporário chamado `r-reticulate`. Ou seja, [as bibliotecas usadas durante a geração do site serão as bibliotecas instaladas neste ambiente](https://stackoverflow.com/questions/76745347/how-to-make-quarto-use-the-same-python-environment-that-was-specified-in-rstudio).
 
 Exemplo de instalação de biblioteca do Python usando o `reticulate`:
 

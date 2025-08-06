@@ -52,7 +52,7 @@ $$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des
 
 $\square$
 
-Este resultado ilustra que $\bar{X}$ converge *em probabilidade* para $\mu$. Podemos interpretar esse resultado como sendo *à medida que n cresce, é extremamente improvável que a diferença entre* $\bar{X}$ e $\mu$ seja maior que $\varepsilon$.
+Este resultado ilustra que $\bar{X}$ converge *em probabilidade* para $\mu$. Podemos interpretar esse resultado como sendo *à medida que n cresce, é extremamente improvável que a diferença entre* $\bar{X}$ *e* $\mu$ *seja maior que* $\varepsilon$.
 
 ## Relação entre Leis e Convergências
 
@@ -76,7 +76,7 @@ onde $p = 0,5$. Então, pela Lei Forte dos Grandes Números:
 
 $$\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n} \xrightarrow{n \rightarrow + \infty} p$$
 
-Este resultado mostra que a medida que o jogarmos a moeda infinitas vezes, iremos convergir para um cenário em que metade dos lançamentos serão caras e metade serão coroas. Note que o resultado vale quando $n \rightarrow + \infty$, ou seja, ele não estabelece nada em uma quantidade finita de lançamentos onde pode existir variabilidade. Por exemplo, mesmo que seja altamente improvável que nos primeiros 100 lançamentos todos os resultados sejam a face "Cara", não existe nada matematicamente que estabeleça que isso seja impossível. No entanto, no limite do infinito as quantidades iniciais serão "engolidas" pela LGN. Para uma discussão mais aprofundada sobre esse tema recomenda-se uma leitura sobre o [Gambler's Fallacy](https://en.wikipedia.org/wiki/Gambler%27s_fallacy).
+Este resultado mostra que a medida que ao jogarmos a moeda infinitas vezes, iremos convergir para um cenário em que metade dos lançamentos serão caras e metade serão coroas. Note que o resultado vale quando $n \rightarrow + \infty$, ou seja, ele não estabelece nada em uma quantidade finita de lançamentos onde pode existir variabilidade. Por exemplo, mesmo que seja altamente improvável que nos primeiros 100 lançamentos todos os resultados sejam a face "Cara", não existe nada matematicamente que estabeleça que isso seja impossível. No entanto, no limite do infinito as quantidades iniciais serão "engolidas" pela LGN. Para uma discussão mais aprofundada sobre esse tema recomenda-se uma leitura sobre o [Gambler's Fallacy](https://en.wikipedia.org/wiki/Gambler%27s_fallacy).
 
 ## Exemplo Computacional
 
