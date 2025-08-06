@@ -21,7 +21,7 @@ website:
     style: "docked"
     search: true
     contents:
-      - section: "Sobre"
+      - text: "Sobre"
         href: index.qmd
       - section: "Probabilidade"
         contents:
