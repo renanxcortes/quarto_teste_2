@@ -52,7 +52,7 @@ O TCL retrata um dos teoremas mais lindos de toda a probabilidade tendo em vista
 
 Este teorema é um dos principais motivos pela ampla difusão da distribuição Normal em diversas áreas do conhecimento científico. Tendo em vista que, dadas às devidas condições, a média amostral pode ser aproximada pela distribuição normal padrão, as aplicações desses resultados são diversos.
 
-**Prova.** Faça $S_n = X_1 + X_2 + ... +X_n$ e multiplicando e dividindo por $n$ o termo do @eq-tcl chegamos em
+**Prova.** Faça $S_n = X_1 + X_2 + ... +X_n$ e multiplicando e dividindo por $n$ o termo da @eq-tcl chegamos em
 
 $$
 \frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{D} N(0, 1)

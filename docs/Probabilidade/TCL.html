@@ -206,7 +206,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Probabilidade/TCL.html">Teorema Central do Limite</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Probabilidade/LGN.html">Grandes Amostras</a></li><li class="breadcrumb-item"><a href="../Probabilidade/TCL.html">Teorema Central do Limite</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -226,18 +226,29 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Grandes Amostras</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Probabilidade/LGN.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lei dos Grandes Números</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Probabilidade/TCL.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Teorema Central do Limite</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -266,7 +277,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Probabilidade/LGN.html">Grandes Amostras</a></li><li class="breadcrumb-item"><a href="../Probabilidade/TCL.html">Teorema Central do Limite</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Teorema Central do Limite</h1>
 </div>
@@ -307,7 +318,7 @@ window.Quarto = {
 \tag{1}\]</span></span></p>
 <p>O TCL retrata um dos teoremas mais lindos de toda a probabilidade tendo em vista que com poucas condições iniciais (neste caso, média e variância finitas) conseguimos provar que a média amostral <span class="math inline">\(\bar{X}\)</span> padronizada converge em distribuição para a distribuição normal padrão. Observe que o teorema não faz nenhuma alusão ao tipo de variável aleatória, podendo ser discreto ou contínuo, e nem sobre o suporte da distribuição, podendo ser positivo, negativo ou ambos.</p>
 <p>Este teorema é um dos principais motivos pela ampla difusão da distribuição Normal em diversas áreas do conhecimento científico. Tendo em vista que, dadas às devidas condições, a média amostral pode ser aproximada pela distribuição normal padrão, as aplicações desses resultados são diversos.</p>
-<p><strong>Prova.</strong> Faça <span class="math inline">\(S_n = X_1 + X_2 + ... +X_n\)</span> e multiplicando e dividindo por <span class="math inline">\(n\)</span> o termo do <a href="#eq-tcl" class="quarto-xref">Equação&nbsp;1</a> chegamos em</p>
+<p><strong>Prova.</strong> Faça <span class="math inline">\(S_n = X_1 + X_2 + ... +X_n\)</span> e multiplicando e dividindo por <span class="math inline">\(n\)</span> o termo da <a href="#eq-tcl" class="quarto-xref">Equação&nbsp;1</a> chegamos em</p>
 <p><span class="math display">\[
 \frac{1}{\sqrt{n}}\left(\frac{S_n - n\mu}{\sigma} \right) = \frac{1}{\sqrt{n}}\left(\frac{\sum_{i=1}^nX_i- n\mu}{\sigma} \right) \overset{\text{Expandindo o somatório}}{=} \frac{1}{\sqrt{n}}\sum_{i=1}^n\left(\frac{X_i- \mu}{\sigma} \right) \xrightarrow{D} N(0, 1)
 \]</span></p>
