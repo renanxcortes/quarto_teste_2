@@ -1,6 +1,7 @@
 ---
 title: "Lei dos Grandes Números"
 lang: pt # Equações ficarem referenciadas em Português
+sidebar: probabilidades
 
 toc: true
 toc-title: "Nesta página"

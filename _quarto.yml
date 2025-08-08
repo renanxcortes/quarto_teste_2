@@ -13,7 +13,8 @@ project:
 #         menu:
 #           - Probabilidade/LGN.qmd
 #           - Probabilidade/TCL.qmd 
-
+# 
+# 
 # Layout vertical (contents e sections)
 website:
   title: "Teaching"
@@ -26,21 +27,31 @@ website:
     left:
       - text: "Sobre"
         href: index.qmd
-      - sidebar:discilinas
-      
+      - text: "Temas"
+        menu:
+          - sidebar:probabilidades
+          - sidebar:multivariada
+
   sidebar:
-    - id: discilinas
-      title: "Temas"
+    - id: probabilidades
+      title: "Probabilidade"
       collapse-level: 2
       style: "docked"
       search: true
       contents:
-        #- text: "Sobre"
-        #  href: index.qmd
-        - section: "Probabilidade"
-          contents:
-            - Probabilidade/LGN.qmd
-            - Probabilidade/TCL.qmd
+        - Probabilidade/LGN.qmd
+        - Probabilidade/TCL.qmd
+  
+    - id: multivariada
+      title: "Análise Multivariada"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        - Multivariada/Componentes_Principais.qmd
+        - Multivariada/Cluster.qmd
+
+
 
 format:
   html:

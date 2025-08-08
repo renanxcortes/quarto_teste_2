@@ -1,6 +1,7 @@
 ---
 title: "Teorema Central do Limite"
 lang: pt # Equações ficarem referenciadas em Português
+sidebar: probabilidades
 
 toc: true
 toc-title: "Nesta página"
