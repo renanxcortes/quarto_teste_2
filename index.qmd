@@ -1,5 +1,6 @@
 ---
-title: "Apresentação"
+title: "Sobre"
+lang: pt # Equações ficarem referenciadas em Português
 
 execute: 
   warning: false

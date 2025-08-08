@@ -1,8 +1,11 @@
 ---
 title: "Lei dos Grandes Números"
+lang: pt # Equações ficarem referenciadas em Português
 
 toc: true
 toc-title: "Nesta página"
+#toc-location: right-body
+toc-location: right
 
 execute: 
   warning: false
@@ -48,7 +51,12 @@ Este resultado estabelece que $\bar{X}$ converge *em probabilidade* para $\mu$.
 
 **Prova.** A prova faz uso da [Desigualdade de Chebyshev](https://pt.wikipedia.org/wiki/Desigualdade_de_Chebyshev):
 
-$$P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0$$
+$$
+\begin{align*}
+P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \\ 
+= \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0
+\end{align*}
+$$
 
 $\square$
 

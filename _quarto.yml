@@ -16,17 +16,31 @@ project:
 
 # Layout vertical (contents e sections)
 website:
-  sidebar:
-    collapse-level: 1
-    style: "docked"
+  title: "Teaching"
+  repo-url: https://github.com/renanxcortes/teaching
+  repo-actions: [edit, source, issue]
+  reader-mode: true
+  navbar:
+    background: primary
     search: true
-    contents:
+    left:
       - text: "Sobre"
         href: index.qmd
-      - section: "Probabilidade"
-        contents:
-          - Probabilidade/LGN.qmd
-          - Probabilidade/TCL.qmd
+      - sidebar:discilinas
+      
+  sidebar:
+    - id: discilinas
+      title: "Disciplinas"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        #- text: "Sobre"
+        #  href: index.qmd
+        - section: "Probabilidade"
+          contents:
+            - Probabilidade/LGN.qmd
+            - Probabilidade/TCL.qmd
 
 format:
   html:
