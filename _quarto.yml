@@ -29,18 +29,20 @@ website:
         href: index.qmd
       - text: "Temas"
         menu:
-          - sidebar:probabilidades
+          - sidebar:probabilidade
           - sidebar:multivariada
 
   sidebar:
-    - id: probabilidades
+    - id: probabilidade
       title: "Probabilidade"
       collapse-level: 2
       style: "docked"
       search: true
       contents:
-        - Probabilidade/LGN.qmd
-        - Probabilidade/TCL.qmd
+        - section: "Grandes Amostras"
+          contents:
+            - Probabilidade/LGN.qmd
+            - Probabilidade/TCL.qmd
   
     - id: multivariada
       title: "Análise Multivariada"
@@ -48,8 +50,10 @@ website:
       style: "docked"
       search: true
       contents:
-        - Multivariada/Componentes_Principais.qmd
-        - Multivariada/Cluster.qmd
+        - section: "Principais Tópicos"
+          contents:
+            - Multivariada/Componentes_Principais.qmd
+            - Multivariada/Cluster.qmd
 
 
 
