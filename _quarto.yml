@@ -30,7 +30,7 @@ website:
       
   sidebar:
     - id: discilinas
-      title: "Disciplinas"
+      title: "Temas"
       collapse-level: 2
       style: "docked"
       search: true
