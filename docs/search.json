@@ -230,7 +230,7 @@
     "href": "Multivariada/Componentes_Principais.html",
     "title": "Componentes Principais",
     "section": "",
-    "text": "Introdução\nComponentes Principais",
+    "text": "\\[\n\\newcommand{\\bs}[1]{\\boldsymbol{#1}}\n\\]",
     "crumbs": [
       "Principais Tópicos",
       "Componentes Principais"
@@ -344,5 +344,16 @@
     "title": "Sobre",
     "section": "",
     "text": "Este é um Website do\nConstante Evolução\nConceitos Gerais de Probabilidade, Estatística e afins\nSinta-se livre para sugerir melhorias abrindo uma issue neste link\nEste é um website baseado no Quarto da empresa Posit.\n\nLinks Úteis\nSite oficial do Quarto\nTemplates úteis do prof. Gang He\nSite do prof. André Zibetti\n\n\nConsiderações de Desenvolvimento do Site\nO código para geração deste site por ser acessado neste link.\nPara rodar códigos em Python, é necessário instalar as bibliotecas usando o reticulate. Especificamente, o Quarto cria um ambiente virtual temporário chamado r-reticulate. Ou seja, as bibliotecas usadas durante a geração do site serão as bibliotecas instaladas neste ambiente.\nExemplo de instalação de biblioteca do Python usando o reticulate:\nreticulate::py_install(\"matplotlib\")\nreticulate::py_install(\"scipy\")\nAlém disso, cuidado com o gerenciamento das engines no momento de compilar o website. Segundo a documentação do Quarto, é importante sabermos as diferentes distinções de engine e suas coexistências conforme a seguir:\nEngine Conflicts:\n\nKnitr vs. Jupyter: If you explicitly set the engine to jupyter in your YAML, R code chunks will not be executed, and only Python (or the kernel’s language) will run. For mixed R and Python, engine: knitr is typically used, relying on reticulate for Python execution."
+  },
+  {
+    "objectID": "Multivariada/Componentes_Principais.html#footnotes",
+    "href": "Multivariada/Componentes_Principais.html#footnotes",
+    "title": "Componentes Principais",
+    "section": "Notas de rodapé",
+    "text": "Notas de rodapé\n\n\nJohnson e Wichern (2007) chama essa quantidade de “vetor aleatório”. No entanto, imagino que pensar como sendo uma base de dados com “p” colunas mais intuitivo.↩︎",
+    "crumbs": [
+      "Principais Tópicos",
+      "Componentes Principais"
+    ]
   }
 ]

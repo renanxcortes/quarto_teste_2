@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -67,6 +87,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -202,14 +251,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\]</span></p>
+</div>
 <section id="introdução" class="level1">
 <h1>Introdução</h1>
-<p>Componentes Principais</p>
+<p>Segundo <span class="citation" data-cites="johnson2007applied">Johnson e Wichern (<a href="#ref-johnson2007applied" role="doc-biblioref">2007</a>)</span>, a análise de componentes principais é designada para explicar a estrutura de variância-covariância de um conjunto de variáveis através de uma <em>pequena quantidade de combinações lineares</em> destas variáveis. Seus objetivos principais são:</p>
+<ul>
+<li>Redução de dados;</li>
+<li>Interpretação.</li>
+</ul>
+<p>É importante destacar que a análise de componentes principais depende somente da matriz de covariância <span class="math inline">\(\bs{\Sigma}\)</span> (ou correlação <span class="math inline">\(\bs{\rho}\)</span>). Ou seja, ela não faz nenhuma suposição da distribuição dos dados dos <span class="math inline">\(X_i\)</span>’s como, por exemplo, normalidade multivariada.</p>
+<section id="formulação" class="level4">
+<h4 class="anchored" data-anchor-id="formulação">Formulação</h4>
+<p>Seja <span class="math inline">\(X_1, X_2, ..., X_p\)</span> variáveis aleatórias e seja <span class="math inline">\(\bs{X'} = [X_1, X_2, ..., X_p]\)</span> toda a sua base de dados<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> ter uma matriz de covariância <span class="math inline">\(\bs{\Sigma}\)</span> com autovalores <span class="math inline">\(\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_p \ge 0\)</span>. Considere a combinação linear</p>
+<p><span class="math display">\[
+\begin{align*}
+Y_1 = \bs{a_1'X} &amp;= a_{11}X_1 + a_{12}X_2 + ... +  a_{1p}X_p \\
+Y_2 = \bs{a_2'X} &amp;= a_{21}X_1 + a_{22}X_2 + ... +  a_{2p}X_p \\
+&amp;\;\;\vdots \notag \\
+Y_p = \bs{a_p'X} &amp;= a_{p1}X_1 + a_{p2}X_2 + ... +  a_{pp}X_p
+\end{align*}
+\]</span></p>
+<p>Observe que <span class="math inline">\(Y_i\)</span>’s são novas variáveis criadas a partir das variáveis <span class="math inline">\(X_i\)</span>’s originais. Além disso, os <span class="math inline">\(Y_i\)</span>’s <strong>não são correlacionados entre si</strong>.</p>
+<p>A análise de componentes principais nada mais é do que uma aplicação prática da <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Decomposição Espectral</a> da matriz de covariância/correlação de uma base de dados.</p>
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-johnson2007applied" class="csl-entry" role="listitem">
+Johnson, Richard A., e Dean W. Wichern. 2007. <em>Applied Multivariate Statistical Analysis</em>. 6.ª ed. Pearson Education Inc.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas de rodapé</h2>
+
+<ol>
+<li id="fn1"><p><span class="citation" data-cites="johnson2007applied">Johnson e Wichern (<a href="#ref-johnson2007applied" role="doc-biblioref">2007</a>)</span> chama essa quantidade de “vetor aleatório”. No entanto, imagino que pensar como sendo uma base de dados com “p” colunas mais intuitivo.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
