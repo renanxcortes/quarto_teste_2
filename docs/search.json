@@ -355,5 +355,49 @@
       "Principais Tópicos",
       "Componentes Principais"
     ]
+  },
+  {
+    "objectID": "Multivariada/Componentes_Principais.html#formulação",
+    "href": "Multivariada/Componentes_Principais.html#formulação",
+    "title": "Componentes Principais",
+    "section": "Formulação",
+    "text": "Formulação\nSeja \\(X_1, X_2, ..., X_p\\) variáveis aleatórias e assuma \\(\\bs{X'} = [X_1, X_2, ..., X_p]\\) ser toda a sua base de dados1 tendo uma matriz de covariância \\(\\bs{\\Sigma}\\) com os pares de autovalores e autovetores associados \\((\\lambda_1, \\bs{e_1}), (\\lambda_2, \\bs{e_2}), ..., (\\lambda_p, \\bs{e_p})\\) onde \\(\\lambda_1 \\ge \\lambda_2 \\ge ... \\ge \\lambda_p \\ge 0\\) e \\(||\\bs{e_i}|| = 1, \\forall i\\). Então, o i-ésimo componente principal será dado por:\n\\[\nY_i = \\bs{e_i'X} = e_{i1}X_1 + e_{i2}X_2 + ... +  e_{ip}X_p, \\ \\ \\ \\ i = 1, ..., p\n\\]\nEspecificamente com essas escolhas:\n\\[\n\\begin{align*}\nVar(Y_i) = \\bs{e_i'\\Sigma e_i} &= \\lambda_i  \\ \\ \\ \\ i = 1, ..., p \\\\\nCov(Y_i,Y_k) = \\bs{e_i'\\Sigma e_k} &= 0,  \\ \\ \\ \\ i \\ne k\n\\end{align*}\n\\]\nAs quantidades \\(Y_i\\)’s são considerados os componentes principais da base de dados \\(\\bs{X'}\\). Observe que \\(Y_i\\)’s são novas variáveis criadas a partir das variáveis \\(X_i\\)’s originais. Além disso, os \\(Y_i\\)’s não são correlacionados entre si.\nA análise de componentes principais nada mais é do que uma aplicação prática da Decomposição Espectral da matriz de covariância/correlação de uma base de dados.\nExpandindo a notação, os \\(p\\) componentes principais podem ser escritos como:\n\\[\n\\begin{align*}\nY_1 = \\bs{e_1'X} &= e_{11}X_1 + e_{12}X_2 + ... +  e_{1p}X_p \\\\\nY_2 = \\bs{e_2'X} &= e_{21}X_1 + e_{22}X_2 + ... +  e_{2p}X_p \\\\\n&\\;\\;\\vdots \\notag \\\\\nY_p = \\bs{e_p'X} &= e_{p1}X_1 + e_{p2}X_2 + ... +  e_{pp}X_p\n\\end{align*}\n\\]\nAs quantidades \\(e_{ij}\\) são denominadas loadings associado do componente \\(i\\) à variável \\(j\\).",
+    "crumbs": [
+      "Principais Tópicos",
+      "Componentes Principais"
+    ]
+  },
+  {
+    "objectID": "Multivariada/Componentes_Principais.html#componentes-principais-na-matriz-de-correlação-bsrho",
+    "href": "Multivariada/Componentes_Principais.html#componentes-principais-na-matriz-de-correlação-bsrho",
+    "title": "Componentes Principais",
+    "section": "Componentes Principais na Matriz de Correlação \\(\\bs{\\rho}\\)",
+    "text": "Componentes Principais na Matriz de Correlação \\(\\bs{\\rho}\\)\nIncluir aqui",
+    "crumbs": [
+      "Principais Tópicos",
+      "Componentes Principais"
+    ]
+  },
+  {
+    "objectID": "Multivariada/Componentes_Principais.html#o-cuidado-com-a-arbitrariedade-dos-autovetores",
+    "href": "Multivariada/Componentes_Principais.html#o-cuidado-com-a-arbitrariedade-dos-autovetores",
+    "title": "Componentes Principais",
+    "section": "O cuidado com a arbitrariedade dos autovetores",
+    "text": "O cuidado com a arbitrariedade dos autovetores\nIncluir aqui…",
+    "crumbs": [
+      "Principais Tópicos",
+      "Componentes Principais"
+    ]
+  },
+  {
+    "objectID": "Multivariada/Componentes_Principais.html#o-cuidado-com-a-arbitrariedade-do-sentido-dos-autovetores",
+    "href": "Multivariada/Componentes_Principais.html#o-cuidado-com-a-arbitrariedade-do-sentido-dos-autovetores",
+    "title": "Componentes Principais",
+    "section": "O cuidado com a arbitrariedade do sentido dos autovetores",
+    "text": "O cuidado com a arbitrariedade do sentido dos autovetores\nIncluir aqui…",
+    "crumbs": [
+      "Principais Tópicos",
+      "Componentes Principais"
+    ]
   }
 ]

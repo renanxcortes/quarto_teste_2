@@ -225,7 +225,12 @@ window.Quarto = {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
+  <ul class="collapse">
+  <li><a href="#formulação" id="toc-formulação" class="nav-link" data-scroll-target="#formulação">Formulação</a></li>
+  <li><a href="#componentes-principais-na-matriz-de-correlação-bsrho" id="toc-componentes-principais-na-matriz-de-correlação-bsrho" class="nav-link" data-scroll-target="#componentes-principais-na-matriz-de-correlação-bsrho">Componentes Principais na Matriz de Correlação <span class="math inline">\(\bs{\rho}\)</span></a></li>
+  <li><a href="#o-cuidado-com-a-arbitrariedade-do-sentido-dos-autovetores" id="toc-o-cuidado-com-a-arbitrariedade-do-sentido-dos-autovetores" class="nav-link" data-scroll-target="#o-cuidado-com-a-arbitrariedade-do-sentido-dos-autovetores">O cuidado com a arbitrariedade do sentido dos autovetores</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Multivariada/Componentes_Principais.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Multivariada/Componentes_Principais.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
@@ -265,9 +270,8 @@ window.Quarto = {
 <li>Interpretação.</li>
 </ul>
 <p>É importante destacar que a análise de componentes principais depende somente da matriz de covariância <span class="math inline">\(\bs{\Sigma}\)</span> (ou correlação <span class="math inline">\(\bs{\rho}\)</span>). Ou seja, ela não faz nenhuma suposição da distribuição dos dados dos <span class="math inline">\(X_i\)</span>’s como, por exemplo, normalidade multivariada.</p>
-<section id="formulação" class="level4">
-<h4 class="anchored" data-anchor-id="formulação">Formulação</h4>
-<p>Inverter a ordem! e_ii e a_ii</p>
+<section id="formulação" class="level2">
+<h2 class="anchored" data-anchor-id="formulação">Formulação</h2>
 <p>Seja <span class="math inline">\(X_1, X_2, ..., X_p\)</span> variáveis aleatórias e assuma <span class="math inline">\(\bs{X'} = [X_1, X_2, ..., X_p]\)</span> ser toda a sua base de dados<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> tendo uma matriz de covariância <span class="math inline">\(\bs{\Sigma}\)</span> com os pares de autovalores e autovetores associados <span class="math inline">\((\lambda_1, \bs{e_1}), (\lambda_2, \bs{e_2}), ..., (\lambda_p, \bs{e_p})\)</span> onde <span class="math inline">\(\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_p \ge 0\)</span> e <span class="math inline">\(||\bs{e_i}|| = 1, \forall i\)</span>. Então, o i-ésimo componente principal será dado por:</p>
 <p><span class="math display">\[
 Y_i = \bs{e_i'X} = e_{i1}X_1 + e_{i2}X_2 + ... +  e_{ip}X_p, \ \ \ \ i = 1, ..., p
@@ -281,15 +285,24 @@ Cov(Y_i,Y_k) = \bs{e_i'\Sigma e_k} &amp;= 0,  \ \ \ \ i \ne k
 \]</span></p>
 <p>As quantidades <span class="math inline">\(Y_i\)</span>’s são considerados os <em>componentes principais</em> da base de dados <span class="math inline">\(\bs{X'}\)</span>. Observe que <span class="math inline">\(Y_i\)</span>’s são <strong>novas variáveis</strong> criadas a partir das variáveis <span class="math inline">\(X_i\)</span>’s originais. Além disso, os <span class="math inline">\(Y_i\)</span>’s <strong>não são correlacionados entre si</strong>.</p>
 <p>A análise de componentes principais nada mais é do que uma aplicação prática da <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Decomposição Espectral</a> da matriz de covariância/correlação de uma base de dados.</p>
-<p>Considere a combinação linear</p>
+<p>Expandindo a notação, os <span class="math inline">\(p\)</span> componentes principais podem ser escritos como:</p>
 <p><span class="math display">\[
 \begin{align*}
-Y_1 = \bs{a_1'X} &amp;= a_{11}X_1 + a_{12}X_2 + ... +  a_{1p}X_p \\
-Y_2 = \bs{a_2'X} &amp;= a_{21}X_1 + a_{22}X_2 + ... +  a_{2p}X_p \\
+Y_1 = \bs{e_1'X} &amp;= e_{11}X_1 + e_{12}X_2 + ... +  e_{1p}X_p \\
+Y_2 = \bs{e_2'X} &amp;= e_{21}X_1 + e_{22}X_2 + ... +  e_{2p}X_p \\
 &amp;\;\;\vdots \notag \\
-Y_p = \bs{a_p'X} &amp;= a_{p1}X_1 + a_{p2}X_2 + ... +  a_{pp}X_p
+Y_p = \bs{e_p'X} &amp;= e_{p1}X_1 + e_{p2}X_2 + ... +  e_{pp}X_p
 \end{align*}
 \]</span></p>
+<p>As quantidades <span class="math inline">\(e_{ij}\)</span> são denominadas <em>loadings</em> associado do componente <span class="math inline">\(i\)</span> à variável <span class="math inline">\(j\)</span>.</p>
+</section>
+<section id="componentes-principais-na-matriz-de-correlação-bsrho" class="level2">
+<h2 class="anchored" data-anchor-id="componentes-principais-na-matriz-de-correlação-bsrho">Componentes Principais na Matriz de Correlação <span class="math inline">\(\bs{\rho}\)</span></h2>
+<p>Incluir aqui</p>
+</section>
+<section id="o-cuidado-com-a-arbitrariedade-do-sentido-dos-autovetores" class="level2">
+<h2 class="anchored" data-anchor-id="o-cuidado-com-a-arbitrariedade-do-sentido-dos-autovetores">O cuidado com a arbitrariedade do sentido dos autovetores</h2>
+<p>Incluir aqui…</p>
 
 
 
