@@ -267,7 +267,21 @@ window.Quarto = {
 <p>É importante destacar que a análise de componentes principais depende somente da matriz de covariância <span class="math inline">\(\bs{\Sigma}\)</span> (ou correlação <span class="math inline">\(\bs{\rho}\)</span>). Ou seja, ela não faz nenhuma suposição da distribuição dos dados dos <span class="math inline">\(X_i\)</span>’s como, por exemplo, normalidade multivariada.</p>
 <section id="formulação" class="level4">
 <h4 class="anchored" data-anchor-id="formulação">Formulação</h4>
-<p>Seja <span class="math inline">\(X_1, X_2, ..., X_p\)</span> variáveis aleatórias e seja <span class="math inline">\(\bs{X'} = [X_1, X_2, ..., X_p]\)</span> toda a sua base de dados<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> ter uma matriz de covariância <span class="math inline">\(\bs{\Sigma}\)</span> com autovalores <span class="math inline">\(\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_p \ge 0\)</span>. Considere a combinação linear</p>
+<p>Inverter a ordem! e_ii e a_ii</p>
+<p>Seja <span class="math inline">\(X_1, X_2, ..., X_p\)</span> variáveis aleatórias e assuma <span class="math inline">\(\bs{X'} = [X_1, X_2, ..., X_p]\)</span> ser toda a sua base de dados<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> tendo uma matriz de covariância <span class="math inline">\(\bs{\Sigma}\)</span> com os pares de autovalores e autovetores associados <span class="math inline">\((\lambda_1, \bs{e_1}), (\lambda_2, \bs{e_2}), ..., (\lambda_p, \bs{e_p})\)</span> onde <span class="math inline">\(\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_p \ge 0\)</span> e <span class="math inline">\(||\bs{e_i}|| = 1, \forall i\)</span>. Então, o i-ésimo componente principal será dado por:</p>
+<p><span class="math display">\[
+Y_i = \bs{e_i'X} = e_{i1}X_1 + e_{i2}X_2 + ... +  e_{ip}X_p, \ \ \ \ i = 1, ..., p
+\]</span></p>
+<p>Especificamente com essas escolhas:</p>
+<p><span class="math display">\[
+\begin{align*}
+Var(Y_i) = \bs{e_i'\Sigma e_i} &amp;= \lambda_i  \ \ \ \ i = 1, ..., p \\
+Cov(Y_i,Y_k) = \bs{e_i'\Sigma e_k} &amp;= 0,  \ \ \ \ i \ne k
+\end{align*}
+\]</span></p>
+<p>As quantidades <span class="math inline">\(Y_i\)</span>’s são considerados os <em>componentes principais</em> da base de dados <span class="math inline">\(\bs{X'}\)</span>. Observe que <span class="math inline">\(Y_i\)</span>’s são <strong>novas variáveis</strong> criadas a partir das variáveis <span class="math inline">\(X_i\)</span>’s originais. Além disso, os <span class="math inline">\(Y_i\)</span>’s <strong>não são correlacionados entre si</strong>.</p>
+<p>A análise de componentes principais nada mais é do que uma aplicação prática da <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Decomposição Espectral</a> da matriz de covariância/correlação de uma base de dados.</p>
+<p>Considere a combinação linear</p>
 <p><span class="math display">\[
 \begin{align*}
 Y_1 = \bs{a_1'X} &amp;= a_{11}X_1 + a_{12}X_2 + ... +  a_{1p}X_p \\
@@ -276,8 +290,6 @@ Y_2 = \bs{a_2'X} &amp;= a_{21}X_1 + a_{22}X_2 + ... +  a_{2p}X_p \\
 Y_p = \bs{a_p'X} &amp;= a_{p1}X_1 + a_{p2}X_2 + ... +  a_{pp}X_p
 \end{align*}
 \]</span></p>
-<p>Observe que <span class="math inline">\(Y_i\)</span>’s são novas variáveis criadas a partir das variáveis <span class="math inline">\(X_i\)</span>’s originais. Além disso, os <span class="math inline">\(Y_i\)</span>’s <strong>não são correlacionados entre si</strong>.</p>
-<p>A análise de componentes principais nada mais é do que uma aplicação prática da <a href="https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix">Decomposição Espectral</a> da matriz de covariância/correlação de uma base de dados.</p>
 
 
 

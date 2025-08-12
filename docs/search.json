@@ -153,7 +153,7 @@
     "href": "Probabilidade/TCL.html#footnotes",
     "title": "Teorema Central do Limite",
     "section": "Notas de rodapé",
-    "text": "Notas de rodapé\n\n\nUma discussão sobre este fator de convergência é discutido aqui↩︎\nEste teorema é um caso particular do Teorema de Continuidade de Levy para funções características. E pode ser melhor detalhado em Curtiss (1942) ou aqui.↩︎\nMagalhães (2006) também realiza esta simplificação de notação em uma prova similar do TCL fazendo uso da Função Característica.↩︎\nLembrando que \\(\\frac{d\\log(f(x))}{dx} = \\frac{1}{f(x)} \\cdot \\frac{df(x)}{dx} = \\frac{f'(x)}{f(x)}\\)↩︎",
+    "text": "Notas de rodapé\n\n\nUma discussão sobre este fator de convergência é discutido aqui↩︎\nEste teorema é um caso particular do Teorema de Continuidade de Levy para funções características. Ele pode ser melhor detalhado em Curtiss (1942) ou aqui.↩︎\nMagalhães (2006) também realiza esta simplificação de notação em uma prova similar do TCL fazendo uso da Função Característica.↩︎\nLembrando que \\(\\frac{d\\log(f(x))}{dx} = \\frac{1}{f(x)} \\cdot \\frac{df(x)}{dx} = \\frac{f'(x)}{f(x)}\\)↩︎",
     "crumbs": [
       "Grandes Amostras",
       "Teorema Central do Limite"

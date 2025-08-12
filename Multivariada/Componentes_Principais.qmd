@@ -16,17 +16,15 @@ format:
   html:
     code-fold: true
     code-summary: "Mostrar Código"
-
 ---
 
-::: {.hidden}
+::: hidden
 $$
 \newcommand{\bs}[1]{\boldsymbol{#1}}
 $$
 :::
 
 <!-- Com relação aos comandos latex, deve-se evitar ter linhas quebradas dentro dos environments (por exemplo, dentro de um "aligned", caso contrário ficará um "$$" renderizado no documento final) -->
-
 
 # Introdução
 
@@ -41,8 +39,32 @@ Segundo @johnson2007applied, a análise de componentes principais é designada p
 
 Inverter a ordem! e_ii e a_ii
 
-Seja $X_1, X_2, ..., X_p$ variáveis aleatórias e seja $\bs{X'} = [X_1, X_2, ..., X_p]$ toda a sua base de dados^[@johnson2007applied chama essa quantidade de "vetor aleatório". No entanto, imagino que pensar como sendo uma base de dados com "p" colunas mais intuitivo.] ter uma matriz de covariância $\bs{\Sigma}$ com autovalores $\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_p \ge 0$ associada à esta base. Considere a combinação linear
+Seja $X_1, X_2, ..., X_p$ variáveis aleatórias e assuma $\bs{X'} = [X_1, X_2, ..., X_p]$ ser toda a sua base de dados[^1] tendo uma matriz de covariância $\bs{\Sigma}$ com os pares de autovalores e autovetores associados $(\lambda_1, \bs{e_1}), (\lambda_2, \bs{e_2}), ..., (\lambda_p, \bs{e_p})$ onde $\lambda_1 \ge \lambda_2 \ge ... \ge \lambda_p \ge 0$ e $||\bs{e_i}|| = 1, \forall i$. Então, o i-ésimo componente principal será dado por:
 
+$$
+Y_i = \bs{e_i'X} = e_{i1}X_1 + e_{i2}X_2 + ... +  e_{ip}X_p, \ \ \ \ i = 1, ..., p
+$$
+
+Especificamente com essas escolhas:
+
+$$
+\begin{align*}
+Var(Y_i) = \bs{e_i'\Sigma e_i} &= \lambda_i  \ \ \ \ i = 1, ..., p \\
+Cov(Y_i,Y_k) = \bs{e_i'\Sigma e_k} &= 0,  \ \ \ \ i \ne k
+\end{align*}
+$$
+
+
+
+[^1]: @johnson2007applied chama essa quantidade de "vetor aleatório". No entanto, imagino que pensar como sendo uma base de dados com "p" colunas mais intuitivo.
+
+As quantidades $Y_i$'s são considerados os *componentes principais* da base de dados $\bs{X'}$. Observe que $Y_i$'s são **novas variáveis** criadas a partir das variáveis $X_i$'s originais. Além disso, os $Y_i$'s **não são correlacionados entre si**.
+
+A análise de componentes principais nada mais é do que uma aplicação prática da [Decomposição Espectral](https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix) da matriz de covariância/correlação de uma base de dados.
+
+
+
+Considere a combinação linear
 
 $$
 \begin{align*}
@@ -53,11 +75,4 @@ Y_p = \bs{a_p'X} &= a_{p1}X_1 + a_{p2}X_2 + ... +  a_{pp}X_p
 \end{align*}
 $$
 
-As quantidades $Y_i$'s são considerados os componentes principais
-
-
-Observe que $Y_i$'s são novas variáveis criadas a partir das variáveis $X_i$'s originais. Além disso, os $Y_i$'s **não são correlacionados entre si**.
-
-
-A análise de componentes principais nada mais é do que uma aplicação prática da [Decomposição Espectral](https://en.wikipedia.org/wiki/Eigendecomposition_of_a_matrix) da matriz de covariância/correlação de uma base de dados. 
 
