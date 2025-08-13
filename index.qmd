@@ -24,7 +24,9 @@ Este é um website baseado no [Quarto](https://quarto.org/docs/websites) da empr
 
 [Templates úteis do prof. Gang He](https://drganghe.github.io/quarto-academic-site-examples.html)
 
-[Site do prof. André Zibetti](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html)
+<!-- [Site do prof. André Zibetti](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html) -->
+
+<!--
 
 # Considerações de Desenvolvimento do Site
 
@@ -44,3 +46,5 @@ Além disso, cuidado com o gerenciamento das engines no momento de compilar o we
 **Engine Conflicts:**
 
 -   **Knitr vs. Jupyter:** *If you explicitly set the `engine` to `jupyter` in your YAML, R code chunks will not be executed, and only Python (or the kernel's language) will run. For mixed R and Python, `engine: knitr` is typically used, relying on `reticulate` for Python execution.*
+
+-->

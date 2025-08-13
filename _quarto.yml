@@ -29,20 +29,33 @@ website:
         href: index.qmd
       - text: "Temas"
         menu:
-          - sidebar:probabilidade
+          - sidebar:int_prob
+          - sidebar:probabilidade_B
           - sidebar:multivariada
 
   sidebar:
-    - id: probabilidade
-      title: "Probabilidade"
+    - id: int_prob
+      title: "Introdução à Probabilidade"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        - section: "Experimento aleatório, espaço amostral e eventos"
+          contents:
+            - Int_Prob/experimento_aleatorio.qmd
+            
+            
+    - id: probabilidade_B
+      title: "Probabilidade B"
       collapse-level: 2
       style: "docked"
       search: true
       contents:
         - section: "Grandes Amostras"
           contents:
-            - Probabilidade/LGN.qmd
-            - Probabilidade/TCL.qmd
+            - Probabilidade_B/LGN.qmd
+            - Probabilidade_B/TCL.qmd
+  
   
     - id: multivariada
       title: "Análise Multivariada"
