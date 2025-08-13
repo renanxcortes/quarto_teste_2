@@ -218,8 +218,20 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
+  <ul class="collapse">
+  <li><a href="#eventosconjuntos" id="toc-eventosconjuntos" class="nav-link" data-scroll-target="#eventosconjuntos">Eventos/Conjuntos</a>
+  <ul class="collapse">
+  <li><a href="#operações-básicas-e-definições" id="toc-operações-básicas-e-definições" class="nav-link" data-scroll-target="#operações-básicas-e-definições">Operações Básicas e Definições</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/experimento_aleatorio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/experimento_aleatorio.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -243,13 +255,33 @@ window.Quarto = {
 </header>
 
 
-<p>Segundo a definição de <span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span>, o <em>espaço amostral</em> é o conjunto de todos os possíveis resultados de um experimento aleatório e é representado por <span class="math inline">\(\Omega\)</span>. Cada resultado possível é denominado <em>ponto</em> ou <em>elemento</em> de <span class="math inline">\(\Omega\)</span> e denotado por <span class="math inline">\(\omega\)</span>. Assim, escrevemos <span class="math inline">\(\omega \in \Omega\)</span> para indicar que <span class="math inline">\(\omega\)</span> está em <span class="math inline">\(\Omega\)</span>. O conjunto sem elementos é o <em>conjunto vazio</em>, denotado por <span class="math inline">\(\emptyset\)</span>. <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>, denomina <em>eventos</em> como sendo letras maiúsculas do alfabeto, tais como A, B, etc. Assim:</p>
+<section id="introdução" class="level1">
+<h1>Introdução</h1>
+<p>O <em>espaço amostral</em> é o conjunto de todos os possíveis resultados de um experimento aleatório e é representado por <span class="math inline">\(\Omega\)</span>. Cada resultado possível é denominado <em>ponto</em> ou <em>elemento</em> de <span class="math inline">\(\Omega\)</span> e denotado por <span class="math inline">\(\omega\)</span>. Assim, escrevemos <span class="math inline">\(\omega \in \Omega\)</span> para indicar que <span class="math inline">\(\omega\)</span> está em <span class="math inline">\(\Omega\)</span>. O conjunto sem elementos é o <em>conjunto vazio</em>, denotado por <span class="math inline">\(\emptyset\)</span>. Muitos autores (<span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span>, <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>), denominam <em>eventos</em> (ou conjunto) como sendo letras maiúsculas do alfabeto, tais como A, B, etc. Assim:</p>
 <p><strong>Definição</strong> Seja <span class="math inline">\(\Omega\)</span> o espaço amostral do experimento. Todo subconjunto <span class="math inline">\(A \in \Omega\)</span> será chamado <em>evento</em>. <span class="math inline">\(\Omega\)</span> é o evento <em>certo</em>, <span class="math inline">\(\emptyset\)</span> o evento <em>impossível</em>. Se <span class="math inline">\(\omega \in \Omega\)</span>, o evento <span class="math inline">\(\{\omega\}\)</span> é dito <em>elementar</em> (ou simples).</p>
+<section id="eventosconjuntos" class="level2">
+<h2 class="anchored" data-anchor-id="eventosconjuntos">Eventos/Conjuntos</h2>
+<section id="operações-básicas-e-definições" class="level3">
+<h3 class="anchored" data-anchor-id="operações-básicas-e-definições">Operações Básicas e Definições</h3>
+<ul>
+<li><p><span class="math inline">\(A^c\)</span> é o complementar de <span class="math inline">\(A\)</span>, isto é, todos os elementos de <span class="math inline">\(\Omega\)</span> exceto os de <span class="math inline">\(A\)</span></p></li>
+<li><p><span class="math inline">\(A_1 \cup A_2 ... \cup A_n\)</span> ou <span class="math inline">\(\bigcup\limits_{i=1}^{n}\)</span> é a <em>união</em> de <span class="math inline">\(A_1, A_2, ..., A_n\)</span> e representa os pontos de <span class="math inline">\(\Omega\)</span> que pertencem à pelo menos um <span class="math inline">\(A_i\)</span></p></li>
+<li><p><span class="math inline">\(A_1 \cap A_2 ... \cap A_n\)</span> ou <span class="math inline">\(\bigcap\limits_{i=1}^{n}\)</span> é a <em>intersecção</em> de <span class="math inline">\(A_1, A_2, ..., A_n\)</span> e representa os pontos de <span class="math inline">\(\Omega\)</span> que pertencem simultaneamente à todos os <span class="math inline">\(A_i\)</span>’s.</p></li>
+<li><p><span class="math inline">\(A-B\)</span> é a <em>diferença</em> entre <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, isto é, todos os elementos de <span class="math inline">\(A\)</span>, exceto os que estão em <span class="math inline">\(B\)</span>. Outra forma de notação é <span class="math inline">\(A \cap B^c\)</span>, pois <span class="math inline">\(A-B = A \cap B^c\)</span></p></li>
+<li><p>Se todo o elemento de <span class="math inline">\(A\)</span> é também um elemento de <span class="math inline">\(B\)</span>, então <span class="math inline">\(A\)</span> é definido como um subconjunto de <span class="math inline">\(B\)</span> e escrevemos <span class="math inline">\(A \subset B\)</span> ou <span class="math inline">\(B \supset A\)</span>. Interpretamos como sendo “<span class="math inline">\(A\)</span> está contido em <span class="math inline">\(B\)</span>” ou “<span class="math inline">\(B\)</span> contém <span class="math inline">\(A\)</span>”</p></li>
+<li><p>Dois conjuntos são <em>disjuntos</em> ou <em>mutuamente excludentes</em> se a sua interseção é vazio. Assim, <span class="math inline">\(A\ e\ B\ disjuntos \iff A \cap B = \emptyset\)</span></p></li>
+</ul>
 
 
 
+</section>
+</section>
+</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-degroot2012probability" class="csl-entry" role="listitem">
+DeGroot, M. H., e M. J. Schervish. 2012. <em>Probability and Statistics</em>. Addison-Wesley.
+</div>
 <div id="ref-barryjames2023" class="csl-entry" role="listitem">
 James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>. 5.ª ed. IMPA.
 </div>
@@ -679,4 +711,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/experimento_aleatorio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/experimento_aleatorio.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/experimento_aleatorio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/experimento_aleatorio.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
