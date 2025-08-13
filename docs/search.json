@@ -546,12 +546,12 @@
   {
     "objectID": "Int_Prob/experimento_aleatorio.html",
     "href": "Int_Prob/experimento_aleatorio.html",
-    "title": "Experimento Aleatório",
+    "title": "Experimento Aleatório, Espaço Amostral e Eventos",
     "section": "",
-    "text": "Introdução\nTeste…",
+    "text": "Segundo a definição de Magalhães (2006), o espaço amostral é o conjunto de todos os possíveis resultados de um experimento aleatório e é representado por \\(\\Omega\\). Cada resultado possível é denominado ponto ou elemento de \\(\\Omega\\) e denotado por \\(\\omega\\). Assim, escrevemos \\(\\omega \\in \\Omega\\) para indicar que \\(\\omega\\) está em \\(\\Omega\\). O conjunto sem elementos é o conjunto vazio, denotado por \\(\\emptyset\\). James (2023), denomina eventos como sendo letras maiúsculas do alfabeto, tais como A, B, etc. Assim:\nDefinição Seja \\(\\Omega\\) o espaço amostral do experimento. Todo subconjunto \\(A \\in \\Omega\\) será chamado evento. \\(\\Omega\\) é o evento certo, \\(\\emptyset\\) o evento impossível. Se \\(\\omega \\in \\Omega\\), o evento \\(\\{\\omega\\}\\) é dito elementar (ou simples).\n\n\n\n\nReferências\n\nJames, Barry R. 2023. Probabilidade: um curso em nível intermediário. 5.ª ed. IMPA.\n\n\nMagalhães, M. N. 2006. Probabilidade e Variáveis Aleatórias. 3.ª ed. Edusp.",
     "crumbs": [
-      "Experimento aleatório, espaço amostral e eventos",
-      "Experimento Aleatório"
+      "Conceitos Básicos",
+      "Experimento Aleatório, Espaço Amostral e Eventos"
     ]
   }
 ]

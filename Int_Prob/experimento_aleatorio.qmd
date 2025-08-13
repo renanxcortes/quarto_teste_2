@@ -1,11 +1,9 @@
 ---
-title: "Experimento Aleatório"
+title: "Experimento Aleatório, Espaço Amostral e Eventos"
 lang: pt # Equações ficarem referenciadas em Português
-#sidebar: multivariada
 
 toc: true
 toc-title: "Nesta página"
-#toc-location: right-body
 toc-location: right
 
 execute: 
@@ -18,6 +16,7 @@ format:
     code-summary: "Mostrar Código"
 ---
 
-# Introdução
 
-Teste...
+Segundo a definição de @magalhaes2006probabilidade, o *espaço amostral* é o conjunto de todos os possíveis resultados de um experimento aleatório e é representado por $\Omega$. Cada resultado possível é denominado *ponto* ou *elemento* de $\Omega$ e denotado por $\omega$. Assim, escrevemos $\omega \in \Omega$ para indicar que $\omega$ está em $\Omega$. O conjunto sem elementos é o *conjunto vazio*, denotado por $\emptyset$. @barryjames2023, denomina *eventos* como sendo letras maiúsculas do alfabeto, tais como A, B, etc. Assim:
+
+**Definição** Seja $\Omega$ o espaço amostral do experimento. Todo subconjunto $A \in \Omega$ será chamado *evento*. $\Omega$ é o evento *certo*, $\emptyset$ o evento *impossível*. Se $\omega \in \Omega$, o evento $\{\omega\}$ é dito *elementar* (ou simples).

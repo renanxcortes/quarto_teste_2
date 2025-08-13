@@ -40,7 +40,7 @@ website:
       style: "docked"
       search: true
       contents:
-        - section: "Experimento aleatório, espaço amostral e eventos"
+        - section: "Conceitos Básicos"
           contents:
             - Int_Prob/experimento_aleatorio.qmd
             
