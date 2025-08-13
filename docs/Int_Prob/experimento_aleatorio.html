@@ -228,6 +228,7 @@ window.Quarto = {
   <li><a href="#eventosconjuntos" id="toc-eventosconjuntos" class="nav-link" data-scroll-target="#eventosconjuntos">Eventos/Conjuntos</a>
   <ul class="collapse">
   <li><a href="#operações-básicas-e-definições" id="toc-operações-básicas-e-definições" class="nav-link" data-scroll-target="#operações-básicas-e-definições">Operações Básicas e Definições</a></li>
+  <li><a href="#leis-de-demorgan" id="toc-leis-de-demorgan" class="nav-link" data-scroll-target="#leis-de-demorgan">Leis de DeMorgan</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -275,9 +276,34 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figs/venn.png" class="img-fluid figure-img"></p>
-<figcaption>Diagrama de Venn (<span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>)</figcaption>
+<figcaption>Diagramas de Venn (<span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>)</figcaption>
 </figure>
 </div>
+</section>
+<section id="leis-de-demorgan" class="level3">
+<h3 class="anchored" data-anchor-id="leis-de-demorgan">Leis de DeMorgan</h3>
+<p>As <a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws">Leis de DeMorgan</a> são teoremas fundamentais que descrevem relações entre a união e interesecção entre conjuntos e de seus complementos.</p>
+<p>O caso simples pode ser descrito abaixo:</p>
+<p><span class="math display">\[
+\begin{align*}
+(A \cup B)^c = A^c \cap B^c \\
+(A \cap B)^c = A^c \cup B^c
+\end{align*}
+\]</span></p>
+<p>Imagine as duas frases:</p>
+<ul>
+<li>A: “Está chovendo”</li>
+<li>B: “Está frio”</li>
+</ul>
+<p>Portanto: A negação de “Está chovendo e está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo ou não está frio” (<span class="math inline">\(A^c \cup B^c\)</span>);</p>
+<p>A negação de “Está chovendo ou está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo e não está frio” (<span class="math inline">\(A^c \cap B^c\)</span>).</p>
+<p>Caso geral:</p>
+<p><span class="math display">\[
+\begin{align*}
+\left( \bigcup\limits_{i=1}^{n} A_i \right)^c = \bigcap\limits_{i=1}^{n} A_i^c \\
+\left( \bigcap\limits_{i=1}^{n} A_i \right)^c = \bigcup\limits_{i=1}^{n} A_i^c
+\end{align*}
+\]</span></p>
 
 
 
