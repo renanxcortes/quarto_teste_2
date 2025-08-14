@@ -43,6 +43,7 @@ website:
         - section: "Conceitos Básicos"
           contents:
             - Int_Prob/experimento_aleatorio.qmd
+            - Int_Prob/conceitos_de_probabilidade.qmd
             
             
     - id: probabilidade_B

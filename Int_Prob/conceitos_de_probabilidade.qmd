@@ -1,0 +1,37 @@
+---
+title: "Conceito de Probabilidade"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute: 
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Probabilidade
+
+## Definição Clássica
+
+## Definição Frequentista
+
+## Definição Geométrica
+
+## Probabilidade Axiomática
+
+Axiomas de kolmogorov
+
+espaços de probbilidade
+
+sigma algebra
+
+falr video do veritaium
