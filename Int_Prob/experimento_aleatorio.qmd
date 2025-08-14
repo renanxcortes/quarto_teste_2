@@ -28,9 +28,9 @@ O *espaço amostral* é o conjunto de todos os possíveis resultados de um exper
 
 -   $A^c$ (ou $\bar{A}$) é o complementar de $A$, isto é, todos os elementos de $\Omega$ exceto os de $A$
 
--   $A_1 \cup A_2 ... \cup A_n$ ou $\bigcup\limits_{i=1}^{n}$ é a *união* de $A_1, A_2, ..., A_n$ e representa os pontos de $\Omega$ que pertencem à pelo menos um $A_i$
+-   $A_1 \cup A_2 ... \cup A_n$ ou $\bigcup\limits_{i=1}^{n}A_i$ é a *união* de $A_1, A_2, ..., A_n$ e representa os pontos de $\Omega$ que pertencem à pelo menos um $A_i$
 
--   $A_1 \cap A_2 ... \cap A_n$ ou $\bigcap\limits_{i=1}^{n}$ é a *intersecção* de $A_1, A_2, ..., A_n$ e representa os pontos de $\Omega$ que pertencem simultaneamente à todos os $A_i$'s.
+-   $A_1 \cap A_2 ... \cap A_n$ ou $\bigcap\limits_{i=1}^{n}A_i$ é a *intersecção* de $A_1, A_2, ..., A_n$ e representa os pontos de $\Omega$ que pertencem simultaneamente à todos os $A_i$'s.
 
 -   $A-B$ é a *diferença* entre $A$ e $B$, isto é, todos os elementos de $A$, exceto os que estão em $B$. Outra forma de notação é $A \cap B^c$, pois $A-B = A \cap B^c$
 
