@@ -592,7 +592,7 @@
     "href": "Int_Prob/conceitos_de_probabilidade.html",
     "title": "Conceito de Probabilidade",
     "section": "",
-    "text": "Probabilidade\n\n\n\n\n\n\n\n\n\n\n\nAxiomas de kolmogorov\nespaços de probbilidade\nsigma algebra\nfalr video do veritaium",
+    "text": "A definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:\n\\[\nP(A) = \\frac{Número\\ de\\ Elementos\\ em\\ A}{Número\\ total\\ de\\ Elementos\\ em\\ \\Omega}\n\\]\nSe \\(\\Omega\\) tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.\n\n\n\nQuando \\(\\Omega\\) é não enumerável, o conceito se aplicará ao comprimento de intervalos, medidas de áreas ou similares, dando origem ao que chamamos de probabilidade geométrica. Por exemplo, se \\(\\Omega\\) é um intervalo onde \\(\\Omega \\in \\mathbb{R}\\), então:\n\\[\nP(A) = \\frac{Comprimento\\ de\\ A}{Comprimento\\ de\\ \\Omega}\n\\]\n\n\n\n\n\n\n\n\n\nAxiomas de kolmogorov\n\n\n\nfalr video do veritaium espaços de probbilidade\nsigma algebra",
     "crumbs": [
       "Conceitos Básicos",
       "Conceito de Probabilidade"
@@ -603,7 +603,40 @@
     "href": "Int_Prob/conceitos_de_probabilidade.html#probabilidade-axiomática",
     "title": "Conceito de Probabilidade",
     "section": "",
-    "text": "Axiomas de kolmogorov\nespaços de probbilidade\nsigma algebra\nfalr video do veritaium",
+    "text": "Axiomas de kolmogorov",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceito de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/conceitos_de_probabilidade.html#definição-clássica-omega-enumerável",
+    "href": "Int_Prob/conceitos_de_probabilidade.html#definição-clássica-omega-enumerável",
+    "title": "Conceito de Probabilidade",
+    "section": "",
+    "text": "A definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:\n\\[\nP(A) = \\frac{Número\\ de\\ Elementos\\ em\\ A}{Número\\ total\\ de\\ Elementos\\ em\\ \\Omega}\n\\]\nSe \\(\\Omega\\) tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceito de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/conceitos_de_probabilidade.html#definição-clássica-geométrica-omega-não-enumerável",
+    "href": "Int_Prob/conceitos_de_probabilidade.html#definição-clássica-geométrica-omega-não-enumerável",
+    "title": "Conceito de Probabilidade",
+    "section": "",
+    "text": "Quando \\(\\Omega\\) é não enumerável, o conceito se aplicará ao comprimento de intervalos, medidas de áreas ou similares, dando origem ao que chamamos de probabilidade geométrica. Por exemplo, se \\(\\Omega\\) é um intervalo onde \\(\\Omega \\in \\mathbb{R}\\), então:\n\\[\nP(A) = \\frac{Comprimento\\ de\\ A}{Comprimento\\ de\\ \\Omega}\n\\]",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceito de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/conceitos_de_probabilidade.html#espaços-de-probabilidade",
+    "href": "Int_Prob/conceitos_de_probabilidade.html#espaços-de-probabilidade",
+    "title": "Conceito de Probabilidade",
+    "section": "",
+    "text": "falr video do veritaium espaços de probbilidade\nsigma algebra",
     "crumbs": [
       "Conceitos Básicos",
       "Conceito de Probabilidade"

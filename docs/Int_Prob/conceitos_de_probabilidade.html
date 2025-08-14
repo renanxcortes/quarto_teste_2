@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -182,10 +211,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
   <ul class="collapse">
-  <li><a href="#definição-clássica" id="toc-definição-clássica" class="nav-link" data-scroll-target="#definição-clássica">Definição Clássica</a></li>
+  <li><a href="#definição-clássica-omega-enumerável" id="toc-definição-clássica-omega-enumerável" class="nav-link" data-scroll-target="#definição-clássica-omega-enumerável">Definição Clássica (<span class="math inline">\(\Omega\)</span> enumerável)</a></li>
+  <li><a href="#definição-clássica-geométrica-omega-não-enumerável" id="toc-definição-clássica-geométrica-omega-não-enumerável" class="nav-link" data-scroll-target="#definição-clássica-geométrica-omega-não-enumerável">Definição Clássica Geométrica (<span class="math inline">\(\Omega\)</span> não enumerável)</a></li>
   <li><a href="#definição-frequentista" id="toc-definição-frequentista" class="nav-link" data-scroll-target="#definição-frequentista">Definição Frequentista</a></li>
   <li><a href="#definição-geométrica" id="toc-definição-geométrica" class="nav-link" data-scroll-target="#definição-geométrica">Definição Geométrica</a></li>
   <li><a href="#probabilidade-axiomática" id="toc-probabilidade-axiomática" class="nav-link" data-scroll-target="#probabilidade-axiomática">Probabilidade Axiomática</a></li>
+  <li><a href="#espaços-de-probabilidade" id="toc-espaços-de-probabilidade" class="nav-link" data-scroll-target="#espaços-de-probabilidade">Espaços de Probabilidade</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/conceitos_de_probabilidade.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/conceitos_de_probabilidade.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
@@ -214,9 +245,20 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introdução" class="level1">
 <h1>Introdução</h1>
-<p>Probabilidade</p>
-<section id="definição-clássica" class="level2">
-<h2 class="anchored" data-anchor-id="definição-clássica">Definição Clássica</h2>
+<section id="definição-clássica-omega-enumerável" class="level2">
+<h2 class="anchored" data-anchor-id="definição-clássica-omega-enumerável">Definição Clássica (<span class="math inline">\(\Omega\)</span> enumerável)</h2>
+<p>A definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:</p>
+<p><span class="math display">\[
+P(A) = \frac{Número\ de\ Elementos\ em\ A}{Número\ total\ de\ Elementos\ em\ \Omega}
+\]</span></p>
+<p>Se <span class="math inline">\(\Omega\)</span> tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.</p>
+</section>
+<section id="definição-clássica-geométrica-omega-não-enumerável" class="level2">
+<h2 class="anchored" data-anchor-id="definição-clássica-geométrica-omega-não-enumerável">Definição Clássica Geométrica (<span class="math inline">\(\Omega\)</span> não enumerável)</h2>
+<p>Quando <span class="math inline">\(\Omega\)</span> é não enumerável, o conceito se aplicará ao comprimento de intervalos, medidas de áreas ou similares, dando origem ao que chamamos de <em>probabilidade geométrica</em>. Por exemplo, se <span class="math inline">\(\Omega\)</span> é um intervalo onde <span class="math inline">\(\Omega \in \mathbb{R}\)</span>, então:</p>
+<p><span class="math display">\[
+P(A) = \frac{Comprimento\ de\ A}{Comprimento\ de\ \Omega}
+\]</span></p>
 </section>
 <section id="definição-frequentista" class="level2">
 <h2 class="anchored" data-anchor-id="definição-frequentista">Definição Frequentista</h2>
@@ -227,9 +269,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="probabilidade-axiomática" class="level2">
 <h2 class="anchored" data-anchor-id="probabilidade-axiomática">Probabilidade Axiomática</h2>
 <p>Axiomas de kolmogorov</p>
-<p>espaços de probbilidade</p>
+</section>
+<section id="espaços-de-probabilidade" class="level2">
+<h2 class="anchored" data-anchor-id="espaços-de-probabilidade">Espaços de Probabilidade</h2>
+<p>falr video do veritaium espaços de probbilidade</p>
 <p>sigma algebra</p>
-<p>falr video do veritaium</p>
 
 
 </section>

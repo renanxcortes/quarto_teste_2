@@ -18,20 +18,48 @@ format:
 
 # Introdução
 
-Probabilidade
+## Definição Clássica ($\Omega$ enumerável)
 
-## Definição Clássica
+Segundo @magalhaes2006probabilidade, a definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:
+
+$$
+P(A) = \frac{Número\ de\ Elementos\ em\ A}{Número\ total\ de\ Elementos\ em\ \Omega}
+$$
+
+Se $\Omega$ tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.
+
+## Definição Clássica Geométrica ($\Omega$ não enumerável)
+
+Quando $\Omega$ é não enumerável, o conceito se aplicará ao comprimento de intervalos, medidas de áreas ou similares, dando origem ao que chamamos de *probabilidade geométrica*. Por exemplo, se $\Omega$ é um intervalo onde $\Omega \in \mathbb{R}$, então:
+
+$$
+P(A) = \frac{Comprimento\ de\ A}{Comprimento\ de\ \Omega}
+$$
+
+
 
 ## Definição Frequentista
 
-## Definição Geométrica
+A definição *frequentista* considera o limite de frequências relativas como o valor da probabilidade. Para tal, seja $n_{A}$ o número de ocorrências de $A$ em $n$ repetições independentes do experimento em questão. Assim,
+
+$$
+P(A) = \lim_{n\rightarrow{+\infty}} \frac{n_A}{n}
+$$
+
 
 ## Probabilidade Axiomática
 
-Axiomas de kolmogorov
+As definições anteriores não são suficientes para uma formulação matemática mais rigorosa da probabilidade. Assim, na primeira metade do século XX, @Kolmogorov1933 apresentou um conjunto de axiomas matemáticos para definir probabilidade e, assim, pavimentando toda a evolução da probabilidade moderna.
 
+É importante, e ao mesmo tempo fascinante, destacar que apenas com esses três axiomas **todos os teoremas da Teoria da Probabilidade são viabilizados**. Assim, podemos destacar que toda a evolução da probabilidade foi pavimentada pelo trabalho de @Kolmogorov1933.
+
+**Definição axiomática**
+
+
+
+## Espaços de Probabilidade
+
+falr video do veritaium
 espaços de probbilidade
 
 sigma algebra
-
-falr video do veritaium
