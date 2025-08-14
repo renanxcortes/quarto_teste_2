@@ -229,6 +229,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#operações-básicas-e-definições" id="toc-operações-básicas-e-definições" class="nav-link" data-scroll-target="#operações-básicas-e-definições">Operações Básicas e Definições</a></li>
   <li><a href="#leis-de-demorgan" id="toc-leis-de-demorgan" class="nav-link" data-scroll-target="#leis-de-demorgan">Leis de DeMorgan</a></li>
+  <li><a href="#digramas-de-venn" id="toc-digramas-de-venn" class="nav-link" data-scroll-target="#digramas-de-venn">Digramas de Venn</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -265,20 +266,13 @@ window.Quarto = {
 <section id="operações-básicas-e-definições" class="level3">
 <h3 class="anchored" data-anchor-id="operações-básicas-e-definições">Operações Básicas e Definições</h3>
 <ul>
-<li><p><span class="math inline">\(A^c\)</span> é o complementar de <span class="math inline">\(A\)</span>, isto é, todos os elementos de <span class="math inline">\(\Omega\)</span> exceto os de <span class="math inline">\(A\)</span></p></li>
+<li><p><span class="math inline">\(A^c\)</span> (ou <span class="math inline">\(\bar{A}\)</span>) é o complementar de <span class="math inline">\(A\)</span>, isto é, todos os elementos de <span class="math inline">\(\Omega\)</span> exceto os de <span class="math inline">\(A\)</span></p></li>
 <li><p><span class="math inline">\(A_1 \cup A_2 ... \cup A_n\)</span> ou <span class="math inline">\(\bigcup\limits_{i=1}^{n}\)</span> é a <em>união</em> de <span class="math inline">\(A_1, A_2, ..., A_n\)</span> e representa os pontos de <span class="math inline">\(\Omega\)</span> que pertencem à pelo menos um <span class="math inline">\(A_i\)</span></p></li>
 <li><p><span class="math inline">\(A_1 \cap A_2 ... \cap A_n\)</span> ou <span class="math inline">\(\bigcap\limits_{i=1}^{n}\)</span> é a <em>intersecção</em> de <span class="math inline">\(A_1, A_2, ..., A_n\)</span> e representa os pontos de <span class="math inline">\(\Omega\)</span> que pertencem simultaneamente à todos os <span class="math inline">\(A_i\)</span>’s.</p></li>
 <li><p><span class="math inline">\(A-B\)</span> é a <em>diferença</em> entre <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, isto é, todos os elementos de <span class="math inline">\(A\)</span>, exceto os que estão em <span class="math inline">\(B\)</span>. Outra forma de notação é <span class="math inline">\(A \cap B^c\)</span>, pois <span class="math inline">\(A-B = A \cap B^c\)</span></p></li>
 <li><p>Se todo o elemento de <span class="math inline">\(A\)</span> é também um elemento de <span class="math inline">\(B\)</span>, então <span class="math inline">\(A\)</span> é definido como um subconjunto de <span class="math inline">\(B\)</span> e escrevemos <span class="math inline">\(A \subset B\)</span> ou <span class="math inline">\(B \supset A\)</span>. Interpretamos como sendo “<span class="math inline">\(A\)</span> está contido em <span class="math inline">\(B\)</span>” ou “<span class="math inline">\(B\)</span> contém <span class="math inline">\(A\)</span>”</p></li>
 <li><p>Dois conjuntos são <em>disjuntos</em> ou <em>mutuamente excludentes</em> se a sua interseção é vazio. Assim, <span class="math inline">\(A\ e\ B\ disjuntos \iff A \cap B = \emptyset\)</span></p></li>
 </ul>
-<p>Alguns exemplos visuais dessas relações podem ser visualizados abaixo:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figs/venn.png" class="img-fluid figure-img"></p>
-<figcaption>Diagramas de Venn (<span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>)</figcaption>
-</figure>
-</div>
 </section>
 <section id="leis-de-demorgan" class="level3">
 <h3 class="anchored" data-anchor-id="leis-de-demorgan">Leis de DeMorgan</h3>
@@ -295,8 +289,11 @@ window.Quarto = {
 <li>A: “Está chovendo”</li>
 <li>B: “Está frio”</li>
 </ul>
-<p>Portanto: A negação de “Está chovendo e está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo ou não está frio” (<span class="math inline">\(A^c \cup B^c\)</span>);</p>
-<p>A negação de “Está chovendo ou está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo e não está frio” (<span class="math inline">\(A^c \cap B^c\)</span>).</p>
+<p>Portanto:</p>
+<ul>
+<li><p>A negação de “Está chovendo e está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo ou não está frio” (<span class="math inline">\(A^c \cup B^c\)</span>);</p></li>
+<li><p>A negação de “Está chovendo ou está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo e não está frio” (<span class="math inline">\(A^c \cap B^c\)</span>).</p></li>
+</ul>
 <p>Caso geral:</p>
 <p><span class="math display">\[
 \begin{align*}
@@ -304,6 +301,23 @@ window.Quarto = {
 \left( \bigcap\limits_{i=1}^{n} A_i \right)^c = \bigcup\limits_{i=1}^{n} A_i^c
 \end{align*}
 \]</span></p>
+<p>Vale ressaltar também que essa relação vale também quando <span class="math inline">\(n = \infty\)</span>, ou seja:</p>
+<p><span class="math display">\[
+\begin{align*}
+\left( \bigcup\limits_{i=1}^{\infty} A_i \right)^c = \bigcap\limits_{i=1}^{\infty} A_i^c \\
+\left( \bigcap\limits_{i=1}^{\infty} A_i \right)^c = \bigcup\limits_{i=1}^{\infty} A_i^c
+\end{align*}
+\]</span></p>
+</section>
+<section id="digramas-de-venn" class="level3">
+<h3 class="anchored" data-anchor-id="digramas-de-venn">Digramas de Venn</h3>
+<p>Uma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via <a href="https://pt.wikipedia.org/wiki/Diagrama_de_Venn">Diagramas de Venn</a>. Abaixo, podemos ver algumas das relações acima (incluindo DeMorgan):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/venn.png" class="img-fluid figure-img"></p>
+<figcaption>Extraído do <span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span></figcaption>
+</figure>
+</div>
 
 
 
