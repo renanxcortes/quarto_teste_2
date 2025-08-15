@@ -58,11 +58,11 @@ Imagine as duas frases:
 -   A: "Está chovendo"
 -   B: "Está frio"
 
-Portanto: 
+Portanto:
 
-- A negação de "Está chovendo e está frio" ($A \cap B$) é "Não está chovendo ou não está frio" ($A^c \cup B^c$);
+-   A negação de "Está chovendo e está frio" ($A \cap B$) é "Não está chovendo ou não está frio" ($A^c \cup B^c$);
 
-- A negação de "Está chovendo ou está frio" ($A \cap B$) é "Não está chovendo e não está frio" ($A^c \cap B^c$).
+-   A negação de "Está chovendo ou está frio" ($A \cap B$) é "Não está chovendo e não está frio" ($A^c \cap B^c$).
 
 Caso geral:
 
@@ -72,7 +72,6 @@ $$
 \left( \bigcap\limits_{i=1}^{n} A_i \right)^c = \bigcup\limits_{i=1}^{n} A_i^c
 \end{align*}
 $$
-
 
 Vale ressaltar também que essa relação vale também quando $n = \infty$, ou seja:
 

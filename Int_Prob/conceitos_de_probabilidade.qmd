@@ -57,7 +57,7 @@ As definições anteriores não são suficientes para uma formulação matemáti
 
 Assumindo que podemos atribuir um número real $P(A)$ para um evento $A$:
 
-- **Axioma 1.** $P(A) > 0$
+- **Axioma 1.** $P(A) \ge 0$
 
 - **Axioma 2.** $P(\Omega) = 1$
 
@@ -69,12 +69,22 @@ $$
 
 (Os eventos são disjuntos 2 a 2, se $A_i \cap A_j = \emptyset, \forall i \ne j$)
 
+Uma discussão mais aprofundada desses axiomas, incluindo uma versão mais conveniente para o Axioma 3 (para o caso $n = \infty$) e uma "Axioma 4" de *continuidade no vazio*, que pode ser derivado dos outros axiomas, é discutida no Capítulo 1 de @barryjames2023.
+
 
 ## Espaços de Probabilidade
 
-espaços de probbilidade
+Um [Espaço de Probabilidade](https://en.wikipedia.org/wiki/Probability_space) é um constructo que provê um modelo formal de um processo aleatório. Ele é composto por uma tríplice de valores $(\Omega, \mathcal{F}, P)$ onde
+
+- $\Omega$ é o espaço amostral
+- $\mathcal{F}$ (ou $\sigma$-álgebra) é o espaço de eventos
+- $P$ é uma função de probabilidade
 
 falr video do veritaium
 
+
+https://en.wikipedia.org/wiki/Banach%E2%80%93Tarski_paradox
+Vitali Set
+Axioma da escolha
 
 sigma algebra

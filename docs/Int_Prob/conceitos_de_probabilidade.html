@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Conceito de Probabilidade – Teaching</title>
+<title>Conceitos de Probabilidade – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -176,7 +176,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/conceitos_de_probabilidade.html">Conceito de Probabilidade</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/conceitos_de_probabilidade.html">Conceitos de Probabilidade</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -214,7 +214,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Int_Prob/conceitos_de_probabilidade.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Conceito de Probabilidade</span></a>
+ <span class="menu-text">Conceitos de Probabilidade</span></a>
   </div>
 </li>
       </ul>
@@ -243,9 +243,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/conceitos_de_probabilidade.html">Conceito de Probabilidade</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/conceitos_de_probabilidade.html">Conceitos de Probabilidade</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Conceito de Probabilidade</h1>
+<h1 class="title">Conceitos de Probabilidade</h1>
 </div>
 
 
@@ -293,7 +293,7 @@ P(A) = \lim_{n\rightarrow{+\infty}} \frac{n_A}{n}
 <p><strong>Definição axiomática</strong></p>
 <p>Assumindo que podemos atribuir um número real <span class="math inline">\(P(A)\)</span> para um evento <span class="math inline">\(A\)</span>:</p>
 <ul>
-<li><p><strong>Axioma 1.</strong> <span class="math inline">\(P(A) &gt; 0\)</span></p></li>
+<li><p><strong>Axioma 1.</strong> <span class="math inline">\(P(A) \ge 0\)</span></p></li>
 <li><p><strong>Axioma 2.</strong> <span class="math inline">\(P(\Omega) = 1\)</span></p></li>
 <li><p><strong>Axioma 3.</strong> Se <span class="math inline">\(A_1, A_2, ..., A_n\)</span> são disjuntos (2 a 2) (isto é, mutuamente excludentes), então</p></li>
 </ul>
@@ -301,10 +301,16 @@ P(A) = \lim_{n\rightarrow{+\infty}} \frac{n_A}{n}
 P\left( \bigcup_{k=1}^{n} A_k \right) = \sum_{k=1}^{n} P (A_k)
 \]</span></p>
 <p>(Os eventos são disjuntos 2 a 2, se <span class="math inline">\(A_i \cap A_j = \emptyset, \forall i \ne j\)</span>)</p>
+<p>Uma discussão mais aprofundada desses axiomas, incluindo uma versão mais conveniente para o Axioma 3 (para o caso <span class="math inline">\(n = \infty\)</span>) e uma “Axioma 4” de <em>continuidade no vazio</em>, que pode ser derivado dos outros axiomas, é discutida no Capítulo 1 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
 </section>
 <section id="espaços-de-probabilidade" class="level2">
 <h2 class="anchored" data-anchor-id="espaços-de-probabilidade">Espaços de Probabilidade</h2>
-<p>espaços de probbilidade</p>
+<p>Um <a href="https://en.wikipedia.org/wiki/Probability_space">Espaço de Probabilidade</a> é um constructo que provê um modelo formal de um processo aleatório. Ele é composto por uma tríplice de valores <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> onde</p>
+<ul>
+<li><span class="math inline">\(\Omega\)</span> é o espaço amostral</li>
+<li><span class="math inline">\(\mathcal{F}\)</span> é o espaço de eventos (ou <span class="math inline">\(\sigma\)</span>-álgebra)</li>
+<li><span class="math inline">\(P\)</span> é uma função de probabilidade</li>
+</ul>
 <p>falr video do veritaium</p>
 <p>sigma algebra</p>
 
@@ -314,6 +320,9 @@ P\left( \bigcup_{k=1}^{n} A_k \right) = \sum_{k=1}^{n} P (A_k)
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-barryjames2023" class="csl-entry" role="listitem">
+James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>. 5.ª ed. IMPA.
+</div>
 <div id="ref-Kolmogorov1933" class="csl-entry" role="listitem">
 Kolmogorov, Andrei Nikolaevich. 1933. <em>Foundations of the Theory of Probability</em>.
 </div>
