@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -214,7 +234,6 @@ window.Quarto = {
   <li><a href="#definição-clássica-omega-enumerável" id="toc-definição-clássica-omega-enumerável" class="nav-link" data-scroll-target="#definição-clássica-omega-enumerável">Definição Clássica (<span class="math inline">\(\Omega\)</span> enumerável)</a></li>
   <li><a href="#definição-clássica-geométrica-omega-não-enumerável" id="toc-definição-clássica-geométrica-omega-não-enumerável" class="nav-link" data-scroll-target="#definição-clássica-geométrica-omega-não-enumerável">Definição Clássica Geométrica (<span class="math inline">\(\Omega\)</span> não enumerável)</a></li>
   <li><a href="#definição-frequentista" id="toc-definição-frequentista" class="nav-link" data-scroll-target="#definição-frequentista">Definição Frequentista</a></li>
-  <li><a href="#definição-geométrica" id="toc-definição-geométrica" class="nav-link" data-scroll-target="#definição-geométrica">Definição Geométrica</a></li>
   <li><a href="#probabilidade-axiomática" id="toc-probabilidade-axiomática" class="nav-link" data-scroll-target="#probabilidade-axiomática">Probabilidade Axiomática</a></li>
   <li><a href="#espaços-de-probabilidade" id="toc-espaços-de-probabilidade" class="nav-link" data-scroll-target="#espaços-de-probabilidade">Espaços de Probabilidade</a></li>
   </ul></li>
@@ -247,7 +266,7 @@ window.Quarto = {
 <h1>Introdução</h1>
 <section id="definição-clássica-omega-enumerável" class="level2">
 <h2 class="anchored" data-anchor-id="definição-clássica-omega-enumerável">Definição Clássica (<span class="math inline">\(\Omega\)</span> enumerável)</h2>
-<p>A definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:</p>
+<p>Segundo <span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span>, a definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:</p>
 <p><span class="math display">\[
 P(A) = \frac{Número\ de\ Elementos\ em\ A}{Número\ total\ de\ Elementos\ em\ \Omega}
 \]</span></p>
@@ -262,24 +281,46 @@ P(A) = \frac{Comprimento\ de\ A}{Comprimento\ de\ \Omega}
 </section>
 <section id="definição-frequentista" class="level2">
 <h2 class="anchored" data-anchor-id="definição-frequentista">Definição Frequentista</h2>
-</section>
-<section id="definição-geométrica" class="level2">
-<h2 class="anchored" data-anchor-id="definição-geométrica">Definição Geométrica</h2>
+<p>A definição <em>frequentista</em> considera o limite de frequências relativas como o valor da probabilidade. Para tal, seja <span class="math inline">\(n_{A}\)</span> o número de ocorrências de <span class="math inline">\(A\)</span> em <span class="math inline">\(n\)</span> repetições independentes do experimento em questão. Assim,</p>
+<p><span class="math display">\[
+P(A) = \lim_{n\rightarrow{+\infty}} \frac{n_A}{n}
+\]</span></p>
 </section>
 <section id="probabilidade-axiomática" class="level2">
 <h2 class="anchored" data-anchor-id="probabilidade-axiomática">Probabilidade Axiomática</h2>
-<p>Axiomas de kolmogorov</p>
+<p>As definições anteriores não são suficientes para uma formulação matemática mais rigorosa da probabilidade. Assim, na primeira metade do século XX, <span class="citation" data-cites="Kolmogorov1933">Kolmogorov (<a href="#ref-Kolmogorov1933" role="doc-biblioref">1933</a>)</span> apresentou um conjunto de axiomas matemáticos para definir probabilidade e, assim, pavimentando toda a evolução da probabilidade moderna.</p>
+<p>É importante, e ao mesmo tempo fascinante, destacar que apenas com esses três axiomas <strong>todos os teoremas da Teoria da Probabilidade são viabilizados</strong>. Assim, podemos destacar que toda a evolução da probabilidade foi pavimentada pelo trabalho de <span class="citation" data-cites="Kolmogorov1933">Kolmogorov (<a href="#ref-Kolmogorov1933" role="doc-biblioref">1933</a>)</span>.</p>
+<p><strong>Definição axiomática</strong></p>
+<p>Assumindo que podemos atribuir um número real <span class="math inline">\(P(A)\)</span> para um evento <span class="math inline">\(A\)</span>:</p>
+<ul>
+<li><p><strong>Axioma 1.</strong> <span class="math inline">\(P(A) &gt; 0\)</span></p></li>
+<li><p><strong>Axioma 2.</strong> <span class="math inline">\(P(\Omega) = 1\)</span></p></li>
+<li><p><strong>Axioma 3.</strong> Se <span class="math inline">\(A_1, A_2, ..., A_n\)</span> são disjuntos (2 a 2) (isto é, mutuamente excludentes), então</p></li>
+</ul>
+<p><span class="math display">\[
+P\left( \bigcup_{k=1}^{n} A_k \right) = \sum_{k=1}^{n} P (A_k)
+\]</span></p>
+<p>(Os eventos são disjuntos 2 a 2, se <span class="math inline">\(A_i \cap A_j = \emptyset, \forall i \ne j\)</span>)</p>
 </section>
 <section id="espaços-de-probabilidade" class="level2">
 <h2 class="anchored" data-anchor-id="espaços-de-probabilidade">Espaços de Probabilidade</h2>
-<p>falr video do veritaium espaços de probbilidade</p>
+<p>espaços de probbilidade</p>
+<p>falr video do veritaium</p>
 <p>sigma algebra</p>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Kolmogorov1933" class="csl-entry" role="listitem">
+Kolmogorov, Andrei Nikolaevich. 1933. <em>Foundations of the Theory of Probability</em>.
+</div>
+<div id="ref-magalhaes2006probabilidade" class="csl-entry" role="listitem">
+Magalhães, M. N. 2006. <em>Probabilidade e Vari<span>á</span>veis Aleat<span>ó</span>rias</em>. 3.ª ed. Edusp.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

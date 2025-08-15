@@ -1,5 +1,5 @@
 ---
-title: "Conceito de Probabilidade"
+title: "Conceitos de Probabilidade"
 lang: pt # Equações ficarem referenciadas em Português
 
 toc: true
@@ -55,11 +55,26 @@ As definições anteriores não são suficientes para uma formulação matemáti
 
 **Definição axiomática**
 
+Assumindo que podemos atribuir um número real $P(A)$ para um evento $A$:
+
+- **Axioma 1.** $P(A) > 0$
+
+- **Axioma 2.** $P(\Omega) = 1$
+
+- **Axioma 3.** Se $A_1, A_2, ..., A_n$ são disjuntos (2 a 2) (isto é, mutuamente excludentes), então
+
+$$
+P\left( \bigcup_{k=1}^{n} A_k \right) = \sum_{k=1}^{n} P (A_k) 
+$$
+
+(Os eventos são disjuntos 2 a 2, se $A_i \cap A_j = \emptyset, \forall i \ne j$)
 
 
 ## Espaços de Probabilidade
 
-falr video do veritaium
 espaços de probbilidade
+
+falr video do veritaium
+
 
 sigma algebra

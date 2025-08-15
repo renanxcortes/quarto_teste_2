@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Sobre",
     "section": "",
-    "text": "Este é um Website do\nConstante Evolução\nConceitos Gerais de Probabilidade, Estatística e afins\nSinta-se livre para sugerir melhorias abrindo uma issue neste link\nEste é um website baseado no Quarto da empresa Posit.\n\nLinks Úteis\nSite oficial do Quarto\nTemplates úteis do prof. Gang He"
+    "text": "Este é um Website do\nConstante Evolução\nConceitos Gerais de Probabilidade, Estatística e afins\nSinta-se livre para sugerir melhorias abrindo uma issue neste link\nEste é um website baseado no Quarto da empresa Posit.\n\nLinks Úteis\nSite oficial do Quarto\nTemplates de Quarto úteis do prof. Gang He\nLivro de Estatística Básica do Prof. Filipe Zabala"
   },
   {
     "objectID": "about.html",
@@ -592,7 +592,7 @@
     "href": "Int_Prob/conceitos_de_probabilidade.html",
     "title": "Conceito de Probabilidade",
     "section": "",
-    "text": "A definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:\n\\[\nP(A) = \\frac{Número\\ de\\ Elementos\\ em\\ A}{Número\\ total\\ de\\ Elementos\\ em\\ \\Omega}\n\\]\nSe \\(\\Omega\\) tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.\n\n\n\nQuando \\(\\Omega\\) é não enumerável, o conceito se aplicará ao comprimento de intervalos, medidas de áreas ou similares, dando origem ao que chamamos de probabilidade geométrica. Por exemplo, se \\(\\Omega\\) é um intervalo onde \\(\\Omega \\in \\mathbb{R}\\), então:\n\\[\nP(A) = \\frac{Comprimento\\ de\\ A}{Comprimento\\ de\\ \\Omega}\n\\]\n\n\n\n\n\n\n\n\n\nAxiomas de kolmogorov\n\n\n\nfalr video do veritaium espaços de probbilidade\nsigma algebra",
+    "text": "Segundo Magalhães (2006), a definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:\n\\[\nP(A) = \\frac{Número\\ de\\ Elementos\\ em\\ A}{Número\\ total\\ de\\ Elementos\\ em\\ \\Omega}\n\\]\nSe \\(\\Omega\\) tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.\n\n\n\nQuando \\(\\Omega\\) é não enumerável, o conceito se aplicará ao comprimento de intervalos, medidas de áreas ou similares, dando origem ao que chamamos de probabilidade geométrica. Por exemplo, se \\(\\Omega\\) é um intervalo onde \\(\\Omega \\in \\mathbb{R}\\), então:\n\\[\nP(A) = \\frac{Comprimento\\ de\\ A}{Comprimento\\ de\\ \\Omega}\n\\]\n\n\n\nA definição frequentista considera o limite de frequências relativas como o valor da probabilidade. Para tal, seja \\(n_{A}\\) o número de ocorrências de \\(A\\) em \\(n\\) repetições independentes do experimento em questão. Assim,\n\\[\nP(A) = \\lim_{n\\rightarrow{+\\infty}} \\frac{n_A}{n}\n\\]\n\n\n\nAs definições anteriores não são suficientes para uma formulação matemática mais rigorosa da probabilidade. Assim, na primeira metade do século XX, Kolmogorov (1933) apresentou um conjunto de axiomas matemáticos para definir probabilidade e, assim, pavimentando toda a evolução da probabilidade moderna.\nÉ importante, e ao mesmo tempo fascinante, destacar que apenas com esses três axiomas todos os teoremas da Teoria da Probabilidade são viabilizados. Assim, podemos destacar que toda a evolução da probabilidade foi pavimentada pelo trabalho de Kolmogorov (1933).\nDefinição axiomática\nAssumindo que podemos atribuir um número real \\(P(A)\\) para um evento \\(A\\):\n\nAxioma 1. \\(P(A) &gt; 0\\)\nAxioma 2. \\(P(\\Omega) = 1\\)\nAxioma 3. Se \\(A_1, A_2, ..., A_n\\) são disjuntos (2 a 2) (isto é, mutuamente excludentes), então\n\n\\[\nP\\left( \\bigcup_{k=1}^{n} A_k \\right) = \\sum_{k=1}^{n} P (A_k)\n\\]\n(Os eventos são disjuntos 2 a 2, se \\(A_i \\cap A_j = \\emptyset, \\forall i \\ne j\\))\n\n\n\nespaços de probbilidade\nfalr video do veritaium\nsigma algebra",
     "crumbs": [
       "Conceitos Básicos",
       "Conceito de Probabilidade"
@@ -603,7 +603,7 @@
     "href": "Int_Prob/conceitos_de_probabilidade.html#probabilidade-axiomática",
     "title": "Conceito de Probabilidade",
     "section": "",
-    "text": "Axiomas de kolmogorov",
+    "text": "As definições anteriores não são suficientes para uma formulação matemática mais rigorosa da probabilidade. Assim, na primeira metade do século XX, Kolmogorov (1933) apresentou um conjunto de axiomas matemáticos para definir probabilidade e, assim, pavimentando toda a evolução da probabilidade moderna.\nÉ importante, e ao mesmo tempo fascinante, destacar que apenas com esses três axiomas todos os teoremas da Teoria da Probabilidade são viabilizados. Assim, podemos destacar que toda a evolução da probabilidade foi pavimentada pelo trabalho de Kolmogorov (1933).\nDefinição axiomática\nAssumindo que podemos atribuir um número real \\(P(A)\\) para um evento \\(A\\):\n\nAxioma 1. \\(P(A) &gt; 0\\)\nAxioma 2. \\(P(\\Omega) = 1\\)\nAxioma 3. Se \\(A_1, A_2, ..., A_n\\) são disjuntos (2 a 2) (isto é, mutuamente excludentes), então\n\n\\[\nP\\left( \\bigcup_{k=1}^{n} A_k \\right) = \\sum_{k=1}^{n} P (A_k)\n\\]\n(Os eventos são disjuntos 2 a 2, se \\(A_i \\cap A_j = \\emptyset, \\forall i \\ne j\\))",
     "crumbs": [
       "Conceitos Básicos",
       "Conceito de Probabilidade"
@@ -614,7 +614,7 @@
     "href": "Int_Prob/conceitos_de_probabilidade.html#definição-clássica-omega-enumerável",
     "title": "Conceito de Probabilidade",
     "section": "",
-    "text": "A definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:\n\\[\nP(A) = \\frac{Número\\ de\\ Elementos\\ em\\ A}{Número\\ total\\ de\\ Elementos\\ em\\ \\Omega}\n\\]\nSe \\(\\Omega\\) tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.",
+    "text": "Segundo Magalhães (2006), a definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:\n\\[\nP(A) = \\frac{Número\\ de\\ Elementos\\ em\\ A}{Número\\ total\\ de\\ Elementos\\ em\\ \\Omega}\n\\]\nSe \\(\\Omega\\) tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.",
     "crumbs": [
       "Conceitos Básicos",
       "Conceito de Probabilidade"
@@ -636,7 +636,18 @@
     "href": "Int_Prob/conceitos_de_probabilidade.html#espaços-de-probabilidade",
     "title": "Conceito de Probabilidade",
     "section": "",
-    "text": "falr video do veritaium espaços de probbilidade\nsigma algebra",
+    "text": "espaços de probbilidade\nfalr video do veritaium\nsigma algebra",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceito de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/conceitos_de_probabilidade.html#definição-frequentista",
+    "href": "Int_Prob/conceitos_de_probabilidade.html#definição-frequentista",
+    "title": "Conceito de Probabilidade",
+    "section": "",
+    "text": "A definição frequentista considera o limite de frequências relativas como o valor da probabilidade. Para tal, seja \\(n_{A}\\) o número de ocorrências de \\(A\\) em \\(n\\) repetições independentes do experimento em questão. Assim,\n\\[\nP(A) = \\lim_{n\\rightarrow{+\\infty}} \\frac{n_A}{n}\n\\]",
     "crumbs": [
       "Conceitos Básicos",
       "Conceito de Probabilidade"
