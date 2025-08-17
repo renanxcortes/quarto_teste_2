@@ -115,9 +115,26 @@ $$
 
 **Prova.** Como $A \subset \Omega$, então $0 \le P(A) \le P(\Omega) = 1$
 
-- Para quaisquer eventos $A$ e $B$, $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+- Para quaisquer eventos $A$ e $B$, $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ (Esta relação é mais fácil de visualizar via Diagrama de Venn)
 
-**Prova.** Como $A \subset \Omega$, então $0 \le P(A) \le P(\Omega) = 1$
+**Prova.** 
+
+Primeiro, vamos escrever $P(A)$ e $P(B)$ como a soma de suas partes:
+
+$$
+P(A) = P(A \cap B^c) + P(A \cap B) \\
+P(B) = P(B \cap A^c) + P(B \cap A)
+$$
+
+Agora, vamos escrever a união como a soma de suas partes:
+
+$$
+P(A \cup B) = P(A \cap B^c) + P(A \cap B) + P(B \cap A^c) 
+$$
+
+Agora, somando e substraindo $P(A \cap B)$:
+
+...
 
 
 ## Espaços de Probabilidade
