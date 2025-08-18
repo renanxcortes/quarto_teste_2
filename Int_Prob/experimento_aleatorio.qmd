@@ -86,4 +86,4 @@ $$
 
 Uma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via [Diagramas de Venn](https://pt.wikipedia.org/wiki/Diagrama_de_Venn). Abaixo, podemos ver algumas das relações acima (incluindo DeMorgan):
 
-![Extraído do @degroot2012probability](figs/venn.png)
+![Extraído do @mood1974introduction](figs/venn.png)
