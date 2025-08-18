@@ -134,7 +134,7 @@ $$
 
 Agora, somando e substraindo $P(A \cap B)$:
 
-...
+....
 
 
 ## Espaços de Probabilidade
