@@ -111,6 +111,8 @@ P(B) &\ge P(A)
 $$
 
 
+- Se $A \subset B$, então $P(A \cap B) = P(A)$.
+
 - Para qualquer evento $A$, $0 \le P(A) \le 1$.
 
 **Prova.** Como $A \subset \Omega$, então $0 \le P(A) \le P(\Omega) = 1$
@@ -134,8 +136,19 @@ $$
 
 Agora, somando e substraindo $P(A \cap B)$:
 
-....
+$$
+\begin{align*}
+P(A \cup B) &= \overbrace{P(A \cap B^c) + P(A \cap B)}^{P(A)} + \overbrace{P(B \cap A^c) + P(A \cap B)}^{P(B)} - P(A \cap B) \\
+P(A \cup B) &= P(A) + P(B) - P(A \cap B)
+\end{align*}
+$$
 
+
+- (*Desigualdade de Boole*) Sejam $A_1, A_2, ..., A_n$ então
+
+$$
+P\left( \bigcup_{i=1}^{n} A_i  \right) \le \sum_{i=1}^{n}P(A_i)
+$$
 
 ## Espaços de Probabilidade
 

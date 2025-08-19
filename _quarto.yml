@@ -44,6 +44,7 @@ website:
           contents:
             - Int_Prob/experimento_aleatorio.qmd
             - Int_Prob/conceitos_de_probabilidade.qmd
+            - Int_Prob/probabilidade_condicional_e_independencia.qmd
             
             
     - id: probabilidade_B

@@ -217,6 +217,12 @@ window.Quarto = {
  <span class="menu-text">Conceitos de Probabilidade</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Int_Prob/probabilidade_condicional_e_independencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilidade Condicional e Independência</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -340,7 +346,8 @@ P(B) &amp;\ge P(A)
 \end{align*}
 \]</span></p>
 <ul>
-<li>Para qualquer evento <span class="math inline">\(A\)</span>, <span class="math inline">\(0 \le P(A) \le 1\)</span>.</li>
+<li><p>Se <span class="math inline">\(A \subset B\)</span>, então <span class="math inline">\(P(A \cap B) = P(A)\)</span>.</p></li>
+<li><p>Para qualquer evento <span class="math inline">\(A\)</span>, <span class="math inline">\(0 \le P(A) \le 1\)</span>.</p></li>
 </ul>
 <p><strong>Prova.</strong> Como <span class="math inline">\(A \subset \Omega\)</span>, então <span class="math inline">\(0 \le P(A) \le P(\Omega) = 1\)</span></p>
 <ul>
@@ -357,7 +364,18 @@ P(B) = P(B \cap A^c) + P(B \cap A)
 P(A \cup B) = P(A \cap B^c) + P(A \cap B) + P(B \cap A^c)
 \]</span></p>
 <p>Agora, somando e substraindo <span class="math inline">\(P(A \cap B)\)</span>:</p>
-<p>….</p>
+<p><span class="math display">\[
+\begin{align*}
+P(A \cup B) &amp;= \overbrace{P(A \cap B^c) + P(A \cap B)}^{P(A)} + \overbrace{P(B \cap A^c) + P(A \cap B)}^{P(B)} - P(A \cap B) \\
+P(A \cup B) &amp;= P(A) + P(B) - P(A \cap B)
+\end{align*}
+\]</span></p>
+<ul>
+<li>(<em>Desigualdade de Boole</em>) Sejam <span class="math inline">\(A_1, A_2, ..., A_n\)</span> então</li>
+</ul>
+<p><span class="math display">\[
+P\left( \bigcup_{i=1}^{n} A_i  \right) \le \sum_{i=1}^{n}P(A_i)
+\]</span></p>
 </section>
 </section>
 <section id="espaços-de-probabilidade" class="level2">
