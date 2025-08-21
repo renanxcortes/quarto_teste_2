@@ -28,6 +28,12 @@ O *espaço amostral* é o conjunto de todos os possíveis resultados de um exper
 
 ### Operações Básicas e Definições
 
+-   Lei Comutativa: $A \cup B = B \cup A$ e, também, $A \cap B = B \cap A$
+
+-   Lei Associativa: $A \cup (B \cup C) = (A \cup B) \cup C$ e, também, $A \cap (B \cap C) = (A \cap B) \cap C$
+
+-   Lei Distributiva: $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ e, também, $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+
 -   $A^c$ (ou $\bar{A}$) é o complementar de $A$, isto é, todos os elementos de $\Omega$ exceto os de $A$
 
 -   $A_1 \cup A_2 ... \cup A_n$ ou $\bigcup\limits_{i=1}^{n}A_i$ é a *união* de $A_1, A_2, ..., A_n$ e representa os pontos de $\Omega$ que pertencem à pelo menos um $A_i$
