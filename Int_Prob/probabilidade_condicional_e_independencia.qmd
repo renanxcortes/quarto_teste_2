@@ -50,7 +50,7 @@ P\left( \bigcup_{i=1}^{n} A_i |B \right) = \frac{P\left( \left(\bigcup_{i=1}^{n}
 $$
 Desta maneira, para quaquer $B$ satisfazendo $P(B) > 0$, qualquer função de probabilidade aplicada no subespaço de $B$ também é uma função de probabilidade e goza das mesmas propriedades de uma função não-condicionada.
 
-#### Teorema da Probabilidade Total
+## Teorema da Probabilidade Total
 
 Antes de apresentar o teorema da probabilidade total, apresenta-se a definição de **partição** do espaço amostral:
 
@@ -68,5 +68,41 @@ Visualmente:
 
 Ressalta-se que o *Teorema da Probabilidade Total* vale também quando $n = \infty$
 
+## Teorema de Bayes
+
+O Teorema de Bayese, [na sua forma extendida](https://en.wikipedia.org/wiki/Bayes%27_theorem)^[Um vídeo interessante sobre a aplicação e explicação do Teorema de Bayes pode ser visto nesse vídeo: [A Armadilha Bayesiana](https://www.youtube.com/watch?v=R13BD8qKeTg)], é visto como a probabilidade de um evento de uma partição condicionado à um evento já ocorrido do espaço amostral. A fórmula de Bayes é definida a seguir:
+
+**Teorema** Se $B_1, B_2, ..., B_n$ forma uma *partição* de $\Omega$ então para qualquer evento $A$ temos que
+
+$$
+P(B_i |A) = \frac{P(A | B_i) P(B_i)} {\sum\limits_{i=1}^{n}P(A | B_i)P(B_i)} \ \ \ \forall i=1,...n.
+$$
+Ressalta-se que o *Teorema de Bayes* vale também quando $n = \infty$.
+
+Observe que o **denominador** da Fórmula de Bayes é o valor do Teorema da Probabilidade Total definida anteriormente.
 
 
+INCLUIR AKI Exmeplo do morettin... tentar desenhar o exemplo do morettin como uma particao.... o B é "saiu cara" numa particao de moedas...
+
+## Regra da multiplicação
+
+Outro resultado importante é a regra da multiplicação abaixo:
+
+
+**Teorema** Sejam $A_1, A_2, ..., A_n$ diferentes eventos de um espaço de probabilidade, então:
+
+$$
+P(A_1 \cap A_2 \cap ... \cap A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2 \cap A_1)...P(A_n|A_1 \cap ... \cap A_{n-1})
+$$
+
+Ou, conforme @mood1974introduction, em notação alternativa: 
+
+$$
+P(A_1A_2 ... A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2A_1)...P(A_n|A_1... A_{n-1})
+$$
+
+
+
+# Independência de eventos
+
+teste

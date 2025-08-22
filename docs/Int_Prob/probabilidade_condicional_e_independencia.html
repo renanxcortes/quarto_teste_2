@@ -235,7 +235,13 @@ window.Quarto = {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#probabilidade-condicional" id="toc-probabilidade-condicional" class="nav-link active" data-scroll-target="#probabilidade-condicional">Probabilidade Condicional</a></li>
+  <li><a href="#probabilidade-condicional" id="toc-probabilidade-condicional" class="nav-link active" data-scroll-target="#probabilidade-condicional">Probabilidade Condicional</a>
+  <ul class="collapse">
+  <li><a href="#teorema-da-probabilidade-total" id="toc-teorema-da-probabilidade-total" class="nav-link" data-scroll-target="#teorema-da-probabilidade-total">Teorema da Probabilidade Total</a></li>
+  <li><a href="#teorema-de-bayes" id="toc-teorema-de-bayes" class="nav-link" data-scroll-target="#teorema-de-bayes">Teorema de Bayes</a></li>
+  <li><a href="#regra-da-multiplicação" id="toc-regra-da-multiplicação" class="nav-link" data-scroll-target="#regra-da-multiplicação">Regra da multiplicação</a></li>
+  </ul></li>
+  <li><a href="#independência-de-eventos" id="toc-independência-de-eventos" class="nav-link" data-scroll-target="#independência-de-eventos">Independência de eventos</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/probabilidade_condicional_e_independencia.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/probabilidade_condicional_e_independencia.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
@@ -286,8 +292,8 @@ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(\text{sair 2 e par})}{P(\text{par})}
 <p><span class="math display">\[
 P\left( \bigcup_{i=1}^{n} A_i |B \right) = \frac{P\left( \left(\bigcup_{i=1}^{n} A_i \right)\cap B \right)}{P(B)} \overset{Lei \ Distributiva}{=} \frac{P\left( \bigcup_{i=1}^{n} \left(A_i \cap B \right)\right)}{P(B)} = \frac{\sum_{i=1}^{n}P\left( A_i \cap B \right)}{P(B)} = \sum_{i=1}^{n}\left(\frac{P(A_i \cap B) }{P(B)}\right) = \sum_{i=1}^{n}P\left( A_i | B \right)
 \]</span> Desta maneira, para quaquer <span class="math inline">\(B\)</span> satisfazendo <span class="math inline">\(P(B) &gt; 0\)</span>, qualquer função de probabilidade aplicada no subespaço de <span class="math inline">\(B\)</span> também é uma função de probabilidade e goza das mesmas propriedades de uma função não-condicionada.</p>
-<section id="teorema-da-probabilidade-total" class="level4">
-<h4 class="anchored" data-anchor-id="teorema-da-probabilidade-total">Teorema da Probabilidade Total</h4>
+<section id="teorema-da-probabilidade-total" class="level2">
+<h2 class="anchored" data-anchor-id="teorema-da-probabilidade-total">Teorema da Probabilidade Total</h2>
 <p>Antes de apresentar o teorema da probabilidade total, apresenta-se a definição de <strong>partição</strong> do espaço amostral:</p>
 <p><strong>Definição</strong> Se <span class="math inline">\(B_1, B_2, ..., B_n\)</span> representa um conjunto de eventos mutuamente excludentes satisfazendo <span class="math inline">\(\Omega = \bigcup\limits_{i=1}^{n}B_i\)</span> então, dizemos que <span class="math inline">\(B_1, B_2, ..., B_n\)</span> forma uma <em>partição</em> de <span class="math inline">\(\Omega\)</span>.</p>
 <p><strong>Teorema</strong> Se <span class="math inline">\(B_1, B_2, ..., B_n\)</span> forma uma <em>partição</em> de <span class="math inline">\(\Omega\)</span> então para qualquer evento <span class="math inline">\(A\)</span>:</p>
@@ -302,17 +308,52 @@ P(A) = P\left(\bigcup\limits_{i=1}^{n}(A \cap B_i)\right) = \sum\limits_{i=1}^{n
 </figure>
 </div>
 <p>Ressalta-se que o <em>Teorema da Probabilidade Total</em> vale também quando <span class="math inline">\(n = \infty\)</span></p>
+</section>
+<section id="teorema-de-bayes" class="level2">
+<h2 class="anchored" data-anchor-id="teorema-de-bayes">Teorema de Bayes</h2>
+<p>O Teorema de Bayese, <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">na sua forma extendida</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, é visto como a probabilidade de um evento de uma partição condicionado à um evento já ocorrido do espaço amostral. A fórmula de Bayes é definida a seguir:</p>
+<p><strong>Teorema</strong> Se <span class="math inline">\(B_1, B_2, ..., B_n\)</span> forma uma <em>partição</em> de <span class="math inline">\(\Omega\)</span> então para qualquer evento <span class="math inline">\(A\)</span> temos que</p>
+<p><span class="math display">\[
+P(B_i |A) = \frac{P(A | B_i) P(B_i)} {\sum\limits_{i=1}^{n}P(A | B_i)P(B_i)} \ \ \ \forall i=1,...n.
+\]</span> Ressalta-se que o <em>Teorema de Bayes</em> vale também quando <span class="math inline">\(n = \infty\)</span>.</p>
+<p>Observe que o <strong>denominador</strong> da Fórmula de Bayes é o valor do Teorema da Probabilidade Total definida anteriormente.</p>
+<p>INCLUIR AKI Exmeplo do morettin… tentar desenhar o exemplo do morettin como uma particao…. o B é “saiu cara” numa particao de moedas…</p>
+</section>
+<section id="regra-da-multiplicação" class="level2">
+<h2 class="anchored" data-anchor-id="regra-da-multiplicação">Regra da multiplicação</h2>
+<p>Outro resultado importante é a regra da multiplicação abaixo:</p>
+<p><strong>Teorema</strong> Sejam <span class="math inline">\(A_1, A_2, ..., A_n\)</span> diferentes eventos de um espaço de probabilidade, então:</p>
+<p><span class="math display">\[
+P(A_1 \cap A_2 \cap ... \cap A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2 \cap A_1)...P(A_n|A_1 \cap ... \cap A_{n-1})
+\]</span></p>
+<p>Ou, conforme <span class="citation" data-cites="mood1974introduction">Mood, Graybill, e Boes (<a href="#ref-mood1974introduction" role="doc-biblioref">1974</a>)</span>, em notação alternativa:</p>
+<p><span class="math display">\[
+P(A_1A_2 ... A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2A_1)...P(A_n|A_1... A_{n-1})
+\]</span></p>
+</section>
+</section>
+<section id="independência-de-eventos" class="level1">
+<h1>Independência de eventos</h1>
+<p>teste</p>
 
 
 
 </section>
-</section>
+
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-degroot2012probability" class="csl-entry" role="listitem">
 DeGroot, M. H., e M. J. Schervish. 2012. <em>Probability and Statistics</em>. Addison-Wesley.
 </div>
-</div></section></div></main> <!-- /main -->
+<div id="ref-mood1974introduction" class="csl-entry" role="listitem">
+Mood, A. M. F., F. A. Graybill, e D. C. Boes. 1974. <em>Introduction to the Theory of Statistics</em>. McGraw-Hill international editions: Statistics series. McGraw-Hill.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas de rodapé</h2>
+
+<ol>
+<li id="fn1"><p>Um vídeo interessante sobre a aplicação e explicação do Teorema de Bayes pode ser visto nesse vídeo: <a href="https://www.youtube.com/watch?v=R13BD8qKeTg">A Armadilha Bayesiana</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
