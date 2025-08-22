@@ -46,9 +46,15 @@ O *espaço amostral* é o conjunto de todos os possíveis resultados de um exper
 
 -   Dois conjuntos são *disjuntos* ou *mutuamente excludentes* se a sua interseção é vazio. Assim, $A\ e\ B\ disjuntos \iff A \cap B = \emptyset$
 
+### Digramas de Venn
+
+Uma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via [Diagramas de Venn](https://pt.wikipedia.org/wiki/Diagrama_de_Venn). Abaixo, podemos ver algumas das relações:
+
+![Extraído do @mood1974introduction](figs/venn.png)
+
 ### Leis de DeMorgan
 
-As [Leis de DeMorgan](https://en.wikipedia.org/wiki/De_Morgan%27s_laws) são teoremas fundamentais que descrevem relações entre a união e interesecção entre conjuntos e de seus complementos.
+As [Leis de DeMorgan](https://en.wikipedia.org/wiki/De_Morgan%27s_laws), ilustrada também no Diagrama de Venn anterior, são teoremas fundamentais que descrevem relações entre a união e interesecção entre conjuntos e de seus complementos.
 
 O caso simples pode ser descrito abaixo:
 
@@ -88,8 +94,4 @@ $$
 \end{align*}
 $$
 
-### Digramas de Venn
 
-Uma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via [Diagramas de Venn](https://pt.wikipedia.org/wiki/Diagrama_de_Venn). Abaixo, podemos ver algumas das relações acima (incluindo DeMorgan):
-
-![Extraído do @mood1974introduction](figs/venn.png)

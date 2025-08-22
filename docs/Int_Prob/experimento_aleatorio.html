@@ -240,8 +240,8 @@ window.Quarto = {
   <li><a href="#eventosconjuntos" id="toc-eventosconjuntos" class="nav-link" data-scroll-target="#eventosconjuntos">Eventos/Conjuntos</a>
   <ul class="collapse">
   <li><a href="#operações-básicas-e-definições" id="toc-operações-básicas-e-definições" class="nav-link" data-scroll-target="#operações-básicas-e-definições">Operações Básicas e Definições</a></li>
-  <li><a href="#leis-de-demorgan" id="toc-leis-de-demorgan" class="nav-link" data-scroll-target="#leis-de-demorgan">Leis de DeMorgan</a></li>
   <li><a href="#digramas-de-venn" id="toc-digramas-de-venn" class="nav-link" data-scroll-target="#digramas-de-venn">Digramas de Venn</a></li>
+  <li><a href="#leis-de-demorgan" id="toc-leis-de-demorgan" class="nav-link" data-scroll-target="#leis-de-demorgan">Leis de DeMorgan</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -290,9 +290,19 @@ window.Quarto = {
 <li><p>Dois conjuntos são <em>disjuntos</em> ou <em>mutuamente excludentes</em> se a sua interseção é vazio. Assim, <span class="math inline">\(A\ e\ B\ disjuntos \iff A \cap B = \emptyset\)</span></p></li>
 </ul>
 </section>
+<section id="digramas-de-venn" class="level3">
+<h3 class="anchored" data-anchor-id="digramas-de-venn">Digramas de Venn</h3>
+<p>Uma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via <a href="https://pt.wikipedia.org/wiki/Diagrama_de_Venn">Diagramas de Venn</a>. Abaixo, podemos ver algumas das relações:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/venn.png" class="img-fluid figure-img"></p>
+<figcaption>Extraído do <span class="citation" data-cites="mood1974introduction">Mood, Graybill, e Boes (<a href="#ref-mood1974introduction" role="doc-biblioref">1974</a>)</span></figcaption>
+</figure>
+</div>
+</section>
 <section id="leis-de-demorgan" class="level3">
 <h3 class="anchored" data-anchor-id="leis-de-demorgan">Leis de DeMorgan</h3>
-<p>As <a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws">Leis de DeMorgan</a> são teoremas fundamentais que descrevem relações entre a união e interesecção entre conjuntos e de seus complementos.</p>
+<p>As <a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws">Leis de DeMorgan</a>, ilustrada também no Diagrama de Venn anterior, são teoremas fundamentais que descrevem relações entre a união e interesecção entre conjuntos e de seus complementos.</p>
 <p>O caso simples pode ser descrito abaixo:</p>
 <p><span class="math display">\[
 \begin{align*}
@@ -324,16 +334,6 @@ window.Quarto = {
 \left( \bigcap\limits_{i=1}^{\infty} A_i \right)^c = \bigcup\limits_{i=1}^{\infty} A_i^c
 \end{align*}
 \]</span></p>
-</section>
-<section id="digramas-de-venn" class="level3">
-<h3 class="anchored" data-anchor-id="digramas-de-venn">Digramas de Venn</h3>
-<p>Uma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via <a href="https://pt.wikipedia.org/wiki/Diagrama_de_Venn">Diagramas de Venn</a>. Abaixo, podemos ver algumas das relações acima (incluindo DeMorgan):</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figs/venn.png" class="img-fluid figure-img"></p>
-<figcaption>Extraído do <span class="citation" data-cites="mood1974introduction">Mood, Graybill, e Boes (<a href="#ref-mood1974introduction" role="doc-biblioref">1974</a>)</span></figcaption>
-</figure>
-</div>
 
 
 
