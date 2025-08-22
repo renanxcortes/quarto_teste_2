@@ -13,9 +13,9 @@ about:
   image-width: 70%
   links:
     # - icon: sun
-    #  text: DeepPolicyLab
-    #  href: https://deeppolicylab.github.io
-    #   target: _blank
+    #   text: DeepPolicyLab
+    #   href: https://deeppolicylab.github.io
+      # target: _blank
     - icon: globe
       text: Website
       href: https://renanxcortes.github.io/
@@ -23,18 +23,18 @@ about:
     - icon: envelope
       text: E-mail
       href: mailto:renanxcortes@gmail.com
-   # - icon: github
-   #   text: Github
-   #   href: https://github.com/drganghe
+    - icon: github
+      text: Github
+      href: https://github.com/renanxcortes
    # - icon: twitter
    #   text: Twitter
    #   href: https://twitter.com/DrGangHe
    # - icon: mastodon
    #   text: Mastodon
    #   href: https://mastodon.social/@hegang
-   # - icon: linkedin
-   #   text: LinkedIn
-   #   href: https://linkedin.com/in/hegang
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/renan-cortes-a3583a33/
    #   target: _blank
    # - icon: youtube
    #   text: YouTube
@@ -52,6 +52,9 @@ about:
    # - text: "{{< ai google-scholar >}} Google Scholar"
    #   href: https://scholar.google.com/citations?user=vf90AuEAAAAJ
    #   target: _blank
+    - text: "Currículo Lattes"
+      href: http://lattes.cnpq.br/2352000783745031
+      target: _blank
    # - text: "{{< ai researchgate >}} Research Gate"
    #   href: https://www.researchgate.net/profile/Gang-He-19
     #   target: _blank
