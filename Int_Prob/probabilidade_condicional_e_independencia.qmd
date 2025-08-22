@@ -50,8 +50,23 @@ P\left( \bigcup_{i=1}^{n} A_i |B \right) = \frac{P\left( \left(\bigcup_{i=1}^{n}
 $$
 Desta maneira, para quaquer $B$ satisfazendo $P(B) > 0$, qualquer função de probabilidade aplicada no subespaço de $B$ também é uma função de probabilidade e goza das mesmas propriedades de uma função não-condicionada.
 
+#### Teorema da Probabilidade Total
 
+Antes de apresentar o teorema da probabilidade total, apresenta-se a definição de **partição** do espaço amostral:
 
+**Definição** Se $B_1, B_2, ..., B_n$ representa um conjunto de eventos mutuamente excludentes satisfazendo $\Omega = \bigcup\limits_{i=1}^{n}B_i$ então, dizemos que $B_1, B_2, ..., B_n$ forma uma *partição* de $\Omega$.
+
+**Teorema** Se $B_1, B_2, ..., B_n$ forma uma *partição* de $\Omega$ então para qualquer evento $A$:
+
+$$
+P(A) = P\left(\bigcup\limits_{i=1}^{n}(A \cap B_i)\right) = \sum\limits_{i=1}^{n}P(A \cap B_i) = \sum\limits_{i=1}^{n}P(A | B_i)P(B_i)
+$$
+
+Visualmente:
+
+![Exemplo de uma partição de $\Omega$ para $n = 5$ e um evento A (extraído de @degroot2012probability)](figs/particao_total.png)
+
+Ressalta-se que o *Teorema da Probabilidade Total* vale também quando $n = \infty$
 
 
 
