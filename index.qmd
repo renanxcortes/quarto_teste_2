@@ -1,12 +1,81 @@
 ---
-title: "Sobre"
-lang: pt # Equações ficarem referenciadas em Português
+title: "Renan Xavier Cortes"
+description-meta: "Renan é..."
+image: "figs/renan_ucr.png"
+page-navigation: false
+toc: false
+#sidebar: false
+page-layout: full
 
-execute: 
-  warning: false
-  message: false
-  echo: false
+about:
+  id: hero-heading
+  template: trestles
+  image-width: 70%
+  links:
+    # - icon: sun
+    #  text: DeepPolicyLab
+    #  href: https://deeppolicylab.github.io
+    #   target: _blank
+    - icon: globe
+      text: Website
+      href: https://renanxcortes.github.io/
+      target: _blank
+    - icon: envelope
+      text: E-mail
+      href: mailto:renanxcortes@gmail.com
+   # - icon: github
+   #   text: Github
+   #   href: https://github.com/drganghe
+   # - icon: twitter
+   #   text: Twitter
+   #   href: https://twitter.com/DrGangHe
+   # - icon: mastodon
+   #   text: Mastodon
+   #   href: https://mastodon.social/@hegang
+   # - icon: linkedin
+   #   text: LinkedIn
+   #   href: https://linkedin.com/in/hegang
+   #   target: _blank
+   # - icon: youtube
+   #   text: YouTube
+   #   href: https://www.youtube.com/@DrGangHe
+   #   target: _blank
+   # - text: "{{< ai orcid >}} ORCID"   # use academic icons, "" are needed
+   #   href: https://orcid.org/0000-0002-8416-1965
+   #   target: _blank
+   # - text: "{{< ai clarivate >}} Web of Science"
+   #   href: https://www.webofscience.com/wos/author/record/N-4549-2013
+   #   target: _blank
+   # - text: "{{< ai scopus >}} Scopus"
+   #   href: https://www.scopus.com/authid/detail.uri?authorId=55607981900
+   #   target: _blank
+   # - text: "{{< ai google-scholar >}} Google Scholar"
+   #   href: https://scholar.google.com/citations?user=vf90AuEAAAAJ
+   #   target: _blank
+   # - text: "{{< ai researchgate >}} Research Gate"
+   #   href: https://www.researchgate.net/profile/Gang-He-19
+    #   target: _blank
+
+listing:
+  - id: recent-posts
+    contents: 
+      - posts
+      - posts/post-links.yml
+#    exclude:
+#      title: " "
+    type: grid
+    max-items: 3
+#    image-height: 150px
+    page-size: 3 #set same as max-times to remove the page number setting
+    fields: [image, date, title, subtitle]
+    max-description-length: 75
+    sort: 
+      - "date desc"
+      - "title asc"
 ---
+
+
+:::{#hero-heading}
 
 Este é um Website do
 
@@ -25,6 +94,12 @@ Este é um website baseado no [Quarto](https://quarto.org/docs/websites) da empr
 [Templates de Quarto úteis do prof. Gang He](https://drganghe.github.io/quarto-academic-site-examples.html)
 
 [Livro de Estatística Básica do Prof. Filipe Zabala](https://filipezabala.com/enrs/)
+
+:::
+
+
+
+
 
 <!-- [Site do prof. André Zibetti](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html) -->
 
