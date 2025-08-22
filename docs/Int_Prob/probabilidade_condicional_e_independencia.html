@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -266,11 +286,33 @@ P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(\text{sair 2 e par})}{P(\text{par})}
 <p><span class="math display">\[
 P\left( \bigcup_{i=1}^{n} A_i |B \right) = \frac{P\left( \left(\bigcup_{i=1}^{n} A_i \right)\cap B \right)}{P(B)} \overset{Lei \ Distributiva}{=} \frac{P\left( \bigcup_{i=1}^{n} \left(A_i \cap B \right)\right)}{P(B)} = \frac{\sum_{i=1}^{n}P\left( A_i \cap B \right)}{P(B)} = \sum_{i=1}^{n}\left(\frac{P(A_i \cap B) }{P(B)}\right) = \sum_{i=1}^{n}P\left( A_i | B \right)
 \]</span> Desta maneira, para quaquer <span class="math inline">\(B\)</span> satisfazendo <span class="math inline">\(P(B) &gt; 0\)</span>, qualquer função de probabilidade aplicada no subespaço de <span class="math inline">\(B\)</span> também é uma função de probabilidade e goza das mesmas propriedades de uma função não-condicionada.</p>
+<section id="teorema-da-probabilidade-total" class="level4">
+<h4 class="anchored" data-anchor-id="teorema-da-probabilidade-total">Teorema da Probabilidade Total</h4>
+<p>Antes de apresentar o teorema da probabilidade total, apresenta-se a definição de <strong>partição</strong> do espaço amostral:</p>
+<p><strong>Definição</strong> Se <span class="math inline">\(B_1, B_2, ..., B_n\)</span> representa um conjunto de eventos mutuamente excludentes satisfazendo <span class="math inline">\(\Omega = \bigcup\limits_{i=1}^{n}B_i\)</span> então, dizemos que <span class="math inline">\(B_1, B_2, ..., B_n\)</span> forma uma <em>partição</em> de <span class="math inline">\(\Omega\)</span>.</p>
+<p><strong>Teorema</strong> Se <span class="math inline">\(B_1, B_2, ..., B_n\)</span> forma uma <em>partição</em> de <span class="math inline">\(\Omega\)</span> então para qualquer evento <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[
+P(A) = P\left(\bigcup\limits_{i=1}^{n}(A \cap B_i)\right) = \sum\limits_{i=1}^{n}P(A \cap B_i) = \sum\limits_{i=1}^{n}P(A | B_i)P(B_i)
+\]</span></p>
+<p>Visualmente:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/particao_total.png" class="img-fluid figure-img"></p>
+<figcaption>Exemplo de uma partição de <span class="math inline">\(\Omega\)</span> para <span class="math inline">\(n = 5\)</span> e um evento A (extraído de <span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>)</figcaption>
+</figure>
+</div>
+<p>Ressalta-se que o <em>Teorema da Probabilidade Total</em> vale também quando <span class="math inline">\(n = \infty\)</span></p>
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-degroot2012probability" class="csl-entry" role="listitem">
+DeGroot, M. H., e M. J. Schervish. 2012. <em>Probability and Statistics</em>. Addison-Wesley.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
