@@ -70,7 +70,7 @@ Ressalta-se que o *Teorema da Probabilidade Total* vale também quando $n = \inf
 
 ## Teorema de Bayes
 
-O Teorema de Bayese, [na sua forma extendida](https://en.wikipedia.org/wiki/Bayes%27_theorem)^[Um vídeo interessante sobre a aplicação e explicação do Teorema de Bayes pode ser visto nesse vídeo: [A Armadilha Bayesiana](https://www.youtube.com/watch?v=R13BD8qKeTg)], é visto como a probabilidade de um evento de uma partição condicionado à um evento já ocorrido do espaço amostral. A fórmula de Bayes é definida a seguir:
+O Teorema de Bayese, [na sua forma extendida](https://en.wikipedia.org/wiki/Bayes%27_theorem)^[Um vídeo interessante sobre a aplicação e explicação do Teorema de Bayes pode ser visto aqui: [A Armadilha Bayesiana](https://www.youtube.com/watch?v=R13BD8qKeTg)], é visto como a probabilidade de um evento de uma partição condicionado à um evento já ocorrido do espaço amostral. A fórmula de Bayes é definida a seguir:
 
 **Teorema** Se $B_1, B_2, ..., B_n$ forma uma *partição* de $\Omega$ então para qualquer evento $A$ temos que
 
@@ -105,4 +105,19 @@ $$
 
 # Independência de eventos
 
-teste
+**Definição** Os eventos $A$ e $B$ definidos no mesmo espaço de probabilidade são considerados *independentes* se, e somente se:
+
+- $P(A \cap B) = P(A)P(B)$
+
+Note que, se a igualdade acima valer, então:
+
+- $P(A | B) = P(A),\ se\ P(B) > 0$
+- $P(B | A) = P(B),\ se\ P(A) > 0$
+
+
+**Definição** *Independência de múltiplos eventos* Os eventos $A_1,A_2,...,A_n$ definidos no mesmo espaço de probabilidade são considerados conjuntamente *independentes* se, e somente se:
+
+
+$$
+P\left( \bigcap_{i=1}^{n} A_i \right) = \prod_{i=1}^{n} P\left(  A_i \right).
+$$
