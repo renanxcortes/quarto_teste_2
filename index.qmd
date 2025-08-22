@@ -12,10 +12,6 @@ about:
   template: trestles
   image-width: 70%
   links:
-    # - icon: sun
-    #   text: DeepPolicyLab
-    #   href: https://deeppolicylab.github.io
-      # target: _blank
     - icon: globe
       text: Website
       href: https://renanxcortes.github.io/
@@ -26,39 +22,19 @@ about:
     - icon: github
       text: Github
       href: https://github.com/renanxcortes
-   # - icon: twitter
-   #   text: Twitter
-   #   href: https://twitter.com/DrGangHe
-   # - icon: mastodon
-   #   text: Mastodon
-   #   href: https://mastodon.social/@hegang
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/renan-cortes-a3583a33/
-   #   target: _blank
-   # - icon: youtube
-   #   text: YouTube
-   #   href: https://www.youtube.com/@DrGangHe
-   #   target: _blank
-   # - text: "{{< ai orcid >}} ORCID"   # use academic icons, "" are needed
-   #   href: https://orcid.org/0000-0002-8416-1965
-   #   target: _blank
-   # - text: "{{< ai clarivate >}} Web of Science"
-   #   href: https://www.webofscience.com/wos/author/record/N-4549-2013
-   #   target: _blank
-   # - text: "{{< ai scopus >}} Scopus"
-   #   href: https://www.scopus.com/authid/detail.uri?authorId=55607981900
-   #   target: _blank
    # - text: "{{< ai google-scholar >}} Google Scholar"
    #   href: https://scholar.google.com/citations?user=vf90AuEAAAAJ
    #   target: _blank
-    #- icon: "![](icons/lattes.svg)" # Discussão de como incorporar o símbolo do lattes como ícone: https://github.com/simple-icons/simple-icons/issues/13127
+   # - icon: "![](icons/lattes.svg)" # Discussão de como incorporar o símbolo do lattes como ícone: https://github.com/simple-icons/simple-icons/issues/13127
     - text: "Currículo Lattes"
       href: http://lattes.cnpq.br/2352000783745031
       target: _blank
    # - text: "{{< ai researchgate >}} Research Gate"
    #   href: https://www.researchgate.net/profile/Gang-He-19
-    #   target: _blank
+   #   target: _blank
 
 listing:
   - id: recent-posts
