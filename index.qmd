@@ -52,7 +52,8 @@ about:
    # - text: "{{< ai google-scholar >}} Google Scholar"
    #   href: https://scholar.google.com/citations?user=vf90AuEAAAAJ
    #   target: _blank
-    - text: "Currículo Lattes"
+    - icon: "![](icons/lattes.svg)" # Discussão de como incorporar o símbolo do lattes como ícone: https://github.com/simple-icons/simple-icons/issues/13127
+      text: " Currículo Lattes"
       href: http://lattes.cnpq.br/2352000783745031
       target: _blank
    # - text: "{{< ai researchgate >}} Research Gate"
