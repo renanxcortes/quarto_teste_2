@@ -42,9 +42,10 @@ website:
       contents:
         - section: "Conceitos Básicos"
           contents:
-            - Int_Prob/experimento_aleatorio.qmd
-            - Int_Prob/conceitos_de_probabilidade.qmd
-            - Int_Prob/probabilidade_condicional_e_independencia.qmd
+            - Int_Prob/1_experimento_aleatorio.qmd
+            - Int_Prob/2_conceitos_de_probabilidade.qmd
+            - Int_Prob/3_probabilidade_condicional_e_independencia.qmd
+            - Int_Prob/4_variaveis_aleatorias.qmd
             
             
     - id: probabilidade_B

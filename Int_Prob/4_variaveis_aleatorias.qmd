@@ -1,0 +1,28 @@
+---
+title: "Variáveis Aleatórias"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute: 
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+Informalmente, uma variável aleatória (VA) é um *valor numérico* do resultado de um experimento aleatório. Formalmente, abaixo segue a definição (@magalhaes2006probabilidade, @barryjames2023):
+
+**Definição** Seja $(\Omega, \mathcal{F}, \mathcal{P})$ um espaço de probabilidade. Denominamos de *variável aleatória*, qualquer função $X : \Omega \rightarrow \mathbb{R}$ tal que $[X \le x]$ é evento aleatório para todo $x \in \mathbb{R}$; isto é, $[X \le x] \in \mathcal{F}, \forall x \in \mathbb{R}$^[Esta definição formal matemática, na sua integridade, pode parece difícil de assimilar num primeiro momento. Em linhas gerais, uma variável aleatória deve ser uma função mensurável dentro da sua $\sigma$-álgebra do espaço de probabildade. Por exemplo, é possível definir uma $\sigma$-álgebra de maneira incoveniente e fazer com que algumas variáveis aleatórias não se encaixem como função mensurável por ter que depender de eventos aleatórios que não estejam presentes em $\mathcal{F}$. Nesse sentido, o cojunto das partes e a [$\sigma$-álgebra de Borel](https://pt.wikipedia.org/wiki/%C3%81lgebra_de_Borel) são as **preferidas**, justamente por permitirem que praticamente todas as variáveis de interesse sejam mensuráveis. Para maiores detalhes, ver o exemplo 2.1 de @magalhaes2006probabilidade e as observações da Seção 2.1 de @barryjames2023)].
+
+
+
+
+

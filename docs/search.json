@@ -729,5 +729,181 @@
       "Conceitos Básicos",
       "Probabilidade Condicional e Independência"
     ]
+  },
+  {
+    "objectID": "Int_Prob/4_variaveis_aleatorias.html",
+    "href": "Int_Prob/4_variaveis_aleatorias.html",
+    "title": "Variáveis Aleatórias",
+    "section": "",
+    "text": "Informalmente, uma variável aleatória (VA) é um valor numérico do resultado de um experimento aleatório. Formalmente, abaixo segue a definição (Magalhães (2006), James (2023)):\nDefinição Seja \\((\\Omega, \\mathcal{F}, \\mathcal{P})\\) um espaço de probabilidade. Denominamos de variável aleatória, qualquer função \\(X : \\Omega \\rightarrow \\mathbb{R}\\) tal que \\([X \\le x]\\) é evento aleatório para todo \\(x \\in \\mathbb{R}\\); isto é, \\([X \\le x] \\in \\mathcal{F}, \\forall x \\in \\mathbb{R}\\)1.",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Variáveis Aleatórias"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/4_variaveis_aleatorias.html#footnotes",
+    "href": "Int_Prob/4_variaveis_aleatorias.html#footnotes",
+    "title": "Variáveis Aleatórias",
+    "section": "Notas de rodapé",
+    "text": "Notas de rodapé\n\n\nEsta definição formal matemática, na sua integridade, pode parece difícil de assimilar num primeiro momento. Em linhas gerais, uma variável aleatória deve ser uma função mensurável dentro da sua \\(\\sigma\\)-álgebra do espaço de probabildade. Por exemplo, é possível definir uma \\(\\sigma\\)-álgebra de maneira incoveniente e fazer com que algumas variáveis aleatórias não se encaixem como função mensurável por ter que depender de eventos aleatórios que não estejam presentes em \\(\\mathcal{F}\\). Nesse sentido, o cojunto das partes e a \\(\\sigma\\)-álgebra de Borel são as preferidas, justamente por permitirem que praticamente todas as variáveis de interesse sejam mensuráveis. Para maiores detalhes, ver o exemplo 2.1 de Magalhães (2006) e as observações da Seção 2.1 de James (2023))↩︎",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Variáveis Aleatórias"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/3_probabilidade_condicional_e_independencia.html",
+    "href": "Int_Prob/3_probabilidade_condicional_e_independencia.html",
+    "title": "Probabilidade Condicional e Independência",
+    "section": "",
+    "text": "Definição Sejam dois eventos \\(A\\) e \\(B\\) definidos no mesmo espaço de probabilidade, a probabilidade condicional de \\(A\\) dado o evento \\(B\\), denotado por \\(P(A|B)\\) é definido por\n\\[\nP(A|B) = \\frac{P(A \\cap B)}{P(B)}, \\ \\ \\ \\ se \\ P(B) &gt; 0,\n\\]\ne é indefinida se \\(P(B) = 0\\). Um resultado direto dessa definição é que \\(P(A|B)P(B) = P(B|A)P(A)\\).\nExemplo Suponha o lançamento de um Dado Honesto, ou seja, \\(\\Omega = \\{\\{1\\}, \\{2\\}, \\{3\\}, \\{4\\}, \\{5\\}, \\{6\\}\\}\\), qual a probabilidade de sair o número 2, dado que saiu um número par?\nSeja,\n\n\\(A\\): sair o número 2\n\\(B\\): sair par\n\n\\[\nP(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{P(\\text{sair 2 e par})}{P(\\text{par})}  \\overset{A \\subset B}{=} \\frac{P(\\text{sair 2})}{P(\\text{par})}  = \\frac{\\frac{1}{6}}{\\frac{1}{2}} = \\frac{1}{3}\n\\]\nNote que “dado o evento \\(B\\)” significa dizer que o “evento \\(B\\)” ocorreu e, sendo assim, “limitamos” o espaço amostral para o evento B. Ou seja, não estamos mais trabalhando com \\(\\Omega\\), mas sim somente com os elementos do evento \\(B\\) sendo possíveis. Dado isto, será que este novo cenário satisfazem os axiomas de Kolmogorov caso \\(P(B)&gt;0\\)? A resposta é sim, pois:\n\n\\(P(A|B) = \\frac{P(A \\cap B)}{P(B)} \\ge 0, \\forall A \\in \\mathcal{F}\\)\n\\(P(\\Omega|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{P(B)}{P(B)} = 1\\)\nSe \\(A_1, A_2, ...\\) são mutuamente excludentes de \\(\\mathcal{F}\\), então\n\n\\[\nP\\left( \\bigcup_{i=1}^{n} A_i |B \\right) = \\frac{P\\left( \\left(\\bigcup_{i=1}^{n} A_i \\right)\\cap B \\right)}{P(B)} \\overset{Lei \\ Distributiva}{=} \\frac{P\\left( \\bigcup_{i=1}^{n} \\left(A_i \\cap B \\right)\\right)}{P(B)} = \\frac{\\sum_{i=1}^{n}P\\left( A_i \\cap B \\right)}{P(B)} = \\sum_{i=1}^{n}\\left(\\frac{P(A_i \\cap B) }{P(B)}\\right) = \\sum_{i=1}^{n}P\\left( A_i | B \\right)\n\\] Desta maneira, para quaquer \\(B\\) satisfazendo \\(P(B) &gt; 0\\), qualquer função de probabilidade aplicada no subespaço de \\(B\\) também é uma função de probabilidade e goza das mesmas propriedades de uma função não-condicionada.\n\n\nAntes de apresentar o teorema da probabilidade total, apresenta-se a definição de partição do espaço amostral:\nDefinição Se \\(B_1, B_2, ..., B_n\\) representa um conjunto de eventos mutuamente excludentes satisfazendo \\(\\Omega = \\bigcup\\limits_{i=1}^{n}B_i\\) então, dizemos que \\(B_1, B_2, ..., B_n\\) forma uma partição de \\(\\Omega\\).\nTeorema Se \\(B_1, B_2, ..., B_n\\) forma uma partição de \\(\\Omega\\) então para qualquer evento \\(A\\):\n\\[\nP(A) = P\\left(\\bigcup\\limits_{i=1}^{n}(A \\cap B_i)\\right) = \\sum\\limits_{i=1}^{n}P(A \\cap B_i) = \\sum\\limits_{i=1}^{n}P(A | B_i)P(B_i)\n\\]\nVisualmente:\n\n\n\nExemplo de uma partição de \\(\\Omega\\) para \\(n = 5\\) e um evento A (extraído de DeGroot e Schervish (2012))\n\n\nRessalta-se que o Teorema da Probabilidade Total vale também quando \\(n = \\infty\\)\n\n\n\nO Teorema de Bayese, na sua forma extendida1, é visto como a probabilidade de um evento de uma partição condicionado à um evento já ocorrido do espaço amostral. A fórmula de Bayes é definida a seguir:\nTeorema Se \\(B_1, B_2, ..., B_n\\) forma uma partição de \\(\\Omega\\) então para qualquer evento \\(A\\) temos que\n\\[\nP(B_i |A) = \\frac{P(A | B_i) P(B_i)} {\\sum\\limits_{i=1}^{n}P(A | B_i)P(B_i)} \\ \\ \\ \\forall i=1,...n.\n\\] Ressalta-se que o Teorema de Bayes vale também quando \\(n = \\infty\\).\nObserve que o denominador da Fórmula de Bayes é o valor do Teorema da Probabilidade Total definida anteriormente.\nO Teorema de Bayes é particularmente útil quando estamos tratando com experimentos em múltiplas fases. Se \\(B_i\\) é um evento condicionado à um evento \\(A\\), então querer saber \\(P(B_i|A)\\) é como se fosse no sentido de retrospectiva (“backward”). É como se fosse questionar sobre a probabilidade da primeira fase, condicionada no que aconteceu na segunda fase do experimento. Por isso, o Teorema de Bayes também é chamado de teorema da probabilidade a posteriori (Morettin (1999)).\nExemplo Suponha que em uma urna nós temos três moedas: sendo duas honestas e uma viciada com duas faces “caras”. Suponha que eu retire, aleatoriamente, uma moeda urna e jogue pra cima e saia a face “cara”. Então, dado que saiu “cara”, qual a probabilidade de eu ter sorteado a moeda viciada?\nPodemos pensar neste problema da seguinte forma ilustrativa:\n\n\n\nIlustração de experimento de duas fases\n\n\nOriginalmente, \\(P(B_3) = \\frac{1}{3}\\), no entanto, a probabilidade condicionada a posteriori é:\n\\[\nP(B_3|A) = \\frac{P(A | B_3) P(B_3)} {P(A | B_1)P(B_1) + P(A | B_2)P(B_2) + P(A | B_3)P(B_3)} = \\frac{1 \\times \\frac{1}{3}} {\\frac{1}{2} \\times \\frac{1}{3} + \\frac{1}{2} \\times \\frac{1}{3} + 1\\times \\frac{1}{3}} = \\frac{\\frac{1}{3}}{\\frac{4}{6}} = \\frac{1}{2}\n\\]\nOu seja, note que a probabilidade “atualizou” de \\(\\frac{1}{3}\\) para \\(\\frac{1}{2}\\).\n\n\n\nOutro resultado importante é a regra da multiplicação abaixo:\nTeorema Sejam \\(A_1, A_2, ..., A_n\\) diferentes eventos de um espaço de probabilidade, então:\n\\[\nP(A_1 \\cap A_2 \\cap ... \\cap A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2 \\cap A_1)...P(A_n|A_1 \\cap ... \\cap A_{n-1})\n\\]\nOu, conforme Mood, Graybill, e Boes (1974), em notação alternativa:\n\\[\nP(A_1A_2 ... A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2A_1)...P(A_n|A_1... A_{n-1})\n\\]",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Probabilidade Condicional e Independência"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/3_probabilidade_condicional_e_independencia.html#teorema-da-probabilidade-total",
+    "href": "Int_Prob/3_probabilidade_condicional_e_independencia.html#teorema-da-probabilidade-total",
+    "title": "Probabilidade Condicional e Independência",
+    "section": "",
+    "text": "Antes de apresentar o teorema da probabilidade total, apresenta-se a definição de partição do espaço amostral:\nDefinição Se \\(B_1, B_2, ..., B_n\\) representa um conjunto de eventos mutuamente excludentes satisfazendo \\(\\Omega = \\bigcup\\limits_{i=1}^{n}B_i\\) então, dizemos que \\(B_1, B_2, ..., B_n\\) forma uma partição de \\(\\Omega\\).\nTeorema Se \\(B_1, B_2, ..., B_n\\) forma uma partição de \\(\\Omega\\) então para qualquer evento \\(A\\):\n\\[\nP(A) = P\\left(\\bigcup\\limits_{i=1}^{n}(A \\cap B_i)\\right) = \\sum\\limits_{i=1}^{n}P(A \\cap B_i) = \\sum\\limits_{i=1}^{n}P(A | B_i)P(B_i)\n\\]\nVisualmente:\n\n\n\nExemplo de uma partição de \\(\\Omega\\) para \\(n = 5\\) e um evento A (extraído de DeGroot e Schervish (2012))\n\n\nRessalta-se que o Teorema da Probabilidade Total vale também quando \\(n = \\infty\\)",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Probabilidade Condicional e Independência"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/3_probabilidade_condicional_e_independencia.html#teorema-de-bayes",
+    "href": "Int_Prob/3_probabilidade_condicional_e_independencia.html#teorema-de-bayes",
+    "title": "Probabilidade Condicional e Independência",
+    "section": "",
+    "text": "O Teorema de Bayese, na sua forma extendida1, é visto como a probabilidade de um evento de uma partição condicionado à um evento já ocorrido do espaço amostral. A fórmula de Bayes é definida a seguir:\nTeorema Se \\(B_1, B_2, ..., B_n\\) forma uma partição de \\(\\Omega\\) então para qualquer evento \\(A\\) temos que\n\\[\nP(B_i |A) = \\frac{P(A | B_i) P(B_i)} {\\sum\\limits_{i=1}^{n}P(A | B_i)P(B_i)} \\ \\ \\ \\forall i=1,...n.\n\\] Ressalta-se que o Teorema de Bayes vale também quando \\(n = \\infty\\).\nObserve que o denominador da Fórmula de Bayes é o valor do Teorema da Probabilidade Total definida anteriormente.\nO Teorema de Bayes é particularmente útil quando estamos tratando com experimentos em múltiplas fases. Se \\(B_i\\) é um evento condicionado à um evento \\(A\\), então querer saber \\(P(B_i|A)\\) é como se fosse no sentido de retrospectiva (“backward”). É como se fosse questionar sobre a probabilidade da primeira fase, condicionada no que aconteceu na segunda fase do experimento. Por isso, o Teorema de Bayes também é chamado de teorema da probabilidade a posteriori (Morettin (1999)).\nExemplo Suponha que em uma urna nós temos três moedas: sendo duas honestas e uma viciada com duas faces “caras”. Suponha que eu retire, aleatoriamente, uma moeda urna e jogue pra cima e saia a face “cara”. Então, dado que saiu “cara”, qual a probabilidade de eu ter sorteado a moeda viciada?\nPodemos pensar neste problema da seguinte forma ilustrativa:\n\n\n\nIlustração de experimento de duas fases\n\n\nOriginalmente, \\(P(B_3) = \\frac{1}{3}\\), no entanto, a probabilidade condicionada a posteriori é:\n\\[\nP(B_3|A) = \\frac{P(A | B_3) P(B_3)} {P(A | B_1)P(B_1) + P(A | B_2)P(B_2) + P(A | B_3)P(B_3)} = \\frac{1 \\times \\frac{1}{3}} {\\frac{1}{2} \\times \\frac{1}{3} + \\frac{1}{2} \\times \\frac{1}{3} + 1\\times \\frac{1}{3}} = \\frac{\\frac{1}{3}}{\\frac{4}{6}} = \\frac{1}{2}\n\\]\nOu seja, note que a probabilidade “atualizou” de \\(\\frac{1}{3}\\) para \\(\\frac{1}{2}\\).",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Probabilidade Condicional e Independência"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/3_probabilidade_condicional_e_independencia.html#regra-da-multiplicação",
+    "href": "Int_Prob/3_probabilidade_condicional_e_independencia.html#regra-da-multiplicação",
+    "title": "Probabilidade Condicional e Independência",
+    "section": "",
+    "text": "Outro resultado importante é a regra da multiplicação abaixo:\nTeorema Sejam \\(A_1, A_2, ..., A_n\\) diferentes eventos de um espaço de probabilidade, então:\n\\[\nP(A_1 \\cap A_2 \\cap ... \\cap A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2 \\cap A_1)...P(A_n|A_1 \\cap ... \\cap A_{n-1})\n\\]\nOu, conforme Mood, Graybill, e Boes (1974), em notação alternativa:\n\\[\nP(A_1A_2 ... A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2A_1)...P(A_n|A_1... A_{n-1})\n\\]",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Probabilidade Condicional e Independência"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/3_probabilidade_condicional_e_independencia.html#footnotes",
+    "href": "Int_Prob/3_probabilidade_condicional_e_independencia.html#footnotes",
+    "title": "Probabilidade Condicional e Independência",
+    "section": "Notas de rodapé",
+    "text": "Notas de rodapé\n\n\nUm vídeo interessante sobre a aplicação e explicação do Teorema de Bayes pode ser visto aqui: A Armadilha Bayesiana↩︎",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Probabilidade Condicional e Independência"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/1_experimento_aleatorio.html",
+    "href": "Int_Prob/1_experimento_aleatorio.html",
+    "title": "Experimento Aleatório, Espaço Amostral e Eventos",
+    "section": "",
+    "text": "Experimentos aleatórios são situação na natureza que envolvem incertezas. A busca por avaliar as diversas probabilidades de ocorrência é um dos objetivos no estudo desses fenômenos.\nO espaço amostral é o conjunto de todos os possíveis resultados de um experimento aleatório e é representado por \\(\\Omega\\). Cada resultado possível é denominado ponto ou elemento de \\(\\Omega\\) e denotado por \\(\\omega\\). Assim, escrevemos \\(\\omega \\in \\Omega\\) para indicar que \\(\\omega\\) está em \\(\\Omega\\). O conjunto sem elementos é o conjunto vazio, denotado por \\(\\emptyset\\). Muitos autores (Magalhães (2006), James (2023), DeGroot e Schervish (2012)), denominam eventos (ou conjunto) como sendo letras maiúsculas do alfabeto, tais como A, B, etc. Assim:\nDefinição Seja \\(\\Omega\\) o espaço amostral do experimento. Todo subconjunto \\(A \\in \\Omega\\) será chamado evento. \\(\\Omega\\) é o evento certo, \\(\\emptyset\\) o evento impossível. Se \\(\\omega \\in \\Omega\\), o evento \\(\\{\\omega\\}\\) é dito elementar (ou simples).\n\n\n\n\n\nLei Comutativa: \\(A \\cup B = B \\cup A\\) e, também, \\(A \\cap B = B \\cap A\\)\nLei Associativa: \\(A \\cup (B \\cup C) = (A \\cup B) \\cup C\\) e, também, \\(A \\cap (B \\cap C) = (A \\cap B) \\cap C\\)\nLei Distributiva: \\(A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)\\) e, também, \\(A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\\)\n\\(A^c\\) (ou \\(\\bar{A}\\)) é o complementar de \\(A\\), isto é, todos os elementos de \\(\\Omega\\) exceto os de \\(A\\)\n\\(A_1 \\cup A_2 ... \\cup A_n\\) ou \\(\\bigcup\\limits_{i=1}^{n}A_i\\) é a união de \\(A_1, A_2, ..., A_n\\) e representa os pontos de \\(\\Omega\\) que pertencem à pelo menos um \\(A_i\\)\n\\(A_1 \\cap A_2 ... \\cap A_n\\) ou \\(\\bigcap\\limits_{i=1}^{n}A_i\\) é a intersecção de \\(A_1, A_2, ..., A_n\\) e representa os pontos de \\(\\Omega\\) que pertencem simultaneamente à todos os \\(A_i\\)’s.\n\\(A-B\\) é a diferença entre \\(A\\) e \\(B\\), isto é, todos os elementos de \\(A\\), exceto os que estão em \\(B\\). Outra forma de notação é \\(A \\cap B^c\\), pois \\(A-B = A \\cap B^c\\)\nSe todo o elemento de \\(A\\) é também um elemento de \\(B\\), então \\(A\\) é definido como um subconjunto de \\(B\\) e escrevemos \\(A \\subset B\\) ou \\(B \\supset A\\). Interpretamos como sendo “\\(A\\) está contido em \\(B\\)” ou “\\(B\\) contém \\(A\\)”\nDois conjuntos são disjuntos ou mutuamente excludentes se a sua interseção é vazio. Assim, \\(A\\ e\\ B\\ disjuntos \\iff A \\cap B = \\emptyset\\)\n\n\n\n\nUma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via Diagramas de Venn. Abaixo, podemos ver algumas das relações:\n\n\n\nExtraído do Mood, Graybill, e Boes (1974)\n\n\n\n\n\nAs Leis de DeMorgan, ilustrada também no Diagrama de Venn anterior, são teoremas fundamentais que descrevem relações entre a união e interesecção entre conjuntos e de seus complementos.\nO caso simples pode ser descrito abaixo:\n\\[\n\\begin{align*}\n(A \\cup B)^c = A^c \\cap B^c \\\\\n(A \\cap B)^c = A^c \\cup B^c\n\\end{align*}\n\\]\nImagine as duas frases:\n\nA: “Está chovendo”\nB: “Está frio”\n\nPortanto:\n\nA negação de “Está chovendo e está frio” (\\(A \\cap B\\)) é “Não está chovendo ou não está frio” (\\(A^c \\cup B^c\\));\nA negação de “Está chovendo ou está frio” (\\(A \\cap B\\)) é “Não está chovendo e não está frio” (\\(A^c \\cap B^c\\)).\n\nCaso geral:\n\\[\n\\begin{align*}\n\\left( \\bigcup\\limits_{i=1}^{n} A_i \\right)^c = \\bigcap\\limits_{i=1}^{n} A_i^c \\\\\n\\left( \\bigcap\\limits_{i=1}^{n} A_i \\right)^c = \\bigcup\\limits_{i=1}^{n} A_i^c\n\\end{align*}\n\\]\nVale ressaltar também que essa relação vale também quando \\(n = \\infty\\), ou seja:\n\\[\n\\begin{align*}\n\\left( \\bigcup\\limits_{i=1}^{\\infty} A_i \\right)^c = \\bigcap\\limits_{i=1}^{\\infty} A_i^c \\\\\n\\left( \\bigcap\\limits_{i=1}^{\\infty} A_i \\right)^c = \\bigcup\\limits_{i=1}^{\\infty} A_i^c\n\\end{align*}\n\\]",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Experimento Aleatório, Espaço Amostral e Eventos"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/1_experimento_aleatorio.html#eventosconjuntos",
+    "href": "Int_Prob/1_experimento_aleatorio.html#eventosconjuntos",
+    "title": "Experimento Aleatório, Espaço Amostral e Eventos",
+    "section": "",
+    "text": "Lei Comutativa: \\(A \\cup B = B \\cup A\\) e, também, \\(A \\cap B = B \\cap A\\)\nLei Associativa: \\(A \\cup (B \\cup C) = (A \\cup B) \\cup C\\) e, também, \\(A \\cap (B \\cap C) = (A \\cap B) \\cap C\\)\nLei Distributiva: \\(A \\cap (B \\cup C) = (A \\cap B) \\cup (A \\cap C)\\) e, também, \\(A \\cup (B \\cap C) = (A \\cup B) \\cap (A \\cup C)\\)\n\\(A^c\\) (ou \\(\\bar{A}\\)) é o complementar de \\(A\\), isto é, todos os elementos de \\(\\Omega\\) exceto os de \\(A\\)\n\\(A_1 \\cup A_2 ... \\cup A_n\\) ou \\(\\bigcup\\limits_{i=1}^{n}A_i\\) é a união de \\(A_1, A_2, ..., A_n\\) e representa os pontos de \\(\\Omega\\) que pertencem à pelo menos um \\(A_i\\)\n\\(A_1 \\cap A_2 ... \\cap A_n\\) ou \\(\\bigcap\\limits_{i=1}^{n}A_i\\) é a intersecção de \\(A_1, A_2, ..., A_n\\) e representa os pontos de \\(\\Omega\\) que pertencem simultaneamente à todos os \\(A_i\\)’s.\n\\(A-B\\) é a diferença entre \\(A\\) e \\(B\\), isto é, todos os elementos de \\(A\\), exceto os que estão em \\(B\\). Outra forma de notação é \\(A \\cap B^c\\), pois \\(A-B = A \\cap B^c\\)\nSe todo o elemento de \\(A\\) é também um elemento de \\(B\\), então \\(A\\) é definido como um subconjunto de \\(B\\) e escrevemos \\(A \\subset B\\) ou \\(B \\supset A\\). Interpretamos como sendo “\\(A\\) está contido em \\(B\\)” ou “\\(B\\) contém \\(A\\)”\nDois conjuntos são disjuntos ou mutuamente excludentes se a sua interseção é vazio. Assim, \\(A\\ e\\ B\\ disjuntos \\iff A \\cap B = \\emptyset\\)\n\n\n\n\nUma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via Diagramas de Venn. Abaixo, podemos ver algumas das relações:\n\n\n\nExtraído do Mood, Graybill, e Boes (1974)\n\n\n\n\n\nAs Leis de DeMorgan, ilustrada também no Diagrama de Venn anterior, são teoremas fundamentais que descrevem relações entre a união e interesecção entre conjuntos e de seus complementos.\nO caso simples pode ser descrito abaixo:\n\\[\n\\begin{align*}\n(A \\cup B)^c = A^c \\cap B^c \\\\\n(A \\cap B)^c = A^c \\cup B^c\n\\end{align*}\n\\]\nImagine as duas frases:\n\nA: “Está chovendo”\nB: “Está frio”\n\nPortanto:\n\nA negação de “Está chovendo e está frio” (\\(A \\cap B\\)) é “Não está chovendo ou não está frio” (\\(A^c \\cup B^c\\));\nA negação de “Está chovendo ou está frio” (\\(A \\cap B\\)) é “Não está chovendo e não está frio” (\\(A^c \\cap B^c\\)).\n\nCaso geral:\n\\[\n\\begin{align*}\n\\left( \\bigcup\\limits_{i=1}^{n} A_i \\right)^c = \\bigcap\\limits_{i=1}^{n} A_i^c \\\\\n\\left( \\bigcap\\limits_{i=1}^{n} A_i \\right)^c = \\bigcup\\limits_{i=1}^{n} A_i^c\n\\end{align*}\n\\]\nVale ressaltar também que essa relação vale também quando \\(n = \\infty\\), ou seja:\n\\[\n\\begin{align*}\n\\left( \\bigcup\\limits_{i=1}^{\\infty} A_i \\right)^c = \\bigcap\\limits_{i=1}^{\\infty} A_i^c \\\\\n\\left( \\bigcap\\limits_{i=1}^{\\infty} A_i \\right)^c = \\bigcup\\limits_{i=1}^{\\infty} A_i^c\n\\end{align*}\n\\]",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Experimento Aleatório, Espaço Amostral e Eventos"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/2_conceitos_de_probabilidade.html",
+    "href": "Int_Prob/2_conceitos_de_probabilidade.html",
+    "title": "Conceitos de Probabilidade",
+    "section": "",
+    "text": "Segundo Magalhães (2006), a definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:\n\\[\nP(A) = \\frac{Número\\ de\\ Elementos\\ em\\ A}{Número\\ total\\ de\\ Elementos\\ em\\ \\Omega}\n\\]\nSe \\(\\Omega\\) tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.\n\n\n\nQuando \\(\\Omega\\) é não enumerável, o conceito se aplicará ao comprimento de intervalos, medidas de áreas ou similares, dando origem ao que chamamos de probabilidade geométrica. Por exemplo, se \\(\\Omega\\) é um intervalo onde \\(\\Omega \\in \\mathbb{R}\\), então:\n\\[\nP(A) = \\frac{Comprimento\\ de\\ A}{Comprimento\\ de\\ \\Omega}\n\\]\n\n\n\nA definição frequentista considera o limite de frequências relativas como o valor da probabilidade. Para tal, seja \\(n_{A}\\) o número de ocorrências de \\(A\\) em \\(n\\) repetições independentes do experimento em questão. Assim,\n\\[\nP(A) = \\lim_{n\\rightarrow{+\\infty}} \\frac{n_A}{n}\n\\]\n\n\n\nAs definições anteriores não são suficientes para uma formulação matemática mais rigorosa da probabilidade. Assim, na primeira metade do século XX, Kolmogorov (1933) apresentou um conjunto de axiomas matemáticos para definir probabilidade e, assim, pavimentando toda a evolução da probabilidade moderna.\nÉ importante, e ao mesmo tempo fascinante, destacar que apenas com esses três axiomas todos os teoremas da Teoria da Probabilidade são viabilizados. Assim, podemos destacar que toda a evolução da probabilidade foi pavimentada pelo trabalho de Kolmogorov (1933).\nDefinição axiomática\nAssumindo que podemos atribuir um número real \\(P(A)\\) para um evento \\(A\\):\n\nAxioma 1. \\(P(A) \\ge 0\\)\nAxioma 2. \\(P(\\Omega) = 1\\)\nAxioma 3. Se \\(A_1, A_2, ..., A_n\\) são disjuntos (2 a 2) (isto é, mutuamente excludentes), então\n\n\\[\nP\\left( \\bigcup_{k=1}^{n} A_k \\right) = \\sum_{k=1}^{n} P (A_k)\n\\]\n(Os eventos são disjuntos 2 a 2, se \\(A_i \\cap A_j = \\emptyset, \\forall i \\ne j\\))\nUma discussão mais aprofundada desses axiomas, incluindo uma versão mais conveniente para o Axioma 3 (para o caso \\(n = \\infty\\)) e uma “Axioma 4” de continuidade no vazio, que pode ser derivado dos outros axiomas, é discutida no Capítulo 1 de James (2023).\n\n\nComo comentado, os Axiomas de Kolmogorov sustentam toda a teoria da probabilidade e alguns resultados diretos são:\n\n\\(P(\\emptyset) = 0\\).\n\nProva.\n\\[\n\\begin{align*}\nP(A \\cup \\emptyset) &= P(A) + P(\\emptyset) \\\\\nP(A) &= P(A) + P(\\emptyset) \\\\\nP(\\emptyset) &= 0\n\\end{align*}\n\\]\n\nPara qualquer evento \\(A\\), \\(P(A^c) = 1-P(A)\\).\n\nProva.\n\\[\n\\begin{align*}\nP(\\Omega) &= P(A \\cup A^c) = P(A) + P(A^c) \\\\\n1 &= P(A) + P(A^c) \\overset{\\text{Isolando}}{\\implies} P(A^c) = 1-P(A)\n\\end{align*}\n\\]\n\nSe \\(A \\subset B\\), então \\(P(A) \\le P(B)\\).\n\nProva.\n\\[\n\\begin{align*}\nP(B) &= P(A \\cup (B \\cap A^c)) = P(A) + P(B \\cap A^c) \\\\\nP(B) &\\ge P(A)\n\\end{align*}\n\\]\n\nSe \\(A \\subset B\\), então \\(P(A \\cap B) = P(A)\\).\nPara qualquer evento \\(A\\), \\(0 \\le P(A) \\le 1\\).\n\nProva. Como \\(A \\subset \\Omega\\), então \\(0 \\le P(A) \\le P(\\Omega) = 1\\)\n\nPara quaisquer eventos \\(A\\) e \\(B\\), \\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\) (Esta relação é mais fácil de visualizar via Diagrama de Venn)\n\nProva.\nPrimeiro, vamos escrever \\(P(A)\\) e \\(P(B)\\) como a soma de suas partes:\n\\[\nP(A) = P(A \\cap B^c) + P(A \\cap B) \\\\\nP(B) = P(B \\cap A^c) + P(B \\cap A)\n\\]\nAgora, vamos escrever a união como a soma de suas partes:\n\\[\nP(A \\cup B) = P(A \\cap B^c) + P(A \\cap B) + P(B \\cap A^c)\n\\]\nAgora, somando e substraindo \\(P(A \\cap B)\\):\n\\[\n\\begin{align*}\nP(A \\cup B) &= \\overbrace{P(A \\cap B^c) + P(A \\cap B)}^{P(A)} + \\overbrace{P(B \\cap A^c) + P(A \\cap B)}^{P(B)} - P(A \\cap B) \\\\\nP(A \\cup B) &= P(A) + P(B) - P(A \\cap B)\n\\end{align*}\n\\]\n\n(Desigualdade de Boole) Sejam \\(A_1, A_2, ..., A_n\\) então\n\n\\[\nP\\left( \\bigcup_{i=1}^{n} A_i  \\right) \\le \\sum_{i=1}^{n}P(A_i)\n\\]\n\n\n\n\nUm Espaço de Probabilidade é um constructo que provê um modelo formal de um processo aleatório. Ele é composto por uma tríplice de valores \\((\\Omega, \\mathcal{F}, P)\\) onde\n\n\\(\\Omega\\) é todo o espaço amostral\n\\(\\mathcal{F}\\) (ou \\(\\sigma\\)-álgebra) é o espaço de eventos (domínio)\n\\(\\mathcal{P}\\) é uma função de probabilidade aplicada em \\(\\mathcal{F}\\) que produz valores no intervalo \\([0,1]\\)\n\nPara um entendimento mais consistente da importância da definição de um espaço de probabilidade, bem como da importância da definição de uma \\(\\sigma\\)-álgebra, que é o domínio do espaço, recomenda-se a leitura do Capítulo 1 de James (2023), Capítulo 1 de Magalhães (2006), Capítulo 2B e 12 de Axler (2020).1 No entanto, como esta discussão é mais aprofundada, para uma visão mais geral recomendo fortemente o leitor a assitir o vídeo Bertrand’s Paradox (with 3blue1brown) - Numberphile (explicação do Exemplo 1.8 de Magalhães (2006)) para esclarecer qual o efeito da definição de diferentes espaços de probabiidade para um mesmo problema e assim produzir probabilidades significativamente diferentes dependendo da maneira como são definidos \\(\\Omega\\) e \\(\\sigma\\)-álgebra e, assim, produzindo diferentes processos geradores de eventos.",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceitos de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/2_conceitos_de_probabilidade.html#definição-clássica-omega-enumerável",
+    "href": "Int_Prob/2_conceitos_de_probabilidade.html#definição-clássica-omega-enumerável",
+    "title": "Conceitos de Probabilidade",
+    "section": "",
+    "text": "Segundo Magalhães (2006), a definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:\n\\[\nP(A) = \\frac{Número\\ de\\ Elementos\\ em\\ A}{Número\\ total\\ de\\ Elementos\\ em\\ \\Omega}\n\\]\nSe \\(\\Omega\\) tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceitos de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/2_conceitos_de_probabilidade.html#definição-clássica-geométrica-omega-não-enumerável",
+    "href": "Int_Prob/2_conceitos_de_probabilidade.html#definição-clássica-geométrica-omega-não-enumerável",
+    "title": "Conceitos de Probabilidade",
+    "section": "",
+    "text": "Quando \\(\\Omega\\) é não enumerável, o conceito se aplicará ao comprimento de intervalos, medidas de áreas ou similares, dando origem ao que chamamos de probabilidade geométrica. Por exemplo, se \\(\\Omega\\) é um intervalo onde \\(\\Omega \\in \\mathbb{R}\\), então:\n\\[\nP(A) = \\frac{Comprimento\\ de\\ A}{Comprimento\\ de\\ \\Omega}\n\\]",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceitos de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/2_conceitos_de_probabilidade.html#definição-frequentista",
+    "href": "Int_Prob/2_conceitos_de_probabilidade.html#definição-frequentista",
+    "title": "Conceitos de Probabilidade",
+    "section": "",
+    "text": "A definição frequentista considera o limite de frequências relativas como o valor da probabilidade. Para tal, seja \\(n_{A}\\) o número de ocorrências de \\(A\\) em \\(n\\) repetições independentes do experimento em questão. Assim,\n\\[\nP(A) = \\lim_{n\\rightarrow{+\\infty}} \\frac{n_A}{n}\n\\]",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceitos de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/2_conceitos_de_probabilidade.html#probabilidade-axiomática",
+    "href": "Int_Prob/2_conceitos_de_probabilidade.html#probabilidade-axiomática",
+    "title": "Conceitos de Probabilidade",
+    "section": "",
+    "text": "As definições anteriores não são suficientes para uma formulação matemática mais rigorosa da probabilidade. Assim, na primeira metade do século XX, Kolmogorov (1933) apresentou um conjunto de axiomas matemáticos para definir probabilidade e, assim, pavimentando toda a evolução da probabilidade moderna.\nÉ importante, e ao mesmo tempo fascinante, destacar que apenas com esses três axiomas todos os teoremas da Teoria da Probabilidade são viabilizados. Assim, podemos destacar que toda a evolução da probabilidade foi pavimentada pelo trabalho de Kolmogorov (1933).\nDefinição axiomática\nAssumindo que podemos atribuir um número real \\(P(A)\\) para um evento \\(A\\):\n\nAxioma 1. \\(P(A) \\ge 0\\)\nAxioma 2. \\(P(\\Omega) = 1\\)\nAxioma 3. Se \\(A_1, A_2, ..., A_n\\) são disjuntos (2 a 2) (isto é, mutuamente excludentes), então\n\n\\[\nP\\left( \\bigcup_{k=1}^{n} A_k \\right) = \\sum_{k=1}^{n} P (A_k)\n\\]\n(Os eventos são disjuntos 2 a 2, se \\(A_i \\cap A_j = \\emptyset, \\forall i \\ne j\\))\nUma discussão mais aprofundada desses axiomas, incluindo uma versão mais conveniente para o Axioma 3 (para o caso \\(n = \\infty\\)) e uma “Axioma 4” de continuidade no vazio, que pode ser derivado dos outros axiomas, é discutida no Capítulo 1 de James (2023).\n\n\nComo comentado, os Axiomas de Kolmogorov sustentam toda a teoria da probabilidade e alguns resultados diretos são:\n\n\\(P(\\emptyset) = 0\\).\n\nProva.\n\\[\n\\begin{align*}\nP(A \\cup \\emptyset) &= P(A) + P(\\emptyset) \\\\\nP(A) &= P(A) + P(\\emptyset) \\\\\nP(\\emptyset) &= 0\n\\end{align*}\n\\]\n\nPara qualquer evento \\(A\\), \\(P(A^c) = 1-P(A)\\).\n\nProva.\n\\[\n\\begin{align*}\nP(\\Omega) &= P(A \\cup A^c) = P(A) + P(A^c) \\\\\n1 &= P(A) + P(A^c) \\overset{\\text{Isolando}}{\\implies} P(A^c) = 1-P(A)\n\\end{align*}\n\\]\n\nSe \\(A \\subset B\\), então \\(P(A) \\le P(B)\\).\n\nProva.\n\\[\n\\begin{align*}\nP(B) &= P(A \\cup (B \\cap A^c)) = P(A) + P(B \\cap A^c) \\\\\nP(B) &\\ge P(A)\n\\end{align*}\n\\]\n\nSe \\(A \\subset B\\), então \\(P(A \\cap B) = P(A)\\).\nPara qualquer evento \\(A\\), \\(0 \\le P(A) \\le 1\\).\n\nProva. Como \\(A \\subset \\Omega\\), então \\(0 \\le P(A) \\le P(\\Omega) = 1\\)\n\nPara quaisquer eventos \\(A\\) e \\(B\\), \\(P(A \\cup B) = P(A) + P(B) - P(A \\cap B)\\) (Esta relação é mais fácil de visualizar via Diagrama de Venn)\n\nProva.\nPrimeiro, vamos escrever \\(P(A)\\) e \\(P(B)\\) como a soma de suas partes:\n\\[\nP(A) = P(A \\cap B^c) + P(A \\cap B) \\\\\nP(B) = P(B \\cap A^c) + P(B \\cap A)\n\\]\nAgora, vamos escrever a união como a soma de suas partes:\n\\[\nP(A \\cup B) = P(A \\cap B^c) + P(A \\cap B) + P(B \\cap A^c)\n\\]\nAgora, somando e substraindo \\(P(A \\cap B)\\):\n\\[\n\\begin{align*}\nP(A \\cup B) &= \\overbrace{P(A \\cap B^c) + P(A \\cap B)}^{P(A)} + \\overbrace{P(B \\cap A^c) + P(A \\cap B)}^{P(B)} - P(A \\cap B) \\\\\nP(A \\cup B) &= P(A) + P(B) - P(A \\cap B)\n\\end{align*}\n\\]\n\n(Desigualdade de Boole) Sejam \\(A_1, A_2, ..., A_n\\) então\n\n\\[\nP\\left( \\bigcup_{i=1}^{n} A_i  \\right) \\le \\sum_{i=1}^{n}P(A_i)\n\\]",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceitos de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/2_conceitos_de_probabilidade.html#espaços-de-probabilidade",
+    "href": "Int_Prob/2_conceitos_de_probabilidade.html#espaços-de-probabilidade",
+    "title": "Conceitos de Probabilidade",
+    "section": "",
+    "text": "Um Espaço de Probabilidade é um constructo que provê um modelo formal de um processo aleatório. Ele é composto por uma tríplice de valores \\((\\Omega, \\mathcal{F}, P)\\) onde\n\n\\(\\Omega\\) é todo o espaço amostral\n\\(\\mathcal{F}\\) (ou \\(\\sigma\\)-álgebra) é o espaço de eventos (domínio)\n\\(\\mathcal{P}\\) é uma função de probabilidade aplicada em \\(\\mathcal{F}\\) que produz valores no intervalo \\([0,1]\\)\n\nPara um entendimento mais consistente da importância da definição de um espaço de probabilidade, bem como da importância da definição de uma \\(\\sigma\\)-álgebra, que é o domínio do espaço, recomenda-se a leitura do Capítulo 1 de James (2023), Capítulo 1 de Magalhães (2006), Capítulo 2B e 12 de Axler (2020).1 No entanto, como esta discussão é mais aprofundada, para uma visão mais geral recomendo fortemente o leitor a assitir o vídeo Bertrand’s Paradox (with 3blue1brown) - Numberphile (explicação do Exemplo 1.8 de Magalhães (2006)) para esclarecer qual o efeito da definição de diferentes espaços de probabiidade para um mesmo problema e assim produzir probabilidades significativamente diferentes dependendo da maneira como são definidos \\(\\Omega\\) e \\(\\sigma\\)-álgebra e, assim, produzindo diferentes processos geradores de eventos.",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceitos de Probabilidade"
+    ]
+  },
+  {
+    "objectID": "Int_Prob/2_conceitos_de_probabilidade.html#footnotes",
+    "href": "Int_Prob/2_conceitos_de_probabilidade.html#footnotes",
+    "title": "Conceitos de Probabilidade",
+    "section": "Notas de rodapé",
+    "text": "Notas de rodapé\n\n\nO conceito de \\(\\sigma\\)-álgebra (bem como de sua versão finita – Álgebra), em um primeiro momento, pode ser considerado difícil de assimilar do ponto de vista prático. No entanto, ela é fundamental para garantir uma base matemática sólida para toda a teoria da probabilidade. As propriedades desejáveis de uma \\(\\sigma\\)-álgebra garantem que o espaço de probabilidade é um espaço mensurável. Por exemplo, uma das condições é de que se \\(A_1\\) e \\(A_2\\) são dois eventos sendo \\(A_1 \\in \\mathcal{F}\\) e \\(A_2 \\in \\mathcal{F}\\), então \\((A_1 \\cup A_2) \\in \\mathcal{F}\\). Se essa condição não fosse satisfeita, os axiomas de Kolmogorov não poderiam ser naturalmente aplicados à este espaço e potencialmente inconsistências poderiam ser geradas. Por exemplo, seguindo o Exemplo 1.3 de Magalhães (2006), considerando \\(\\Omega = \\{1, 2, 3\\}\\), suponha \\(\\mathcal{F} = \\{ \\emptyset, \\Omega, \\{1\\}, \\{2\\}, \\{1,3\\}, \\{2,3\\} \\}\\) não é uma \\(\\sigma\\)-álgebra pois \\(\\{1, 2\\} \\notin \\mathcal{F}\\) e, portanto, \\(P(\\{1, 2\\})\\) é indefinido. Portanto, não poderíamos, por exemplo, aplicar o terceiro axioma de Kolmogorov para calcular \\(P(\\{1, 2\\})\\). Neste exemplo, a definição de \\(\\mathcal{F}\\) viola o Axioma do Par que é uma dos axiomas fundamentais da Teoria dos Conjuntos de Zermelo–Fraenkel. Adicionamente, discussão possui relação com outros conceitos matemáticos como Aditividade Contável de uma \\(\\sigma\\)-álgebra, o Axioma da Escolha e o Paradoxo de Banach-Tarski. Recomenda-se também assistir o vídeo The Man Who Almost Broke Math (And Himself…).↩︎",
+    "crumbs": [
+      "Conceitos Básicos",
+      "Conceitos de Probabilidade"
+    ]
   }
 ]

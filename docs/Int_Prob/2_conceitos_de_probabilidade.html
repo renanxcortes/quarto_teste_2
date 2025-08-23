@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lei dos Grandes Números – Teaching</title>
+<title>Conceitos de Probabilidade – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -210,7 +176,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Probabilidade_B/LGN.html">Grandes Amostras</a></li><li class="breadcrumb-item"><a href="../Probabilidade_B/LGN.html">Lei dos Grandes Números</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/2_conceitos_de_probabilidade.html">Conceitos de Probabilidade</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -233,7 +199,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Grandes Amostras</span></a>
+ <span class="menu-text">Conceitos Básicos</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -241,14 +207,26 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Probabilidade_B/LGN.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lei dos Grandes Números</span></a>
+  <a href="../Int_Prob/1_experimento_aleatorio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Experimento Aleatório, Espaço Amostral e Eventos</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Probabilidade_B/TCL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Teorema Central do Limite</span></a>
+  <a href="../Int_Prob/2_conceitos_de_probabilidade.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Conceitos de Probabilidade</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Int_Prob/3_probabilidade_condicional_e_independencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilidade Condicional e Independência</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Int_Prob/4_variaveis_aleatorias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Variáveis Aleatórias</span></a>
   </div>
 </li>
       </ul>
@@ -263,24 +241,26 @@ window.Quarto = {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#introdução-e-condições-iniciais" id="toc-introdução-e-condições-iniciais" class="nav-link active" data-scroll-target="#introdução-e-condições-iniciais">Introdução e Condições Iniciais</a>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
   <ul class="collapse">
-  <li><a href="#lei-forte-dos-grandes-números" id="toc-lei-forte-dos-grandes-números" class="nav-link" data-scroll-target="#lei-forte-dos-grandes-números">Lei Forte dos Grandes Números</a></li>
-  <li><a href="#lei-fraca-dos-grandes-números" id="toc-lei-fraca-dos-grandes-números" class="nav-link" data-scroll-target="#lei-fraca-dos-grandes-números">Lei Fraca dos Grandes Números</a></li>
-  <li><a href="#relação-entre-leis-e-convergências" id="toc-relação-entre-leis-e-convergências" class="nav-link" data-scroll-target="#relação-entre-leis-e-convergências">Relação entre Leis e Convergências</a></li>
-  <li><a href="#exemplo-o-caso-bernoulli" id="toc-exemplo-o-caso-bernoulli" class="nav-link" data-scroll-target="#exemplo-o-caso-bernoulli">Exemplo: O caso Bernoulli</a></li>
-  <li><a href="#exemplo-computacional" id="toc-exemplo-computacional" class="nav-link" data-scroll-target="#exemplo-computacional">Exemplo Computacional</a></li>
+  <li><a href="#definição-clássica-omega-enumerável" id="toc-definição-clássica-omega-enumerável" class="nav-link" data-scroll-target="#definição-clássica-omega-enumerável">Definição Clássica (<span class="math inline">\(\Omega\)</span> enumerável)</a></li>
+  <li><a href="#definição-clássica-geométrica-omega-não-enumerável" id="toc-definição-clássica-geométrica-omega-não-enumerável" class="nav-link" data-scroll-target="#definição-clássica-geométrica-omega-não-enumerável">Definição Clássica Geométrica (<span class="math inline">\(\Omega\)</span> não enumerável)</a></li>
+  <li><a href="#definição-frequentista" id="toc-definição-frequentista" class="nav-link" data-scroll-target="#definição-frequentista">Definição Frequentista</a></li>
+  <li><a href="#probabilidade-axiomática" id="toc-probabilidade-axiomática" class="nav-link" data-scroll-target="#probabilidade-axiomática">Probabilidade Axiomática</a>
+  <ul class="collapse">
+  <li><a href="#propriedades-de-probabilidade-derivadas-dos-axiomas-de-kolmogorov" id="toc-propriedades-de-probabilidade-derivadas-dos-axiomas-de-kolmogorov" class="nav-link" data-scroll-target="#propriedades-de-probabilidade-derivadas-dos-axiomas-de-kolmogorov">Propriedades de probabilidade derivadas dos Axiomas de Kolmogorov</a></li>
   </ul></li>
-  <li><a href="#links-úteis" id="toc-links-úteis" class="nav-link" data-scroll-target="#links-úteis">Links Úteis</a></li>
+  <li><a href="#espaços-de-probabilidade" id="toc-espaços-de-probabilidade" class="nav-link" data-scroll-target="#espaços-de-probabilidade">Espaços de Probabilidade</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Probabilidade_B/LGN.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Probabilidade_B/LGN.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/2_conceitos_de_probabilidade.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/2_conceitos_de_probabilidade.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Probabilidade_B/LGN.html">Grandes Amostras</a></li><li class="breadcrumb-item"><a href="../Probabilidade_B/LGN.html">Lei dos Grandes Números</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/2_conceitos_de_probabilidade.html">Conceitos de Probabilidade</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lei dos Grandes Números</h1>
+<h1 class="title">Conceitos de Probabilidade</h1>
 </div>
 
 
@@ -297,145 +277,148 @@ window.Quarto = {
 </header>
 
 
-<section id="introdução-e-condições-iniciais" class="level1">
-<h1>Introdução e Condições Iniciais</h1>
-<p>A Lei dos Grandes Números (LGN) é um dos resultados mais famosos da Teoria da Probabilidade.</p>
-<p>Sejam <span class="math inline">\(X_1, X_2, ...\)</span> variáveis aleatórias independentes e identicamente distribuídas (<span class="math inline">\(iid\)</span>) com média e variância existentes e finitas, isto é <span class="math inline">\(-\infty &lt; \mu &lt; +\infty\)</span> e <span class="math inline">\(0 &lt; \sigma^2 &lt; +\infty\)</span>.</p>
-<p>Além disso, defina <span class="math inline">\(\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n}\)</span> como sendo a média amostral.</p>
-<section id="lei-forte-dos-grandes-números" class="level2">
-<h2 class="anchored" data-anchor-id="lei-forte-dos-grandes-números">Lei Forte dos Grandes Números</h2>
-<p>A Lei Forte estabelece que a média amostral converge para <span class="math inline">\(\mu\)</span> no infinito com probabilidade 1. Ou seja, <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span> com probabilidade 1.</p>
-<p>Observe que <span class="math inline">\(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu\)</span> é um <strong>evento</strong>. Logo, a Lei Forte poderia ser reescrita com uma notação probabilística alternativa:</p>
-<p><span class="math display">\[P\left(\bar{X} \xrightarrow{n \rightarrow + \infty} \mu \right) = 1\]</span></p>
-<p>Este resultado estabelece que <span class="math inline">\(\bar{X}\)</span> converge <em>quase certamente</em> para <span class="math inline">\(\mu\)</span>. Podemos interpretar esse resultado como sendo <em>à medida que n cresce, no infinito,</em> <span class="math inline">\(\bar{X}\)</span> e <span class="math inline">\(\mu\)</span> serão iguais. Ou seja, é uma convergência pontual do valor de uma variável aleatória (a média amostral) para uma constante (a média populacional).</p>
-<p>A prova deste teorema implica em provar que o evento acima é um evento de probabilidade 1, o que exige maior formalidade matemática fazendo uso do <a href="https://pt.wikipedia.org/wiki/Lema_de_Borel-Cantelli">Lema de Borel-Cantelli</a>.</p>
-<p><strong>Prova.</strong> Ver Cáp. 5 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
-<p><span class="math inline">\(\square\)</span></p>
+<section id="introdução" class="level1">
+<h1>Introdução</h1>
+<section id="definição-clássica-omega-enumerável" class="level2">
+<h2 class="anchored" data-anchor-id="definição-clássica-omega-enumerável">Definição Clássica (<span class="math inline">\(\Omega\)</span> enumerável)</h2>
+<p>Segundo <span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span>, a definição clássica de probabilidade se refere à subconjuntos unitários equiprováveis. No caso enumerável finito temos:</p>
+<p><span class="math display">\[
+P(A) = \frac{Número\ de\ Elementos\ em\ A}{Número\ total\ de\ Elementos\ em\ \Omega}
+\]</span></p>
+<p>Se <span class="math inline">\(\Omega\)</span> tiver uma quantidade infinita de elementos, precisamos tratar a a definição acima com o uso de limites.</p>
 </section>
-<section id="lei-fraca-dos-grandes-números" class="level2">
-<h2 class="anchored" data-anchor-id="lei-fraca-dos-grandes-números">Lei Fraca dos Grandes Números</h2>
-<p>A Lei Fraca estabelece que <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>, então:</p>
-<p><span class="math display">\[P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \xrightarrow{n \rightarrow + \infty} 0\]</span></p>
-<p>Este resultado estabelece que <span class="math inline">\(\bar{X}\)</span> converge <em>em probabilidade</em> para <span class="math inline">\(\mu\)</span>.</p>
-<p><strong>Prova.</strong> A prova faz uso da <a href="https://pt.wikipedia.org/wiki/Desigualdade_de_Chebyshev">Desigualdade de Chebyshev</a>:</p>
+<section id="definição-clássica-geométrica-omega-não-enumerável" class="level2">
+<h2 class="anchored" data-anchor-id="definição-clássica-geométrica-omega-não-enumerável">Definição Clássica Geométrica (<span class="math inline">\(\Omega\)</span> não enumerável)</h2>
+<p>Quando <span class="math inline">\(\Omega\)</span> é não enumerável, o conceito se aplicará ao comprimento de intervalos, medidas de áreas ou similares, dando origem ao que chamamos de <em>probabilidade geométrica</em>. Por exemplo, se <span class="math inline">\(\Omega\)</span> é um intervalo onde <span class="math inline">\(\Omega \in \mathbb{R}\)</span>, então:</p>
+<p><span class="math display">\[
+P(A) = \frac{Comprimento\ de\ A}{Comprimento\ de\ \Omega}
+\]</span></p>
+</section>
+<section id="definição-frequentista" class="level2">
+<h2 class="anchored" data-anchor-id="definição-frequentista">Definição Frequentista</h2>
+<p>A definição <em>frequentista</em> considera o limite de frequências relativas como o valor da probabilidade. Para tal, seja <span class="math inline">\(n_{A}\)</span> o número de ocorrências de <span class="math inline">\(A\)</span> em <span class="math inline">\(n\)</span> repetições independentes do experimento em questão. Assim,</p>
+<p><span class="math display">\[
+P(A) = \lim_{n\rightarrow{+\infty}} \frac{n_A}{n}
+\]</span></p>
+</section>
+<section id="probabilidade-axiomática" class="level2">
+<h2 class="anchored" data-anchor-id="probabilidade-axiomática">Probabilidade Axiomática</h2>
+<p>As definições anteriores não são suficientes para uma formulação matemática mais rigorosa da probabilidade. Assim, na primeira metade do século XX, <span class="citation" data-cites="Kolmogorov1933">Kolmogorov (<a href="#ref-Kolmogorov1933" role="doc-biblioref">1933</a>)</span> apresentou um conjunto de axiomas matemáticos para definir probabilidade e, assim, pavimentando toda a evolução da probabilidade moderna.</p>
+<p>É importante, e ao mesmo tempo fascinante, destacar que apenas com esses três axiomas <strong>todos os teoremas da Teoria da Probabilidade são viabilizados</strong>. Assim, podemos destacar que toda a evolução da probabilidade foi pavimentada pelo trabalho de <span class="citation" data-cites="Kolmogorov1933">Kolmogorov (<a href="#ref-Kolmogorov1933" role="doc-biblioref">1933</a>)</span>.</p>
+<p><strong>Definição axiomática</strong></p>
+<p>Assumindo que podemos atribuir um número real <span class="math inline">\(P(A)\)</span> para um evento <span class="math inline">\(A\)</span>:</p>
+<ul>
+<li><p><strong>Axioma 1.</strong> <span class="math inline">\(P(A) \ge 0\)</span></p></li>
+<li><p><strong>Axioma 2.</strong> <span class="math inline">\(P(\Omega) = 1\)</span></p></li>
+<li><p><strong>Axioma 3.</strong> Se <span class="math inline">\(A_1, A_2, ..., A_n\)</span> são disjuntos (2 a 2) (isto é, mutuamente excludentes), então</p></li>
+</ul>
+<p><span class="math display">\[
+P\left( \bigcup_{k=1}^{n} A_k \right) = \sum_{k=1}^{n} P (A_k)
+\]</span></p>
+<p>(Os eventos são disjuntos 2 a 2, se <span class="math inline">\(A_i \cap A_j = \emptyset, \forall i \ne j\)</span>)</p>
+<p>Uma discussão mais aprofundada desses axiomas, incluindo uma versão mais conveniente para o Axioma 3 (para o caso <span class="math inline">\(n = \infty\)</span>) e uma “Axioma 4” de <em>continuidade no vazio</em>, que pode ser derivado dos outros axiomas, é discutida no Capítulo 1 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>.</p>
+<section id="propriedades-de-probabilidade-derivadas-dos-axiomas-de-kolmogorov" class="level3">
+<h3 class="anchored" data-anchor-id="propriedades-de-probabilidade-derivadas-dos-axiomas-de-kolmogorov">Propriedades de probabilidade derivadas dos Axiomas de Kolmogorov</h3>
+<p>Como comentado, os Axiomas de Kolmogorov sustentam toda a teoria da probabilidade e alguns resultados diretos são:</p>
+<ul>
+<li><span class="math inline">\(P(\emptyset) = 0\)</span>.</li>
+</ul>
+<p><strong>Prova.</strong></p>
 <p><span class="math display">\[
 \begin{align*}
-P\left(\left| \bar{X} - \mu \right| \ge \varepsilon \right) \overset{\text{Des. Cheb.}}{\le} \frac{Var(\bar{X})}{\varepsilon^2} = \frac{Var\left(\frac{\sum_{i=1}^{n}{X_i}}{n}\right)}{\varepsilon^2} \overset{\text{Prop. da Constante}}{=} \frac{Var(\sum_{i=1}^{n}{X_i})}{n^2\varepsilon^2} \overset{\text{Indep.}}{=} \\
-= \frac{\sum_{i=1}^{n}{Var(X_i)}}{n^2\varepsilon^2} \overset{\text{Ident. Dist.}}{=} \frac{n\sigma^2}{n^2\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \rightarrow + \infty} 0
+P(A \cup \emptyset) &amp;= P(A) + P(\emptyset) \\
+P(A) &amp;= P(A) + P(\emptyset) \\
+P(\emptyset) &amp;= 0
 \end{align*}
 \]</span></p>
-<p><span class="math inline">\(\square\)</span></p>
-<p>Este resultado ilustra que <span class="math inline">\(\bar{X}\)</span> converge <em>em probabilidade</em> para <span class="math inline">\(\mu\)</span>. Podemos interpretar esse resultado como sendo <em>à medida que n cresce, é extremamente improvável que a diferença entre</em> <span class="math inline">\(\bar{X}\)</span> <em>e</em> <span class="math inline">\(\mu\)</span> <em>seja maior que</em> <span class="math inline">\(\varepsilon\)</span>.</p>
-</section>
-<section id="relação-entre-leis-e-convergências" class="level2">
-<h2 class="anchored" data-anchor-id="relação-entre-leis-e-convergências">Relação entre Leis e Convergências</h2>
-<p>É intuitivo pensar afirmarmos que duas quantidades são <strong>iguais</strong> é mais “forte” do que dizer que essas duas quantidades são “altamente prováveis de <strong>estarem próximas</strong>”. Ora, se uma coisa é igual à outra, isso implica de que elas também são próximas. Tendo em vista que a Lei Forte dos Grandes Números representa a convergência <em>quase certa</em> e a Lei Fraca representa a convergência <em>em probabilidade</em>, temos que se</p>
-<p><span class="math display">\[Convergência\ Quase\ Certa \implies Convergência\ em\ Probabilidade\]</span></p>
-<p>então,</p>
-<p><span class="math display">\[Lei\ Forte \implies Lei\ Fraca\]</span></p>
-<p>O contrário não vale para nenhuma das duas afirmativas acima.</p>
-</section>
-<section id="exemplo-o-caso-bernoulli" class="level2">
-<h2 class="anchored" data-anchor-id="exemplo-o-caso-bernoulli">Exemplo: O caso Bernoulli</h2>
-<p>Suponha uma sequência independente de lançamentos de uma moeda honesta e a variável aleatória <span class="math inline">\(X_i = 1\)</span> se cara e <span class="math inline">\(X_i = 0\)</span> se coroa. Ou seja,</p>
-<p><span class="math display">\[X_i \overset{iid}{\sim}Bernoulli(p)\]</span></p>
-<p>onde <span class="math inline">\(p = 0,5\)</span>. Então, pela Lei Forte dos Grandes Números:</p>
-<p><span class="math display">\[\bar{X} = \frac{\sum_{i=1}^{n}{X_i}}{n} \xrightarrow{n \rightarrow + \infty} p\]</span></p>
-<p>Este resultado mostra que a medida que ao jogarmos a moeda infinitas vezes, iremos convergir para um cenário em que metade dos lançamentos serão caras e metade serão coroas. Note que o resultado vale quando <span class="math inline">\(n \rightarrow + \infty\)</span>, ou seja, ele não estabelece nada em uma quantidade finita de lançamentos onde pode existir variabilidade. Por exemplo, mesmo que seja altamente improvável que nos primeiros 100 lançamentos todos os resultados sejam a face “Cara”, não existe nada matematicamente que estabeleça que isso seja impossível. No entanto, no limite do infinito as quantidades iniciais serão “engolidas” pela LGN. Para uma discussão mais aprofundada sobre esse tema recomenda-se uma leitura sobre o <a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy">Gambler’s Fallacy</a>.</p>
-</section>
-<section id="exemplo-computacional" class="level2">
-<h2 class="anchored" data-anchor-id="exemplo-computacional">Exemplo Computacional</h2>
-<p>No R:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Mostrar Código</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar as bibliotecas necessárias</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir o número de lançamentos</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">500</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Simular lançamentos de uma moeda honesta</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Para reprodutibilidade</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>lancamentos <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"Cara"</span>, <span class="st">"Coroa"</span>), n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular a proporção acumulada de caras</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(lancamentos) <span class="sc">%&gt;%</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">row_number</span>(),</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">proporcao_cara =</span> <span class="fu">cumsum</span>(lancamentos <span class="sc">==</span> <span class="st">"Cara"</span>) <span class="sc">/</span> n</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar o gráfico</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> proporcao_cara)) <span class="sc">+</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Lei dos Grandes Números: Lançamento de uma Moeda Honesta"</span>,</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Número de Lançamentos"</span>,</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Proporção de Caras"</span>) <span class="sc">+</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="LGN_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>No Python:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Mostrar Código</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Definindo o número de lançamentos</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">500</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulando lançamentos de uma moeda honesta</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)  <span class="co"># Para reprodutibilidade</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>lancamentos <span class="op">=</span> np.random.choice([<span class="st">'Cara'</span>, <span class="st">'Coroa'</span>], size<span class="op">=</span>n)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando a proporção acumulada de caras</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>proporcao_cara <span class="op">=</span> np.cumsum(lancamentos <span class="op">==</span> <span class="st">'Cara'</span>) <span class="op">/</span> np.arange(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando o gráfico</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.plot(proporcao_cara, color<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Proporção de Caras'</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="fl">0.5</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Proporção Esperada (0.5)'</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Lei dos Grandes Números: Lançamento de uma Moeda Honesta'</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Número de Lançamentos'</span>)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Proporção de Caras'</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="LGN_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="576"></p>
-</figure>
-</div>
-</div>
-</div>
+<ul>
+<li>Para qualquer evento <span class="math inline">\(A\)</span>, <span class="math inline">\(P(A^c) = 1-P(A)\)</span>.</li>
+</ul>
+<p><strong>Prova.</strong></p>
+<p><span class="math display">\[
+\begin{align*}
+P(\Omega) &amp;= P(A \cup A^c) = P(A) + P(A^c) \\
+1 &amp;= P(A) + P(A^c) \overset{\text{Isolando}}{\implies} P(A^c) = 1-P(A)
+\end{align*}
+\]</span></p>
+<ul>
+<li>Se <span class="math inline">\(A \subset B\)</span>, então <span class="math inline">\(P(A) \le P(B)\)</span>.</li>
+</ul>
+<p><strong>Prova.</strong></p>
+<p><span class="math display">\[
+\begin{align*}
+P(B) &amp;= P(A \cup (B \cap A^c)) = P(A) + P(B \cap A^c) \\
+P(B) &amp;\ge P(A)
+\end{align*}
+\]</span></p>
+<ul>
+<li><p>Se <span class="math inline">\(A \subset B\)</span>, então <span class="math inline">\(P(A \cap B) = P(A)\)</span>.</p></li>
+<li><p>Para qualquer evento <span class="math inline">\(A\)</span>, <span class="math inline">\(0 \le P(A) \le 1\)</span>.</p></li>
+</ul>
+<p><strong>Prova.</strong> Como <span class="math inline">\(A \subset \Omega\)</span>, então <span class="math inline">\(0 \le P(A) \le P(\Omega) = 1\)</span></p>
+<ul>
+<li>Para quaisquer eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, <span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span> (Esta relação é mais fácil de visualizar via Diagrama de Venn)</li>
+</ul>
+<p><strong>Prova.</strong></p>
+<p>Primeiro, vamos escrever <span class="math inline">\(P(A)\)</span> e <span class="math inline">\(P(B)\)</span> como a soma de suas partes:</p>
+<p><span class="math display">\[
+P(A) = P(A \cap B^c) + P(A \cap B) \\
+P(B) = P(B \cap A^c) + P(B \cap A)
+\]</span></p>
+<p>Agora, vamos escrever a união como a soma de suas partes:</p>
+<p><span class="math display">\[
+P(A \cup B) = P(A \cap B^c) + P(A \cap B) + P(B \cap A^c)
+\]</span></p>
+<p>Agora, somando e substraindo <span class="math inline">\(P(A \cap B)\)</span>:</p>
+<p><span class="math display">\[
+\begin{align*}
+P(A \cup B) &amp;= \overbrace{P(A \cap B^c) + P(A \cap B)}^{P(A)} + \overbrace{P(B \cap A^c) + P(A \cap B)}^{P(B)} - P(A \cap B) \\
+P(A \cup B) &amp;= P(A) + P(B) - P(A \cap B)
+\end{align*}
+\]</span></p>
+<ul>
+<li>(<em>Desigualdade de Boole</em>) Sejam <span class="math inline">\(A_1, A_2, ..., A_n\)</span> então</li>
+</ul>
+<p><span class="math display">\[
+P\left( \bigcup_{i=1}^{n} A_i  \right) \le \sum_{i=1}^{n}P(A_i)
+\]</span></p>
 </section>
 </section>
-<section id="links-úteis" class="level1">
-<h1>Links Úteis</h1>
-<p><a href="https://www.youtube.com/watch?v=OprNqnHsVIA&amp;t=1910s">Aula de Harvard de Lei dos Grandes Números e Teorema Central do Limite</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Law_of_large_numbers">Página da Wikipedia da Lei dos Grandes Números</a></p>
+<section id="espaços-de-probabilidade" class="level2">
+<h2 class="anchored" data-anchor-id="espaços-de-probabilidade">Espaços de Probabilidade</h2>
+<p>Um <a href="https://en.wikipedia.org/wiki/Probability_space">Espaço de Probabilidade</a> é um constructo que provê um modelo formal de um processo aleatório. Ele é composto por uma tríplice de valores <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span> onde</p>
+<ul>
+<li><span class="math inline">\(\Omega\)</span> é todo o espaço amostral</li>
+<li><span class="math inline">\(\mathcal{F}\)</span> (ou <span class="math inline">\(\sigma\)</span>-álgebra) é o espaço de eventos (domínio)</li>
+<li><span class="math inline">\(\mathcal{P}\)</span> é uma função de probabilidade aplicada em <span class="math inline">\(\mathcal{F}\)</span> que produz valores no intervalo <span class="math inline">\([0,1]\)</span></li>
+</ul>
+<p>Para um entendimento mais consistente da importância da definição de um espaço de probabilidade, bem como da importância da definição de uma <span class="math inline">\(\sigma\)</span>-álgebra, que é o domínio do espaço, recomenda-se a leitura do Capítulo 1 de <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>, Capítulo 1 de <span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span>, Capítulo 2B e 12 de <span class="citation" data-cites="axler2020measure">Axler (<a href="#ref-axler2020measure" role="doc-biblioref">2020</a>)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> No entanto, como esta discussão é mais aprofundada, para uma visão mais geral recomendo fortemente o leitor a assitir o vídeo <a href="https://www.youtube.com/watch?v=mZBwsm6B280">Bertrand’s Paradox (with 3blue1brown) - Numberphile</a> (explicação do Exemplo 1.8 de <span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span>) para esclarecer qual o efeito da definição de diferentes espaços de probabiidade para um mesmo problema e assim produzir probabilidades significativamente diferentes dependendo da maneira como são definidos <span class="math inline">\(\Omega\)</span> e <span class="math inline">\(\sigma\)</span>-álgebra e, assim, produzindo diferentes processos geradores de eventos.</p>
 
 
 
 </section>
+</section>
+
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-axler2020measure" class="csl-entry" role="listitem">
+Axler, Sheldon. 2020. <em>Measure, Integration &amp; Real Analysis</em>. Vol. 282. Graduate Texts em Mathematics. Springer. <a href="https://doi.org/10.1007/978-3-030-33143-6">https://doi.org/10.1007/978-3-030-33143-6</a>.
+</div>
 <div id="ref-barryjames2023" class="csl-entry" role="listitem">
 James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>. 5.ª ed. IMPA.
 </div>
-</div></section></div></main> <!-- /main -->
+<div id="ref-Kolmogorov1933" class="csl-entry" role="listitem">
+Kolmogorov, Andrei Nikolaevich. 1933. <em>Foundations of the Theory of Probability</em>.
+</div>
+<div id="ref-magalhaes2006probabilidade" class="csl-entry" role="listitem">
+Magalhães, M. N. 2006. <em>Probabilidade e Vari<span>á</span>veis Aleat<span>ó</span>rias</em>. 3.ª ed. Edusp.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas de rodapé</h2>
+
+<ol>
+<li id="fn1"><p>O conceito de <span class="math inline">\(\sigma\)</span>-álgebra (bem como de sua versão finita – Álgebra), em um primeiro momento, pode ser considerado difícil de assimilar do ponto de vista prático. No entanto, ela é fundamental para garantir uma base matemática sólida para toda a teoria da probabilidade. As propriedades desejáveis de uma <span class="math inline">\(\sigma\)</span>-álgebra garantem que o espaço de probabilidade é um espaço mensurável. Por exemplo, uma das condições é de que se <span class="math inline">\(A_1\)</span> e <span class="math inline">\(A_2\)</span> são dois eventos sendo <span class="math inline">\(A_1 \in \mathcal{F}\)</span> e <span class="math inline">\(A_2 \in \mathcal{F}\)</span>, então <span class="math inline">\((A_1 \cup A_2) \in \mathcal{F}\)</span>. Se essa condição não fosse satisfeita, os axiomas de Kolmogorov não poderiam ser naturalmente aplicados à este espaço e potencialmente inconsistências poderiam ser geradas. Por exemplo, seguindo o Exemplo 1.3 de <span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span>, considerando <span class="math inline">\(\Omega = \{1, 2, 3\}\)</span>, suponha <span class="math inline">\(\mathcal{F} = \{ \emptyset, \Omega, \{1\}, \{2\}, \{1,3\}, \{2,3\} \}\)</span> <strong>não</strong> é uma <span class="math inline">\(\sigma\)</span>-álgebra pois <span class="math inline">\(\{1, 2\} \notin \mathcal{F}\)</span> e, portanto, <span class="math inline">\(P(\{1, 2\})\)</span> é <strong>indefinido</strong>. Portanto, não poderíamos, por exemplo, aplicar o terceiro axioma de Kolmogorov para calcular <span class="math inline">\(P(\{1, 2\})\)</span>. Neste exemplo, a definição de <span class="math inline">\(\mathcal{F}\)</span> viola o <a href="https://en.wikipedia.org/wiki/Axiom_of_pairing">Axioma do Par</a> que é uma dos axiomas fundamentais da Teoria dos Conjuntos de <a href="https://en.wikipedia.org/wiki/Zermelo%E2%80%93Fraenkel_set_theory">Zermelo–Fraenkel</a>. Adicionamente, discussão possui relação com outros conceitos matemáticos como <a href="https://en.wikipedia.org/wiki/Sigma-additive_set_function">Aditividade Contável</a> de uma <span class="math inline">\(\sigma\)</span>-álgebra, o <a href="https://pt.wikipedia.org/wiki/Axioma_da_escolha">Axioma da Escolha</a> e o <a href="https://en.wikipedia.org/wiki/Banach%E2%80%93Tarski_paradox">Paradoxo de Banach-Tarski</a>. Recomenda-se também assistir o vídeo <a href="https://www.youtube.com/watch?v=_cr46G2K5Fo&amp;t=1178s">The Man Who Almost Broke Math (And Himself…)</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -858,4 +841,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Probabilidade_B/LGN.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Probabilidade_B/LGN.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/2_conceitos_de_probabilidade.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/2_conceitos_de_probabilidade.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
