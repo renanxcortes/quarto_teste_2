@@ -317,7 +317,20 @@ P(A) = P\left(\bigcup\limits_{i=1}^{n}(A \cap B_i)\right) = \sum\limits_{i=1}^{n
 P(B_i |A) = \frac{P(A | B_i) P(B_i)} {\sum\limits_{i=1}^{n}P(A | B_i)P(B_i)} \ \ \ \forall i=1,...n.
 \]</span> Ressalta-se que o <em>Teorema de Bayes</em> vale também quando <span class="math inline">\(n = \infty\)</span>.</p>
 <p>Observe que o <strong>denominador</strong> da Fórmula de Bayes é o valor do Teorema da Probabilidade Total definida anteriormente.</p>
-<p>INCLUIR AKI Exmeplo do morettin… tentar desenhar o exemplo do morettin como uma particao…. o B é “saiu cara” numa particao de moedas…</p>
+<p>O Teorema de Bayes é particularmente útil quando estamos tratando com experimentos em múltiplas fases. Se <span class="math inline">\(B_i\)</span> é um evento condicionado à um evento <span class="math inline">\(A\)</span>, então querer saber <span class="math inline">\(P(B_i|A)\)</span> é como se fosse no sentido de retrospectiva (“backward”). É como se fosse <strong>questionar sobre a probabilidade da primeira fase, condicionada no que aconteceu na segunda fase do experimento</strong>. Por isso, o Teorema de Bayes também é chamado de <em>teorema da probabilidade a posteriori</em> (<span class="citation" data-cites="morettin1999estatística">(<a href="#ref-morettin1999estatística" role="doc-biblioref"><strong>morettin1999estatística?</strong></a>)</span>).</p>
+<p><strong>Exemplo</strong> Suponha que em uma urna nós temos três moedas: sendo duas honestas e uma viciada com duas faces “caras”. Suponha que eu retire, aleatoriamente, uma moeda urna e jogue pra cima e saia a face “cara”. Então, dado que saiu “cara”, qual a probabilidade de eu ter sorteado a moeda viciada?</p>
+<p>Podemos pensar neste problema da seguinte forma ilustrativa:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/moedas_particao.png" class="img-fluid figure-img"></p>
+<figcaption>Ilustração de experimento de duas fases</figcaption>
+</figure>
+</div>
+<p>Originalmente, <span class="math inline">\(P(B_3) = \frac{1}{3}\)</span>, no entanto, a probabilidade condicionada a posteriori é:</p>
+<p><span class="math display">\[
+P(B_3|A) = \frac{P(A | B_3) P(B_3)} {P(A | B_1)P(B_1) + P(A | B_2)P(B_2) + P(A | B_3)P(B_3)} = \frac{1 \times \frac{1}{3}} {\frac{1}{2} \times \frac{1}{3} + \frac{1}{2} \times \frac{1}{3} + 1\times \frac{1}{3}} = \frac{\frac{1}{3}}{\frac{4}{6}} = \frac{1}{2}
+\]</span></p>
+<p>Ou seja, note que a probabilidade “atualizou” de <span class="math inline">\(\frac{1}{3}\)</span> para <span class="math inline">\(\frac{1}{2}\)</span>.</p>
 </section>
 <section id="regra-da-multiplicação" class="level2">
 <h2 class="anchored" data-anchor-id="regra-da-multiplicação">Regra da multiplicação</h2>
@@ -343,7 +356,7 @@ P(A_1A_2 ... A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2A_1)...P(A_n|A_1... A_{n-1})
 <li><span class="math inline">\(P(A | B) = P(A),\ se\ P(B) &gt; 0\)</span></li>
 <li><span class="math inline">\(P(B | A) = P(B),\ se\ P(A) &gt; 0\)</span></li>
 </ul>
-<p><strong>Definição</strong> <em>Independência de múltiplos eventos</em> Os eventos <span class="math inline">\(A_1,A_2,...,A_n\)</span> definidos no mesmo espaço de probabilidade são considerados conjuntamente <em>independentes</em> se, e somente se:</p>
+<p><strong>Definição</strong> (<em>Independência de múltiplos eventos</em>) Os eventos <span class="math inline">\(A_1,A_2,...,A_n\)</span> definidos no mesmo espaço de probabilidade são considerados conjuntamente <em>independentes</em> se, e somente se:</p>
 <p><span class="math display">\[
 P\left( \bigcap_{i=1}^{n} A_i \right) = \prod_{i=1}^{n} P\left(  A_i \right).
 \]</span></p>

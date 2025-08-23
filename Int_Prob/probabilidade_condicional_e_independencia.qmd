@@ -81,8 +81,21 @@ Ressalta-se que o *Teorema de Bayes* vale também quando $n = \infty$.
 
 Observe que o **denominador** da Fórmula de Bayes é o valor do Teorema da Probabilidade Total definida anteriormente.
 
+O Teorema de Bayes é particularmente útil quando estamos tratando com experimentos em múltiplas fases. Se $B_i$ é um evento condicionado à um evento $A$, então querer saber $P(B_i|A)$ é como se fosse no sentido de retrospectiva ("backward"). É como se fosse **questionar sobre a probabilidade da primeira fase, condicionada no que aconteceu na segunda fase do experimento**. Por isso, o Teorema de Bayes também é chamado de *teorema da probabilidade a posteriori* (@morettin1999estatística).
 
-INCLUIR AKI Exmeplo do morettin... tentar desenhar o exemplo do morettin como uma particao.... o B é "saiu cara" numa particao de moedas...
+**Exemplo** Suponha que em uma urna nós temos três moedas: sendo duas honestas e uma viciada com duas faces "caras". Suponha que eu retire, aleatoriamente, uma moeda urna e jogue pra cima e saia a face "cara". Então, dado que saiu "cara", qual a probabilidade de eu ter sorteado a moeda viciada? 
+
+Podemos pensar neste problema da seguinte forma ilustrativa:
+
+![Ilustração de experimento de duas fases](figs/moedas_particao.png)
+
+Originalmente, $P(B_3) = \frac{1}{3}$, no entanto, a probabilidade condicionada a posteriori é:
+
+$$
+P(B_3|A) = \frac{P(A | B_3) P(B_3)} {P(A | B_1)P(B_1) + P(A | B_2)P(B_2) + P(A | B_3)P(B_3)} = \frac{1 \times \frac{1}{3}} {\frac{1}{2} \times \frac{1}{3} + \frac{1}{2} \times \frac{1}{3} + 1\times \frac{1}{3}} = \frac{\frac{1}{3}}{\frac{4}{6}} = \frac{1}{2}
+$$
+
+Ou seja, note que a probabilidade "atualizou" de $\frac{1}{3}$ para $\frac{1}{2}$.
 
 ## Regra da multiplicação
 
@@ -115,7 +128,7 @@ Note que, se a igualdade acima valer, então:
 - $P(B | A) = P(B),\ se\ P(A) > 0$
 
 
-**Definição** *Independência de múltiplos eventos* Os eventos $A_1,A_2,...,A_n$ definidos no mesmo espaço de probabilidade são considerados conjuntamente *independentes* se, e somente se:
+**Definição** (*Independência de múltiplos eventos*) Os eventos $A_1,A_2,...,A_n$ definidos no mesmo espaço de probabilidade são considerados conjuntamente *independentes* se, e somente se:
 
 
 $$
