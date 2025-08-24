@@ -21,6 +21,7 @@ website:
   repo-url: https://github.com/renanxcortes/teaching
   repo-actions: [edit, source, issue]
   reader-mode: true
+  favicon: figs/logo.png
   navbar:
     background: primary
     search: true
