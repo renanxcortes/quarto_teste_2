@@ -332,7 +332,7 @@ X &amp;=
 <li><p><span class="math inline">\(F_X(-\infty) = \lim\limits_{n \to -\infty}F_X(x) = 0\)</span></p></li>
 <li><p><span class="math inline">\(F_X(+\infty) = \lim\limits_{n \to +\infty}F_X(x) = 1\)</span></p></li>
 </ul>
-<p>Um ponto interessante é que a definição de uma FDA poderia ser dada simplesmente por essas propriedades. Isto é, dada qualquer função <span class="math inline">\(F(.)\)</span> que respeite as propriedades acima, logo ela <strong>será FDA de alguma variável aleatória existente</strong> (mesmo sem mencioná-la!).</p>
+<p>Um ponto interessante é que a definição de uma FDA poderia ser dada simplesmente por essas propriedades. Isto é, qualquer função <span class="math inline">\(F(.)\)</span> que respeite as propriedades acima <strong>será FDA de alguma variável aleatória existente</strong> (mesmo sem mencioná-la!).</p>
 </section>
 <section id="funções-densidade" class="level1">
 <h1>Funções Densidade</h1>
@@ -533,7 +533,13 @@ f_X(x) &amp;=
 </section>
 <section id="variáveis-aleatórias-contínuas" class="level2">
 <h2 class="anchored" data-anchor-id="variáveis-aleatórias-contínuas">Variáveis Aleatórias Contínuas</h2>
-<p><strong>Definição</strong> Uma variável aleatória <span class="math inline">\(X\)</span> é dita contínua se existe uma função <span class="math inline">\(f_X(.)\)</span> tal que <span class="math inline">\(F_X(x) = \int_\limits{-\infty}^{x}f_{X}(u)d(u), \forall x \in \mathbb{R}\)</span>.</p>
+<p><strong>Definição</strong> Uma variável aleatória <span class="math inline">\(X\)</span> é dita contínua se existe uma função <span class="math inline">\(f_X(.)\)</span> tal que <span class="math inline">\(F_X(x) = \int_\limits{-\infty}^{x}f_{X}(u)d(u), \forall x \in \mathbb{R}\)</span>. Se <span class="math inline">\(X\)</span> é contíuna, então a função <span class="math inline">\(f_X(x)\)</span> é chamada de <em>função densidade de probabilidade</em> de <span class="math inline">\(X\)</span> aplicada no ponto <span class="math inline">\(x\)</span>.</p>
+<p>Para qualquer função densidade de uma V.A. <span class="math inline">\(X\)</span>, contínua tem-se as seguintes propriedades:</p>
+<ul>
+<li><p><span class="math inline">\(f_X(x) \ge 0, \forall x \in \mathbb{R}\)</span></p></li>
+<li><p>$ _^{+}f(x)dx = 1$.</p></li>
+</ul>
+<p>Um ponto interessante é que a definição de uma função de densidade poderia ser dada simplesmente por essas propriedades. Isto é, qualquer função <span class="math inline">\(f(.)\)</span> que respeite as propriedades acima <strong>será função de densidade de probabilidade de alguma variável aleatória existente</strong> (mesmo sem mencioná-la!).</p>
 
 
 

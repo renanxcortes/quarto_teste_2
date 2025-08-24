@@ -63,17 +63,23 @@ Constante Evolução
 
 Conceitos Gerais de Probabilidade, Estatística e afins
 
+Falar que ao longo do site códigos serão abordados.. seguindo planos de ensino
+
 Sinta-se livre para sugerir melhorias abrindo uma issue [neste link](https://github.com/renanxcortes/teaching/issues)
 
 Este é um website baseado no [Quarto](https://quarto.org/docs/websites) da empresa [Posit](https://posit.co/).
 
-# Links Úteis
-
-[Site oficial do Quarto](https://quarto.org/docs/websites)
+# Links interessantes que me inspiram e que podem te inspirar também
 
 [Templates de Quarto úteis do prof. Gang He](https://drganghe.github.io/quarto-academic-site-examples.html)
 
+[Site da Disciplina de Probabilidade e Estatística EDA da UFRGS](https://www.ufrgs.br/probabilidade-estatistica/)
+
 [Livro de Estatística Básica do Prof. Filipe Zabala](https://filipezabala.com/enrs/)
+
+[Livro R for Data Science](https://r4ds.hadley.nz/)
+
+[Site do prof. André Zibetti](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html)
 
 :::
 
@@ -81,7 +87,6 @@ Este é um website baseado no [Quarto](https://quarto.org/docs/websites) da empr
 
 
 
-<!-- [Site do prof. André Zibetti](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html) -->
 
 <!--
 
