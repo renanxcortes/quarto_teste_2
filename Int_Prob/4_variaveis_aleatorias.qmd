@@ -18,7 +18,7 @@ format:
 
 # Introdução
 
-Informalmente, uma variável aleatória (VA) é um *valor numérico* do resultado de um experimento aleatório. Formalmente, abaixo segue a definição (@magalhaes2006probabilidade, @barryjames2023):
+Informalmente, uma variável aleatória (V.A.) é um *valor numérico* do resultado de um experimento aleatório. Formalmente, abaixo segue a definição (@magalhaes2006probabilidade, @barryjames2023):
 
 **Definição** Seja $(\Omega, \mathcal{F}, \mathcal{P})$ um espaço de probabilidade. Denominamos de *variável aleatória*, qualquer função $X : \Omega \rightarrow \mathbb{R}$ tal que $[X \le x]$ é evento aleatório para todo $x \in \mathbb{R}$; isto é, $[X \le x] \in \mathcal{F}, \forall x \in \mathbb{R}$[^1].
 
@@ -41,16 +41,16 @@ Formalmente, precisamos mostrar que esta construção deste experimento $X$ most
 
 **Exemplo** (@mood1974introduction) Assuma um experimento de lançar dois dados honestos de seis lados, sendo o dado $i$ e o dado $j$. Defina a variável aleatória $X$ assumir o valor da soma das suas faces, ou seja, $X(\omega) = i+j$, onde $\Omega = \{(i,j): i,j = 1, 2,...,6\}$
 
+**Definição** *Função de Distribuição Acumulada (FDA)* A FDA de uma V.A. $X$ aplicada no ponto $x$ denotada por $F_X(x)$, é uma função com domínio nos números reais e imagem (contra domínio) no intervalo $[0,1]$ que satisfaz $F_X(x) = P(X \le x), \forall x \in \mathbb{R}$.
 
+A FDA é unicamente definida para cada variável aleatória. Ou seja, uma variável aleatória $X$ possui uma única respectiva função $F_X(.)$.
 
+Para qualquer FDA de uma V.A. $X$, tem-se:
 
+-   $0 \le F_X(x) \le 1$
 
+-   $F_X(x)$ é não decrescente. Isto é, se $x_1 \le x_2 \implies F_X(x_1) \le F_X(x_2)$
 
+-   $F_X(-\infty) = \lim\limits_{n \to -\infty}F_X(x) = 0$
 
-
-
-
-
-
-
-
+-   $F_X(+\infty) = \lim\limits_{n \to +\infty}F_X(x) = 1$
