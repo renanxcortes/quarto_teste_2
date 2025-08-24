@@ -246,4 +246,32 @@ $P(a < X < b) = \int\limits_{a}^{b}f(x)dx = F_X(b) - F_X(a)$
 
 Além disso, $P(X = a) = 0, \forall a \in \mathbb{R}$.
 
-**Exemplo** pegar do mood..
+**Exemplo** (@mood1974introduction)....
+
+```{r}
+library(ggplot2)
+
+valor_lambda <- 1 / 5
+lower_bound <- 5
+upper_bound <- 10
+
+# Obs: a função interna do R possui a mesma parametrização de Mood e Graybill
+# De qualquer forma, poderíamos criar a nossa própria versão da exponencial como por exemplo:
+# dexp_2 <- function(x, lambda) {ifelse(x >= 0, lambda * exp(-lambda * x), 0)}
+
+x_values <- seq(0, 12, by = 0.01) # Ajustar à gosto
+exp_data <- data.frame(x = x_values, y = dexp(x_values, rate = valor_lambda))
+
+shaded_area_data <- subset(exp_data, x >= lower_bound & x <= upper_bound)
+shaded_area_data <- rbind(c(lower_bound, 0), shaded_area_data, c(upper_bound, 0))
+
+ggplot(exp_data, aes(x = x, y = y)) +
+  geom_line(color = "blue") + # Densidade de Probabilidade
+  geom_polygon(data = shaded_area_data, aes(x = x, y = y), fill = "red", alpha = 0.5) + # Área Hachurada
+  labs(title = substitute(paste("Função Densidade de Probabilidade (",lambda," = ", x , ")"), list(x = valor_lambda)), # Não pode ser paste0
+       x = "x",
+       y = "Valor da Densidade f(x)") +
+  ylim(c(0,1)) +
+  theme_minimal()
+```
+
