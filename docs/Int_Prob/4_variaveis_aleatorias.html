@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -242,6 +276,11 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#funções-densidade" id="toc-funções-densidade" class="nav-link" data-scroll-target="#funções-densidade">Funções Densidade</a>
+  <ul class="collapse">
+  <li><a href="#variáveis-aleatórias-discretas" id="toc-variáveis-aleatórias-discretas" class="nav-link" data-scroll-target="#variáveis-aleatórias-discretas">Variáveis Aleatórias Discretas</a></li>
+  <li><a href="#variáveis-aleatórias-contínuas" id="toc-variáveis-aleatórias-contínuas" class="nav-link" data-scroll-target="#variáveis-aleatórias-contínuas">Variáveis Aleatórias Contínuas</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/4_variaveis_aleatorias.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/4_variaveis_aleatorias.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
@@ -286,20 +325,120 @@ X &amp;=
 <p><strong>Exemplo</strong> (<span class="citation" data-cites="mood1974introduction">Mood, Graybill, e Boes (<a href="#ref-mood1974introduction" role="doc-biblioref">1974</a>)</span>) Assuma um experimento de lançar dois dados honestos de seis lados, sendo o dado <span class="math inline">\(i\)</span> e o dado <span class="math inline">\(j\)</span>. Defina a variável aleatória <span class="math inline">\(X\)</span> assumir o valor da soma das suas faces, ou seja, <span class="math inline">\(X(\omega) = i+j\)</span>, onde <span class="math inline">\(\Omega = \{(i,j): i,j = 1, 2,...,6\}\)</span></p>
 <p><strong>Definição</strong> <em>Função de Distribuição Acumulada (FDA)</em> A FDA de uma V.A. <span class="math inline">\(X\)</span> aplicada no ponto <span class="math inline">\(x\)</span> denotada por <span class="math inline">\(F_X(x)\)</span>, é uma função com domínio nos números reais e imagem (contra domínio) no intervalo <span class="math inline">\([0,1]\)</span> que satisfaz <span class="math inline">\(F_X(x) = P(X \le x), \forall x \in \mathbb{R}\)</span>.</p>
 <p>A FDA é unicamente definida para cada variável aleatória. Ou seja, uma variável aleatória <span class="math inline">\(X\)</span> possui uma única respectiva função <span class="math inline">\(F_X(.)\)</span>.</p>
-<p>Para qualquer FDA de uma V.A. <span class="math inline">\(X\)</span>, tem-se:</p>
+<p>Para qualquer FDA de uma V.A. <span class="math inline">\(X\)</span>, tem-se as seguintes propriedades:</p>
 <ul>
 <li><p><span class="math inline">\(0 \le F_X(x) \le 1\)</span></p></li>
 <li><p><span class="math inline">\(F_X(x)\)</span> é não decrescente. Isto é, se <span class="math inline">\(x_1 \le x_2 \implies F_X(x_1) \le F_X(x_2)\)</span></p></li>
 <li><p><span class="math inline">\(F_X(-\infty) = \lim\limits_{n \to -\infty}F_X(x) = 0\)</span></p></li>
 <li><p><span class="math inline">\(F_X(+\infty) = \lim\limits_{n \to +\infty}F_X(x) = 1\)</span></p></li>
 </ul>
+<p>Um ponto interessante é que a definição de uma FDA poderia ser dada simplesmente por essas propriedades. Isto é, dada qualquer função <span class="math inline">\(F(.)\)</span> que respeite as propriedades acima, logo ela <strong>será FDA de alguma variável aleatória existente</strong> (mesmo sem mencioná-la!).</p>
+</section>
+<section id="funções-densidade" class="level1">
+<h1>Funções Densidade</h1>
+<p>A FDA vista anteriormente possui uma definição genérica podendo englobar todo o tipo de variável aleatória. No entanto, os valoes específicos da sua distribuição podem também ser descritos através da <em>função de densidade de probabilidade</em>. Para isso, vamos considerar o caso de variáveis <em>discretas</em> e <em>contínuas</em>.</p>
+<section id="variáveis-aleatórias-discretas" class="level2">
+<h2 class="anchored" data-anchor-id="variáveis-aleatórias-discretas">Variáveis Aleatórias Discretas</h2>
+<p><strong>Definição</strong> Se os valores considerados de <span class="math inline">\(X\)</span> são <strong>contáveis</strong>, então <span class="math inline">\(X\)</span> é considerado <em>discreto</em>.</p>
+<p>Note que se <span class="math inline">\(X\)</span> é contável assumindo, por exemplo, valores <span class="math inline">\(x_1, x_2, ..., x_n, ...\)</span>, então <span class="math inline">\(\Omega = \bigcup\limits_{i=1}^{\infty} \{X = x_n\}\)</span>, mas como os <span class="math inline">\(x_i\)</span>’s podem ser vistos como eventos disjuntos, isto é, <span class="math inline">\(\{X = x_i\} \cap \{X = x_j\} = \emptyset, \forall i \ne j\)</span>; então, <span class="math inline">\(1 = P(\Omega) = \sum\limits_{i=1}^{\infty}P(X = x_i)\)</span> pelo <strong>terceiro axioma</strong> de Kolmogorov.</p>
+<p>A função densidade de probabilidade, <span class="math inline">\(f_X(.)\)</span> é definida como sendo</p>
+<p><span class="math display">\[
+\begin{align*}
+f_X(x) &amp;=
+\begin{cases}
+  P(X = x_i), &amp; \text{se}\ x=x_i,\ i = 1, 2, ...  \\
+  0, &amp; \text{caso contrário}
+\end{cases}
+\end{align*}
+\]</span></p>
+<p>A função densidade de probabilidade de uma VA discreta também pode ser chamada de <em>função massa de probabilidade</em>.</p>
+<p><strong>Exemplo</strong> Função de densidade do lançamento de um dado honesto sendo <span class="math inline">\(X\)</span> definido como sendo o <strong>valor da face</strong>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar Código</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar o pacote ggplot2</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados: resultados do dado e suas probabilidades</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">face =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">probabilidade =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="dv">6</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">fracoes =</span> <span class="st">'1/6'</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar o gráfico de barras</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(face), <span class="at">y =</span> probabilidade)) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#2780e3"</span>) <span class="sc">+</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> fracoes), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Função Massa de Probabilidade de um Dado Honesto"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Face do Dado"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Probabilidade"</span>) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_variaveis_aleatorias_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Exemplo</strong> Função de densidade do lançamento de dois dados honestos sendo <span class="math inline">\(X\)</span> definido como sendo o <strong>valor da soma das duas faces</strong>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar Código</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculando as probabilidades das somas</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>somas <span class="ot">&lt;-</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">12</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="ot">&lt;-</span> <span class="fu">sapply</span>(somas, <span class="cf">function</span>(soma) {</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Contar combinações possíveis que resultam na soma</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  combinações <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">dado1=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">dado2=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  total <span class="ot">&lt;-</span> <span class="fu">nrow</span>(combinações)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  resultados_validos <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">rowSums</span>(combinações) <span class="sc">==</span> soma)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  prob <span class="ot">&lt;-</span> resultados_validos <span class="sc">/</span> total</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(prob)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertendo para frações em formato string</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>fracoes_str <span class="ot">&lt;-</span> <span class="fu">sapply</span>(probabilidades, <span class="cf">function</span>(p) <span class="fu">as.character</span>(<span class="fu">fractions</span>(p)))</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar data frame</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>dados_somas <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">soma =</span> somas,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">probabilidade =</span> probabilidades,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">fracoes =</span> fracoes_str</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotagem</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_somas, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(soma), <span class="at">y =</span> probabilidade)) <span class="sc">+</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#2780e3"</span>) <span class="sc">+</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> fracoes), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Função Massa de Probabilidade da Soma de Dois Dados"</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Soma dos Dados"</span>,</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Probabilidade"</span>) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4_variaveis_aleatorias_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="variáveis-aleatórias-contínuas" class="level2">
+
 
 
 
 </section>
+</section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Variáveis Aleatórias Contínuas</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-barryjames2023" class="csl-entry" role="listitem">
 James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>. 5.ª ed. IMPA.
 </div>

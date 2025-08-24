@@ -45,7 +45,7 @@ Formalmente, precisamos mostrar que esta construção deste experimento $X$ most
 
 A FDA é unicamente definida para cada variável aleatória. Ou seja, uma variável aleatória $X$ possui uma única respectiva função $F_X(.)$.
 
-Para qualquer FDA de uma V.A. $X$, tem-se:
+Para qualquer FDA de uma V.A. $X$, tem-se as seguintes propriedades:
 
 -   $0 \le F_X(x) \le 1$
 
@@ -54,3 +54,95 @@ Para qualquer FDA de uma V.A. $X$, tem-se:
 -   $F_X(-\infty) = \lim\limits_{n \to -\infty}F_X(x) = 0$
 
 -   $F_X(+\infty) = \lim\limits_{n \to +\infty}F_X(x) = 1$
+
+
+Um ponto interessante é que a definição de uma FDA poderia ser dada simplesmente por essas propriedades. Isto é, dada qualquer função $F(.)$ que respeite as propriedades acima, logo ela **será FDA de alguma variável aleatória existente** (mesmo sem mencioná-la!).
+
+
+# Funções Densidade
+
+A FDA vista anteriormente possui uma definição genérica podendo englobar todo o tipo de variável aleatória. No entanto, os valoes específicos da sua distribuição podem também ser descritos através da *função de densidade de probabilidade*. Para isso, vamos considerar o caso de variáveis *discretas* e *contínuas*.
+
+
+## Variáveis Aleatórias Discretas
+
+**Definição** Se os valores considerados de $X$ são **contáveis**, então $X$ é considerado *discreto*.
+
+Note que se $X$ é contável assumindo, por exemplo, valores $x_1, x_2, ..., x_n, ...$, então $\Omega = \bigcup\limits_{i=1}^{\infty} \{X = x_n\}$, mas como os $x_i$'s podem ser vistos como eventos disjuntos, isto é, $\{X = x_i\} \cap \{X = x_j\} = \emptyset, \forall i \ne j$; então, $1 = P(\Omega) = \sum\limits_{i=1}^{\infty}P(X = x_i)$ pelo **terceiro axioma** de Kolmogorov.
+
+A função densidade de probabilidade, $f_X(.)$ é definida como sendo
+
+$$
+\begin{align*}
+f_X(x) &= 
+\begin{cases}
+  P(X = x_i), & \text{se}\ x=x_i,\ i = 1, 2, ...  \\
+  0, & \text{caso contrário}
+\end{cases}
+\end{align*}
+$$
+
+A função densidade de probabilidade de uma VA discreta também pode ser chamada de *função massa de probabilidade*.
+
+**Exemplo** Função de densidade do lançamento de um dado honesto sendo $X$ definido como sendo o **valor da face**.
+
+```{r}
+# Carregar o pacote ggplot2
+library(ggplot2)
+
+# Dados: resultados do dado e suas probabilidades
+dados <- data.frame(
+  face = 1:6,
+  probabilidade = rep(1/6, 6),
+  fracoes = '1/6'
+)
+
+# Criar o gráfico de barras
+ggplot(dados, aes(x = factor(face), y = probabilidade)) +
+  geom_bar(stat = "identity", fill = "#2780e3") +
+  geom_text(aes(label = fracoes), vjust = -0.5, size = 4) +
+  labs(title = "Função Massa de Probabilidade de um Dado Honesto",
+       x = "Face do Dado",
+       y = "Probabilidade") +
+  theme_minimal()
+```
+
+
+**Exemplo** Função de densidade do lançamento de dois dados honestos sendo $X$ definido como sendo o **valor da soma das duas faces**.
+
+```{r}
+library(ggplot2)
+library(MASS)
+
+# Calculando as probabilidades das somas
+somas <- 2:12
+probabilidades <- sapply(somas, function(soma) {
+  # Contar combinações possíveis que resultam na soma
+  combinações <- expand.grid(dado1=1:6, dado2=1:6)
+  total <- nrow(combinações)
+  resultados_validos <- sum(rowSums(combinações) == soma)
+  prob <- resultados_validos / total
+  return(prob)
+})
+
+# Convertendo para frações em formato string
+fracoes_str <- sapply(probabilidades, function(p) as.character(fractions(p)))
+
+# Criar data frame
+dados_somas <- data.frame(
+  soma = somas,
+  probabilidade = probabilidades,
+  fracoes = fracoes_str
+)
+
+# Plotagem
+ggplot(dados_somas, aes(x = factor(soma), y = probabilidade)) +
+  geom_bar(stat = "identity", fill = "#2780e3") +
+  geom_text(aes(label = fracoes), vjust = -0.5, size = 4) +
+  labs(title = "Função Massa de Probabilidade da Soma de Dois Dados",
+       x = "Soma dos Dados",
+       y = "Probabilidade") +
+  theme_minimal()
+```
+
+## Variáveis Aleatórias Contínuas
