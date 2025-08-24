@@ -153,9 +153,9 @@ library(MASS)
 # Cria uma função que calcula P(X = x_i) onde x_i é a soma das duas faces
 calcula_prob_soma <- function(soma) {
   # Contar combinações possíveis que resultam na soma
-  combinações <- expand.grid(dado1=1:6, dado2=1:6)
-  total <- nrow(combinações)
-  resultados_validos <- sum(rowSums(combinações) == soma)
+  combinacoes <- expand.grid(dado1=1:6, dado2=1:6)
+  total <- nrow(combinacoes)
+  resultados_validos <- sum(rowSums(combinacoes) == soma)
   prob <- resultados_validos / total
   return(prob)
 }
