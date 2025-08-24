@@ -46,23 +46,20 @@ Formalmente, precisamos mostrar que esta construção deste experimento $X$ most
 A FDA é unicamente definida para cada variável aleatória. Ou seja, uma variável aleatória $X$ possui uma única respectiva função $F_X(.)$.
 
 Para qualquer FDA de uma V.A. $X$, tem-se as seguintes propriedades:
-  
-  -   $0 \le F_X(x) \le 1$
-  
-  -   $F_X(x)$ é não decrescente. Isto é, se $x_1 \le x_2 \implies F_X(x_1) \le F_X(x_2)$
-  
-  -   $F_X(-\infty) = \lim\limits_{n \to -\infty}F_X(x) = 0$
-  
-  -   $F_X(+\infty) = \lim\limits_{n \to +\infty}F_X(x) = 1$
-  
-  
-  Um ponto interessante é que a definição de uma FDA poderia ser dada simplesmente por essas propriedades. Isto é, qualquer função $F(.)$ que respeite as propriedades acima **será FDA de alguma variável aleatória existente** (mesmo sem mencioná-la!).
 
+-   $0 \le F_X(x) \le 1$
+
+-   $F_X(x)$ é não decrescente. Isto é, se $x_1 \le x_2 \implies F_X(x_1) \le F_X(x_2)$
+
+-   $F_X(-\infty) = \lim\limits_{n \to -\infty}F_X(x) = 0$
+
+-   $F_X(+\infty) = \lim\limits_{n \to +\infty}F_X(x) = 1$
+
+Um ponto interessante é que a definição de uma FDA poderia ser dada simplesmente por essas propriedades. Isto é, qualquer função $F(.)$ que respeite as propriedades acima **será FDA de alguma variável aleatória existente** (mesmo sem mencioná-la!).
 
 # Funções Densidade
 
 A FDA vista anteriormente possui uma definição genérica podendo englobar todo o tipo de variável aleatória. No entanto, os valoes específicos da sua distribuição podem também ser descritos através da *função de densidade de probabilidade*. Para isso, vamos considerar o caso de variáveis *discretas* e *contínuas*.
-
 
 ## Variáveis Aleatórias Discretas
 
@@ -142,8 +139,6 @@ ggplot(dados_grafico) +
   geom_segment(aes(x = 6, y = 1, xend = 7, yend = 1)) # Segmento mais extremo para ilustrar o +infinito
 
 ```
-
-
 
 **Exemplo** Função de densidade do lançamento de dois dados honestos sendo $X$ definido como sendo o **valor da soma das duas faces**.
 
@@ -233,16 +228,22 @@ ggplot(dados_grafico) +
   geom_segment(aes(x = 12, y = 1, xend = 13, yend = 1)) # Segmento mais extremo para ilustrar o +infinito
 ```
 
-
 ## Variáveis Aleatórias Contínuas
 
 **Definição** Uma variável aleatória $X$ é dita contínua se existe uma função $f_X(.)$ tal que $F_X(x) = \int_\limits{-\infty}^{x}f_{X}(u)d(u), \forall x \in \mathbb{R}$. Se $X$ é contíuna, então a função $f_X(x)$ é chamada de *função densidade de probabilidade* de $X$ aplicada no ponto $x$.
 
 Para qualquer função densidade de uma V.A. $X$, contínua tem-se as seguintes propriedades:
-  
-  -   $f_X(x) \ge 0, \forall x \in \mathbb{R}$
-  
-  -   $ \int_\limits{-\infty}^{+\infty}f(x)dx = 1$.
-  
+
+-   $f_X(x) \ge 0, \forall x \in \mathbb{R}$
+
+-   $\int\limits_{-\infty}^{+\infty}f(x)dx = 1$.
+
 Um ponto interessante é que a definição de uma função de densidade poderia ser dada simplesmente por essas propriedades. Isto é, qualquer função $f(.)$ que respeite as propriedades acima **será função de densidade de probabilidade de alguma variável aleatória existente** (mesmo sem mencioná-la!).
 
+Para obter a probabilidade de uma variável aleatória $X$ estar entre dois valores $a,b \in \mathbb{R}, a < b$, podemos usar as definições usuais de cálculo integral. Isto é:
+
+$P(a < X < b) = \int\limits_{a}^{b}f(x)dx = F_X(b) - F_X(a)$
+
+Além disso, $P(X = a) = 0, \forall a \in \mathbb{R}$.
+
+**Exemplo** (@rollalima2025probabilidade)

@@ -81,6 +81,8 @@ Este é um website baseado no [Quarto](https://quarto.org/docs/websites) da empr
 
 [Site do prof. André Zibetti](https://www.inf.ufsc.br/~andre.zibetti/probabilidade/index.html)
 
+[Livro de Probabilidade de Leonardo T. Rolla e Bernardo N. B. de Lima](https://www.ime.usp.br/~leorolla/probabilidade/)
+
 :::
 
 
