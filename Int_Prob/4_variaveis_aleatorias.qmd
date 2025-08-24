@@ -246,4 +246,4 @@ $P(a < X < b) = \int\limits_{a}^{b}f(x)dx = F_X(b) - F_X(a)$
 
 Além disso, $P(X = a) = 0, \forall a \in \mathbb{R}$.
 
-**Exemplo** (@rollalima2025probabilidade)
+**Exemplo** pegar do mood..
