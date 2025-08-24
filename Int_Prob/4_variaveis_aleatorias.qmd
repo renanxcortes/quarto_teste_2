@@ -131,14 +131,15 @@ dados_grafico <- dados %>%
 
 ggplot(dados_grafico) + 
   geom_segment(aes(x = lag(x), y = lag(fda), xend = x, yend = fda, lty = tipo)) +
-  geom_point(aes(x, fda, fill = tipo), shape = 21) +
+  geom_point(data = slice(dados_grafico, -1), aes(x, fda, fill = tipo), shape = 21) + # Retira ponto mais extremo para ilustrar o -infinito
   scale_fill_manual(values = c("black", "white")) +
   scale_linetype_manual(values = c("dashed", "solid")) +
   labs(title = "FDA teórica de um dado honesto (6 faces)",
-     x = "Face x",
-     y = "P(X ≤ x)") +
+       x = "Face x",
+       y = "P(X ≤ x)") +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  geom_segment(aes(x = 6, y = 1, xend = 7, yend = 1)) # Segmento mais extremo para ilustrar o +infinito
 
 ```
 
@@ -184,9 +185,58 @@ ggplot(dados_somas, aes(x = factor(soma), y = probabilidade)) +
   theme_minimal()
 ```
 
+Observe que, neste caso, a FDA pode ser visualizada abaixo:
+
+```{r}
+# Cria uma função que calcula P(X = x_i) onde x_i é a soma das duas faces
+calcula_prob_soma <- function(soma) {
+  # Contar combinações possíveis que resultam na soma
+  combinacoes <- expand.grid(dado1=1:6, dado2=1:6)
+  total <- nrow(combinacoes)
+  resultados_validos <- sum(rowSums(combinacoes) == soma)
+  prob <- resultados_validos / total
+  return(prob)
+}
+
+# Aplica a função acima para todo o espaço amostral Omega
+somas <- 0:12
+probabilidades <- sapply(somas, calcula_prob_soma)
+
+# Criar data frame
+dados_somas <- tibble::tibble(
+  soma = somas,
+  probabilidade = probabilidades,
+  fda = cumsum(probabilidade)
+) %>%
+  distinct(fda, .keep_all = T) # Evita segmentos redundantes
+
+dados_grafico <- dados_somas %>%
+  mutate(tipo = "fda") %>%
+  bind_rows(dados_somas %>%
+              mutate(tipo = "previa_fda",
+                     fda = lag(fda))) %>%
+  tidyr::drop_na() %>%
+  rename(x = soma) %>%
+  arrange(x, desc(tipo))
+
+ggplot(dados_grafico) + 
+  geom_segment(aes(x = lag(x), y = lag(fda), xend = x, yend = fda, lty = tipo)) +
+  geom_point(data = slice(dados_grafico, -1), aes(x, fda, fill = tipo), shape = 21) + # Retira ponto mais extremo para ilustrar o -infinito
+  scale_fill_manual(values = c("black", "white")) +
+  scale_linetype_manual(values = c("dashed", "solid")) +
+  labs(title = "FDA teórica da soma de dois dados honestos",
+       x = "Soma das Faces",
+       y = "P(X ≤ x)") +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  scale_x_continuous(breaks = 0:13, limits = c(0, 13)) +
+  geom_segment(aes(x = 12, y = 1, xend = 13, yend = 1)) # Segmento mais extremo para ilustrar o +infinito
+```
+
+
 ## Variáveis Aleatórias Contínuas
 
-
+**Definição** Uma variável aleatória $X$ é dita contínua se existe uma função $f_X(.)$ tal que $F_X(x) = \int_\limits{-\infty}^{x}f_{X}(u)d(u), \forall x \in \mathbb{R}$. 
 
 
 
