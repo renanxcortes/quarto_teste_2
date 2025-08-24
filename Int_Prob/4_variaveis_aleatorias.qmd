@@ -107,6 +107,42 @@ ggplot(dados, aes(x = factor(face), y = probabilidade)) +
   theme_minimal()
 ```
 
+Observe que, neste caso, a FDA pode ser visualizada abaixo:
+
+```{r}
+# Código inspirado em https://stackoverflow.com/questions/52236576/r-ggplot-make-geom-step-jumps-dashed
+
+# Carregar as bibliotecas necessárias
+library(ggplot2)
+library(dplyr)
+
+dados <- tibble::tibble(
+  x = 0:6,
+  probabilidade = c(0, rep(1/6, 6)),
+  fda = cumsum(probabilidade))
+
+dados_grafico <- dados %>%
+  mutate(tipo = "fda") %>%
+  bind_rows(dados %>%
+              mutate(tipo = "previa_fda",
+                     fda = lag(fda))) %>%
+  tidyr::drop_na() %>%
+  arrange(x, desc(tipo))
+
+ggplot(dados_grafico) + 
+  geom_segment(aes(x = lag(x), y = lag(fda), xend = x, yend = fda, lty = tipo)) +
+  geom_point(aes(x, fda, fill = tipo), shape = 21) +
+  scale_fill_manual(values = c("black", "white")) +
+  scale_linetype_manual(values = c("dashed", "solid")) +
+  labs(title = "FDA teórica de um dado honesto (6 faces)",
+     x = "Face x",
+     y = "P(X ≤ x)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+```
+
+
 
 **Exemplo** Função de densidade do lançamento de dois dados honestos sendo $X$ definido como sendo o **valor da soma das duas faces**.
 
@@ -149,3 +185,8 @@ ggplot(dados_somas, aes(x = factor(soma), y = probabilidade)) +
 ```
 
 ## Variáveis Aleatórias Contínuas
+
+
+
+
+
