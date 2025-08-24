@@ -28,7 +28,7 @@ website:
     left:
       - text: "Sobre"
         href: index.qmd
-      - text: "Temas"
+      - text: "Disciplinas"
         menu:
           - sidebar:int_prob
           - sidebar:probabilidade_B
