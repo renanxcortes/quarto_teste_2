@@ -114,16 +114,19 @@ ggplot(dados, aes(x = factor(face), y = probabilidade)) +
 library(ggplot2)
 library(MASS)
 
-# Calculando as probabilidades das somas
-somas <- 2:12
-probabilidades <- sapply(somas, function(soma) {
+# Cria uma função que calcula P(X = x_i) onde x_i é a soma das duas faces
+calcula_prob_soma <- function(soma) {
   # Contar combinações possíveis que resultam na soma
   combinações <- expand.grid(dado1=1:6, dado2=1:6)
   total <- nrow(combinações)
   resultados_validos <- sum(rowSums(combinações) == soma)
   prob <- resultados_validos / total
   return(prob)
-})
+}
+
+# Aplica a função acima para todo o espaço amostral Omega
+somas <- 2:12
+probabilidades <- sapply(somas, calcula_prob_soma)
 
 # Convertendo para frações em formato string
 fracoes_str <- sapply(probabilidades, function(p) as.character(fractions(p)))
