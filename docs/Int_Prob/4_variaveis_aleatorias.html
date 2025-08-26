@@ -544,7 +544,20 @@ f_X(x) &amp;=
 <p>Para obter a probabilidade de uma variável aleatória <span class="math inline">\(X\)</span> estar entre dois valores <span class="math inline">\(a,b \in \mathbb{R}, a &lt; b\)</span>, podemos usar as definições usuais de cálculo integral. Isto é:</p>
 <p><span class="math inline">\(P(a &lt; X &lt; b) = \int\limits_{a}^{b}f(x)dx = F_X(b) - F_X(a)\)</span></p>
 <p>Além disso, <span class="math inline">\(P(X = a) = 0, \forall a \in \mathbb{R}\)</span>.</p>
-<p><strong>Exemplo</strong> (<span class="citation" data-cites="mood1974introduction">Mood, Graybill, e Boes (<a href="#ref-mood1974introduction" role="doc-biblioref">1974</a>)</span>)….</p>
+<p>Observe que para variáveis aleatórias contínuas nos pontos <span class="math inline">\(a\)</span> e <span class="math inline">\(b\)</span>, o valor da probabilidade não se altera se incluímos ou excluímos na desiguldade os valores. Isto é:</p>
+<p><span class="math display">\[
+P(a &lt; X &lt; b) = P(a \le X &lt; b) = P(a &lt; X \le b) = P(a \le X \le b)
+\]</span></p>
+<p><strong>Exemplo</strong> (<span class="citation" data-cites="mood1974introduction">Mood, Graybill, e Boes (<a href="#ref-mood1974introduction" role="doc-biblioref">1974</a>)</span>) Seja <span class="math inline">\(X\)</span> uma variável aleatória representando o tempo de uma conversa de telefone. Assuma que a FDA de <span class="math inline">\(X\)</span> é dada por <span class="math inline">\(F_X(x) = \left( 1 - e^{-\lambda x} \right), x \ge 0\)</span> e assuma também que <span class="math inline">\(\lambda &gt; 0\)</span>. A função densidade de probabilidade correspondente é dada por <span class="math inline">\(f_X(x) = \lambda e^{-\lambda x}, x \ge 0\)</span>. Assuma que a função é dada em medidas de minutos. Então, assumindo <span class="math inline">\(\lambda = \frac{1}{5}\)</span>, qual a probabilidade de uma ligação durar entre 5 e 10 minutos?</p>
+<p>Essa resposta pode ser dada pela função densidade:</p>
+<p><span class="math display">\[
+P(5 &lt; X &lt; 10) = \int\limits_{5}^{10}\lambda e^{-\lambda x} dx = e^{-5\lambda}-e^{-10\lambda} = e^{-1}-e^{-2} \approx 0.23
+\]</span></p>
+<p>Ou também pela função de distribuição acumulada:</p>
+<p><span class="math display">\[
+P(5 &lt; X &lt; 10) = P(X &lt; 10) - P(X &lt; 5) = F_X(10) - F_X(5) = (1- e^{-\lambda 10}) -  (1- e^{-\lambda 5}) = e^{-1} - e^{-2}  \approx 0.23
+\]</span></p>
+<p>Abaixo podemos ver a representação gráfica do valor dessa probabilidade:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Mostrar Código</summary>

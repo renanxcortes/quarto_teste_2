@@ -246,7 +246,27 @@ $P(a < X < b) = \int\limits_{a}^{b}f(x)dx = F_X(b) - F_X(a)$
 
 Além disso, $P(X = a) = 0, \forall a \in \mathbb{R}$.
 
-**Exemplo** (@mood1974introduction)....
+Observe que para variáveis aleatórias contínuas nos pontos $a$ e $b$, o valor da probabilidade não se altera se incluímos ou excluímos na desiguldade os valores. Isto é:
+
+$$
+P(a < X < b) = P(a \le X < b) = P(a < X \le b) = P(a \le X \le b)
+$$
+
+**Exemplo** (@mood1974introduction) Seja $X$ uma variável aleatória representando o tempo de uma conversa de telefone. Assuma que a FDA de $X$ é dada por $F_X(x) = \left( 1 - e^{-\lambda x} \right), x \ge 0$ e assuma também que $\lambda > 0$. A função densidade de probabilidade correspondente é dada por $f_X(x) = \lambda e^{-\lambda x}, x \ge 0$. Assuma que a função é dada em medidas de minutos. Então, assumindo $\lambda = \frac{1}{5}$, qual a probabilidade de uma ligação durar entre 5 e 10 minutos?
+
+Essa resposta pode ser dada pela função densidade:
+
+$$
+P(5 < X < 10) = \int\limits_{5}^{10}\lambda e^{-\lambda x} dx = e^{-5\lambda}-e^{-10\lambda} = e^{-1}-e^{-2} \approx 0.23
+$$
+
+Ou também pela função de distribuição acumulada:
+
+$$
+P(5 < X < 10) = P(X < 10) - P(X < 5) = F_X(10) - F_X(5) = (1- e^{-\lambda 10}) -  (1- e^{-\lambda 5}) = e^{-1} - e^{-2}  \approx 0.23
+$$
+
+Abaixo podemos ver a representação gráfica do valor dessa probabilidade:
 
 ```{r}
 library(ggplot2)
@@ -274,4 +294,3 @@ ggplot(exp_data, aes(x = x, y = y)) +
   ylim(c(0,1)) +
   theme_minimal()
 ```
-
