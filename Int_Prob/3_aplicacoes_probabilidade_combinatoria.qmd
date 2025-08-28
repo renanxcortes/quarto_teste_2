@@ -1,0 +1,29 @@
+---
+title: "Aplicações de Probabilidade em arranjos, permutações e combinações"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute: 
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+## Definições
+
+**Definição de Arranjo** Um arranjo é um agrupamento ordenado de elementos de um conjunto, onde a ordem dos elementos **importa**. Notação, o arranjo de $m$ em subgrupos de $n$ elementos é dado por $A^m_n$.
+
+**Definição de Combinação** Uma combinação é um agrupamento de elementos de um conjunto, onde a ordem dos elementos **não importa**. Notação, a combinação de $m$ em subgrupos de $n$ elementos é dado por $C^m_n$ ou ${m}\choose{n}$.
+
+**Definição de Permutação** uma permutação é o número de maneiras de ordenar os elementos de um conjunto, de forma que a ordem de cada elemento seja considerada e a ordem de todos os elementos seja diferente.
+
+

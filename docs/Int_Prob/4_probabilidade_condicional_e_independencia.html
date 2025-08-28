@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Experimento Aleatório, Espaço Amostral e Eventos – Teaching</title>
+<title>Probabilidade Condicional e Independência – Teaching</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -177,7 +177,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Experimento Aleatório, Espaço Amostral e Eventos</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/4_probabilidade_condicional_e_independencia.html">Probabilidade Condicional e Independência</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -208,7 +208,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Int_Prob/1_experimento_aleatorio.html" class="sidebar-item-text sidebar-link active">
+  <a href="../Int_Prob/1_experimento_aleatorio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Experimento Aleatório, Espaço Amostral e Eventos</span></a>
   </div>
 </li>
@@ -226,7 +226,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Int_Prob/4_probabilidade_condicional_e_independencia.html" class="sidebar-item-text sidebar-link">
+  <a href="../Int_Prob/4_probabilidade_condicional_e_independencia.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Probabilidade Condicional e Independência</span></a>
   </div>
 </li>
@@ -248,24 +248,22 @@ window.Quarto = {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
+  <li><a href="#probabilidade-condicional" id="toc-probabilidade-condicional" class="nav-link active" data-scroll-target="#probabilidade-condicional">Probabilidade Condicional</a>
   <ul class="collapse">
-  <li><a href="#eventosconjuntos" id="toc-eventosconjuntos" class="nav-link" data-scroll-target="#eventosconjuntos">Eventos/Conjuntos</a>
-  <ul class="collapse">
-  <li><a href="#operações-básicas-e-definições" id="toc-operações-básicas-e-definições" class="nav-link" data-scroll-target="#operações-básicas-e-definições">Operações Básicas e Definições</a></li>
-  <li><a href="#digramas-de-venn" id="toc-digramas-de-venn" class="nav-link" data-scroll-target="#digramas-de-venn">Digramas de Venn</a></li>
-  <li><a href="#leis-de-demorgan" id="toc-leis-de-demorgan" class="nav-link" data-scroll-target="#leis-de-demorgan">Leis de DeMorgan</a></li>
+  <li><a href="#teorema-da-probabilidade-total" id="toc-teorema-da-probabilidade-total" class="nav-link" data-scroll-target="#teorema-da-probabilidade-total">Teorema da Probabilidade Total</a></li>
+  <li><a href="#teorema-de-bayes" id="toc-teorema-de-bayes" class="nav-link" data-scroll-target="#teorema-de-bayes">Teorema de Bayes</a></li>
+  <li><a href="#regra-da-multiplicação" id="toc-regra-da-multiplicação" class="nav-link" data-scroll-target="#regra-da-multiplicação">Regra da multiplicação</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#independência-de-eventos" id="toc-independência-de-eventos" class="nav-link" data-scroll-target="#independência-de-eventos">Independência de eventos</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/1_experimento_aleatorio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/1_experimento_aleatorio.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/4_probabilidade_condicional_e_independencia.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/4_probabilidade_condicional_e_independencia.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Experimento Aleatório, Espaço Amostral e Eventos</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/4_probabilidade_condicional_e_independencia.html">Probabilidade Condicional e Independência</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Experimento Aleatório, Espaço Amostral e Eventos</h1>
+<h1 class="title">Probabilidade Condicional e Independência</h1>
 </div>
 
 
@@ -282,92 +280,121 @@ window.Quarto = {
 </header>
 
 
-<section id="introdução" class="level1">
-<h1>Introdução</h1>
-<p><em>Experimentos aleatórios</em> são situação na natureza que envolvem incertezas. A busca por avaliar as diversas probabilidades de ocorrência é um dos objetivos no estudo desses fenômenos.</p>
-<p>O <em>espaço amostral</em> é o conjunto de todos os possíveis resultados de um experimento aleatório e é representado por <span class="math inline">\(\Omega\)</span>. Cada resultado possível é denominado <em>ponto</em> ou <em>elemento</em> de <span class="math inline">\(\Omega\)</span> e denotado por <span class="math inline">\(\omega\)</span>. Assim, escrevemos <span class="math inline">\(\omega \in \Omega\)</span> para indicar que <span class="math inline">\(\omega\)</span> está em <span class="math inline">\(\Omega\)</span>. O conjunto sem elementos é o <em>conjunto vazio</em>, denotado por <span class="math inline">\(\emptyset\)</span>. Muitos autores (<span class="citation" data-cites="magalhaes2006probabilidade">Magalhães (<a href="#ref-magalhaes2006probabilidade" role="doc-biblioref">2006</a>)</span>, <span class="citation" data-cites="barryjames2023">James (<a href="#ref-barryjames2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>), denominam <em>eventos</em> (ou conjunto) como sendo letras maiúsculas do alfabeto, tais como A, B, etc. Assim:</p>
-<p><strong>Definição</strong> Seja <span class="math inline">\(\Omega\)</span> o espaço amostral do experimento. Todo subconjunto <span class="math inline">\(A \in \Omega\)</span> será chamado <em>evento</em>. <span class="math inline">\(\Omega\)</span> é o evento <em>certo</em>, <span class="math inline">\(\emptyset\)</span> o evento <em>impossível</em>. Se <span class="math inline">\(\omega \in \Omega\)</span>, o evento <span class="math inline">\(\{\omega\}\)</span> é dito <em>elementar</em> (ou simples).</p>
-<section id="eventosconjuntos" class="level2">
-<h2 class="anchored" data-anchor-id="eventosconjuntos">Eventos/Conjuntos</h2>
-<section id="operações-básicas-e-definições" class="level3">
-<h3 class="anchored" data-anchor-id="operações-básicas-e-definições">Operações Básicas e Definições</h3>
+<section id="probabilidade-condicional" class="level1">
+<h1>Probabilidade Condicional</h1>
+<p><strong>Definição</strong> Sejam dois eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> definidos no mesmo espaço de probabilidade, a <em>probabilidade condicional</em> de <span class="math inline">\(A\)</span> dado o evento <span class="math inline">\(B\)</span>, denotado por <span class="math inline">\(P(A|B)\)</span> é definido por</p>
+<p><span class="math display">\[
+P(A|B) = \frac{P(A \cap B)}{P(B)}, \ \ \ \ se \ P(B) &gt; 0,
+\]</span></p>
+<p>e é indefinida se <span class="math inline">\(P(B) = 0\)</span>. Um resultado direto dessa definição é que <span class="math inline">\(P(A|B)P(B) = P(B|A)P(A)\)</span>.</p>
+<p><em>Exemplo</em> Suponha o lançamento de um Dado Honesto, ou seja, <span class="math inline">\(\Omega = \{\{1\}, \{2\}, \{3\}, \{4\}, \{5\}, \{6\}\}\)</span>, qual a probabilidade de sair o número 2, dado que saiu um número par?</p>
+<p>Seja,</p>
 <ul>
-<li><p>Lei Comutativa: <span class="math inline">\(A \cup B = B \cup A\)</span> e, também, <span class="math inline">\(A \cap B = B \cap A\)</span></p></li>
-<li><p>Lei Associativa: <span class="math inline">\(A \cup (B \cup C) = (A \cup B) \cup C\)</span> e, também, <span class="math inline">\(A \cap (B \cap C) = (A \cap B) \cap C\)</span></p></li>
-<li><p>Lei Distributiva: <span class="math inline">\(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\)</span> e, também, <span class="math inline">\(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\)</span></p></li>
-<li><p><span class="math inline">\(A^c\)</span> (ou <span class="math inline">\(\bar{A}\)</span>) é o complementar de <span class="math inline">\(A\)</span>, isto é, todos os elementos de <span class="math inline">\(\Omega\)</span> exceto os de <span class="math inline">\(A\)</span></p></li>
-<li><p><span class="math inline">\(A_1 \cup A_2 ... \cup A_n\)</span> ou <span class="math inline">\(\bigcup\limits_{i=1}^{n}A_i\)</span> é a <em>união</em> de <span class="math inline">\(A_1, A_2, ..., A_n\)</span> e representa os pontos de <span class="math inline">\(\Omega\)</span> que pertencem à pelo menos um <span class="math inline">\(A_i\)</span></p></li>
-<li><p><span class="math inline">\(A_1 \cap A_2 ... \cap A_n\)</span> ou <span class="math inline">\(\bigcap\limits_{i=1}^{n}A_i\)</span> é a <em>intersecção</em> de <span class="math inline">\(A_1, A_2, ..., A_n\)</span> e representa os pontos de <span class="math inline">\(\Omega\)</span> que pertencem simultaneamente à todos os <span class="math inline">\(A_i\)</span>’s.</p></li>
-<li><p><span class="math inline">\(A-B\)</span> é a <em>diferença</em> entre <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>, isto é, todos os elementos de <span class="math inline">\(A\)</span>, exceto os que estão em <span class="math inline">\(B\)</span>. Outra forma de notação é <span class="math inline">\(A \cap B^c\)</span>, pois <span class="math inline">\(A-B = A \cap B^c\)</span></p></li>
-<li><p>Se todo o elemento de <span class="math inline">\(A\)</span> é também um elemento de <span class="math inline">\(B\)</span>, então <span class="math inline">\(A\)</span> é definido como um subconjunto de <span class="math inline">\(B\)</span> e escrevemos <span class="math inline">\(A \subset B\)</span> ou <span class="math inline">\(B \supset A\)</span>. Interpretamos como sendo “<span class="math inline">\(A\)</span> está contido em <span class="math inline">\(B\)</span>” ou “<span class="math inline">\(B\)</span> contém <span class="math inline">\(A\)</span>”</p></li>
-<li><p>Dois conjuntos são <em>disjuntos</em> ou <em>mutuamente excludentes</em> se a sua interseção é vazio. Assim, <span class="math inline">\(A\ e\ B\ disjuntos \iff A \cap B = \emptyset\)</span></p></li>
+<li><span class="math inline">\(A\)</span>: sair o número 2</li>
+<li><span class="math inline">\(B\)</span>: sair par</li>
 </ul>
-</section>
-<section id="digramas-de-venn" class="level3">
-<h3 class="anchored" data-anchor-id="digramas-de-venn">Digramas de Venn</h3>
-<p>Uma maneiras mais intuitivas de visualizar essas relações entre conjuntos é via <a href="https://pt.wikipedia.org/wiki/Diagrama_de_Venn">Diagramas de Venn</a>. Abaixo, podemos ver algumas das relações:</p>
+<p><span class="math display">\[
+P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(\text{sair 2 e par})}{P(\text{par})}  \overset{A \subset B}{=} \frac{P(\text{sair 2})}{P(\text{par})}  = \frac{\frac{1}{6}}{\frac{1}{2}} = \frac{1}{3}
+\]</span></p>
+<p>Note que “dado o evento <span class="math inline">\(B\)</span>” significa dizer que o “evento <span class="math inline">\(B\)</span>” ocorreu e, sendo assim, “limitamos” o espaço amostral para o evento B. Ou seja, não estamos mais trabalhando com <span class="math inline">\(\Omega\)</span>, mas sim somente com os elementos do evento <span class="math inline">\(B\)</span> sendo possíveis. Dado isto, será que este novo cenário satisfazem os axiomas de Kolmogorov caso <span class="math inline">\(P(B)&gt;0\)</span>? A resposta é <strong>sim</strong>, pois:</p>
+<ul>
+<li><span class="math inline">\(P(A|B) = \frac{P(A \cap B)}{P(B)} \ge 0, \forall A \in \mathcal{F}\)</span></li>
+<li><span class="math inline">\(P(\Omega|B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B)}{P(B)} = 1\)</span></li>
+<li>Se <span class="math inline">\(A_1, A_2, ...\)</span> são mutuamente excludentes de <span class="math inline">\(\mathcal{F}\)</span>, então</li>
+</ul>
+<p><span class="math display">\[
+P\left( \bigcup_{i=1}^{n} A_i |B \right) = \frac{P\left( \left(\bigcup_{i=1}^{n} A_i \right)\cap B \right)}{P(B)} \overset{Lei \ Distributiva}{=} \frac{P\left( \bigcup_{i=1}^{n} \left(A_i \cap B \right)\right)}{P(B)} = \frac{\sum_{i=1}^{n}P\left( A_i \cap B \right)}{P(B)} = \sum_{i=1}^{n}\left(\frac{P(A_i \cap B) }{P(B)}\right) = \sum_{i=1}^{n}P\left( A_i | B \right)
+\]</span> Desta maneira, para quaquer <span class="math inline">\(B\)</span> satisfazendo <span class="math inline">\(P(B) &gt; 0\)</span>, qualquer função de probabilidade aplicada no subespaço de <span class="math inline">\(B\)</span> também é uma função de probabilidade e goza das mesmas propriedades de uma função não-condicionada.</p>
+<section id="teorema-da-probabilidade-total" class="level2">
+<h2 class="anchored" data-anchor-id="teorema-da-probabilidade-total">Teorema da Probabilidade Total</h2>
+<p>Antes de apresentar o teorema da probabilidade total, apresenta-se a definição de <strong>partição</strong> do espaço amostral:</p>
+<p><strong>Definição</strong> Se <span class="math inline">\(B_1, B_2, ..., B_n\)</span> representa um conjunto de eventos mutuamente excludentes satisfazendo <span class="math inline">\(\Omega = \bigcup\limits_{i=1}^{n}B_i\)</span> então, dizemos que <span class="math inline">\(B_1, B_2, ..., B_n\)</span> forma uma <em>partição</em> de <span class="math inline">\(\Omega\)</span>.</p>
+<p><strong>Teorema</strong> Se <span class="math inline">\(B_1, B_2, ..., B_n\)</span> forma uma <em>partição</em> de <span class="math inline">\(\Omega\)</span> então para qualquer evento <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[
+P(A) = P\left(\bigcup\limits_{i=1}^{n}(A \cap B_i)\right) = \sum\limits_{i=1}^{n}P(A \cap B_i) = \sum\limits_{i=1}^{n}P(A | B_i)P(B_i)
+\]</span></p>
+<p>Visualmente:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figs/venn.png" class="img-fluid figure-img"></p>
-<figcaption>Extraído do <span class="citation" data-cites="mood1974introduction">Mood, Graybill, e Boes (<a href="#ref-mood1974introduction" role="doc-biblioref">1974</a>)</span></figcaption>
+<p><img src="figs/particao_total.png" class="img-fluid figure-img"></p>
+<figcaption>Exemplo de uma partição de <span class="math inline">\(\Omega\)</span> para <span class="math inline">\(n = 5\)</span> e um evento A (extraído de <span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>)</figcaption>
 </figure>
 </div>
+<p>Ressalta-se que o <em>Teorema da Probabilidade Total</em> vale também quando <span class="math inline">\(n = \infty\)</span></p>
 </section>
-<section id="leis-de-demorgan" class="level3">
-<h3 class="anchored" data-anchor-id="leis-de-demorgan">Leis de DeMorgan</h3>
-<p>As <a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws">Leis de DeMorgan</a>, ilustrada também no Diagrama de Venn anterior, são teoremas fundamentais que descrevem relações entre a união e interesecção entre conjuntos e de seus complementos.</p>
-<p>O caso simples pode ser descrito abaixo:</p>
+<section id="teorema-de-bayes" class="level2">
+<h2 class="anchored" data-anchor-id="teorema-de-bayes">Teorema de Bayes</h2>
+<p>O Teorema de Bayese, <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">na sua forma extendida</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, é visto como a probabilidade de um evento de uma partição condicionado à um evento já ocorrido do espaço amostral. A fórmula de Bayes é definida a seguir:</p>
+<p><strong>Teorema</strong> Se <span class="math inline">\(B_1, B_2, ..., B_n\)</span> forma uma <em>partição</em> de <span class="math inline">\(\Omega\)</span> então para qualquer evento <span class="math inline">\(A\)</span> temos que</p>
 <p><span class="math display">\[
-\begin{align*}
-(A \cup B)^c = A^c \cap B^c \\
-(A \cap B)^c = A^c \cup B^c
-\end{align*}
+P(B_i |A) = \frac{P(A | B_i) P(B_i)} {\sum\limits_{i=1}^{n}P(A | B_i)P(B_i)} \ \ \ \forall i=1,...n.
+\]</span> Ressalta-se que o <em>Teorema de Bayes</em> vale também quando <span class="math inline">\(n = \infty\)</span>.</p>
+<p>Observe que o <strong>denominador</strong> da Fórmula de Bayes é o valor do Teorema da Probabilidade Total definida anteriormente.</p>
+<p>O Teorema de Bayes é particularmente útil quando estamos tratando com experimentos em múltiplas fases. Se <span class="math inline">\(B_i\)</span> é um evento condicionado à um evento <span class="math inline">\(A\)</span>, então querer saber <span class="math inline">\(P(B_i|A)\)</span> é como se fosse no sentido de retrospectiva (“backward”). É como se fosse <strong>questionar sobre a probabilidade da primeira fase, condicionada no que aconteceu na segunda fase do experimento</strong>. Por isso, o Teorema de Bayes também é chamado de <em>teorema da probabilidade a posteriori</em> (<span class="citation" data-cites="morettin1999estatística">Morettin (<a href="#ref-morettin1999estatística" role="doc-biblioref">1999</a>)</span>).</p>
+<p><strong>Exemplo</strong> Suponha que em uma urna nós temos três moedas: sendo duas honestas e uma viciada com duas faces “caras”. Suponha que eu retire, aleatoriamente, uma moeda urna e jogue pra cima e saia a face “cara”. Então, dado que saiu “cara”, qual a probabilidade de eu ter sorteado a moeda viciada?</p>
+<p>Podemos pensar neste problema da seguinte forma ilustrativa:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/moedas_particao.png" class="img-fluid figure-img"></p>
+<figcaption>Ilustração de experimento de duas fases</figcaption>
+</figure>
+</div>
+<p>Originalmente, <span class="math inline">\(P(B_3) = \frac{1}{3}\)</span>, no entanto, a probabilidade condicionada a posteriori é:</p>
+<p><span class="math display">\[
+P(B_3|A) = \frac{P(A | B_3) P(B_3)} {P(A | B_1)P(B_1) + P(A | B_2)P(B_2) + P(A | B_3)P(B_3)} = \frac{1 \times \frac{1}{3}} {\frac{1}{2} \times \frac{1}{3} + \frac{1}{2} \times \frac{1}{3} + 1\times \frac{1}{3}} = \frac{\frac{1}{3}}{\frac{4}{6}} = \frac{1}{2}
 \]</span></p>
-<p>Imagine as duas frases:</p>
+<p>Ou seja, note que a probabilidade “atualizou” de <span class="math inline">\(\frac{1}{3}\)</span> para <span class="math inline">\(\frac{1}{2}\)</span>.</p>
+</section>
+<section id="regra-da-multiplicação" class="level2">
+<h2 class="anchored" data-anchor-id="regra-da-multiplicação">Regra da multiplicação</h2>
+<p>Outro resultado importante é a regra da multiplicação abaixo:</p>
+<p><strong>Teorema</strong> Sejam <span class="math inline">\(A_1, A_2, ..., A_n\)</span> diferentes eventos de um espaço de probabilidade, então:</p>
+<p><span class="math display">\[
+P(A_1 \cap A_2 \cap ... \cap A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2 \cap A_1)...P(A_n|A_1 \cap ... \cap A_{n-1})
+\]</span></p>
+<p>Ou, conforme <span class="citation" data-cites="mood1974introduction">Mood, Graybill, e Boes (<a href="#ref-mood1974introduction" role="doc-biblioref">1974</a>)</span>, em notação alternativa:</p>
+<p><span class="math display">\[
+P(A_1A_2 ... A_n) = P(A_1)P(A_2|A_1)P(A_3|A_2A_1)...P(A_n|A_1... A_{n-1})
+\]</span></p>
+</section>
+</section>
+<section id="independência-de-eventos" class="level1">
+<h1>Independência de eventos</h1>
+<p><strong>Definição</strong> Os eventos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> definidos no mesmo espaço de probabilidade são considerados <em>independentes</em> se, e somente se:</p>
 <ul>
-<li>A: “Está chovendo”</li>
-<li>B: “Está frio”</li>
+<li><span class="math inline">\(P(A \cap B) = P(A)P(B)\)</span></li>
 </ul>
-<p>Portanto:</p>
+<p>Note que, se a igualdade acima valer, então:</p>
 <ul>
-<li><p>A negação de “Está chovendo e está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo ou não está frio” (<span class="math inline">\(A^c \cup B^c\)</span>);</p></li>
-<li><p>A negação de “Está chovendo ou está frio” (<span class="math inline">\(A \cap B\)</span>) é “Não está chovendo e não está frio” (<span class="math inline">\(A^c \cap B^c\)</span>).</p></li>
+<li><span class="math inline">\(P(A | B) = P(A),\ se\ P(B) &gt; 0\)</span></li>
+<li><span class="math inline">\(P(B | A) = P(B),\ se\ P(A) &gt; 0\)</span></li>
 </ul>
-<p>Caso geral:</p>
+<p><strong>Definição</strong> (<em>Independência de múltiplos eventos</em>) Os eventos <span class="math inline">\(A_1,A_2,...,A_n\)</span> definidos no mesmo espaço de probabilidade são considerados conjuntamente <em>independentes</em> se, e somente se:</p>
 <p><span class="math display">\[
-\begin{align*}
-\left( \bigcup\limits_{i=1}^{n} A_i \right)^c = \bigcap\limits_{i=1}^{n} A_i^c \\
-\left( \bigcap\limits_{i=1}^{n} A_i \right)^c = \bigcup\limits_{i=1}^{n} A_i^c
-\end{align*}
-\]</span></p>
-<p>Vale ressaltar também que essa relação vale também quando <span class="math inline">\(n = \infty\)</span>, ou seja:</p>
-<p><span class="math display">\[
-\begin{align*}
-\left( \bigcup\limits_{i=1}^{\infty} A_i \right)^c = \bigcap\limits_{i=1}^{\infty} A_i^c \\
-\left( \bigcap\limits_{i=1}^{\infty} A_i \right)^c = \bigcup\limits_{i=1}^{\infty} A_i^c
-\end{align*}
+P\left( \bigcap_{i=1}^{n} A_i \right) = \prod_{i=1}^{n} P\left(  A_i \right).
 \]</span></p>
 
 
 
 </section>
-</section>
-</section>
+
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-degroot2012probability" class="csl-entry" role="listitem">
 DeGroot, M. H., e M. J. Schervish. 2012. <em>Probability and Statistics</em>. Addison-Wesley.
 </div>
-<div id="ref-barryjames2023" class="csl-entry" role="listitem">
-James, Barry R. 2023. <em>Probabilidade: um curso em nível intermediário</em>. 5.ª ed. IMPA.
-</div>
-<div id="ref-magalhaes2006probabilidade" class="csl-entry" role="listitem">
-Magalhães, M. N. 2006. <em>Probabilidade e Vari<span>á</span>veis Aleat<span>ó</span>rias</em>. 3.ª ed. Edusp.
-</div>
 <div id="ref-mood1974introduction" class="csl-entry" role="listitem">
 Mood, A. M. F., F. A. Graybill, e D. C. Boes. 1974. <em>Introduction to the Theory of Statistics</em>. McGraw-Hill international editions: Statistics series. McGraw-Hill.
 </div>
-</div></section></div></main> <!-- /main -->
+<div id="ref-morettin1999estatística" class="csl-entry" role="listitem">
+Morettin, L. G. 1999. <em>Estat<span>ı́</span>stica b<span>á</span>sica: Probabilidade, 7.ed</em>. Estat<span>ı́</span>stica b<span>á</span>sica. Pearson Makron Books.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas de rodapé</h2>
+
+<ol>
+<li id="fn1"><p>Um vídeo interessante sobre a aplicação e explicação do Teorema de Bayes pode ser visto aqui: <a href="https://www.youtube.com/watch?v=R13BD8qKeTg">A Armadilha Bayesiana</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -790,4 +817,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/1_experimento_aleatorio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/1_experimento_aleatorio.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/4_probabilidade_condicional_e_independencia.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/4_probabilidade_condicional_e_independencia.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div></div></footer></body></html>
