@@ -38,15 +38,54 @@ $$
 C^N_n = \frac{A^N_n}{n!} = \frac{N!}{n!(N-n)!} = \frac{N(N-1)...(N-n+1)}{n!}
 $$
 
+Pela definição clássica de probabilidade, a probabilidade de um evento $A$ é dada por:
+
+$$
+P(A) = \frac{Número\ de\ Elementos\ em\ A}{Número\ total\ de\ Elementos\ em\ \Omega}
+$$
 
 ## Exemplos:
 
-Abaixo, seguem alguns exemplos de aplicações em probabilidade^[Alguns exemplos retirados [deste link](https://www.todamateria.com.br/analise-combinatoria/).]
+Abaixo, seguem alguns exemplos:
+
+**Exemplo** Um restaurante oferece oito opções para montar sua refeição, dentre as quais, o cliente pode escolher 4 destas para cada prato. Suponha que um cliente almoçará todos os dias neste restaurante, enquanto houver opções diferentes. Quantos dias este cliente poderá almoçar no restaurante, sem repetir uma refeição?^[Retirado [deste link](https://www.todamateria.com.br/analise-combinatoria/).]
+
+R.: Queremos saber de quantas maneiras diferentes podemos formar subconjuntos com quatro elementos, a partir de um conjunto com 8 elementos distintos.
+
+Nesta escolha, a ordem dos itens escolhidos não possui nenhuma prioridade, por isso, se trata de um problema de combinação.
+
+$$
+C^{8}_4 = {8 \choose 4} = \frac{8 \times 7 \times 6 \times 5}{4 \times 3 \times 2 \times 1} = 70
+$$
+
+**Exemplo** (@dantas2013probabilidade) Seis times participam de um torneio de basquete. Cada uma das equipes enfrentam todas a demais. Quantos jogos serão realizados?
+
+R.: Precisamos calcular o número de amostras não ordenadas de tamanho 2 de um conjunto de 6 elementos. Logo:
+
+$$
+C^{6}_2 = {6 \choose 2} = \frac{6 \times 5}{2 \times 1} = 15
+$$
 
 **Exemplo** Qual a probabilidade de um apostador ganhar o prêmio máximo da mega-sena, fazendo uma aposta mínima, ou seja, apostar exatamente nos seis números sorteados, dentre todos os sessenta números possíveis?
+
+R.: primeiramente, vamos calcular a quantidade de jogos diferentes de seis números podemos formar com os sessenta números da mega-sena:
 
 $$
 C^{60}_6 = {60 \choose 6} = \frac{60!}{6!(60-6)!} = \frac{60 \times 59  \times 58  \times 57  \times 56  \times 55}{6 \times 5 \times 4 \times 3 \times 2 \times 1} = 50.063.860
 $$
+
+Fazendo o cálculo da probabilidade pela linguagem R:
+
+```{r}
+n_sorteios_possiveis <- choose(60, 6)
+print(paste0(format(1 / n_sorteios_possiveis * 100, scientific = FALSE), "%"))
+```
+
+Logo, a resposta é $\frac{1}{50063860} = 0,000001997449\%$.
+
+
+
+
+
 
 
