@@ -46,7 +46,7 @@ Abaixo, seguem alguns exemplos de aplicações em probabilidade^[Alguns exemplos
 **Exemplo** Qual a probabilidade de um apostador ganhar o prêmio máximo da mega-sena, fazendo uma aposta mínima, ou seja, apostar exatamente nos seis números sorteados, dentre todos os sessenta números possíveis?
 
 $$
-C^{60}_6 = {60 \choose 6} = \frac{60!}{6!(60-6)!} = \frac{60 \times 59  \times 58  \times 57  \times 56  \times 55  \times 54}{6 \times 5 \times 4 \times 3 \times 2 \times 1} = 50.063.860
+C^{60}_6 = {60 \choose 6} = \frac{60!}{6!(60-6)!} = \frac{60 \times 59  \times 58  \times 57  \times 56  \times 55}{6 \times 5 \times 4 \times 3 \times 2 \times 1} = 50.063.860
 $$
 
 
