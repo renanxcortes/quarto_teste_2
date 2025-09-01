@@ -228,10 +228,8 @@ window.Quarto = {
     <h2 id="toc-title">Nesta página</h2>
    
   <ul>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
-  <ul class="collapse">
-  <li><a href="#definições" id="toc-definições" class="nav-link" data-scroll-target="#definições">Definições</a></li>
-  </ul></li>
+  <li><a href="#definições" id="toc-definições" class="nav-link active" data-scroll-target="#definições">Definições</a></li>
+  <li><a href="#exemplos" id="toc-exemplos" class="nav-link" data-scroll-target="#exemplos">Exemplos:</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/3_aplicacoes_probabilidade_combinatoria.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/3_aplicacoes_probabilidade_combinatoria.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
@@ -257,19 +255,40 @@ window.Quarto = {
 </header>
 
 
-<section id="introdução" class="level1">
-<h1>Introdução</h1>
 <section id="definições" class="level2">
 <h2 class="anchored" data-anchor-id="definições">Definições</h2>
-<p><strong>Definição de Arranjo</strong> Um arranjo é um agrupamento ordenado de elementos de um conjunto, onde a ordem dos elementos <strong>importa</strong>. Notação, o arranjo de <span class="math inline">\(m\)</span> em subgrupos de <span class="math inline">\(n\)</span> elementos é dado por <span class="math inline">\(A^m_n\)</span>.</p>
-<p><strong>Definição de Combinação</strong> Uma combinação é um agrupamento de elementos de um conjunto, onde a ordem dos elementos <strong>não importa</strong>. Notação, a combinação de <span class="math inline">\(m\)</span> em subgrupos de <span class="math inline">\(n\)</span> elementos é dado por <span class="math inline">\(C^m_n\)</span> ou <span class="math inline">\({m}\choose{n}\)</span>.</p>
-<p><strong>Definição de Permutação</strong> uma permutação é o número de maneiras de ordenar os elementos de um conjunto, de forma que a ordem de cada elemento seja considerada e a ordem de todos os elementos seja diferente.</p>
+<p><strong>Definição</strong> O <em>Fatorial</em> de um número <span class="math inline">\(n\)</span> é o produto de todos os naturais menores ou iguais a <span class="math inline">\(n\)</span>. Notação: fatorial de <span class="math inline">\(n\)</span> é dado por <span class="math inline">\(n!\)</span>.</p>
+<p><span class="math display">\[
+n! = n\times(n-1)\times(n-2)\times ... \times 1
+\]</span></p>
+<p><strong>Definição</strong> Uma <em>Permutação</em> é o número de maneiras de ordenar os elementos de um conjunto, de forma que a ordem de cada elemento seja considerada e a ordem de todos os elementos seja diferente. Se em um conjunto estiver presentes <span class="math inline">\(m\)</span> elementos distintos, a quantidade de maneiras diferentes que podemos ordenar é dada pelo Fatorial de <span class="math inline">\(m\)</span>, ou seja, por <span class="math inline">\(m!\)</span>.</p>
+<p><strong>Definição</strong> Um <em>Arranjo</em> é um agrupamento ordenado de elementos de um conjunto, onde a ordem dos elementos <strong>importa</strong>. Notação: o arranjo de <span class="math inline">\(N\)</span> elementos em subgrupos de <span class="math inline">\(n\)</span> elementos é dado por <span class="math inline">\(A^N_n\)</span>.</p>
+<p><span class="math display">\[
+A^N_n = \frac{N!}{(N-n)!} = N(N-1)...(N-n+1)
+\]</span></p>
+<p><strong>Definição</strong> Uma <em>Combinação</em> é um agrupamento de elementos de um conjunto, onde a ordem dos elementos <strong>não importa</strong>. Notação: a combinação de <span class="math inline">\(N\)</span> elementos em subgrupos de <span class="math inline">\(n\)</span> elementos é dado por <span class="math inline">\(C^N_n\)</span> ou <span class="math inline">\({N \choose n}\)</span>.</p>
+<p><span class="math display">\[
+C^N_n = \frac{A^N_n}{n!} = \frac{N!}{n!(N-n)!} = \frac{N(N-1)...(N-n+1)}{n!}
+\]</span></p>
+</section>
+<section id="exemplos" class="level2">
+<h2 class="anchored" data-anchor-id="exemplos">Exemplos:</h2>
+<p>Abaixo, seguem alguns exemplos de aplicações em probabilidade<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><strong>Exemplo</strong> Qual a probabilidade de um apostador ganhar o prêmio máximo da mega-sena, fazendo uma aposta mínima, ou seja, apostar exatamente nos seis números sorteados, dentre todos os sessenta números possíveis?</p>
+<p><span class="math display">\[
+C^{60}_6 = {60 \choose 6} = \frac{60!}{6!(60-6)!} = \frac{60 \times 59  \times 58  \times 57  \times 56  \times 55  \times 54}{6 \times 5 \times 4 \times 3 \times 2 \times 1} = 50.063.860
+\]</span></p>
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas de rodapé</h2>
+
+<ol>
+<li id="fn1"><p>Alguns exemplos retirados <a href="https://www.todamateria.com.br/analise-combinatoria/">deste link</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

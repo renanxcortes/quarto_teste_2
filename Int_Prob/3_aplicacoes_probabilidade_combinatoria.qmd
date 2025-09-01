@@ -16,14 +16,37 @@ format:
     code-summary: "Mostrar Código"
 ---
 
-# Introdução
-
 ## Definições
 
-**Definição de Arranjo** Um arranjo é um agrupamento ordenado de elementos de um conjunto, onde a ordem dos elementos **importa**. Notação, o arranjo de $m$ em subgrupos de $n$ elementos é dado por $A^m_n$.
+**Definição** O *Fatorial* de um número $n$ é o produto de todos os naturais menores ou iguais a $n$. Notação: fatorial de $n$ é dado por $n!$.
 
-**Definição de Combinação** Uma combinação é um agrupamento de elementos de um conjunto, onde a ordem dos elementos **não importa**. Notação, a combinação de $m$ em subgrupos de $n$ elementos é dado por $C^m_n$ ou ${m}\choose{n}$.
+$$
+n! = n\times(n-1)\times(n-2)\times ... \times 1
+$$
 
-**Definição de Permutação** uma permutação é o número de maneiras de ordenar os elementos de um conjunto, de forma que a ordem de cada elemento seja considerada e a ordem de todos os elementos seja diferente.
+**Definição** Uma *Permutação* é o número de maneiras de ordenar os elementos de um conjunto, de forma que a ordem de cada elemento seja considerada e a ordem de todos os elementos seja diferente. Se em um conjunto estiver presentes $m$ elementos distintos, a quantidade de maneiras diferentes que podemos ordenar é dada pelo Fatorial de $m$, ou seja, por $m!$.
+
+**Definição** Um *Arranjo* é um agrupamento ordenado de elementos de um conjunto, onde a ordem dos elementos **importa**. Notação: o arranjo de $N$ elementos em subgrupos de $n$ elementos é dado por $A^N_n$.
+
+$$
+A^N_n = \frac{N!}{(N-n)!} = N(N-1)...(N-n+1)
+$$
+
+**Definição** Uma *Combinação* é um agrupamento de elementos de um conjunto, onde a ordem dos elementos **não importa**. Notação: a combinação de $N$ elementos em subgrupos de $n$ elementos é dado por $C^N_n$ ou ${N \choose n}$.
+
+$$
+C^N_n = \frac{A^N_n}{n!} = \frac{N!}{n!(N-n)!} = \frac{N(N-1)...(N-n+1)}{n!}
+$$
+
+
+## Exemplos:
+
+Abaixo, seguem alguns exemplos de aplicações em probabilidade^[Alguns exemplos retirados [deste link](https://www.todamateria.com.br/analise-combinatoria/).]
+
+**Exemplo** Qual a probabilidade de um apostador ganhar o prêmio máximo da mega-sena, fazendo uma aposta mínima, ou seja, apostar exatamente nos seis números sorteados, dentre todos os sessenta números possíveis?
+
+$$
+C^{60}_6 = {60 \choose 6} = \frac{60!}{6!(60-6)!} = \frac{60 \times 59  \times 58  \times 57  \times 56  \times 55  \times 54}{6 \times 5 \times 4 \times 3 \times 2 \times 1} = 50.063.860
+$$
 
 
