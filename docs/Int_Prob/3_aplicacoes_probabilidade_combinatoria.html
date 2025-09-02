@@ -391,6 +391,20 @@ p_2 = \frac{C^{10}_{0} \times C^{10}_{1} \times C^{10}_{2} \times C^{10}_{3}}{2^
 <pre><code>[1] "0.171875%"</code></pre>
 </div>
 </div>
+<p><strong>Exemplo</strong> (<span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>) Suponha que uma turma contenha 15 meninos e 30 meninas, e que 10 alunos sejam selecionados aleatoriamente para uma tarefa especial. Devemos determinar a probabilidade p de que exatamente três meninos sejam selecionados. O número de combinações diferentes dos 45 alunos que podem ser obtidas na amostra de 10 alunos é <span class="math inline">\({45 \choose 10}\)</span>, e a afirmação de que os 10 alunos são selecionados aleatoriamente significa que cada uma dessas <span class="math inline">\({45 \choose 10}\)</span> combinações possíveis é igualmente provável. Portanto, devemos encontrar o número dessas combinações que contêm exatamente três meninos e sete meninas. Quando uma combinação de três meninos e sete meninas é formada, o número de combinações diferentes nas quais três meninos podem ser selecionados entre os 15 meninos disponíveis é <span class="math inline">\({15 \choose 3}\)</span>, e o número de combinações diferentes nas quais sete meninas podem ser selecionadas entre as 30 meninas disponíveis é <span class="math inline">\({30 \choose 7}\)</span>. Como cada uma dessas combinações de três meninos pode ser pareada com cada uma das combinações de sete meninas para formar uma amostra distinta, o número de combinações contendo exatamente três meninos é <span class="math inline">\({15 \choose 3}\)</span> <span class="math inline">\({30 \choose 7}\)</span>. Portanto, a probabilidade desejada é</p>
+<p><span class="math display">\[
+p = \frac{{15 \choose 3} {30 \choose 7}}{{45 \choose 10}} \approx 0,2904 = 29,04\%
+\]</span></p>
+<p>Fazendo o cálculo da probabilidade pela linguagem R:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar Código</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="fu">format</span>((<span class="fu">choose</span>(<span class="dv">15</span>, <span class="dv">3</span>) <span class="sc">*</span> <span class="fu">choose</span>(<span class="dv">30</span>, <span class="dv">7</span>)) <span class="sc">/</span> <span class="fu">choose</span>(<span class="dv">45</span>, <span class="dv">10</span>), <span class="at">scientific =</span> <span class="cn">FALSE</span>), <span class="st">"%"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "0.2903557%"</code></pre>
+</div>
+</div>
 
 
 

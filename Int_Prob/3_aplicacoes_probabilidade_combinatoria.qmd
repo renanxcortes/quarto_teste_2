@@ -110,3 +110,16 @@ Fazendo o cálculo da probabilidade pela linguagem R:
 print(paste0(format((choose(10, 0) + choose(10, 1) + choose(10, 2) + choose(10, 3)) / (2^10), scientific = FALSE), "%"))
 ```
 
+**Exemplo** (@degroot2012probability) Suponha que uma turma contenha 15 meninos e 30 meninas, e que 10 alunos sejam selecionados aleatoriamente para uma tarefa especial. Devemos determinar a probabilidade p de que exatamente três meninos sejam selecionados. O número de combinações diferentes dos 45 alunos que podem ser obtidas na amostra de 10 alunos é ${45 \choose 10}$, e a afirmação de que os 10 alunos são selecionados aleatoriamente significa que cada uma dessas ${45 \choose 10}$ combinações possíveis é igualmente provável. Portanto, devemos encontrar o número dessas combinações que contêm exatamente três meninos e sete meninas. Quando uma combinação de três meninos e sete meninas é formada, o número de
+combinações diferentes nas quais três meninos podem ser selecionados entre os 15 meninos disponíveis é ${15 \choose 3}$, e o número de combinações diferentes nas quais sete meninas podem ser selecionadas entre as 30 meninas disponíveis é
+${30 \choose 7}$. Como cada uma dessas combinações de três meninos pode ser pareada com cada uma das combinações de sete meninas para formar uma amostra distinta, o número de combinações contendo exatamente três meninos é ${15 \choose 3}$ ${30 \choose 7}$. Portanto, a probabilidade desejada é
+
+$$
+p = \frac{{15 \choose 3} {30 \choose 7}}{{45 \choose 10}} \approx 0,2904 = 29,04\%
+$$
+
+Fazendo o cálculo da probabilidade pela linguagem R:
+
+```{r}
+print(paste0(format((choose(15, 3) * choose(30, 7)) / choose(45, 10), scientific = FALSE), "%"))
+```
