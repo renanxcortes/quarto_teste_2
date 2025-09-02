@@ -41,12 +41,14 @@ website:
       style: "docked"
       search: true
       contents:
-        - section: "Conceitos Básicos"
+        - section: "Probabilidade"
           contents:
             - Int_Prob/1_experimento_aleatorio.qmd
             - Int_Prob/2_conceitos_de_probabilidade.qmd
             - Int_Prob/3_aplicacoes_probabilidade_combinatoria.qmd
             - Int_Prob/4_probabilidade_condicional_e_independencia.qmd
+        - section: "Variáveis Aleatórias"
+          contents:
             - Int_Prob/5_variaveis_aleatorias.qmd
             
             

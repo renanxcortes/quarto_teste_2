@@ -16,7 +16,7 @@ format:
     code-summary: "Mostrar Código"
 ---
 
-## Definições
+# Definições
 
 **Definição** O *Fatorial* de um número $n$ é o produto de todos os naturais menores ou iguais a $n$. Notação: fatorial de $n$ é dado por $n!$.
 
@@ -44,7 +44,7 @@ $$
 P(A) = \frac{Número\ de\ Elementos\ em\ A}{Número\ total\ de\ Elementos\ em\ \Omega}
 $$
 
-## Exemplos:
+# Exemplos
 
 Abaixo, seguem alguns exemplos:
 

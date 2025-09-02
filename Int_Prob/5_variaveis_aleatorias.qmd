@@ -1,5 +1,5 @@
 ---
-title: "Variáveis Aleatórias"
+title: "Conceitos Básicos"
 lang: pt # Equações ficarem referenciadas em Português
 
 toc: true

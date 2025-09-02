@@ -211,7 +211,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/3_aplicacoes_probabilidade_combinatoria.html">Aplicações de Probabilidade em arranjos, permutações e combinações</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Probabilidade</a></li><li class="breadcrumb-item"><a href="../Int_Prob/3_aplicacoes_probabilidade_combinatoria.html">Aplicações de Probabilidade em arranjos, permutações e combinações</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -234,7 +234,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Conceitos Básicos</span></a>
+ <span class="menu-text">Probabilidade</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -264,10 +264,21 @@ window.Quarto = {
  <span class="menu-text">Probabilidade Condicional e Independência</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Variáveis Aleatórias</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../Int_Prob/5_variaveis_aleatorias.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Variáveis Aleatórias</span></a>
+ <span class="menu-text">Conceitos Básicos</span></a>
   </div>
 </li>
       </ul>
@@ -283,14 +294,14 @@ window.Quarto = {
    
   <ul>
   <li><a href="#definições" id="toc-definições" class="nav-link active" data-scroll-target="#definições">Definições</a></li>
-  <li><a href="#exemplos" id="toc-exemplos" class="nav-link" data-scroll-target="#exemplos">Exemplos:</a></li>
+  <li><a href="#exemplos" id="toc-exemplos" class="nav-link" data-scroll-target="#exemplos">Exemplos</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/3_aplicacoes_probabilidade_combinatoria.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/3_aplicacoes_probabilidade_combinatoria.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Conceitos Básicos</a></li><li class="breadcrumb-item"><a href="../Int_Prob/3_aplicacoes_probabilidade_combinatoria.html">Aplicações de Probabilidade em arranjos, permutações e combinações</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Int_Prob/1_experimento_aleatorio.html">Probabilidade</a></li><li class="breadcrumb-item"><a href="../Int_Prob/3_aplicacoes_probabilidade_combinatoria.html">Aplicações de Probabilidade em arranjos, permutações e combinações</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Aplicações de Probabilidade em arranjos, permutações e combinações</h1>
 </div>
@@ -309,8 +320,8 @@ window.Quarto = {
 </header>
 
 
-<section id="definições" class="level2">
-<h2 class="anchored" data-anchor-id="definições">Definições</h2>
+<section id="definições" class="level1">
+<h1>Definições</h1>
 <p><strong>Definição</strong> O <em>Fatorial</em> de um número <span class="math inline">\(n\)</span> é o produto de todos os naturais menores ou iguais a <span class="math inline">\(n\)</span>. Notação: fatorial de <span class="math inline">\(n\)</span> é dado por <span class="math inline">\(n!\)</span>.</p>
 <p><span class="math display">\[
 n! = n\times(n-1)\times(n-2)\times ... \times 1
@@ -329,8 +340,8 @@ C^N_n = \frac{A^N_n}{n!} = \frac{N!}{n!(N-n)!} = \frac{N(N-1)...(N-n+1)}{n!}
 P(A) = \frac{Número\ de\ Elementos\ em\ A}{Número\ total\ de\ Elementos\ em\ \Omega}
 \]</span></p>
 </section>
-<section id="exemplos" class="level2">
-<h2 class="anchored" data-anchor-id="exemplos">Exemplos:</h2>
+<section id="exemplos" class="level1">
+<h1>Exemplos</h1>
 <p>Abaixo, seguem alguns exemplos:</p>
 <p><strong>Exemplo</strong> Um restaurante oferece oito opções para montar sua refeição, dentre as quais, o cliente pode escolher 4 destas para cada prato. Suponha que um cliente almoçará todos os dias neste restaurante, enquanto houver opções diferentes. Quantos dias este cliente poderá almoçar no restaurante, sem repetir uma refeição?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>R.: Queremos saber de quantas maneiras diferentes podemos formar subconjuntos com quatro elementos, a partir de um conjunto com 8 elementos distintos.</p>
