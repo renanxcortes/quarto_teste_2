@@ -294,3 +294,8 @@ ggplot(exp_data, aes(x = x, y = y)) +
   ylim(c(0,1)) +
   theme_minimal()
 ```
+
+
+# Esperança Matemática
+
+...
