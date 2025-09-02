@@ -83,9 +83,30 @@ print(paste0(format(1 / n_sorteios_possiveis * 100, scientific = FALSE), "%"))
 
 Logo, a resposta é $\frac{1}{50063860} = 0,000001997449\%$.
 
+**Exemplo** (@degroot2012probability) Suponha que uma moeda honesta seja lançada 10 vezes e que se deseja determinar (a) a probabilidade $p_1$ de obter exatamente três caras e (b) a probabilidade $p_2$ de obter três ou menos caras.
+
+R.: a) O número total possível de sequências diferentes de 10 caras e coroas é $2^{10}$, e pode-se supor que cada uma dessas sequências seja igualmente provável. O número dessas sequências que contêm exatamente três caras será igual ao número de arranjos diferentes que podem ser formados com três caras e sete coroas. Aqui estão alguns desses arranjos (onde, "H" é cara e "T" é coroa): HHHTTTTTTT, HHTHTTTTTT, HHTTHTTTTTT, TTHTHTHTTT, etc. Cada arranjo é equivalente a uma escolha de onde colocar as 3 caras entre os 10 lançamentos, então há $C^{10}_3$ possibilidades. Logo, a probabilidade de obter exatamente três caras é então
+
+$$
+p_1 = \frac{C^{10}_{3}}{2^{10}} \approx 0,1172 = 11,72\%
+$$
+
+Fazendo o cálculo da probabilidade pela linguagem R:
+
+```{r}
+print(paste0(format(choose(10, 3) / (2^10), scientific = FALSE), "%"))
+```
+
+b) Usando o mesmo raciocínio da parte (a), o número de sequências no espaço amostral que contêm exatamente k caras (k = 0, 1, 2, 3) é $C^{10}_k$. Portanto, a probabilidade de obter três ou menos caras é
 
 
+$$
+p_2 = \frac{C^{10}_{0} \times C^{10}_{1} \times C^{10}_{2} \times C^{10}_{3}}{2^{10}} = \frac{1+10+45+120}{2^{10}} = \frac{176}{2^{10}} \approx 0,1719 = 17,19\%
+$$
 
+Fazendo o cálculo da probabilidade pela linguagem R:
 
-
+```{r}
+print(paste0(format((choose(10, 0) + choose(10, 1) + choose(10, 2) + choose(10, 3)) / (2^10), scientific = FALSE), "%"))
+```
 

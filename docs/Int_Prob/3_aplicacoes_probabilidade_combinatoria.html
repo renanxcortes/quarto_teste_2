@@ -360,6 +360,37 @@ C^{60}_6 = {60 \choose 6} = \frac{60!}{6!(60-6)!} = \frac{60 \times 59  \times 5
 </div>
 </div>
 <p>Logo, a resposta é <span class="math inline">\(\frac{1}{50063860} = 0,000001997449\%\)</span>.</p>
+<p><strong>Exemplo</strong> (<span class="citation" data-cites="degroot2012probability">DeGroot e Schervish (<a href="#ref-degroot2012probability" role="doc-biblioref">2012</a>)</span>) Suponha que uma moeda honesta seja lançada 10 vezes e que se deseja determinar (a) a probabilidade <span class="math inline">\(p_1\)</span> de obter exatamente três caras e (b) a probabilidade <span class="math inline">\(p_2\)</span> de obter três ou menos caras.</p>
+<p>R.: a) O número total possível de sequências diferentes de 10 caras e coroas é <span class="math inline">\(2^{10}\)</span>, e pode-se supor que cada uma dessas sequências seja igualmente provável. O número dessas sequências que contêm exatamente três caras será igual ao número de arranjos diferentes que podem ser formados com três caras e sete coroas. Aqui estão alguns desses arranjos (onde, “H” é cara e “T” é coroa): HHHTTTTTTT, HHTHTTTTTT, HHTTHTTTTTT, TTHTHTHTTT, etc. Cada arranjo é equivalente a uma escolha de onde colocar as 3 caras entre os 10 lançamentos, então há <span class="math inline">\(C^{10}_3\)</span> possibilidades. Logo, a probabilidade de obter exatamente três caras é então</p>
+<p><span class="math display">\[
+p_1 = \frac{C^{10}_{3}}{2^{10}} \approx 0,1172 = 11,72\%
+\]</span></p>
+<p>Fazendo o cálculo da probabilidade pela linguagem R:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar Código</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="fu">format</span>(<span class="fu">choose</span>(<span class="dv">10</span>, <span class="dv">3</span>) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">^</span><span class="dv">10</span>), <span class="at">scientific =</span> <span class="cn">FALSE</span>), <span class="st">"%"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "0.1171875%"</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Usando o mesmo raciocínio da parte (a), o número de sequências no espaço amostral que contêm exatamente k caras (k = 0, 1, 2, 3) é <span class="math inline">\(C^{10}_k\)</span>. Portanto, a probabilidade de obter três ou menos caras é</li>
+</ol>
+<p><span class="math display">\[
+p_2 = \frac{C^{10}_{0} \times C^{10}_{1} \times C^{10}_{2} \times C^{10}_{3}}{2^{10}} = \frac{1+10+45+120}{2^{10}} = \frac{176}{2^{10}} \approx 0,1719 = 17,19\%
+\]</span></p>
+<p>Fazendo o cálculo da probabilidade pela linguagem R:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Mostrar Código</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="fu">format</span>((<span class="fu">choose</span>(<span class="dv">10</span>, <span class="dv">0</span>) <span class="sc">+</span> <span class="fu">choose</span>(<span class="dv">10</span>, <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">choose</span>(<span class="dv">10</span>, <span class="dv">2</span>) <span class="sc">+</span> <span class="fu">choose</span>(<span class="dv">10</span>, <span class="dv">3</span>)) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">^</span><span class="dv">10</span>), <span class="at">scientific =</span> <span class="cn">FALSE</span>), <span class="st">"%"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "0.171875%"</code></pre>
+</div>
+</div>
 
 
 
@@ -369,6 +400,9 @@ C^{60}_6 = {60 \choose 6} = \frac{60!}{6!(60-6)!} = \frac{60 \times 59  \times 5
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-dantas2013probabilidade" class="csl-entry" role="listitem">
 Dantas, C. A. B. 2013. <em>Probabilidade: Um Curso Introdut<span>ó</span>rio Vol. 10</em>. EDUSP.
+</div>
+<div id="ref-degroot2012probability" class="csl-entry" role="listitem">
+DeGroot, M. H., e M. J. Schervish. 2012. <em>Probability and Statistics</em>. Addison-Wesley.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Notas de rodapé</h2>
 
