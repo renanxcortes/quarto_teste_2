@@ -296,6 +296,3 @@ ggplot(exp_data, aes(x = x, y = y)) +
 ```
 
 
-# Esperança Matemática
-
-...
