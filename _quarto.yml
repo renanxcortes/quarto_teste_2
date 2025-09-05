@@ -49,7 +49,8 @@ website:
             - Int_Prob/4_probabilidade_condicional_e_independencia.qmd
         - section: "Variáveis Aleatórias"
           contents:
-            - Int_Prob/5_variaveis_aleatorias.qmd
+            - Int_Prob/5_variaveis_aleatorias_conceitos_basicos.qmd
+            - Int_Prob/6_vetores_aleatorios.qmd
             
             
     - id: probabilidade_B

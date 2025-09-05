@@ -1,0 +1,37 @@
+---
+title: "Vetores Aleatórios"
+lang: pt # Equações ficarem referenciadas em Português
+
+toc: true
+toc-title: "Nesta página"
+toc-location: right
+
+execute: 
+  warning: false
+  message: false
+
+format:
+  html:
+    code-fold: true
+    code-summary: "Mostrar Código"
+---
+
+# Introdução
+
+**Definição** (@rolla2021intprob) Um *vetor aleatório* $X = (X_1, ..., X_p)$ é uma função $X: \Omega \rightarrow \mathbb{R}^p$ tal que cada coordenada $X_i$ é uma variável aleatória.
+
+
+## Vetores Aleatórios Discretos
+
+**Definição** (@dantas2013probabilidade) A distribuição de probabilidade do vetor aleatório $(X_1, X_2, ..., X_p)$ é uma tabela que associa a cada valor $(x_1, x_2, ..., x_p)$ desse vetor sua correspondente probabilidade $P([X_1 = x_1, X_2 = x_2, ..., X_p = x_p])$. Ela é denominada também distribuição conjunta de $X_1, X_2, ..., X_p$.
+
+Observemos que a notação $[X_1 = x_1, X_2 = x_2, ..., X_p = x_p]$ representa a intersecção dos eventos $[X_1 = x_1], [X_2 = x_2], ..., [X_p = x_p]$ ou seja,
+
+$$
+\begin{align*}
+[X_1 = x_1, X_2 = x_2, ..., X_p = x_p] &= \{ \omega: X_1(\omega) = x_1, X_2(\omega) = x_2, ..., X_p(\omega) = x_p \} = \\ &= \{ \omega: X_1(\omega) = x_1 \} \cap \{ \omega: X_2(\omega) = x_2 \} \cap ...  \cap \{ \omega: X_p(\omega) = x_p \}
+\end{align*}
+$$
+
+
+
