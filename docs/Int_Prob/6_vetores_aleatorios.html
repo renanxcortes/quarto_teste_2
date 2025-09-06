@@ -267,7 +267,11 @@ window.Quarto = {
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a>
   <ul class="collapse">
-  <li><a href="#vetores-aleatórios-discretos" id="toc-vetores-aleatórios-discretos" class="nav-link" data-scroll-target="#vetores-aleatórios-discretos">Vetores Aleatórios Discretos</a></li>
+  <li><a href="#vetores-aleatórios-discretos" id="toc-vetores-aleatórios-discretos" class="nav-link" data-scroll-target="#vetores-aleatórios-discretos">Vetores Aleatórios Discretos</a>
+  <ul class="collapse">
+  <li><a href="#distribuições-de-probabilidade" id="toc-distribuições-de-probabilidade" class="nav-link" data-scroll-target="#distribuições-de-probabilidade">Distribuições de Probabilidade</a></li>
+  <li><a href="#distribuições-marginais" id="toc-distribuições-marginais" class="nav-link" data-scroll-target="#distribuições-marginais">Distribuições Marginais</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/6_vetores_aleatorios.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/6_vetores_aleatorios.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
@@ -299,23 +303,55 @@ window.Quarto = {
 <p><strong>Definição</strong> (<span class="citation" data-cites="rolla2021intprob">Rolla (<a href="#ref-rolla2021intprob" role="doc-biblioref">2021</a>)</span>) Um <em>vetor aleatório</em> <span class="math inline">\(X = (X_1, ..., X_p)\)</span> é uma função <span class="math inline">\(X: \Omega \rightarrow \mathbb{R}^p\)</span> tal que cada coordenada <span class="math inline">\(X_i\)</span> é uma variável aleatória.</p>
 <section id="vetores-aleatórios-discretos" class="level2">
 <h2 class="anchored" data-anchor-id="vetores-aleatórios-discretos">Vetores Aleatórios Discretos</h2>
-<p><strong>Definição</strong> (<span class="citation" data-cites="dantas2013probabilidade">Dantas (<a href="#ref-dantas2013probabilidade" role="doc-biblioref">2013</a>)</span>) A distribuição de probabilidade do vetor aleatório <span class="math inline">\((X_1, X_2, ..., X_p)\)</span> é uma tabela que associa a cada valor <span class="math inline">\((x_1, x_2, ..., x_p)\)</span> desse vetor sua correspondente probabilidade <span class="math inline">\(P([X_1 = x_1, X_2 = x_2, ..., X_p = x_p])\)</span>. Ela é denominada também distribuição conjunta de <span class="math inline">\(X_1, X_2, ..., X_p\)</span>.</p>
+<section id="distribuições-de-probabilidade" class="level3">
+<h3 class="anchored" data-anchor-id="distribuições-de-probabilidade">Distribuições de Probabilidade</h3>
+<p><strong>Definição</strong> A distribuição de probabilidade do vetor aleatório <span class="math inline">\((X_1, X_2, ..., X_p)\)</span> é uma tabela que associa a cada valor <span class="math inline">\((x_1, x_2, ..., x_p)\)</span> desse vetor sua correspondente probabilidade <span class="math inline">\(P([X_1 = x_1, X_2 = x_2, ..., X_p = x_p])\)</span>. Ela é denominada também distribuição conjunta de <span class="math inline">\(X_1, X_2, ..., X_p\)</span>.</p>
 <p>Observemos que a notação <span class="math inline">\([X_1 = x_1, X_2 = x_2, ..., X_p = x_p]\)</span> representa a intersecção dos eventos <span class="math inline">\([X_1 = x_1], [X_2 = x_2], ..., [X_p = x_p]\)</span> ou seja,</p>
 <p><span class="math display">\[
 \begin{align*}
 [X_1 = x_1, X_2 = x_2, ..., X_p = x_p] &amp;= \{ \omega: X_1(\omega) = x_1, X_2(\omega) = x_2, ..., X_p(\omega) = x_p \} = \\ &amp;= \{ \omega: X_1(\omega) = x_1 \} \cap \{ \omega: X_2(\omega) = x_2 \} \cap ...  \cap \{ \omega: X_p(\omega) = x_p \}
 \end{align*}
 \]</span></p>
-<p><strong>Exemplo</strong> Lançamento de dois dados. Seja <span class="math inline">\(X_1\)</span> a face do primeiro dado e <span class="math inline">\(X_2\)</span> a face do segundo dado a distribuição conjunta do vetor aleatório <span class="math inline">\((X_1, X_2)\)</span> é dada por</p>
+<p><strong>Exemplo</strong> Lançamento de dois dados honestos. Seja <span class="math inline">\(X_1\)</span> o valor da face do primeiro dado e <span class="math inline">\(X_2\)</span> o valor da face do segundo dado a distribuição conjunta do vetor aleatório <span class="math inline">\((X_1, X_2)\)</span> é dada por</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figs/tabela_dados.png" class="img-fluid figure-img"></p>
 <figcaption>Distribuição Conjunta de Dois Dados Honestos</figcaption>
 </figure>
 </div>
+<p><strong>Exemplo</strong> Lançamento de um dado e uma moeda, ambos honestos. Seja <span class="math inline">\(X\)</span> o valor da face do primeiro dado e <span class="math inline">\(Y\)</span> a variável aleatória da moeda sendo <span class="math inline">\(Y = 1\)</span> se “cara” e <span class="math inline">\(Y = 0\)</span> se “coroa”. Então, a distribuição conjunta do vetor aleatório <span class="math inline">\((X, Y)\)</span> é dada por</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/tabela_dado_moeda.png" class="img-fluid figure-img"></p>
+<figcaption>Distribuição Conjunta de Um Dado e Uma Moeda Honestos</figcaption>
+</figure>
+</div>
+<p><strong>Definição</strong> (<span class="citation" data-cites="dantas2013probabilidade">Dantas (<a href="#ref-dantas2013probabilidade" role="doc-biblioref">2013</a>)</span>) A função de distribuição do par de variáveis aleatórias discretas <span class="math inline">\((X,Y)\)</span> é dada por:</p>
+<p><span class="math display">\[
+F(x,y) = P(X \le x, Y \le y) = \sum_{i: x_i \le x}\sum_{j: y_j \le j} = P(X = x_i, Y = y_i)
+\]</span></p>
+</section>
+<section id="distribuições-marginais" class="level3">
+<h3 class="anchored" data-anchor-id="distribuições-marginais">Distribuições Marginais</h3>
+<p>A distribuição marginal de uma variável aleatória específica é dada ao somarmos as probabilidades “varrendo” todo o intervalo de todas as demais variáveis do vetor aleatório. Por exemplo, assuma que em um vetor aleatório <span class="math inline">\((X,Y)\)</span>, <span class="math inline">\(X\)</span> assume os valores <span class="math inline">\(x_1, x_2, ..., x_n\)</span> enquanto <span class="math inline">\(Y\)</span> assume os valores <span class="math inline">\(y_1, y_2, ..., y_m\)</span>. Então, a ditribuição marginal de X é dada por</p>
+<p><span class="math display">\[
+P(X = x_i) = \sum_{j = 1}^{m} = P(X = x_i, Y = y_j).
+\]</span></p>
+<p>Analogamente, a dstribuição marginal de <span class="math inline">\(Y\)</span> é obtida através de</p>
+<p><span class="math display">\[
+P(Y = y_j) = \sum_{i = 1}^{n} = P(X = x_i, Y = y_j).
+\]</span></p>
+<p>Abaixo, destacado em vermelho seguem as distribuições marginais do exemplo anterior:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/tabela_dado_moeda_marginal.png" class="img-fluid figure-img"></p>
+<figcaption>Distribuição Conjunta de Um Dado e Uma Moeda Honestos com distribuições marginais</figcaption>
+</figure>
+</div>
 
 
 
+</section>
 </section>
 </section>
 
