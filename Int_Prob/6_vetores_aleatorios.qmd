@@ -34,6 +34,8 @@ $$
 \end{align*}
 $$
 
+Uma notação alternativa para $P([X_1 = x_1, X_2 = x_2, ..., X_p = x_p])$ é $P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)$.
+
 **Exemplo** Lançamento de dois dados honestos. Seja $X_1$ o valor da face do primeiro dado e $X_2$ o valor da face do segundo dado a distribuição conjunta do vetor aleatório $(X_1, X_2)$ é dada por
 
 ![Distribuição Conjunta de Dois Dados Honestos](figs/tabela_dados.png)
@@ -66,15 +68,19 @@ Abaixo, destacado em vermelho seguem as distribuições marginais do exemplo ant
 
 ![Distribuição Conjunta de Um Dado e Uma Moeda Honestos com distribuições marginais](figs/tabela_dado_moeda_marginal.png)
 
+Para o caso multidimensional (ou seja, $p$-dimensional), o procedimento é análogo.
 
+Seja $(X_1, X_2, ..., X_p)$ um vetor aleatório com distribuição conjunta dada por: $P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)$, onde $x_1, x_2, ..., x_p$, percorrem o conjunto de valores de $X_1, X_2, ..., X_p$, respectivamente.
 
+A distribuição marginal de $X_1$ é obtida calculando-se, para cada valor $x_1$ de $X_1$:
 
+$$
+P(X_1 = x_1) = \sum_{x_2} \dots \sum_{x_p} P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)
+$$
 
+Analogamente, para obter a marginal de qualquer subconjunto de $(X_1, X_2, ..., X_p)$, fazemos o somatório percorrendo o subconjunto complementar. Por exemplo, para a marginal de $(X_1, X_2)$, tem-se:
 
-
-
-
-
-
-
+$$
+P(X_1 = x_1, X_2 = x_2) = \sum_{x_3} \sum_{x_4} \dots \sum_{x_p} P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)
+$$
 

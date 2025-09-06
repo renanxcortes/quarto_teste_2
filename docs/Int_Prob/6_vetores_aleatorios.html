@@ -312,6 +312,7 @@ window.Quarto = {
 [X_1 = x_1, X_2 = x_2, ..., X_p = x_p] &amp;= \{ \omega: X_1(\omega) = x_1, X_2(\omega) = x_2, ..., X_p(\omega) = x_p \} = \\ &amp;= \{ \omega: X_1(\omega) = x_1 \} \cap \{ \omega: X_2(\omega) = x_2 \} \cap ...  \cap \{ \omega: X_p(\omega) = x_p \}
 \end{align*}
 \]</span></p>
+<p>Uma notação alternativa para <span class="math inline">\(P([X_1 = x_1, X_2 = x_2, ..., X_p = x_p])\)</span> é <span class="math inline">\(P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)\)</span>.</p>
 <p><strong>Exemplo</strong> Lançamento de dois dados honestos. Seja <span class="math inline">\(X_1\)</span> o valor da face do primeiro dado e <span class="math inline">\(X_2\)</span> o valor da face do segundo dado a distribuição conjunta do vetor aleatório <span class="math inline">\((X_1, X_2)\)</span> é dada por</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -348,6 +349,16 @@ P(Y = y_j) = \sum_{i = 1}^{n} = P(X = x_i, Y = y_j).
 <figcaption>Distribuição Conjunta de Um Dado e Uma Moeda Honestos com distribuições marginais</figcaption>
 </figure>
 </div>
+<p>Para o caso multidimensional (ou seja, <span class="math inline">\(p\)</span>-dimensional), o procedimento é análogo.</p>
+<p>Seja <span class="math inline">\((X_1, X_2, ..., X_p)\)</span> um vetor aleatório com distribuição conjunta dada por: <span class="math inline">\(P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)\)</span>, onde <span class="math inline">\(x_1, x_2, ..., x_p\)</span>, percorrem o conjunto de valores de <span class="math inline">\(X_1, X_2, ..., X_p\)</span>, respectivamente.</p>
+<p>A distribuição marginal de <span class="math inline">\(X_1\)</span> é obtida calculando-se, para cada valor <span class="math inline">\(x_1\)</span> de <span class="math inline">\(X_1\)</span>:</p>
+<p><span class="math display">\[
+P(X_1 = x_1) = \sum_{x_2} \dots \sum_{x_p} P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)
+\]</span></p>
+<p>Analogamente, para obter a marginal de qualquer subconjunto de <span class="math inline">\((X_1, X_2, ..., X_p)\)</span>, fazemos o somatório percorrendo o subconjunto complementar. Por exemplo, para a marginal de <span class="math inline">\((X_1, X_2)\)</span>, tem-se:</p>
+<p><span class="math display">\[
+P(X_1 = x_1, X_2 = x_2) = \sum_{x_3} \sum_{x_4} \dots \sum_{x_p} P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)
+\]</span></p>
 
 
 
