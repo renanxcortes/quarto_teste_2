@@ -102,7 +102,7 @@ $$
 F_{X,Y}(x,y) = F_{X}(x)F_{Y}(y)
 $$
 
-**Prova** 
+**Prova**
 
 Ida:
 
@@ -122,7 +122,7 @@ $$
 
 $\square$
 
-### Distibuições Condicionais
+### Distribuições Condicionais
 
 **Definição** A distribuição condicional de $Y$ dado $X$ associa a cada valor $x$ de $X$ uma distribuição de probabilidade sobre os valores de $Y$, da seguinte maneira:
 
@@ -130,19 +130,12 @@ $$
 P(Y = x | X = x) = \frac{P(X = x, Y = y)}{P(X = x)}
 $$
 
-Note que isso se refere à distribuição condicional de $Y$ dado $X$, estamos nos referindo ao conjunto de *todas as distribuições condicionais* associadas a cada um dos valores de $X$. 
-
-
-
+Note que isso se refere à distribuição condicional de $Y$ dado $X$, estamos nos referindo ao conjunto de *todas as distribuições condicionais* associadas a cada um dos valores de $X$.
 
 ## Vetores Aleatórios Contínuos
 
+**Definição** Uma função $f(x,y)$ definida para $- \infty < x < + \infty$, $- \infty < y < + \infty$, não-negativa e satisfazendo a condição
 
-
-
-
-
-
-
-
-
+$$
+\int
+$$
