@@ -47,8 +47,10 @@ Uma notação alternativa para $P([X_1 = x_1, X_2 = x_2, ..., X_p = x_p])$ é $P
 **Definição** (@dantas2013probabilidade) A função de distribuição do par de variáveis aleatórias discretas $(X,Y)$ é dada por:
 
 $$
-F(x,y) = P(X \le x, Y \le y) = \sum_{i: x_i \le x}\sum_{j: y_j \le j} = P(X = x_i, Y = y_i)
+F(x,y) = P(X \le x, Y \le y) = \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i, Y = y_i)
 $$
+
+Uma notação alternativa para $F(x,y)$ é $F_{X,Y}(x,y)$.
 
 ### Distribuições Marginais
 
@@ -83,4 +85,64 @@ Analogamente, para obter a marginal de qualquer subconjunto de $(X_1, X_2, ..., 
 $$
 P(X_1 = x_1, X_2 = x_2) = \sum_{x_3} \sum_{x_4} \dots \sum_{x_p} P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)
 $$
+
+### Vetores Aleatórios Independentes
+
+**Definição** As variáveis aleatórias $X_1, X_2, ..., X_p$ são ditas independentes se para todos os elementos $x_1, x_2, ..., x_p$ das mesmas tivermos:
+
+$$
+P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p) = P(X_1 = x_1)P(X_2 = x_2)...P(X_p = x_p).
+$$
+
+Ou seja, se as variáveis são independentes, então a distribuição conjunta é o produto das marginais.
+
+**Lema** As variáveis $X$ e $Y$ com função de distribuição $F_{X,Y}(x,y)$ são independentes se, e somente se
+
+$$
+F_{X,Y}(x,y) = F_{X}(x)F_{Y}(y)
+$$
+
+**Prova** 
+
+Ida:
+
+$$
+\begin{align*}
+F_{X,Y}(x,y) &= \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i, Y = y_i) \overset{\text{Definição de Indep.}}{=} \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i)P(Y = y_i) \overset{\text{Separa Somatórios}}{=} \\ &= \underbrace{\sum_{i: x_i \le x}P(X = x_i)}_{F_{X}(x)}  \underbrace{\sum_{j: y_j \le j}P(Y = y_i)}_{F_{Y}(y)} = F_X(x)F_Y(y)
+\end{align*}
+$$
+
+Volta:
+
+$$
+\begin{align*}
+F_X(x)F_Y(y) &= \sum_{i: x_i \le x}P(X = x_i) \sum_{j: y_j \le j}P(Y = y_i) \overset{\text{Combina Somatórios}}{=} \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i)P(Y = y_i) \overset{\text{Definição de Indep.}}{=} \\ &= \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i, Y = y_i) = F_{X,Y}(x,y)
+\end{align*}
+$$
+
+$\square$
+
+### Distibuições Condicionais
+
+**Definição** A distribuição condicional de $Y$ dado $X$ associa a cada valor $x$ de $X$ uma distribuição de probabilidade sobre os valores de $Y$, da seguinte maneira:
+
+$$
+P(Y = x | X = x) = \frac{P(X = x, Y = y)}{P(X = x)}
+$$
+
+Note que isso se refere à distribuição condicional de $Y$ dado $X$, estamos nos referindo ao conjunto de *todas as distribuições condicionais* associadas a cada um dos valores de $X$. 
+
+
+
+
+## Vetores Aleatórios Contínuos
+
+
+
+
+
+
+
+
+
 

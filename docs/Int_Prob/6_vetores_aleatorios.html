@@ -271,7 +271,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#distribuições-de-probabilidade" id="toc-distribuições-de-probabilidade" class="nav-link" data-scroll-target="#distribuições-de-probabilidade">Distribuições de Probabilidade</a></li>
   <li><a href="#distribuições-marginais" id="toc-distribuições-marginais" class="nav-link" data-scroll-target="#distribuições-marginais">Distribuições Marginais</a></li>
+  <li><a href="#vetores-aleatórios-independentes" id="toc-vetores-aleatórios-independentes" class="nav-link" data-scroll-target="#vetores-aleatórios-independentes">Vetores Aleatórios Independentes</a></li>
+  <li><a href="#distibuições-condicionais" id="toc-distibuições-condicionais" class="nav-link" data-scroll-target="#distibuições-condicionais">Distibuições Condicionais</a></li>
   </ul></li>
+  <li><a href="#vetores-aleatórios-contínuos" id="toc-vetores-aleatórios-contínuos" class="nav-link" data-scroll-target="#vetores-aleatórios-contínuos">Vetores Aleatórios Contínuos</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/6_vetores_aleatorios.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/6_vetores_aleatorios.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
@@ -329,8 +332,9 @@ window.Quarto = {
 </div>
 <p><strong>Definição</strong> (<span class="citation" data-cites="dantas2013probabilidade">Dantas (<a href="#ref-dantas2013probabilidade" role="doc-biblioref">2013</a>)</span>) A função de distribuição do par de variáveis aleatórias discretas <span class="math inline">\((X,Y)\)</span> é dada por:</p>
 <p><span class="math display">\[
-F(x,y) = P(X \le x, Y \le y) = \sum_{i: x_i \le x}\sum_{j: y_j \le j} = P(X = x_i, Y = y_i)
+F(x,y) = P(X \le x, Y \le y) = \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i, Y = y_i)
 \]</span></p>
+<p>Uma notação alternativa para <span class="math inline">\(F(x,y)\)</span> é <span class="math inline">\(F_{X,Y}(x,y)\)</span>.</p>
 </section>
 <section id="distribuições-marginais" class="level3">
 <h3 class="anchored" data-anchor-id="distribuições-marginais">Distribuições Marginais</h3>
@@ -359,14 +363,51 @@ P(X_1 = x_1) = \sum_{x_2} \dots \sum_{x_p} P(X_1 = x_1, X_2 = x_2, ..., X_p = x_
 <p><span class="math display">\[
 P(X_1 = x_1, X_2 = x_2) = \sum_{x_3} \sum_{x_4} \dots \sum_{x_p} P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)
 \]</span></p>
+</section>
+<section id="vetores-aleatórios-independentes" class="level3">
+<h3 class="anchored" data-anchor-id="vetores-aleatórios-independentes">Vetores Aleatórios Independentes</h3>
+<p><strong>Definição</strong> As variáveis aleatórias <span class="math inline">\(X_1, X_2, ..., X_p\)</span> são ditas independentes se para todos os elementos <span class="math inline">\(x_1, x_2, ..., x_p\)</span> das mesmas tivermos:</p>
+<p><span class="math display">\[
+P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p) = P(X_1 = x_1)P(X_2 = x_2)...P(X_p = x_p).
+\]</span></p>
+<p>Ou seja, se as variáveis são independentes, então a distribuição conjunta é o produto das marginais.</p>
+<p><strong>Lema</strong> As variáveis <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> com função de distribuição <span class="math inline">\(F_{X,Y}(x,y)\)</span> são independentes se, e somente se</p>
+<p><span class="math display">\[
+F_{X,Y}(x,y) = F_{X}(x)F_{Y}(y)
+\]</span></p>
+<p><strong>Prova</strong></p>
+<p>Ida:</p>
+<p><span class="math display">\[
+\begin{align*}
+F_{X,Y}(x,y) &amp;= \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i, Y = y_i) \overset{\text{Definição de Indep.}}{=} \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i)P(Y = y_i) \overset{\text{Separa Somatórios}}{=} \\ &amp;= \underbrace{\sum_{i: x_i \le x}P(X = x_i)}_{F_{X}(x)}  \underbrace{\sum_{j: y_j \le j}P(Y = y_i)}_{F_{Y}(y)} = F_X(x)F_Y(y)
+\end{align*}
+\]</span></p>
+<p>Volta:</p>
+<p><span class="math display">\[
+\begin{align*}
+F_X(x)F_Y(y) &amp;= \sum_{i: x_i \le x}P(X = x_i) \sum_{j: y_j \le j}P(Y = y_i) \overset{\text{Combina Somatórios}}{=} \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i)P(Y = y_i) \overset{\text{Definição de Indep.}}{=} \\ &amp;= \sum_{i: x_i \le x}\sum_{j: y_j \le j} P(X = x_i, Y = y_i) = F_{X,Y}(x,y)
+\end{align*}
+\]</span></p>
+<p><span class="math inline">\(\square\)</span></p>
+</section>
+<section id="distibuições-condicionais" class="level3">
+<h3 class="anchored" data-anchor-id="distibuições-condicionais">Distibuições Condicionais</h3>
+<p><strong>Definição</strong> A distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span> associa a cada valor <span class="math inline">\(x\)</span> de <span class="math inline">\(X\)</span> uma distribuição de probabilidade sobre os valores de <span class="math inline">\(Y\)</span>, da seguinte maneira:</p>
+<p><span class="math display">\[
+P(Y = x | X = x) = \frac{P(X = x, Y = y)}{P(X = x)}
+\]</span></p>
+<p>Note que isso se refere à distribuição condicional de <span class="math inline">\(Y\)</span> dado <span class="math inline">\(X\)</span>, estamos nos referindo ao conjunto de <em>todas as distribuições condicionais</em> associadas a cada um dos valores de <span class="math inline">\(X\)</span>.</p>
+</section>
+</section>
+<section id="vetores-aleatórios-contínuos" class="level2">
+
 
 
 
 </section>
 </section>
-</section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referências</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Vetores Aleatórios Contínuos</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-dantas2013probabilidade" class="csl-entry" role="listitem">
 Dantas, C. A. B. 2013. <em>Probabilidade: Um Curso Introdut<span>ó</span>rio Vol. 10</em>. EDUSP.
 </div>
