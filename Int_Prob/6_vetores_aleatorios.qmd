@@ -137,5 +137,48 @@ Note que isso se refere à distribuição condicional de $Y$ dado $X$, estamos n
 **Definição** Uma função $f(x,y)$ definida para $- \infty < x < + \infty$, $- \infty < y < + \infty$, não-negativa e satisfazendo a condição
 
 $$
-\int
+\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)dxdy=1
 $$
+
+é denominada uma função densidade de probabilidade da variável aleatória bidimensional $(X,Y)$ se para todo o subconjunto $B$ de opntos do $\mathbb{R}^2$ tivermos:
+
+$$
+P((X,Y) \in B) = \int\int_{B}f(x,y)dxdy
+$$
+
+```{r}
+# --- Dependências (instalar se não estiverem disponíveis) ---
+pacotes <- c("mvtnorm", "plotly")
+nao_instalados <- pacotes[!pacotes %in% installed.packages()[, "Package"]]
+if(length(nao_instalados)) install.packages(nao_instalados, repos = "https://cloud.r-project.org")
+
+library(mvtnorm)  # para dmvnorm
+library(plotly)   # para superfície 3D interativa
+
+# --- Parâmetros da normal bivariada ---
+mu <- c(0, 0)                         # vetor de médias
+Sigma <- matrix(c(1.0, 0.6,           # matriz de covariância com correlação
+                  0.6, 1.0), ncol=2)
+
+# --- Grade onde avaliamos a densidade ---
+x_seq <- seq(-3, 3, length.out = 121)
+y_seq <- seq(-3, 3, length.out = 121)
+grade <- expand.grid(x = x_seq, y = y_seq)
+
+# Avaliar densidade bivariada na grade
+dens <- dmvnorm(grade, mean = mu, sigma = Sigma)
+z_mat <- matrix(dens, nrow = length(x_seq), ncol = length(y_seq))
+
+# --- Superfície 3D interativa com plotly ---
+p <- plot_ly(x = x_seq, y = y_seq, z = ~z_mat, showscale = TRUE) %>%
+  add_surface() %>%
+  layout(title = "Densidade Normal Bivariada (interativa)",
+         scene = list(
+           xaxis = list(title = "X1"),
+           yaxis = list(title = "X2"),
+           zaxis = list(title = "Densidade")
+         ))
+# Aparece no Viewer do RStudio ou no navegador
+p
+```
+
