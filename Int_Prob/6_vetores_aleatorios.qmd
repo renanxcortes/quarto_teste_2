@@ -11,19 +11,21 @@ format:
   html:
     code-fold: true
     code-summary: "Mostrar Código"
-editor_options: 
-  chunk_output_type: inline
 ---
 
 # Introdução
 
-**Definição** (@rolla2021intprob) Um *vetor aleatório* $X = (X_1, ..., X_p)$ é uma função $X: \Omega \rightarrow \mathbb{R}^p$ tal que cada coordenada $X_i$ é uma variável aleatória.
+**Definição** (@rolla2021intprob) Um *vetor aleatório* $(X_1, ..., X_p)$ é uma função $X: \Omega \rightarrow \mathbb{R}^p$ tal que cada coordenada $X_i$ é uma variável aleatória.
+
+Importante destacar que a notação para vetor aleatório pode variar de acordo com o autor. Podemos encontrar a notação como $\textbf{X}$ (isto é, em negrito conforme @magalhaes2006probabilidade), $\overset{\sim}{X}$ ou, ainda, $\underset{\sim}{X}$ (@barryjames2023).
+
+<!-- função utilde do latex não disponível sem um usepackage(undertilde), por isso optei pelo overset com \sim  -->
 
 ## Vetores Aleatórios Discretos
 
 ### Distribuições de Probabilidade
 
-**Definição** A distribuição de probabilidade do vetor aleatório $(X_1, X_2, ..., X_p)$ é uma tabela que associa a cada valor $(x_1, x_2, ..., x_p)$ desse vetor sua correspondente probabilidade $P([X_1 = x_1, X_2 = x_2, ..., X_p = x_p])$. Ela é denominada também distribuição conjunta de $X_1, X_2, ..., X_p$.
+**Definição** A distribuição de probabilidade do vetor aleatório $\textbf{X} = (X_1, X_2, ..., X_p)$ é uma tabela que associa a cada valor $(x_1, x_2, ..., x_p)$ desse vetor sua correspondente probabilidade $P([X_1 = x_1, X_2 = x_2, ..., X_p = x_p])$. Ela é denominada também distribuição conjunta de $X_1, X_2, ..., X_p$.
 
 Observemos que a notação $[X_1 = x_1, X_2 = x_2, ..., X_p = x_p]$ representa a intersecção dos eventos $[X_1 = x_1], [X_2 = x_2], ..., [X_p = x_p]$ ou seja,
 
@@ -71,7 +73,7 @@ Abaixo, destacado em vermelho seguem as distribuições marginais do exemplo ant
 
 Para o caso multidimensional (ou seja, $p$-dimensional), o procedimento é análogo.
 
-Seja $(X_1, X_2, ..., X_p)$ um vetor aleatório com distribuição conjunta dada por: $P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)$, onde $x_1, x_2, ..., x_p$, percorrem o conjunto de valores de $X_1, X_2, ..., X_p$, respectivamente.
+Seja $\textbf{X} = (X_1, X_2, ..., X_p)$ um vetor aleatório com distribuição conjunta dada por: $P(X_1 = x_1, X_2 = x_2, ..., X_p = x_p)$, onde $x_1, x_2, ..., x_p$, percorrem o conjunto de valores de $X_1, X_2, ..., X_p$, respectivamente.
 
 A distribuição marginal de $X_1$ é obtida calculando-se, para cada valor $x_1$ de $X_1$:
 
@@ -280,7 +282,6 @@ $$
 F_{X,Y}(x,y) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{X,Y}(u,v) dudv
 $$
 
-
 ### Distribuições Marginais
 
 Dada a densidade conjunta das variáveis $X$ e $Y$, podemos determinar as densidades de $X$ e de $Y$ isoladamente. Essas densidades são chamadas de densidades marginais $f_X(x)$ e $f_Y(x)$, respectivamente. Elas são obtidas através da seguinte maneira:
@@ -297,3 +298,40 @@ Para o caso multivariado, por exemplo para o vetor aleatório $(X_1, X_2, ..., X
 $$
 f_{X_1}(x_1) = \overbrace{\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} ... \int_{-\infty}^{+\infty}}^{\text{p-1 integrais}} f(x_1, x_2, ..., x_p) dx_2dx_3...dx_p
 $$
+
+
+### Vetores Aleatórios Independentes
+
+**Definição** As variáveis aleatórias $X$ e $Y$, cuja densidade conjunta é $f(x,y)$, para $x,y \in \mathbb{R}$, e cujas densidades marginais são denotadas $f_X(x)$ e $f_Y(y)$, são ditas independentes se para todo o par de valores $(x,y)$ tivermos
+
+$$
+f(x,y) = f_X(x)f_Y(y)
+$$
+
+E no caso $p$-dimensional:
+
+$$
+f_{\textbf{X}}(x_1,x_2, ..., x_p) = f_{X_1}(x_1)f_{X_2}(x_2)...f_{X_p}(x_p)
+$$
+
+Ou seja, se as variáveis são independentes, então a distribuição conjunta é o produto das marginais.
+
+**Lema** Analogamente ao caso discreto, as variáveis $X$ e $Y$ com função de distribuição $F_{X,Y}(x,y)$ são independentes se, e somente se
+
+$$
+F_{X,Y}(x,y) = F_{X}(x)F_{Y}(y)
+$$
+
+**Prova** Ver Seção 6.3 de @magalhaes2006probabilidade.
+
+$\square$
+
+### Distribuições Condicionais
+
+**Definição** A distribuição condicional de $Y$ dado $X$ associa a cada valor $x$ de $X$ uma distribuição de probabilidade sobre os valores de $Y$, da seguinte maneira:
+
+$$
+f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y)}{f_X(x)}
+$$
+
+Note que isso se refere à distribuição condicional de $Y$ dado $X$, estamos nos referindo ao conjunto de *todas as distribuições condicionais* associadas a cada um dos valores de $X$.
