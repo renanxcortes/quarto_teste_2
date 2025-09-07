@@ -1,19 +1,18 @@
 ---
 title: "Vetores Aleatórios"
 lang: pt # Equações ficarem referenciadas em Português
-
 toc: true
 toc-title: "Nesta página"
 toc-location: right
-
 execute: 
   warning: false
   message: false
-
 format:
   html:
     code-fold: true
     code-summary: "Mostrar Código"
+editor_options: 
+  chunk_output_type: inline
 ---
 
 # Introdução
@@ -134,13 +133,15 @@ Note que isso se refere à distribuição condicional de $Y$ dado $X$, estamos n
 
 ## Vetores Aleatórios Contínuos
 
+### Distribuições de Probabilidade
+
 **Definição** Uma função $f(x,y)$ definida para $- \infty < x < + \infty$, $- \infty < y < + \infty$, não-negativa e satisfazendo a condição
 
 $$
 \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)dxdy=1
 $$
 
-é denominada uma função densidade de probabilidade da variável aleatória bidimensional $(X,Y)$ se para todo o subconjunto $B$ de opntos do $\mathbb{R}^2$ tivermos:
+é denominada uma função densidade de probabilidade da variável aleatória bidimensional $(X,Y)$ se para todo o subconjunto $B$ de pontos do $\mathbb{R}^2$ tivermos:
 
 $$
 P((X,Y) \in B) = \int\int_{B}f(x,y)dxdy
@@ -148,65 +149,27 @@ $$
 
 Segundo @dantas2013probabilidade, a interpretação da função densidade de probabilidade no caso bidimensional é a seguinte: seja $(x,y)$ um ponto do plano e consideremos um retângulo de lados $\Delta x$ e $\Delta y$ construído a partir do ponto $(x,y)$. A probabilidade de que $(X,Y)$ pertença a esse retângulo é aproximadamente igual ao volume do paralelepípedo de lados $\Delta x$ e $\Delta y$ e cuja altura é $f(x,y)$, ou seja,
 
-![Construção de probabilidade de uma distribuição conjunta bidimensional (Extraído de @dantas2013probabilidade)](figs/bidimensional_deltas.png){width=50%}
-
+![Construção de probabilidade de uma distribuição conjunta bidimensional (Extraído de @dantas2013probabilidade)](figs/bidimensional_deltas.png){width="50%"}
 
 Abaixo, seguem alguns exemplos visuais tridimensionais:
 
-**Exemplo** Normal Bivariada
-
-```{r}
-# --- Dependências (instalar se não estiverem disponíveis) ---
-pacotes <- c("mvtnorm", "plotly")
-nao_instalados <- pacotes[!pacotes %in% installed.packages()[, "Package"]]
-if(length(nao_instalados)) install.packages(nao_instalados, repos = "https://cloud.r-project.org")
-
-library(mvtnorm)  # para dmvnorm
-library(plotly)   # para superfície 3D interativa
-
-# --- Parâmetros da normal bivariada ---
-mu <- c(0, 0)                         # vetor de médias
-Sigma <- matrix(c(1.0, 0.6,           # matriz de covariância com correlação
-                  0.6, 1.0), ncol=2)
-
-# --- Grade onde avaliamos a densidade ---
-x_seq <- seq(-3, 3, length.out = 121)
-y_seq <- seq(-3, 3, length.out = 121)
-grade <- expand.grid(x = x_seq, y = y_seq)
-
-# Avaliar densidade bivariada na grade
-dens <- dmvnorm(grade, mean = mu, sigma = Sigma)
-z_mat <- matrix(dens, nrow = length(x_seq), ncol = length(y_seq))
-
-# --- Superfície 3D interativa com plotly ---
-p <- plot_ly(x = x_seq, y = y_seq, z = ~z_mat, showscale = TRUE) %>%
-  add_surface() %>%
-  layout(title = "Densidade Normal Bivariada (interativa)",
-         scene = list(
-           xaxis = list(title = "X1"),
-           yaxis = list(title = "X2"),
-           zaxis = list(title = "Densidade")
-         ))
-# Aparece no Viewer do RStudio ou no navegador
-p
-```
-
-
 **Exemplo** Função bidimensional com área destacada *entre dois valores de cada variável*:
-  
+
 Suponha a densidade
 
 $$
 f(x,y) = 9x^2y^2, \quad 0 \le x,y \le 1,
 $$
+
 Suponha o cálculo de probabilidade do tipo:
-    
+
 $$
 P(c \le X \le d, \; e \le Y \le f) \;=\; 
 \int_c^d \int_e^f 9x^2 y^2 \, dy \, dx.
 $$
+
 Essa integral tem solução fechada:
-      
+
 $$
 P = (d^3 - c^3)\,(f^3 - e^3).
 $$
@@ -259,3 +222,78 @@ p3d <- plot_ly(showscale = FALSE) %>%
 p3d
 ```
 
+**Exemplo** Normal Bivariada
+
+```{r}
+# --- Dependências (instalar se não estiverem disponíveis) ---
+pacotes <- c("mvtnorm", "plotly")
+nao_instalados <- pacotes[!pacotes %in% installed.packages()[, "Package"]]
+if(length(nao_instalados)) install.packages(nao_instalados, repos = "https://cloud.r-project.org")
+
+library(mvtnorm)  # para dmvnorm
+library(plotly)   # para superfície 3D interativa
+
+# --- Parâmetros da normal bivariada ---
+mu <- c(0, 0)                         # vetor de médias
+Sigma <- matrix(c(1.0, 0.6,           # matriz de covariância com correlação
+                  0.6, 1.0), ncol=2)
+
+# --- Grade onde avaliamos a densidade ---
+x_seq <- seq(-3, 3, length.out = 121)
+y_seq <- seq(-3, 3, length.out = 121)
+grade <- expand.grid(x = x_seq, y = y_seq)
+
+# Avaliar densidade bivariada na grade
+dens <- dmvnorm(grade, mean = mu, sigma = Sigma)
+z_mat <- matrix(dens, nrow = length(x_seq), ncol = length(y_seq))
+
+# --- Superfície 3D interativa com plotly ---
+p <- plot_ly(x = x_seq, y = y_seq, z = ~z_mat, showscale = TRUE) %>%
+  add_surface() %>%
+  layout(title = "Densidade Normal Bivariada (interativa)",
+         scene = list(
+           xaxis = list(title = "X1"),
+           yaxis = list(title = "X2"),
+           zaxis = list(title = "Densidade")
+         ))
+# Aparece no Viewer do RStudio ou no navegador
+p
+```
+
+**Definição** (@dantas2013probabilidade) A função de distribuição de uma variável aleatória bidimensional $(X,Y)$ é dada por:
+
+$$
+F(x,y) = P(X \le x, Y \le y), \quad x \in \mathbb{R}, y \in \mathbb{R}
+$$
+
+Uma notação alternativa para $F(x,y)$ é $F_{X,Y}(x,y)$.
+
+No caso de variáveis aleatórias contínuas $X$ e $Y$, a probabilidade do evento $[X \le x, Y \le, y]$ é igual ao valor da integral da densidade conjunta de $(X, Y)$ no conjunto $B = [X \le x, Y \le, y]$
+
+$$
+F(x,y) = \int_{-\infty}^{x}\int_{-\infty}^{y} f(u,v) dudv
+$$
+
+Ou com uma notação alternativa:
+
+$$
+F_{X,Y}(x,y) = \int_{-\infty}^{x}\int_{-\infty}^{y} f_{X,Y}(u,v) dudv
+$$
+
+
+### Distribuições Marginais
+
+Dada a densidade conjunta das variáveis $X$ e $Y$, podemos determinar as densidades de $X$ e de $Y$ isoladamente. Essas densidades são chamadas de densidades marginais $f_X(x)$ e $f_Y(x)$, respectivamente. Elas são obtidas através da seguinte maneira:
+
+$$
+\begin{align*}
+f_X(x) = \int_{-\infty}^{+\infty} f(x,y) dy \\
+f_Y(y) = \int_{-\infty}^{+\infty} f(x,y) dx
+\end{align*}
+$$
+
+Para o caso multivariado, por exemplo para o vetor aleatório $(X_1, X_2, ..., X_p)$ para obter uma marginal em específico, por exemplo, $X_1$ integramos em relação à todas às demais, isto é:
+
+$$
+f_{X_1}(x_1) = \overbrace{\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} ... \int_{-\infty}^{+\infty}}^{\text{p-1 integrais}} f(x_1, x_2, ..., x_p) dx_2dx_3...dx_p
+$$
