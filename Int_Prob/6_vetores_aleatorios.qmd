@@ -146,6 +146,15 @@ $$
 P((X,Y) \in B) = \int\int_{B}f(x,y)dxdy
 $$
 
+Segundo @dantas2013probabilidade, a interpretação da função densidade de probabilidade no caso bidimensional é a seguinte: seja $(x,y)$ um ponto do plano e consideremos um retângulo de lados $\Delta x$ e $\Delta y$ construído a partir do ponto $(x,y)$. A probabilidade de que $(X,Y)$ pertença a esse retângulo é aproximadamente igual ao volume do paralelepípedo de lados $\Delta x$ e $\Delta y$ e cuja altura é $f(x,y)$, ou seja,
+
+![Construção de probabilidade de uma distribuição conjunta bidimensional (Extraído de @dantas2013probabilidade)](figs/bidimensional_deltas.png){width=50%}
+
+
+Abaixo, seguem alguns exemplos visuais tridimensionais:
+
+**Exemplo Normal Bivariada**
+
 ```{r}
 # --- Dependências (instalar se não estiverem disponíveis) ---
 pacotes <- c("mvtnorm", "plotly")
@@ -181,4 +190,3 @@ p <- plot_ly(x = x_seq, y = y_seq, z = ~z_mat, showscale = TRUE) %>%
 # Aparece no Viewer do RStudio ou no navegador
 p
 ```
-
