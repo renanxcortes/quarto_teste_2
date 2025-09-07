@@ -153,7 +153,7 @@ Segundo @dantas2013probabilidade, a interpretação da função densidade de pro
 
 Abaixo, seguem alguns exemplos visuais tridimensionais:
 
-**Exemplo Normal Bivariada**
+**Exemplo** Normal Bivariada
 
 ```{r}
 # --- Dependências (instalar se não estiverem disponíveis) ---
@@ -190,3 +190,72 @@ p <- plot_ly(x = x_seq, y = y_seq, z = ~z_mat, showscale = TRUE) %>%
 # Aparece no Viewer do RStudio ou no navegador
 p
 ```
+
+
+**Exemplo** Função bidimensional com área destacada *entre dois valores de cada variável*:
+  
+Suponha a densidade
+
+$$
+f(x,y) = 9x^2y^2, \quad 0 \le x,y \le 1,
+$$
+Suponha o cálculo de probabilidade do tipo:
+    
+$$
+P(c \le X \le d, \; e \le Y \le f) \;=\; 
+\int_c^d \int_e^f 9x^2 y^2 \, dy \, dx.
+$$
+Essa integral tem solução fechada:
+      
+$$
+P = (d^3 - c^3)\,(f^3 - e^3).
+$$
+
+Vamos calcular e ilustrar o valor da probabilidade $P(0.2 \le X \le 0.6, 0.3 \le Y \le 0.8)$:
+
+```{r}
+# Distribuição montanhosa f(x,y) = 9x^2 y^2
+if (!requireNamespace("plotly", quietly = TRUE)) install.packages("plotly")
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+
+library(plotly)
+library(ggplot2)
+
+# --- Intervalos ---
+c1 <- 0.2; d1 <- 0.6   # intervalo para X
+e1 <- 0.3; f1 <- 0.8   # intervalo para Y
+
+# Função densidade
+f_xy <- function(x, y) 9 * x^2 * y^2
+
+# Probabilidade analítica
+prob_interval <- (d1^3 - c1^3) * (f1^3 - e1^3)
+cat(sprintf("Probabilidade P(%.2f <= X <= %.2f, %.2f <= Y <= %.2f) = %.4f\n",
+            c1, d1, e1, f1, prob_interval))
+
+```
+
+```{r}
+# --- Grid para visualização ---
+x_seq <- seq(0, 1, length.out = 80)
+y_seq <- seq(0, 1, length.out = 80)
+Z <- outer(x_seq, y_seq, f_xy)
+
+# Máscara região do intervalo
+mask_region <- outer(x_seq, y_seq, function(x, y) (x >= c1 & x <= d1 & y >= e1 & y <= f1))
+
+# --- Gráfico 3D ---
+p3d <- plot_ly(showscale = FALSE) %>%
+  add_surface(x = x_seq, y = y_seq, z = Z,
+              opacity = 0.6, name = "densidade") %>%
+  add_surface(x = x_seq, y = y_seq,
+              z = ifelse(mask_region, Z, NA),
+              opacity = 1.0, name = "região do intervalo") %>%
+  layout(title = "Distribuição f(x,y) = 9x²y² com intervalo destacado",
+         scene = list(xaxis = list(title = "X"),
+                      yaxis = list(title = "Y"),
+                      zaxis = list(title = "densidade")))
+
+p3d
+```
+
