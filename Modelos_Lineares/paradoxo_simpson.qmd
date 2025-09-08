@@ -1,5 +1,5 @@
 ---
-title: "Confundimento - O Caso do Paradoxo de Simpson"
+title: "O Caso do Paradoxo de Simpson"
 lang: pt # Equações ficarem referenciadas em Português
 #sidebar: multivariada
 
