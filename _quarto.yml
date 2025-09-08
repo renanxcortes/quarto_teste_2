@@ -51,8 +51,7 @@ website:
           contents:
             - Int_Prob/5_variaveis_aleatorias_conceitos_basicos.qmd
             - Int_Prob/6_vetores_aleatorios.qmd
-            
-            
+
     - id: probabilidade_B
       title: "Probabilidade B"
       collapse-level: 2
@@ -63,8 +62,17 @@ website:
           contents:
             - Probabilidade_B/LGN.qmd
             - Probabilidade_B/TCL.qmd
-  
-  
+
+    - id: modelos_lineares
+      title: "Modelos Lineares"
+      collapse-level: 2
+      style: "docked"
+      search: true
+      contents:
+        - section: "Confundimento"
+          contents:
+            - Modelos_Lineares/paradoxo_simpson.qmd
+
     - id: multivariada
       title: "Análise Multivariada"
       collapse-level: 2
