@@ -28,7 +28,7 @@ website:
     left:
       - text: "Sobre"
         href: index.qmd
-      - text: "Disciplinas"
+      - text: "Temas"
         menu:
           - sidebar:int_prob
           - sidebar:probabilidade_B
@@ -54,7 +54,7 @@ website:
             - Int_Prob/6_vetores_aleatorios.qmd
 
     - id: probabilidade_B
-      title: "Probabilidade B"
+      title: "Probabilidade Avançada"
       collapse-level: 2
       style: "docked"
       search: true
