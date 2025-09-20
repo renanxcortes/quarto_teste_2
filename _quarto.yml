@@ -52,6 +52,7 @@ website:
           contents:
             - Int_Prob/5_variaveis_aleatorias_conceitos_basicos.qmd
             - Int_Prob/6_vetores_aleatorios.qmd
+            - Int_Prob/7_funcoes_de_variaveis_aleatorias.qmd
 
     - id: probabilidade_B
       title: "Probabilidade Avançada"
