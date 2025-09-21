@@ -68,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -227,6 +256,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução">Introdução</a></li>
+  <li><a href="#funções-de-variáveis-aleatórias-discretas" id="toc-funções-de-variáveis-aleatórias-discretas" class="nav-link" data-scroll-target="#funções-de-variáveis-aleatórias-discretas">Funções de Variáveis Aleatórias Discretas</a></li>
+  <li><a href="#funções-de-variáveis-aleatórias-contínuas" id="toc-funções-de-variáveis-aleatórias-contínuas" class="nav-link" data-scroll-target="#funções-de-variáveis-aleatórias-contínuas">Funções de Variáveis Aleatórias Contínuas</a></li>
+  <li><a href="#funções-de-vetores-aleatórios" id="toc-funções-de-vetores-aleatórios" class="nav-link" data-scroll-target="#funções-de-vetores-aleatórios">Funções de Vetores Aleatórios</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/renanxcortes/teaching/edit/main/Int_Prob/7_funcoes_de_variaveis_aleatorias.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/renanxcortes/teaching/blob/main/Int_Prob/7_funcoes_de_variaveis_aleatorias.qmd" class="toc-action"><i class="bi empty"></i>Ver o código fonte</a></li><li><a href="https://github.com/renanxcortes/teaching/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
@@ -254,7 +286,26 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introdução" class="level1">
 <h1>Introdução</h1>
-<p>Teste</p>
+<p>Nesta seção vamos abordar alguns tópicos referentes à funções de variáveis aleatórias. Por definição, uma função <span class="math inline">\(g(.)\)</span> (por exemplo, uma transformação linear) aplicada à uma variável aleatória <span class="math inline">\(X\)</span>, isto é, <span class="math inline">\(g(X)\)</span> também <strong>será</strong> uma variável aleatória. Analogamente, uma função <span class="math inline">\(h(.)\)</span> (por exemplo, uma soma) aplicada em um vetor aleatório <span class="math inline">\(\textbf{X}\)</span>, isto é, <span class="math inline">\(h(\textbf{X})\)</span> <strong>também será</strong> uma variável aleatória.</p>
+</section>
+<section id="funções-de-variáveis-aleatórias-discretas" class="level1">
+<h1>Funções de Variáveis Aleatórias Discretas</h1>
+<p><strong>Teorema</strong> Seja <span class="math inline">\(X\)</span> uma distribuição discreta com distribuição massa de probabilidade <span class="math inline">\(f_X\)</span> e seja <span class="math inline">\(Y = g(X)\)</span> para alguma função de <span class="math inline">\(g\)</span> definida no conjunto de valores possíveis de <span class="math inline">\(X\)</span>. Para cada valor possível <span class="math inline">\(y\)</span> de <span class="math inline">\(Y\)</span>, a distribuição massa <span class="math inline">\(f_Y\)</span> de Y é</p>
+<p><span class="math display">\[
+f_Y(y) = P(Y = y) = P(g(X) = y) = \sum_{x:g(x) = y}f_X(x)
+\]</span></p>
+<p>Isto é, devemos somar os valores da dsitribuição original de <span class="math inline">\(x\)</span> nos novos pontos do novo domínio, isto é, o domínio de <span class="math inline">\(y\)</span>. Com alguns exemplos, isso ficará mais claro:</p>
+<p><strong>Exemplo</strong> Seja <span class="math inline">\(X\)</span> uma V.A. discreta com a seguinte forma:</p>
+</section>
+<section id="funções-de-variáveis-aleatórias-contínuas" class="level1">
+<h1>Funções de Variáveis Aleatórias Contínuas</h1>
+</section>
+<section id="funções-de-vetores-aleatórios" class="level1">
+<h1>Funções de Vetores Aleatórios</h1>
+<p>https://www.youtube.com/watch?v=tH-wuwvXmsk</p>
+<p>https://www.youtube.com/watch?v=hC2idx2-GME</p>
+<p>3.8 do degroot</p>
+<p>convolucao</p>
 
 
 </section>

@@ -15,4 +15,30 @@ format:
 
 # Introdução
 
-Teste
+Nesta seção vamos abordar alguns tópicos referentes à funções de variáveis aleatórias. Por definição, uma função $g(.)$ (por exemplo, uma transformação linear) aplicada à uma variável aleatória $X$, isto é, $g(X)$ também **será** uma variável aleatória. Analogamente, uma função $h(.)$ (por exemplo, uma soma) aplicada em um vetor aleatório $\textbf{X}$, isto é, $h(\textbf{X})$ **também será** uma variável aleatória.
+
+# Funções de Variáveis Aleatórias Discretas
+
+**Teorema** Seja $X$ uma distribuição discreta com distribuição massa de probabilidade $f_X$ e seja $Y = g(X)$ para alguma função de $g$ definida no conjunto de valores possíveis de $X$. Para cada valor possível $y$ de $Y$, a distribuição massa $f_Y$ de Y é
+
+$$
+f_Y(y) = P(Y = y) = P(g(X) = y) = \sum_{x:g(x) = y}f_X(x)
+$$
+
+Isto é, devemos somar os valores da dsitribuição original de $x$ nos novos pontos do novo domínio, isto é, o domínio de $y$. Com alguns exemplos, isso ficará mais claro:
+
+**Exemplo** Seja $X$ uma V.A. discreta com a seguinte forma:
+
+
+
+# Funções de Variáveis Aleatórias Contínuas
+
+# Funções de Vetores Aleatórios
+
+https://www.youtube.com/watch?v=tH-wuwvXmsk
+
+https://www.youtube.com/watch?v=hC2idx2-GME
+
+3.8 do degroot
+
+convolucao
