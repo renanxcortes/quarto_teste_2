@@ -29,7 +29,33 @@ Isto é, devemos somar os valores da dsitribuição original de $x$ nos novos po
 
 **Exemplo** Seja $X$ uma V.A. discreta com a seguinte forma:
 
+<div style="width: fit-content; margin: auto;">
 
+| $x$        | -2  | -1  | 0   | 1   | 2   |
+|----------|-----|-----|-----|-----|-----|
+| $P(X = x)$ | 1/5 | 1/5 | 1/5 | 1/5 | 1/5 |
+
+</div>
+
+A distribuição de $Y = X + 2$ é
+
+<div style="width: fit-content; margin: auto;">
+
+| $y$        | 0  | 1  | 2   | 3   | 4   |
+|----------|-----|-----|-----|-----|-----|
+| $P(Y = y)$ | 1/5 | 1/5 | 1/5 | 1/5 | 1/5 |
+
+</div>
+
+A distribuição de $Z = X^2$ é
+
+<div style="width: fit-content; margin: auto;">
+
+| $z$        | 0  | 1  | 2   |
+|----------|-----|-----|-----|
+| $P(Z = z)$ | 1/5 | 2/5 | 2/5 |
+
+</div>
 
 # Funções de Variáveis Aleatórias Contínuas
 
