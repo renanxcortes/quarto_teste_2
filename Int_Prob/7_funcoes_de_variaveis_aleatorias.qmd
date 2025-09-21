@@ -25,7 +25,10 @@ $$
 f_Y(y) = P(Y = y) = P(g(X) = y) = \sum_{x:g(x) = y}f_X(x).
 $$
 
-Isto é, devemos somar os valores da dsitribuição original de $x$ nos novos pontos do novo domínio, isto é, o domínio de $y$. Com alguns exemplos, isso ficará mais claro:
+Isto é, devemos somar os valores da dsitribuição original de $x$ nos novos pontos do novo domínio, isto é, o domínio de $y$. 
+
+**Teorema** Seja $X$ uma distribuição discreta com distribuição massa de probabilidade $f_X$. Seja $a \in \mathbb{R}, a \ne 0$ and $b \in \mathbb{R}$, e seja $Y = aX + b$. Então, $f_Y(y) = P(Y = y) = P(aX + b = y) = P \left( X = \frac{y-b}{a} \right) = f_X\left(\frac{y-b}{a} \right)$
+
 
 **Exemplo** Seja $X$ uma V.A. discreta com a seguinte forma:
 
@@ -57,7 +60,7 @@ A distribuição de $Z = X^2$ é
 
 </div>
 
-**Teorema** Seja $X$ uma distribuição discreta com distribuição massa de probabilidade $f_X$. Seja $a \in \mathbb{R}, a \ne 0$ and $b \in \mathbb{R}$
+
 
 # Funções de Variáveis Aleatórias Contínuas
 
