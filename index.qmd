@@ -73,7 +73,7 @@ Este é um website baseado no [Quarto](https://quarto.org/docs/websites) da empr
 
 [Site da Disciplina de Probabilidade e Estatística EDA da UFRGS](https://www.ufrgs.br/probabilidade-estatistica/)
 
-[Livro de Estatística Básica do Prof. Filipe Zabala](https://filipezabala.com/enrs/)
+[Livro de Estatística Básica do Prof. Filipe Zabala](https://filipezabala.com/fe)
 
 [Livro R for Data Science](https://r4ds.hadley.nz/)
 
